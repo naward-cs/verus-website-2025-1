@@ -8,6 +8,11 @@
     @apply h-full w-full m-0 p-0 overflow-x-hidden antialiased;
   }
 
+  /* Dark mode background color */
+  .dark {
+    background-color: #020A1A;
+  }
+
   body > div {
     @apply h-full;
   }

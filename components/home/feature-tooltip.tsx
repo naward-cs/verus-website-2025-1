@@ -63,8 +63,8 @@ export function FeatureTooltip({ children, description }: FeatureTooltipProps) {
       >
         {children}
         {isOpen && (
-          <div className="fixed md:hidden left-4 right-4 bottom-4 bg-white p-4 rounded-lg shadow-lg border border-gray-200 z-50 mx-auto" style={{ maxWidth: '90vw' }}>
-            <p className="text-sm text-gray-600">{description}</p>
+          <div className="fixed md:hidden left-4 right-4 bottom-4 bg-white dark:bg-gray-800 text-gray-600 dark:text-gray-300 border-gray-200 dark:border-gray-700 p-4 rounded-lg shadow-lg border z-50 mx-auto" style={{ maxWidth: '90vw' }}>
+            <p className="text-sm">{description}</p>
           </div>
         )}
       </div>
@@ -79,9 +79,9 @@ export function FeatureTooltip({ children, description }: FeatureTooltipProps) {
         </TooltipTrigger>
         <TooltipContent 
           side="bottom" 
-          className="hidden md:block max-w-[280px] bg-white p-4 rounded-lg shadow-lg border border-gray-200"
+          className="hidden md:block max-w-[280px] bg-white dark:bg-gray-800 text-gray-600 dark:text-gray-300 border-gray-200 dark:border-gray-700 p-4 rounded-lg shadow-lg border"
         >
-          <p className="text-sm text-gray-600">{description}</p>
+          <p className="text-sm">{description}</p>
         </TooltipContent>
       </Tooltip>
     </TooltipProvider>

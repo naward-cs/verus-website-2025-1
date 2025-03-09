@@ -1,58 +1,58 @@
-
-
 import { IoMdDownload } from "react-icons/io";
 
 export function ProtocolSection() {
   return (
-    <div className="-mx-4 md:mx-0 w-screen md:max-w-[1220px] bg-gradient-to-b from-[#3165D4] to-[#0A3FB1] rounded-none md:rounded-lg mt-4 md:mt-4 shadow-[0_4px_40px_-12px_rgba(0,0,0,0.1)]">
-      <div className="relative w-full h-full px-4 py-16 md:py-24 md:px-8 overflow-hidden">
+    <div className="-mx-4 md:mx-0 w-screen md:max-w-[1220px] bg-gradient-to-b from-blue-50 to-white dark:bg-gray-950 dark:bg-none rounded-none md:rounded-lg mt-4 md:mt-4 shadow-[0_4px_40px_-12px_rgba(0,0,0,0.1)] dark:shadow-[0_4px_40px_-12px_rgba(0,0,0,0.3)]">
+      <div className="relative w-full h-full px-4 py-16 md:py-24 md:px-8 overflow-hidden backdrop-blur-sm">
         {/* Background Pattern - Adds visual interest */}
         <div className="absolute inset-0">
           <div 
-            className="absolute top-0 left-0 w-[400px] h-[400px] bg-white/20 rounded-full blur-[100px] transform -translate-x-1/2 -translate-y-1/2" 
+            className="absolute top-0 left-0 w-[400px] h-[400px] bg-blue-500/5 rounded-full blur-[100px] transform -translate-x-1/2 -translate-y-1/2" 
             style={{ willChange: 'transform' }}
           />
           <div 
-            className="absolute bottom-0 right-0 w-[400px] h-[400px] bg-white/20 rounded-full blur-[100px] transform translate-x-1/2 translate-y-1/2" 
+            className="absolute bottom-0 right-0 w-[400px] h-[400px] bg-indigo-500/5 rounded-full blur-[100px] transform translate-x-1/2 translate-y-1/2" 
             style={{ willChange: 'transform' }}
           />
         </div>
 
         <div className="relative z-10 flex flex-col items-center">
           <div className="mb-8 md:mb-16">
-            <h2 className="text-[32px] md:text-[75px] text-white tracking-tight font-medium text-center max-w-[700px] leading-[1.1] mb-4 md:mb-8">
-              World Scale Through{" "}
+            <h2 className="text-[28px] md:text-[55px] text-gray-800 dark:text-white tracking-tight font-medium text-center md:max-w-[900px] leading-[1.2] mb-4 md:mb-8">
+              <span className="text-gray-600 dark:text-white">Unlimited Scalability—</span>{""}
               <span className="relative">
-                <span className="relative inline-block px-2 py-1">
-                  <span className="relative z-10 bg-gradient-to-r from-white via-blue-200 to-white bg-clip-text text-transparent">
-                    Multi-Chain
+                <span className="relative inline-block">
+                  <span className="relative z-10 bg-gradient-to-r from-verus-blue to-blue-600 dark:to-blue-400 bg-clip-text text-transparent">
+                    Native Multi-Chain Architecture
                   </span>
-                  <span className="absolute inset-0 bg-gradient-to-r from-white/10 via-blue-200/10 to-white/10 rounded-lg border border-white/20" />
+                  <span className="absolute -inset-1 bg-gradient-to-r from-blue-500/10 via-indigo-500/10 to-verus-blue/10 rounded-lg blur-md" />
                 </span>
               </span>
             </h2>
-            <p className="text-[16px] md:text-[24px] text-white/90 tracking-tight font-normal text-center leading-snug max-w-[700px] opacity-85">
-              Native multi-chain design enables true global scale. 
-Building public infrastructure with truth & privacy for all.
+            <p className="text-[16px] md:text-[20px] text-gray-600 dark:text-gray-300 font-normal tracking-tight text-center leading-relaxed md:max-w-[800px]">
+            Verus achieves unlimited scalability by embracing a multi-chain approach rather than scaling up a single blockchain. Instead of pushing the limits of a monolithic chain, Verus enables anyone to launch fully interoperable blockchains as needed, creating a network that scales horizontally—similar to how the internet is built on millions of servers rather than one super-server.
             </p>
           </div>
 
           <div className="flex flex-col md:flex-row gap-4">
+            {/* Primary Button - Light/Dark Variants */}
             <a 
               href="/intro" 
-              className="h-[40px] md:h-[50px] px-6 bg-white rounded-lg text-[14px] md:text-[16px] font-medium text-black flex items-center justify-center hover:bg-gray-100 transition-colors"
+              className="h-[40px] md:h-[50px] px-6 bg-blue-600 dark:bg-white/90 text-white dark:text-black hover:bg-blue-700 dark:hover:bg-white backdrop-blur-sm rounded-none md:rounded-lg text-[14px] md:text-[16px] font-medium flex items-center justify-center transition-colors border border-blue-500 dark:border-white/60"
             >
               Learn more about the Verus Protocol
             </a>
+            
+            {/* Secondary Button - Light/Dark Variants */}
             <a
-  href="https://docs.verus.io"
-  target="_blank"
-  rel="noopener noreferrer"
-  className="h-[40px] md:h-[50px] px-6 border-2 border-white rounded-lg text-[14px] md:text-[16px] font-medium text-white flex items-center justify-center hover:bg-white/10 transition-colors gap-2"
->
-  Download Vision Paper (.PDF)
-  <IoMdDownload className="h-5 w-5" />
-</a>
+              href="https://docs.verus.io"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="h-[40px] md:h-[50px] px-6 bg-white/90 dark:bg-blue-950/40 text-gray-800 dark:text-blue-300 hover:bg-white dark:hover:text-blue-200 backdrop-blur-sm rounded-none md:rounded-lg text-[14px] md:text-[16px] font-medium flex items-center justify-center gap-2 transition-colors border border-gray-300 dark:border-blue-800/40"
+            >
+              Download Vision Paper (.PDF)
+              <IoMdDownload className="h-5 w-5" />
+            </a>
           </div>
         </div>
       </div>

@@ -1,3 +1,5 @@
+"use client"
+
 import { IoLogoDiscord } from "react-icons/io5"
 import { FeaturesGrid } from "@/components/home/features-grid"
 import { CompareSection } from "@/components/home/compare-section"
@@ -16,8 +18,13 @@ export default function Home() {
       <main className="relative h-[calc(100vh-50px)] md:h-[calc(100vh-70px)] w-screen mt-[50px] md:mt-[70px]">
         <img 
           src="/img/hero-bg2-2.webp"
-          alt="Hero background"
-          className="absolute h-full w-full object-cover"
+          className="absolute h-full w-full object-cover dark:hidden"
+          alt="Hero background - light"
+        />
+        <img 
+          src="/img/bg-darkmode.webp"
+          className="absolute h-full w-full object-cover hidden dark:block"
+          alt="Hero background - dark"
         />
         <div className="relative z-10 flex flex-col items-center px-4 pt-[30px] md:pt-[70px]">
           <h1 className="text-[32px] md:text-[75px] text-white font-medium text-center tracking-tight">
@@ -29,7 +36,7 @@ export default function Home() {
           <div className="flex flex-col md:flex-row gap-4 mt-8 mb-16 md:mb-32">
             <a 
               href="/build" 
-              className="h-[40px] md:h-[50px] px-6 bg-white rounded-lg text-[14px] md:text-[16px] font-medium text-black flex items-center justify-center hover:bg-gray-100 transition-colors"
+              className="h-[40px] md:h-[50px] px-6 bg-white/90 backdrop-blur-sm rounded-none md:rounded-lg text-[14px] md:text-[16px] font-medium text-black flex items-center justify-center hover:bg-white transition-colors border border-white/60"
             >
               Build with Verus
             </a>
@@ -37,7 +44,7 @@ export default function Home() {
               href="https://discord.gg/veruscoin" 
               target="_blank"
               rel="noopener noreferrer"
-              className="h-[40px] md:h-[50px] px-6 border-2 border-white rounded-lg text-[14px] md:text-[16px] font-medium text-white flex items-center justify-center gap-2 hover:bg-black/10 transition-colors"
+              className="h-[40px] md:h-[50px] px-6 bg-blue-950/40 backdrop-blur-sm rounded-none md:rounded-lg text-[14px] md:text-[16px] font-medium text-blue-300 flex items-center justify-center gap-2 hover:text-blue-200 transition-colors border border-blue-800/40"
             >
               Join the worldwide community
               <IoLogoDiscord className="h-5 w-5 md:h-6 md:w-6" />

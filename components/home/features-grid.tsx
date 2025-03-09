@@ -1,4 +1,5 @@
-import { Suspense } from 'react'
+"use client"
+
 import { FeatureTooltip } from './feature-tooltip'
 
 // Feature descriptions as static content
@@ -15,7 +16,6 @@ const featureDescriptions = {
 
 type FeatureKey = keyof typeof featureDescriptions;
 
-// Server Component
 export function FeaturesGrid() {
   const FeatureItem = ({ 
     src, 
@@ -38,7 +38,7 @@ export function FeaturesGrid() {
             alt={alt}
             className="w-[40px] h-[40px] md:w-[48px] md:h-[48px] md:mb-3 mb-2"
           />
-          <span className="text-[16px] md:text-[22px] text-black font-medium text-center">
+          <span className="text-[16px] md:text-[22px] text-black dark:text-white font-medium text-center">
             {title}
           </span>
         </div>
@@ -62,7 +62,7 @@ export function FeaturesGrid() {
         className="md:hidden absolute left-8 w-24 -top-6 h-auto"
       />
 
-      <div className="md:rounded-lg bg-white/40 border border-white/50 mb-2 md:mb-4 shadow-[0_4px_40px_-12px_rgba(0,0,0,0.1)]">
+      <div className="md:rounded-lg bg-white/40 dark:bg-gray-900/60 border border-white/50 dark:border-gray-800/50 mb-2 md:mb-4 shadow-[0_4px_40px_-12px_rgba(0,0,0,0.1)]">
         <div className="grid grid-cols-2 md:grid-cols-4 gap-x-8 md:gap-x-16 md:gap-y-16 gap-y-8 py-12 max-w-[1200px] mx-auto px-4">
           <FeatureItem
             src="/img/hero/security.svg"
