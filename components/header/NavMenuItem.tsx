@@ -20,7 +20,7 @@ export function NavMenuItem({ title, href, children }: NavMenuItemProps) {
   if (!children && href) {
     return (
       <NavigationMenuItem>
-        <Link href={href} className="text-[15px] font-normal text-black opacity-75 hover:opacity-100 hover:underline">
+        <Link href={href} className="text-[15px] font-normal text-black dark:text-white opacity-75 hover:opacity-100 hover:underline">
           {title}
         </Link>
       </NavigationMenuItem>
@@ -30,7 +30,7 @@ export function NavMenuItem({ title, href, children }: NavMenuItemProps) {
   // Otherwise, render a dropdown menu
   return (
     <NavigationMenuItem>
-      <NavigationMenuTrigger className="text-[15px] font-normal text-black opacity-75 hover:opacity-100 hover:underline data-[state=open]:opacity-100">
+      <NavigationMenuTrigger className="text-[15px] font-normal text-black dark:text-white opacity-75 hover:opacity-100 hover:underline data-[state=open]:opacity-100">
         {title}
         <ChevronDown className="ml-1 h-4 w-4 transition-transform duration-200 group-data-[state=open]:rotate-180" />
       </NavigationMenuTrigger>

@@ -27,26 +27,26 @@ function MobileSection({ title, isOpen, toggleSection, children }: SectionProps)
   }, [isOpen, children])
 
   return (
-    <div className="border-b border-gray-100">
+    <div className="border-b border-gray-100 dark:border-gray-800">
       <div className={cn(
         "transition-colors duration-300 -mx-6 rounded-lg",
-        isOpen ? "bg-blue-50/70" : "hover:bg-gray-50/70"
+        isOpen ? "bg-blue-50/70 dark:bg-blue-950/30" : "hover:bg-gray-50/70 dark:hover:bg-gray-800/30"
       )}>
         <div className="px-6">
           <button
             onClick={() => toggleSection(title.toLowerCase())}
             className="flex items-center justify-between w-full py-4 group"
           >
-            <span className="text-[15px] font-medium text-gray-700 group-hover:text-verus-blue transition-colors">
+            <span className="text-[15px] font-medium text-gray-700 dark:text-gray-300 group-hover:text-verus-blue dark:group-hover:text-blue-400 transition-colors">
               {title}
             </span>
             <div className={cn(
               "h-6 w-6 rounded-full flex items-center justify-center transition-all duration-300",
-              isOpen ? "bg-verus-blue" : "bg-gray-100 group-hover:bg-verus-blue/20"
+              isOpen ? "bg-verus-blue" : "bg-gray-100 dark:bg-gray-700 group-hover:bg-verus-blue/20 dark:group-hover:bg-verus-blue/30"
             )}>
               <ChevronRight className={cn(
                 "h-4 w-4 transition-transform duration-300",
-                isOpen ? "rotate-90 text-white" : "text-gray-500 group-hover:text-verus-blue"
+                isOpen ? "rotate-90 text-white" : "text-gray-500 dark:text-gray-400 group-hover:text-verus-blue dark:group-hover:text-blue-400"
               )} />
             </div>
           </button>
@@ -80,20 +80,20 @@ export function MobileNav() {
     <>
       {/* Mobile Menu Button */}
       <button
-        className="md:hidden relative z-50 flex items-center justify-center h-10 w-10 rounded-full bg-gray-100 hover:bg-verus-blue/10 transition-colors"
+        className="md:hidden relative z-50 flex items-center justify-center h-10 w-10 rounded-full bg-gray-100 dark:bg-gray-800 hover:bg-verus-blue/10 dark:hover:bg-verus-blue/20 transition-colors"
         onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
         aria-label={isMobileMenuOpen ? "Close menu" : "Open menu"}
       >
         <div className="relative w-6 h-6">
           <span 
             className={cn(
-              "absolute left-0 top-[11px] h-[2px] w-6 bg-gray-800 transition-all duration-300",
+              "absolute left-0 top-[11px] h-[2px] w-6 bg-gray-800 dark:bg-gray-200 transition-all duration-300",
               isMobileMenuOpen ? "rotate-45" : "rotate-0"
             )} 
           />
           <span 
             className={cn(
-              "absolute left-0 top-[11px] h-[2px] w-6 bg-gray-800 transition-all duration-300",
+              "absolute left-0 top-[11px] h-[2px] w-6 bg-gray-800 dark:bg-gray-200 transition-all duration-300",
               isMobileMenuOpen ? "-rotate-45" : "rotate-0"
             )} 
           />
@@ -103,36 +103,36 @@ export function MobileNav() {
       {/* Mobile Menu with improved styling but no animations */}
       <div
         className={cn(
-          "fixed inset-x-0 top-[50px] md:top-[70px] bottom-0 bg-white shadow-2xl md:hidden overflow-y-auto z-40 transition-transform duration-300",
+          "fixed inset-x-0 top-[50px] md:top-[70px] bottom-0 bg-white dark:bg-gray-950 shadow-2xl dark:shadow-[0_0_20px_rgba(0,0,0,0.5)] md:hidden overflow-y-auto z-40 transition-transform duration-300",
           isMobileMenuOpen ? "translate-x-0" : "translate-x-full"
         )}
       >
-        <div className="absolute top-0 left-0 w-1/2 h-full bg-blue-50/20 opacity-30" />
+        <div className="absolute top-0 left-0 w-1/2 h-full bg-blue-50/20 dark:bg-blue-950/20 opacity-30" />
         <div className="absolute top-0 right-0 h-full w-[25%] bg-gradient-to-l from-verus-blue/5 to-transparent" />
         
         <nav className="p-6 relative">
           {/* Use Verus Section */}
           <MobileSection title="Use" isOpen={openSection === 'use'} toggleSection={toggleSection}>
-            <h3 className="text-[11px] font-medium text-gray-500 uppercase pt-8 pb-2 border-b border-gray-200">Get Started</h3>
+            <h3 className="text-[11px] font-medium text-gray-500 dark:text-gray-400 uppercase pt-8 pb-2 border-b border-gray-200 dark:border-gray-700">Get Started</h3>
             <div className="space-y-2">
-              <Link href="/get-started" className="block text-[15px] py-2 pt-4 hover:text-verus-blue transition-colors">Get Started</Link>
-              <Link href="/wallet" className="block text-[15px] py-2 hover:text-verus-blue transition-colors">Wallet</Link>
-              <Link href="/verusid" className="block text-[15px] py-2 hover:text-verus-blue transition-colors">VerusID</Link>
-              <Link href="/ethereum-bridge" className="block text-[15px] py-2 hover:text-verus-blue transition-colors">Ethereum Bridge</Link>
+              <Link href="/get-started" className="block text-[15px] py-2 pt-4 text-gray-700 dark:text-gray-300 hover:text-verus-blue dark:hover:text-blue-400 transition-colors">Get Started</Link>
+              <Link href="/wallet" className="block text-[15px] py-2 text-gray-700 dark:text-gray-300 hover:text-verus-blue dark:hover:text-blue-400 transition-colors">Wallet</Link>
+              <Link href="/verusid" className="block text-[15px] py-2 text-gray-700 dark:text-gray-300 hover:text-verus-blue dark:hover:text-blue-400 transition-colors">VerusID</Link>
+              <Link href="/ethereum-bridge" className="block text-[15px] py-2 text-gray-700 dark:text-gray-300 hover:text-verus-blue dark:hover:text-blue-400 transition-colors">Ethereum Bridge</Link>
             </div>
 
-            <h3 className="text-[11px] font-medium text-gray-500 uppercase pt-8 pb-2 border-b border-gray-200">Participate</h3>
+            <h3 className="text-[11px] font-medium text-gray-500 dark:text-gray-400 uppercase pt-8 pb-2 border-b border-gray-200 dark:border-gray-700">Participate</h3>
             <div className="space-y-2">
-              <Link href="/mining" className="block text-[15px] py-2 pt-4 hover:text-verus-blue transition-colors">Start Mining</Link>
-              <Link href="/staking" className="block text-[15px] py-2 hover:text-verus-blue transition-colors">Start Staking</Link>
-              <Link href="/exchanges" className="block text-[15px] py-2 hover:text-verus-blue transition-colors">Get VRSC</Link>
+              <Link href="/mining" className="block text-[15px] py-2 pt-4 text-gray-700 dark:text-gray-300 hover:text-verus-blue dark:hover:text-blue-400 transition-colors">Start Mining</Link>
+              <Link href="/staking" className="block text-[15px] py-2 text-gray-700 dark:text-gray-300 hover:text-verus-blue dark:hover:text-blue-400 transition-colors">Start Staking</Link>
+              <Link href="/exchanges" className="block text-[15px] py-2 text-gray-700 dark:text-gray-300 hover:text-verus-blue dark:hover:text-blue-400 transition-colors">Get VRSC</Link>
             </div>
 
-            <h3 className="text-[11px] font-medium text-gray-500 uppercase pt-8 pb-2 border-b border-gray-200">Tools</h3>
+            <h3 className="text-[11px] font-medium text-gray-500 dark:text-gray-400 uppercase pt-8 pb-2 border-b border-gray-200 dark:border-gray-700">Tools</h3>
             <div className="space-y-2">
-              <Link href="/#" className="block text-[15px] py-2 pt-4 hover:text-verus-blue transition-colors">VerusID Search</Link>
-              <Link href="/#" className="block text-[15px] py-2 hover:text-verus-blue transition-colors">Verify Signatures</Link>
-              <Link href="https://insight.verus.io" className="block text-[15px] py-2 flex items-center gap-2 hover:text-verus-blue transition-colors group">
+              <Link href="/#" className="block text-[15px] py-2 pt-4 text-gray-700 dark:text-gray-300 hover:text-verus-blue dark:hover:text-blue-400 transition-colors">VerusID Search</Link>
+              <Link href="/#" className="block text-[15px] py-2 text-gray-700 dark:text-gray-300 hover:text-verus-blue dark:hover:text-blue-400 transition-colors">Verify Signatures</Link>
+              <Link href="https://insight.verus.io" className="block text-[15px] py-2 text-gray-700 dark:text-gray-300 flex items-center gap-2 hover:text-verus-blue dark:hover:text-blue-400 transition-colors group">
                 Explorer
                 <ExternalLink className="h-4 w-4 opacity-50 group-hover:opacity-100" />
               </Link>
@@ -224,8 +224,8 @@ export function MobileNav() {
                 <span className="text-[15px] group-hover:text-verus-blue transition-colors">Discord</span>
               </Link>
               <Link href="https://twitter.com/veruscoin" className="flex items-center gap-2 py-2 px-3 rounded-md hover:bg-verus-blue/10 group transition-colors">
-                <div className="h-8 w-8 rounded-full bg-black/10 flex items-center justify-center">
-                  <FaXTwitter className="h-4 w-4 text-black" />
+                <div className="h-8 w-8 rounded-full bg-black/10 dark:bg-white/10 flex items-center justify-center">
+                  <FaXTwitter className="h-4 w-4 text-black dark:text-white" />
                 </div>
                 <span className="text-[15px] group-hover:text-verus-blue transition-colors">X</span>
               </Link>

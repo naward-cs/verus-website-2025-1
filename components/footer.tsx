@@ -13,12 +13,17 @@ export function Footer() {
         <img 
           src="/img/bg-footer.webp"
           alt=""
-          className="w-full object-cover scale-y-[-1]"
+          className="w-full object-cover scale-y-[-1] dark:hidden"
+        />
+        <img 
+          src="/img/bg-darkmode.webp"
+          alt=""
+          className="w-full object-cover scale-y-[-1] hidden dark:block"
         />
         
         {/* Centered Text and Button */}
         <div className="absolute inset-0 flex flex-col items-center justify-center gap-8">
-          <h2 className="text-[32px] md:text-[75px] text-white tracking-tight font-medium text-center max-w-[700px] leading-[1.1] [text-shadow:_0_1px_20px_rgb(8_32_84_/_100%)] md:[text-shadow:_0_1px_35px_rgb(8_32_84_/_100%)]">
+          <h2 className="text-[32px] md:text-[75px] text-white tracking-tight font-medium text-center max-w-[700px] leading-[1.1] [text-shadow:_0_1px_20px_rgb(8_32_84_/_100%)] md:[text-shadow:_0_1px_35px_rgb(8_32_84_/_100%)] dark:[text-shadow:_0_1px_20px_rgb(0_0_0_/_60%)] dark:md:[text-shadow:_0_1px_35px_rgb(0_0_0_/_60%)]">
             Start Building<br />
             the Internet of Value<br />
             Right Now

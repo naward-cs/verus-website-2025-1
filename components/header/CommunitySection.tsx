@@ -10,7 +10,7 @@ export function CommunitySection() {
   return (
     <div className="grid grid-cols-3 gap-8">
       <div>
-        <h3 className="mb-4 text-xs font-medium text-gray-500 uppercase border-b border-gray-200 pb-2">Explore</h3>
+        <h3 className="mb-4 text-xs font-medium text-gray-500 dark:text-gray-400 uppercase border-b border-gray-200 dark:border-gray-700 pb-2">Explore</h3>
         <div className="space-y-4">
           <NavLink 
             href="/#" 
@@ -33,7 +33,7 @@ export function CommunitySection() {
         </div>
       </div>
       <div>
-        <h3 className="mb-4 text-xs font-medium text-gray-500 uppercase border-b border-gray-200 pb-2">Get Involved</h3>
+        <h3 className="mb-4 text-xs font-medium text-gray-500 dark:text-gray-400 uppercase border-b border-gray-200 dark:border-gray-700 pb-2">Get Involved</h3>
         <div className="space-y-4">
           <NavLink 
             href="/#" 
@@ -50,31 +50,31 @@ export function CommunitySection() {
         </div>
       </div>
       <div>
-        <h3 className="mb-4 text-xs font-medium text-gray-500 uppercase border-b border-gray-200 pb-2">Social Media</h3>
+        <h3 className="mb-4 text-xs font-medium text-gray-500 dark:text-gray-400 uppercase border-b border-gray-200 dark:border-gray-700 pb-2">Social Media</h3>
         <div className="space-y-2">
-          <Link href="https://discord.gg/veruscoin" className="group flex items-center hover:underline p-2">
+          <Link href="https://discord.gg/veruscoin" className="group flex items-center p-2">
             <IoLogoDiscord className="h-5 w-5 text-[#5865F2] mr-2" />
-            <span className="text-[15px] font-[450]">Discord</span>
+            <span className="text-[15px] font-[450] text-gray-800 dark:text-white group-hover:underline">Discord</span>
           </Link>
-          <Link href="https://twitter.com/veruscoin" className="group flex items-center hover:underline p-2">
-            <FaXTwitter className="h-5 w-5 text-black mr-2" />
-            <span className="text-[15px] font-[450]">X.com</span>
+          <Link href="https://twitter.com/veruscoin" className="group flex items-center p-2">
+            <FaXTwitter className="h-5 w-5 text-black dark:text-white mr-2" />
+            <span className="text-[15px] font-[450] text-gray-800 dark:text-white group-hover:underline">X.com</span>
           </Link>
-          <Link href="https://t.me/veruscoin" className="group flex items-center hover:underline p-2">
+          <Link href="https://t.me/veruscoin" className="group flex items-center p-2">
             <FaTelegram className="h-5 w-5 text-[#0088cc] mr-2" />
-            <span className="text-[15px] font-[450]">Telegram</span>
+            <span className="text-[15px] font-[450] text-gray-800 dark:text-white group-hover:underline">Telegram</span>
           </Link>
-          <Link href="https://reddit.com/r/veruscoin" className="group flex items-center hover:underline p-2">
+          <Link href="https://reddit.com/r/veruscoin" className="group flex items-center p-2">
             <FaReddit className="h-5 w-5 text-[#FF4500] mr-2" />
-            <span className="text-[15px] font-[450]">Reddit</span>
+            <span className="text-[15px] font-[450] text-gray-800 dark:text-white group-hover:underline">Reddit</span>
           </Link>
-          <Link href="https://facebook.com/veruscoin" className="group flex items-center hover:underline p-2">
+          <Link href="https://facebook.com/veruscoin" className="group flex items-center p-2">
             <FaFacebook className="h-5 w-5 text-[#1877F2] mr-2" />
-            <span className="text-[15px] font-[450]">Facebook</span>
+            <span className="text-[15px] font-[450] text-gray-800 dark:text-white group-hover:underline">Facebook</span>
           </Link>
-          <Link href="https://youtube.com/@veruscoin" className="group flex items-center hover:underline p-2">
+          <Link href="https://youtube.com/@veruscoin" className="group flex items-center p-2">
             <FaYoutube className="h-5 w-5 text-[#FF0000] mr-2" />
-            <span className="text-[15px] font-[450]">YouTube</span>
+            <span className="text-[15px] font-[450] text-gray-800 dark:text-white group-hover:underline">YouTube</span>
           </Link>
         </div>
       </div>

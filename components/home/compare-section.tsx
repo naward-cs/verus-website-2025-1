@@ -141,10 +141,13 @@ export function CompareSection() {
               href="https://medium.com/veruscoin/verus-smart-transactions-vs-smart-contracts-f98079c00ed0"
               target="_blank"
               rel="noopener noreferrer"
-              className="mt-12 flex items-center gap-2 md:text-[15px] text-[13px] text-blue-600 hover:text-blue-700 dark:text-blue-300 dark:hover:text-blue-200 transition-colors bg-blue-50 dark:bg-blue-950/40 backdrop-blur-sm px-4 py-2 rounded-none md:rounded-lg border border-blue-200 dark:border-blue-800/40"
+              className="group mt-12 flex items-center gap-2 md:text-[15px] text-[13px] text-blue-600 hover:text-blue-700 dark:text-blue-300 dark:hover:text-blue-200 transition-all duration-300 bg-blue-50/80 hover:bg-blue-50 dark:bg-blue-950/40 dark:hover:bg-blue-950/50 backdrop-blur-sm px-5 py-3 rounded-none md:rounded-lg border border-blue-200 dark:border-blue-800/40 hover:border-blue-300 dark:hover:border-blue-700/60 hover:shadow-md dark:hover:shadow-blue-950/40 hover:-translate-y-[1px]"
             >
               <FaMedium className="h-5 w-5 text-gray-700 dark:text-gray-300" />
               <span>Read the article: Verus Smart Transactions vs. Smart Contracts</span>
+              <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 ml-1 transition-all duration-300 group-hover:translate-x-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
+              </svg>
             </a>
           </div>
           

@@ -30,7 +30,7 @@ export default async function MediumFeed() {
   if (!articles.length) {
     return (
       <div className="text-center py-12">
-        <p className="text-gray-500">No articles found</p>
+        <p className="text-gray-500 dark:text-gray-400">No articles found</p>
       </div>
     );
   }
@@ -43,10 +43,10 @@ export default async function MediumFeed() {
           href={article.link}
           target="_blank"
           rel="noopener noreferrer"
-          className="group bg-white border-2 border-[#E9EFFC] rounded-lg overflow-hidden hover:border-gray-300 transition-all duration-200 md:block"
+          className="group bg-white dark:bg-gray-800 border border-[#E9EFFC] dark:border-gray-700 rounded-lg overflow-hidden hover:border-gray-300 dark:hover:border-gray-600 transition-all duration-200 md:block shadow-sm hover:shadow-md"
         >
           {article.thumbnail && (
-            <div className="relative aspect-[16/9] w-full bg-gray-100">
+            <div className="relative aspect-[16/9] w-full bg-gray-100 dark:bg-gray-700">
               <Image
                 src={article.thumbnail}
                 alt=""
@@ -57,14 +57,14 @@ export default async function MediumFeed() {
             </div>
           )}
           <div className="p-6">
-            <h3 className="font-medium text-lg mb-2 line-clamp-2 group-hover:text-verus-blue transition-colors">
+            <h3 className="font-medium text-lg mb-2 line-clamp-2 text-gray-900 dark:text-white group-hover:text-verus-blue dark:group-hover:text-blue-400 transition-colors">
               {article.title}
             </h3>
-            <p className="text-gray-600 text-sm mb-4 line-clamp-3">
+            <p className="text-gray-600 dark:text-gray-300 text-sm mb-4 line-clamp-3">
               {article.description}
             </p>
             <div className="flex items-center justify-between text-sm">
-              <div className="flex items-center gap-1 text-gray-500">
+              <div className="flex items-center gap-1 text-gray-500 dark:text-gray-400">
                 <Calendar className="w-4 h-4" />
                 <time dateTime={new Date(article.pubDate).toISOString()}>
                   {new Date(article.pubDate).toLocaleDateString('en-US', {
@@ -74,7 +74,7 @@ export default async function MediumFeed() {
                   })}
                 </time>
               </div>
-              <span className="flex items-center gap-1 text-verus-blue">
+              <span className="flex items-center gap-1 text-verus-blue dark:text-blue-400">
                 Read more
                 <ExternalLink className="w-4 h-4" />
               </span>

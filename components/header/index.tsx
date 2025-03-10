@@ -11,7 +11,7 @@ import { ThemeToggle } from "./ThemeToggle"
 
 export function Header() {
   return (
-    <header className="fixed top-0 left-0 right-0 z-50 bg-white shadow-sm">
+    <header className="fixed top-0 left-0 right-0 z-50 bg-white dark:bg-gray-950 shadow-sm dark:shadow-gray-900/50">
       <div className="mx-auto flex h-[50px] md:h-[70px] w-full max-w-[1400px] items-center justify-between px-6 transition-all md:px-8">
         <div className="flex items-center">
           <Logo />

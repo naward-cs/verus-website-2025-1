@@ -10,7 +10,7 @@ export function LearnSection() {
   return (
     <div className="grid grid-cols-3 gap-8">
       <div>
-        <h3 className="mb-4 text-xs font-medium text-gray-500 uppercase border-b border-gray-200 pb-2">About</h3>
+        <h3 className="mb-4 text-xs font-medium text-gray-500 dark:text-gray-400 uppercase border-b border-gray-200 dark:border-gray-700 pb-2">About</h3>
         <div className="space-y-4">
           <NavLink 
             href="/intro" 
@@ -27,7 +27,7 @@ export function LearnSection() {
         </div>
       </div>
       <div>
-        <h3 className="mb-4 text-xs font-medium text-gray-500 uppercase border-b border-gray-200 pb-2">Resources</h3>
+        <h3 className="mb-4 text-xs font-medium text-gray-500 dark:text-gray-400 uppercase border-b border-gray-200 dark:border-gray-700 pb-2">Resources</h3>
         <div className="space-y-4">
           <NavLink 
             href="/faq" 
@@ -44,7 +44,7 @@ export function LearnSection() {
         </div>
       </div>
       <div>
-        <h3 className="mb-4 text-xs font-medium text-gray-500 uppercase border-b border-gray-200 pb-2">Updates</h3>
+        <h3 className="mb-4 text-xs font-medium text-gray-500 dark:text-gray-400 uppercase border-b border-gray-200 dark:border-gray-700 pb-2">Updates</h3>
         <div className="space-y-4">
           <NavLink 
             href="/#" 
@@ -54,7 +54,7 @@ export function LearnSection() {
           />
           <NavLink 
             href="https://medium.com/veruscoin" 
-            icon={<FaMedium className="h-5 w-5 text-black" />}
+            icon={<FaMedium className="h-5 w-5 text-gray-700 dark:text-gray-300 group-hover:text-verus-blue transition-colors" />}
             title="Blog"
             description="News and updates"
             isExternal={true}
