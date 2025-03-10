@@ -6,7 +6,7 @@ function SupplySkeleton() {
   return (
     <div className="mb-12">
       <div className="mb-8">
-        <h3 className="text-[14px] text-black/50 mb-2">Circulating supply:</h3>
+        <h3 className="text-[14px] text-black/50 dark:text-white/70 mb-2">Circulating supply:</h3>
         <div className="h-[34px] md:h-[38px] w-[200px] bg-gray-200 animate-pulse rounded" />
       </div>
 
@@ -62,8 +62,8 @@ export function CirculatingSupplyDisplay({ maxSupply }: CirculatingSupplyDisplay
   return (
     <div className="mb-12">
       <div className="mb-8">
-        <h3 className="text-[14px] text-black/50 mb-2">Circulating supply:</h3>
-        <div className="text-[22px] md:text-[26px] font-medium text-verus-blue">
+        <h3 className="text-[14px] text-black/50 dark:text-white/50 mb-2">Circulating supply:</h3>
+        <div className="text-[22px] md:text-[26px] font-medium dark:text-white text-verus-blue">
           {circulatingSupply.toLocaleString()} VRSC
         </div>
       </div>
@@ -80,7 +80,7 @@ export function CirculatingSupplyDisplay({ maxSupply }: CirculatingSupplyDisplay
             style={progressBarStyles.remaining}
           />
         </div>
-        <div className="flex justify-end items-center text-[12px] text-black/50">
+        <div className="flex justify-end items-center text-[12px] dark:text-white/70 text-black/50">
           <span>Max supply: {maxSupply.toLocaleString()} VRSC</span>
         </div>
       </div>
