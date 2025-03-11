@@ -80,21 +80,27 @@ export function MobileNav() {
     <>
       {/* Mobile Menu Button */}
       <button
-        className="md:hidden relative z-50 flex items-center justify-center h-10 w-10 rounded-full bg-gray-100 dark:bg-gray-800 hover:bg-verus-blue/10 dark:hover:bg-verus-blue/20 transition-colors"
+        className="md:hidden relative z-50 flex items-center justify-center h-8 w-8 rounded-md hover:bg-gray-100/50 dark:hover:bg-gray-800/50 transition-colors"
         onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
         aria-label={isMobileMenuOpen ? "Close menu" : "Open menu"}
       >
-        <div className="relative w-6 h-6">
+        <div className="relative w-5 h-5">
           <span 
             className={cn(
-              "absolute left-0 top-[11px] h-[2px] w-6 bg-gray-800 dark:bg-gray-200 transition-all duration-300",
-              isMobileMenuOpen ? "rotate-45" : "rotate-0"
+              "absolute left-0 top-1 h-[2px] w-5 bg-gray-600 dark:bg-gray-400 transition-all duration-300",
+              isMobileMenuOpen ? "rotate-45 top-[9px]" : "rotate-0"
             )} 
           />
           <span 
             className={cn(
-              "absolute left-0 top-[11px] h-[2px] w-6 bg-gray-800 dark:bg-gray-200 transition-all duration-300",
-              isMobileMenuOpen ? "-rotate-45" : "rotate-0"
+              "absolute left-0 h-[2px] w-5 bg-gray-600 dark:bg-gray-400 transition-all duration-300",
+              isMobileMenuOpen ? "opacity-0" : "opacity-100 top-[9px]"
+            )} 
+          />
+          <span 
+            className={cn(
+              "absolute left-0 bottom-1 h-[2px] w-5 bg-gray-600 dark:bg-gray-400 transition-all duration-300",
+              isMobileMenuOpen ? "-rotate-45 bottom-[9px]" : "rotate-0"
             )} 
           />
         </div>
@@ -141,35 +147,35 @@ export function MobileNav() {
 
           {/* Build Section */}
           <MobileSection title="Build" isOpen={openSection === 'build'} toggleSection={toggleSection}>
-            <h3 className="text-[11px] font-medium text-gray-500 uppercase pt-8 pb-2 border-b border-gray-200">Get Started</h3>
+            <h3 className="text-[11px] font-medium text-gray-500 dark:text-gray-400 uppercase pt-8 pb-2 border-b border-gray-200 dark:border-gray-700">Get Started</h3>
             <div className="space-y-2">
-              <Link href="/build/" className="block text-[15px] py-2 pt-4 hover:text-verus-blue transition-colors">Overview</Link>
-              <Link href="/build/verusid/" className="block text-[15px] py-2 hover:text-verus-blue transition-colors">VerusID</Link>
-              <Link href="/#" className="block text-[15px] py-2 hover:text-verus-blue transition-colors">Get Started</Link>
-              <Link href="/#" className="block text-[15px] py-2 hover:text-verus-blue transition-colors">Migrate Your Community</Link>
-              <Link href="/vs-evm/" className="block text-[15px] py-2 hover:text-verus-blue transition-colors">Verus vs EVMs</Link>
+              <Link href="/build" className="block text-[15px] py-2 pt-4 text-gray-700 dark:text-gray-300 hover:text-verus-blue dark:hover:text-blue-400 transition-colors">Overview</Link>
+              <Link href="/build/verusid/" className="block text-[15px] py-2 text-gray-700 dark:text-gray-300 hover:text-verus-blue dark:hover:text-blue-400 transition-colors">VerusID</Link>
+              <Link href="/#" className="block text-[15px] py-2 text-gray-700 dark:text-gray-300 hover:text-verus-blue dark:hover:text-blue-400 transition-colors">Get Started</Link>
+              <Link href="/#" className="block text-[15px] py-2 text-gray-700 dark:text-gray-300 hover:text-verus-blue dark:hover:text-blue-400 transition-colors">Migrate Your Community</Link>
+              <Link href="/vs-evm/" className="block text-[15px] py-2 text-gray-700 dark:text-gray-300 hover:text-verus-blue dark:hover:text-blue-400 transition-colors">Verus vs EVMs</Link>
             </div>
 
-            <h3 className="text-[11px] font-medium text-gray-500 uppercase pt-8 pb-2 border-b border-gray-200">Solutions</h3>
+            <h3 className="text-[11px] font-medium text-gray-500 dark:text-gray-400 uppercase pt-8 pb-2 border-b border-gray-200 dark:border-gray-700">Solutions</h3>
             <div className="space-y-2">
-              <Link href="/build/pbaas-chains/" className="block text-[15px] py-2 pt-4 hover:text-verus-blue transition-colors">Blockchains</Link>
-              <Link href="/build/pbaas-currencies/" className="block text-[15px] py-2 hover:text-verus-blue transition-colors">Currencies</Link>
-              <Link href="/build/data/" className="block text-[15px] py-2 hover:text-verus-blue transition-colors">Store & Retrieve Data</Link>
-              <Link href="/build/defi-payments/" className="block text-[15px] py-2 hover:text-verus-blue transition-colors">DeFi & Payments</Link>
-              <Link href="/build/marketplace/" className="block text-[15px] py-2 hover:text-verus-blue transition-colors">Marketplace</Link>
+              <Link href="/build/pbaas-chains/" className="block text-[15px] py-2 pt-4 text-gray-700 dark:text-gray-300 hover:text-verus-blue dark:hover:text-blue-400 transition-colors">Blockchains</Link>
+              <Link href="/build/pbaas-currencies/" className="block text-[15px] py-2 text-gray-700 dark:text-gray-300 hover:text-verus-blue dark:hover:text-blue-400 transition-colors">Currencies</Link>
+              <Link href="/build/data/" className="block text-[15px] py-2 text-gray-700 dark:text-gray-300 hover:text-verus-blue dark:hover:text-blue-400 transition-colors">Store & Retrieve Data</Link>
+              <Link href="/build/defi-payments/" className="block text-[15px] py-2 text-gray-700 dark:text-gray-300 hover:text-verus-blue dark:hover:text-blue-400 transition-colors">DeFi & Payments</Link>
+              <Link href="/build/marketplace/" className="block text-[15px] py-2 text-gray-700 dark:text-gray-300 hover:text-verus-blue dark:hover:text-blue-400 transition-colors">Marketplace</Link>
             </div>
 
-            <h3 className="text-[11px] font-medium text-gray-500 uppercase pt-8 pb-2 border-b border-gray-200">Documentation</h3>
+            <h3 className="text-[11px] font-medium text-gray-500 dark:text-gray-400 uppercase pt-8 pb-2 border-b border-gray-200 dark:border-gray-700">Documentation</h3>
             <div className="space-y-2">
-              <Link href="https://docs.verus.io" className="block text-[15px] py-2 flex items-center gap-2 hover:text-verus-blue transition-colors group">
+              <Link href="https://docs.verus.io" className="block text-[15px] py-2 pt-4 text-gray-700 dark:text-gray-300 hover:text-verus-blue dark:hover:text-blue-400 transition-colors flex items-center gap-2">
                 Documentation
                 <ExternalLink className="h-4 w-4 opacity-50 group-hover:opacity-100" />
               </Link>
-              <Link href="#" className="block text-[15px] py-2 flex items-center gap-2 hover:text-verus-blue transition-colors group">
+              <Link href="#" className="block text-[15px] py-2 text-gray-700 dark:text-gray-300 hover:text-verus-blue dark:hover:text-blue-400 transition-colors flex items-center gap-2">
                 Integration Documentation
                 <ExternalLink className="h-4 w-4 opacity-50 group-hover:opacity-100" />
               </Link>
-              <Link href="https://wiki.verus.io/#!faq-cli/clifaq-02_verus_commands.md" className="block text-[15px] py-2 flex items-center gap-2 hover:text-verus-blue transition-colors group">
+              <Link href="https://wiki.verus.io/#!faq-cli/clifaq-02_verus_commands.md" className="block text-[15px] py-2 text-gray-700 dark:text-gray-300 hover:text-verus-blue dark:hover:text-blue-400 transition-colors flex items-center gap-2">
                 All API Commands
                 <ExternalLink className="h-4 w-4 opacity-50 group-hover:opacity-100" />
               </Link>
@@ -178,22 +184,22 @@ export function MobileNav() {
 
           {/* Learn Section */}
           <MobileSection title="Learn" isOpen={openSection === 'learn'} toggleSection={toggleSection}>
-            <h3 className="text-[11px] font-medium text-gray-500 uppercase pt-8 pb-2 border-b border-gray-200">About</h3>
+            <h3 className="text-[11px] font-medium text-gray-500 dark:text-gray-400 uppercase pt-8 pb-2 border-b border-gray-200 dark:border-gray-700">About</h3>
             <div className="space-y-2">
-              <Link href="/intro" className="block text-[15px] py-2 pt-4 hover:text-verus-blue transition-colors">What is Verus?</Link>
-              <Link href="/milestones" className="block text-[15px] py-2 hover:text-verus-blue transition-colors">Milestones</Link>
+              <Link href="/intro" className="block text-[15px] py-2 pt-4 text-gray-700 dark:text-gray-300 hover:text-verus-blue dark:hover:text-blue-400 transition-colors">What is Verus?</Link>
+              <Link href="/milestones" className="block text-[15px] py-2 text-gray-700 dark:text-gray-300 hover:text-verus-blue dark:hover:text-blue-400 transition-colors">Milestones</Link>
             </div>
 
-            <h3 className="text-[11px] font-medium text-gray-500 uppercase pt-8 pb-2 border-b border-gray-200">Resources</h3>
+            <h3 className="text-[11px] font-medium text-gray-500 dark:text-gray-400 uppercase pt-8 pb-2 border-b border-gray-200 dark:border-gray-700">Resources</h3>
             <div className="space-y-2">
-              <Link href="/faq" className="block text-[15px] py-2 pt-4 hover:text-verus-blue transition-colors">FAQ</Link>
-              <Link href="/#" className="block text-[15px] py-2 hover:text-verus-blue transition-colors">Whitepapers</Link>
+              <Link href="/faq" className="block text-[15px] py-2 pt-4 text-gray-700 dark:text-gray-300 hover:text-verus-blue dark:hover:text-blue-400 transition-colors">FAQ</Link>
+              <Link href="/#" className="block text-[15px] py-2 text-gray-700 dark:text-gray-300 hover:text-verus-blue dark:hover:text-blue-400 transition-colors">Whitepapers</Link>
             </div>
 
-            <h3 className="text-[11px] font-medium text-gray-500 uppercase pt-8 pb-2 border-b border-gray-200">Updates</h3>
+            <h3 className="text-[11px] font-medium text-gray-500 dark:text-gray-400 uppercase pt-8 pb-2 border-b border-gray-200 dark:border-gray-700">Updates</h3>
             <div className="space-y-2">
-              <Link href="/#" className="block text-[15px] py-2 pt-4 hover:text-verus-blue transition-colors">Network Statistics</Link>
-              <Link href="https://medium.com/veruscoin" className="block text-[15px] py-2 flex items-center gap-2 hover:text-verus-blue transition-colors group">
+              <Link href="/#" className="block text-[15px] py-2 pt-4 text-gray-700 dark:text-gray-300 hover:text-verus-blue dark:hover:text-blue-400 transition-colors">Network Statistics</Link>
+              <Link href="https://medium.com/veruscoin" className="block text-[15px] py-2 text-gray-700 dark:text-gray-300 hover:text-verus-blue dark:hover:text-blue-400 transition-colors flex items-center gap-2">
                 Blog
                 <ExternalLink className="h-4 w-4 opacity-50 group-hover:opacity-100" />
               </Link>
@@ -202,68 +208,90 @@ export function MobileNav() {
 
           {/* Community Section */}
           <MobileSection title="Community" isOpen={openSection === 'community'} toggleSection={toggleSection}>
-            <h3 className="text-[11px] font-medium text-gray-500 uppercase pt-8 pb-2 border-b border-gray-200">Explore</h3>
+            <h3 className="text-[11px] font-medium text-gray-500 dark:text-gray-400 uppercase pt-8 pb-2 border-b border-gray-200 dark:border-gray-700">Explore</h3>
             <div className="space-y-2">
-              <Link href="/#" className="block text-[15px] py-2 pt-4 hover:text-verus-blue transition-colors">Community Hub</Link>
-              <Link href="/#" className="block text-[15px] py-2 hover:text-verus-blue transition-colors">Community Projects</Link>
-              <Link href="/#" className="block text-[15px] py-2 hover:text-verus-blue transition-colors">People</Link>
+              <Link href="/#" className="block text-[15px] py-2 pt-4 text-gray-700 dark:text-gray-300 hover:text-verus-blue dark:hover:text-blue-400 transition-colors">Community Hub</Link>
+              <Link href="/#" className="block text-[15px] py-2 text-gray-700 dark:text-gray-300 hover:text-verus-blue dark:hover:text-blue-400 transition-colors">Community Projects</Link>
+              <Link href="/#" className="block text-[15px] py-2 text-gray-700 dark:text-gray-300 hover:text-verus-blue dark:hover:text-blue-400 transition-colors">People</Link>
             </div>
 
-            <h3 className="text-[11px] font-medium text-gray-500 uppercase pt-8 pb-2 border-b border-gray-200">Get Involved</h3>
+            <h3 className="text-[11px] font-medium text-gray-500 dark:text-gray-400 uppercase pt-8 pb-2 border-b border-gray-200 dark:border-gray-700">Get Involved</h3>
             <div className="space-y-2">
-              <Link href="/#" className="block text-[15px] py-2 pt-4 hover:text-verus-blue transition-colors">Bounties</Link>
-              <Link href="/#" className="block text-[15px] py-2 hover:text-verus-blue transition-colors">Contribute</Link>
+              <Link href="/#" className="block text-[15px] py-2 pt-4 text-gray-700 dark:text-gray-300 hover:text-verus-blue dark:hover:text-blue-400 transition-colors">Bounties</Link>
+              <Link href="/#" className="block text-[15px] py-2 text-gray-700 dark:text-gray-300 hover:text-verus-blue dark:hover:text-blue-400 transition-colors">Contribute</Link>
             </div>
 
-            <h3 className="text-[11px] font-medium text-gray-500 uppercase pt-8 pb-2 border-b border-gray-200">Social Media</h3>
+            <h3 className="text-[11px] font-medium text-gray-500 dark:text-gray-400 uppercase pt-8 pb-2 border-b border-gray-200 dark:border-gray-700">Social Media</h3>
             <div className="grid grid-cols-2 gap-x-4 gap-y-2 pt-2">
               <Link href="https://discord.gg/veruscoin" className="flex items-center gap-2 py-2 px-3 rounded-md hover:bg-verus-blue/10 group transition-colors">
                 <div className="h-8 w-8 rounded-full bg-[#5865F2]/10 flex items-center justify-center">
                   <IoLogoDiscord className="h-4 w-4 text-[#5865F2]" />
                 </div>
-                <span className="text-[15px] group-hover:text-verus-blue transition-colors">Discord</span>
+                <span className="text-[15px] text-gray-700 dark:text-gray-300 group-hover:text-verus-blue dark:group-hover:text-blue-400 transition-colors">Discord</span>
               </Link>
               <Link href="https://twitter.com/veruscoin" className="flex items-center gap-2 py-2 px-3 rounded-md hover:bg-verus-blue/10 group transition-colors">
                 <div className="h-8 w-8 rounded-full bg-black/10 dark:bg-white/10 flex items-center justify-center">
                   <FaXTwitter className="h-4 w-4 text-black dark:text-white" />
                 </div>
-                <span className="text-[15px] group-hover:text-verus-blue transition-colors">X</span>
+                <span className="text-[15px] text-gray-700 dark:text-gray-300 group-hover:text-verus-blue dark:group-hover:text-blue-400 transition-colors">X</span>
               </Link>
               <Link href="https://t.me/veruscoin" className="flex items-center gap-2 py-2 px-3 rounded-md hover:bg-verus-blue/10 group transition-colors">
                 <div className="h-8 w-8 rounded-full bg-[#0088cc]/10 flex items-center justify-center">
                   <FaTelegram className="h-4 w-4 text-[#0088cc]" />
                 </div>
-                <span className="text-[15px] group-hover:text-verus-blue transition-colors">Telegram</span>
+                <span className="text-[15px] text-gray-700 dark:text-gray-300 group-hover:text-verus-blue dark:group-hover:text-blue-400 transition-colors">Telegram</span>
               </Link>
               <Link href="https://reddit.com/r/veruscoin" className="flex items-center gap-2 py-2 px-3 rounded-md hover:bg-verus-blue/10 group transition-colors">
                 <div className="h-8 w-8 rounded-full bg-[#FF4500]/10 flex items-center justify-center">
                   <FaReddit className="h-4 w-4 text-[#FF4500]" />
                 </div>
-                <span className="text-[15px] group-hover:text-verus-blue transition-colors">Reddit</span>
+                <span className="text-[15px] text-gray-700 dark:text-gray-300 group-hover:text-verus-blue dark:group-hover:text-blue-400 transition-colors">Reddit</span>
               </Link>
               <Link href="https://facebook.com/veruscoin" className="flex items-center gap-2 py-2 px-3 rounded-md hover:bg-verus-blue/10 group transition-colors">
                 <div className="h-8 w-8 rounded-full bg-[#1877F2]/10 flex items-center justify-center">
                   <FaFacebook className="h-4 w-4 text-[#1877F2]" />
                 </div>
-                <span className="text-[15px] group-hover:text-verus-blue transition-colors">Facebook</span>
+                <span className="text-[15px] text-gray-700 dark:text-gray-300 group-hover:text-verus-blue dark:group-hover:text-blue-400 transition-colors">Facebook</span>
               </Link>
               <Link href="https://youtube.com/@veruscoin" className="flex items-center gap-2 py-2 px-3 rounded-md hover:bg-verus-blue/10 group transition-colors">
                 <div className="h-8 w-8 rounded-full bg-[#FF0000]/10 flex items-center justify-center">
                   <FaYoutube className="h-4 w-4 text-[#FF0000]" />
                 </div>
-                <span className="text-[15px] group-hover:text-verus-blue transition-colors">YouTube</span>
+                <span className="text-[15px] text-gray-700 dark:text-gray-300 group-hover:text-verus-blue dark:group-hover:text-blue-400 transition-colors">YouTube</span>
               </Link>
             </div>
           </MobileSection>
 
-          {/* Media & Donate Links */}
-          <div className="mt-4 grid grid-cols-2 gap-4">
-            <Link href="/media" className="flex items-center justify-center gap-2 py-3 px-4 rounded-lg bg-gray-50 hover:bg-verus-blue/10 transition-colors group">
-              <span className="text-[15px] font-medium group-hover:text-verus-blue transition-colors">Media</span>
-            </Link>
-            <Link href="/donate" className="flex items-center justify-center gap-2 py-3 px-4 rounded-lg bg-verus-blue/10 hover:bg-verus-blue/20 transition-colors group">
-              <span className="text-[15px] font-medium text-verus-blue">Donate</span>
-            </Link>
+          {/* Media - non-collapsable */}
+          <div className="border-b border-gray-100 dark:border-gray-800">
+            <div className="transition-colors duration-300 -mx-6 rounded-lg hover:bg-gray-50/70 dark:hover:bg-gray-800/30">
+              <div className="px-6">
+                <Link 
+                  href="/media" 
+                  className="flex items-center justify-between w-full py-4 group"
+                >
+                  <span className="text-[15px] font-medium text-gray-700 dark:text-gray-300 group-hover:text-verus-blue dark:group-hover:text-blue-400 transition-colors">
+                    Media
+                  </span>
+                </Link>
+              </div>
+            </div>
+          </div>
+
+          {/* Donate - non-collapsable */}
+          <div className="border-b border-gray-100 dark:border-gray-800">
+            <div className="transition-colors duration-300 -mx-6 rounded-lg hover:bg-gray-50/70 dark:hover:bg-gray-800/30">
+              <div className="px-6">
+                <Link 
+                  href="/donate" 
+                  className="flex items-center justify-between w-full py-4 group"
+                >
+                  <span className="text-[15px] font-medium text-gray-700 dark:text-gray-300 group-hover:text-verus-blue dark:group-hover:text-blue-400 transition-colors">
+                    Donate
+                  </span>
+                </Link>
+              </div>
+            </div>
           </div>
         </nav>
       </div>

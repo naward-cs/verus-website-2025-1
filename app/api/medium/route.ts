@@ -3,129 +3,212 @@ import Parser from 'rss-parser';
 import fs from 'fs';
 import path from 'path';
 
-const CACHE_FILE = path.join(process.cwd(), 'cache', 'medium-articles.json');
+// Configure the route for static exporting
+export const dynamic = 'force-static';
+export const revalidate = 43200; // 12 hours in seconds
+
+// Define cache path
+const CACHE_FILE_PATH = path.join(process.cwd(), 'cache', 'medium-articles.json');
 const CACHE_TTL = 24 * 60 * 60 * 1000; // 24 hours in milliseconds
+const MEDIUM_FEED_URL = 'https://medium.com/feed/veruscoin';
 
-type MediumArticle = {
-  title: string;
-  link: string;
-  pubDate: string;
-  content: string;
-  thumbnail: string;
-  description: string;
-};
+// Track API requests for debugging
+let requestCount = 0;
+let lastRequestTime = 0;
 
-type CacheData = {
-  articles: MediumArticle[];
+// Type definitions
+type CachedData = {
   timestamp: number;
+  articles: any[];
 };
 
 // Ensure cache directory exists
-try {
-  fs.mkdirSync(path.join(process.cwd(), 'cache'), { recursive: true });
-} catch (error) {
-  console.error('Error creating cache directory:', error);
+function ensureCacheDirectory() {
+  const cacheDir = path.dirname(CACHE_FILE_PATH);
+  if (!fs.existsSync(cacheDir)) {
+    fs.mkdirSync(cacheDir, { recursive: true });
+  }
 }
 
-function readCache(): CacheData | null {
+// Read from cache
+function readCache(): CachedData | null {
   try {
-    if (fs.existsSync(CACHE_FILE)) {
-      const data = JSON.parse(fs.readFileSync(CACHE_FILE, 'utf8'));
-      return data;
+    ensureCacheDirectory();
+    
+    if (!fs.existsSync(CACHE_FILE_PATH)) {
+      return null;
     }
+    
+    const data = fs.readFileSync(CACHE_FILE_PATH, 'utf8');
+    const cache = JSON.parse(data) as CachedData;
+    
+    // Check if cache is still valid
+    if (Date.now() - cache.timestamp < CACHE_TTL) {
+      return cache;
+    }
+    
+    return null;
   } catch (error) {
     console.error('Error reading cache:', error);
+    return null;
   }
-  return null;
 }
 
-function writeCache(articles: MediumArticle[]) {
+// Write to cache
+function writeCache(articles: any[]) {
   try {
-    const cacheData: CacheData = {
-      articles,
-      timestamp: Date.now()
+    ensureCacheDirectory();
+    
+    const cacheData: CachedData = {
+      timestamp: Date.now(),
+      articles
     };
-    fs.writeFileSync(CACHE_FILE, JSON.stringify(cacheData));
+    
+    fs.writeFileSync(CACHE_FILE_PATH, JSON.stringify(cacheData, null, 2), 'utf8');
   } catch (error) {
     console.error('Error writing cache:', error);
   }
 }
 
-async function fetchMediumArticles(): Promise<MediumArticle[]> {
-  const parser = new Parser({
-    customFields: {
-      item: [['content:encoded', 'content']]
-    }
-  });
-
+// Fetch articles from Medium
+async function fetchMediumArticles() {
   try {
-    const feed = await parser.parseURL('https://medium.com/feed/veruscoin');
-    
-    return feed.items.map(item => {
-      // Extract the first image from content
-      const contentString = item.content || '';
-      const imgRegex = /<img[^>]+src="([^">]+)"/;
-      const match = contentString.match(imgRegex);
-      
-      // Get high-resolution image URL
-      let thumbnail = match ? match[1] : '';
-      if (thumbnail && thumbnail.includes('max/')) {
-        thumbnail = thumbnail.replace('max/[0-9]+/', 'max/1200/');
+    const parser = new Parser({
+      timeout: 10000, // 10 second timeout
+      customFields: {
+        item: [
+          ['content:encoded', 'content'],
+          ['dc:creator', 'creator']
+        ]
       }
-
-      // Clean up description and decode HTML entities
-      const cleanDescription = item['content:encoded']
-        ? item['content:encoded']
-            .replace(/<[^>]*>/g, '') // Remove HTML tags
-            .replace(/\s+/g, ' ') // Normalize whitespace
-            .trim()
-            .slice(0, 160) + '...'
-        : '';
-
+    });
+    
+    const feed = await parser.parseURL(MEDIUM_FEED_URL);
+    
+    // Process articles
+    const articles = feed.items.map(item => {
+      // Extract thumbnail image from content
+      let thumbnail = '';
+      if (item.content) {
+        const imgMatch = item.content.match(/<img[^>]+src=["']([^"']+)["'][^>]*>/i);
+        if (imgMatch && imgMatch[1]) {
+          thumbnail = imgMatch[1];
+        }
+      }
+      
+      // Extract description (first paragraph or partial content)
+      let description = '';
+      if (item.content) {
+        const textMatch = item.content.replace(/<[^>]+>/g, ' ').trim();
+        description = textMatch.substring(0, 200) + (textMatch.length > 200 ? '...' : '');
+      }
+      
       return {
-        title: item.title || '',
-        link: item.link || '',
-        pubDate: item.pubDate || '',
-        content: item['content:encoded'] || '',
+        title: item.title,
+        link: item.link,
+        pubDate: item.pubDate,
+        creator: item.creator,
+        content: item.content,
         thumbnail,
-        description: cleanDescription
+        description
       };
     });
+    
+    return articles;
   } catch (error) {
     console.error('Error fetching Medium articles:', error);
-    // Return an empty array instead of throwing
-    return [];
+    throw error;
   }
 }
 
-export async function GET() {
+// GET handler
+export async function GET(request: Request) {
+  // Track request frequency
+  const now = Date.now();
+  const timeSinceLastRequest = now - lastRequestTime;
+  requestCount++;
+  
+  // Log request frequency for debugging
+  if (timeSinceLastRequest < 1000) {
+    console.log(`⚠️ Multiple requests within ${timeSinceLastRequest}ms! Request #${requestCount}`);
+  }
+  
+  lastRequestTime = now;
+  
+  // Check for query params to bypass cache
+  const url = new URL(request.url);
+  const forceRefresh = url.searchParams.has('refresh');
+  
   try {
-    // Check cache first
-    const cache = readCache();
-    const now = Date.now();
-
-    // Use cache if it exists and is not expired
-    if (cache && (now - cache.timestamp) < CACHE_TTL) {
-      return NextResponse.json({ articles: cache.articles });
-    }
-
-    // Fetch new articles
-    const articles = await fetchMediumArticles();
-    
-    // Cache the articles if we got them
-    if (articles.length > 0) {
-      writeCache(articles);
-    } else {
-      // If no new articles, use cached articles even if expired
-      if (cache) {
-        return NextResponse.json({ articles: cache.articles });
+    // Only check cache if not forcing refresh
+    if (!forceRefresh) {
+      const cache = readCache();
+      if (cache && cache.articles.length > 0) {
+        return NextResponse.json({ 
+          articles: cache.articles,
+          source: 'cache',
+          timestamp: cache.timestamp,
+          requestId: requestCount
+        }, {
+          headers: {
+            // Add cache control headers
+            'Cache-Control': 'public, max-age=600', // Client-side caching for 10 minutes
+          }
+        });
       }
     }
-
-    return NextResponse.json({ articles });
+    
+    // Fetch fresh data
+    console.log('Fetching fresh Medium articles');
+    const articles = await fetchMediumArticles();
+    
+    // Save to cache
+    if (articles.length > 0) {
+      writeCache(articles);
+    }
+    
+    return NextResponse.json({ 
+      articles, 
+      source: 'fresh',
+      timestamp: Date.now(),
+      requestId: requestCount
+    }, {
+      headers: {
+        // Add cache control headers
+        'Cache-Control': 'public, max-age=600', // Client-side caching for 10 minutes
+      }
+    });
   } catch (error) {
     console.error('Error in Medium API route:', error);
-    // Return empty array instead of throwing
-    return NextResponse.json({ articles: [] });
+    
+    // Try to return cached data even if it's expired
+    const cache = readCache();
+    if (cache) {
+      console.log('Serving expired cache after fetch failure');
+      return NextResponse.json({ 
+        articles: cache.articles,
+        source: 'expired-cache',
+        timestamp: cache.timestamp,
+        requestId: requestCount
+      }, {
+        headers: {
+          // Add cache control headers
+          'Cache-Control': 'public, max-age=300', // Shorter client-side caching for expired data
+        }
+      });
+    }
+    
+    // Return empty response with error status
+    return NextResponse.json({ 
+      articles: [],
+      error: 'Failed to fetch Medium articles',
+      timestamp: Date.now(),
+      requestId: requestCount
+    }, { 
+      status: 200, // Still return 200 to avoid breaking the client
+      headers: {
+        'Cache-Control': 'no-cache', // Don't cache error responses
+      }
+    });
   }
 }

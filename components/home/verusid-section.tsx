@@ -1,4 +1,4 @@
-import Image from "next/image"
+
 import { AtSign } from "lucide-react"
 
 export function VerusIDSection() {

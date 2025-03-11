@@ -3,7 +3,7 @@
 import { Check, ExternalLink } from "lucide-react"
 import { IoLogoDiscord } from "react-icons/io5"
 
-// Updated component with dark mode support and improved styling to match StakingSteps
+// Updated component with dark mode support and improved styling
 export function MiningSteps() {
   return (
     <div className="flex flex-col md:flex-row gap-8 md:max-w-[1220px]">
@@ -106,7 +106,7 @@ export function MiningSteps() {
             </div>
             
             <div className="flex flex-col md:flex-row justify-between items-center mt-8 md:mt-auto h-full">
-              {/* Updated Button to match home participation section */}
+              {/* Button */}
               <div className="w-full md:w-auto mb-8 md:mb-0">
                 <a 
                   href="/wallet"
@@ -155,9 +155,7 @@ export function MiningSteps() {
               className="group h-[40px] md:h-[50px] px-8 bg-white/80 dark:bg-blue-950/80 backdrop-blur-sm border border-blue-200 dark:border-blue-800/60 rounded-lg text-[14px] md:text-[16px] font-medium text-verus-blue dark:text-blue-300 flex items-center justify-center hover:border-blue-300 dark:hover:border-blue-700 transition-all duration-300 hover:shadow-lg dark:hover:shadow-blue-950/50 hover:text-blue-600 dark:hover:text-blue-200 hover:-translate-y-[1px] w-fit mt-8 gap-2"
             >
               Go to mining software
-              <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 ml-2 transition-transform duration-300 group-hover:translate-x-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
-              </svg>
+              <ExternalLink className="h-4 w-4 ml-2 transition-transform duration-300 group-hover:translate-x-1" />
             </a>
 
             <div className="flex mt-4">
@@ -208,9 +206,7 @@ export function MiningSteps() {
               className="group h-[40px] md:h-[50px] px-8 bg-white/80 dark:bg-blue-950/80 backdrop-blur-sm border border-blue-200 dark:border-blue-800/60 rounded-lg text-[14px] md:text-[16px] font-medium text-verus-blue dark:text-blue-300 flex items-center justify-center hover:border-blue-300 dark:hover:border-blue-700 transition-all duration-300 hover:shadow-lg dark:hover:shadow-blue-950/50 hover:text-blue-600 dark:hover:text-blue-200 hover:-translate-y-[1px] w-fit mt-8 gap-2"
             >
               Choose a pool
-              <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 ml-2 transition-transform duration-300 group-hover:translate-x-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
-              </svg>
+              <ExternalLink className="h-4 w-4 ml-2 transition-transform duration-300 group-hover:translate-x-1" />
             </a>
 
             <div className="flex mt-4">

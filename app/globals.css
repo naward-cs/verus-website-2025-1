@@ -18,6 +18,8 @@
   }
 }
 
+
+
 @layer base {
   :root {
     --background: 0 0% 100%;
@@ -42,6 +44,8 @@
     --radius: 0.5rem;
   }
 }
+
+
 
 /* Gradient borders */
 .border-gradient-red {
@@ -124,5 +128,23 @@
   .timeline-item.initial-item:nth-child(odd),
   .timeline-item.initial-item:nth-child(even) {
     transform: translate(0, 0);
+  }
+}
+
+#pocket-extension-root,
+#pocket-extension-styles {
+  display: none !important;
+  height: 0 !important;
+  width: 0 !important;
+  position: absolute !important;
+  overflow: hidden !important;
+  z-index: -9999 !important;
+  opacity: 0 !important;
+}
+
+@media screen and (-webkit-min-device-pixel-ratio:0) {
+  style {
+    -webkit-overflow-scrolling: auto !important;
+    overflow: visible !important;
   }
 }
