@@ -27,28 +27,48 @@ interface CirculatingSupplyDisplayProps {
 
 export function CirculatingSupplyDisplay({ maxSupply }: CirculatingSupplyDisplayProps) {
   const [circulatingSupply, setCirculatingSupply] = useState<number | null>(null)
+  const [isEstimate, setIsEstimate] = useState(false)
+  const [loading, setLoading] = useState(true)
 
   useEffect(() => {
     async function fetchSupply() {
       try {
-        const response = await fetch('/api/supply')
-        if (!response.ok) throw new Error('Failed to fetch supply')
+        // Add cache-busting timestamp
+        const response = await fetch(`/api/supply?_t=${Date.now()}`)
+        
+        if (!response.ok) {
+          console.error(`Supply API returned status: ${response.status}`)
+          throw new Error(`Failed to fetch supply: ${response.status}`)
+        }
+        
         const data = await response.json()
-        if (data.supply) {
+        
+        // Check if we got a valid supply number
+        if (typeof data.supply === 'number' && data.supply > 0) {
           setCirculatingSupply(data.supply)
+          setIsEstimate(data.isEstimate === true)
         } else {
+          console.error('Invalid supply data:', data)
           throw new Error('Invalid supply data')
         }
       } catch (error) {
         console.error('Error fetching supply:', error)
         // Fallback to a reasonable estimate if API fails
         setCirculatingSupply(75_000_000)
+        setIsEstimate(true)
+      } finally {
+        setLoading(false)
       }
     }
 
     fetchSupply()
   }, [])
 
+  if (loading) {
+    return <SupplySkeleton />
+  }
+
+  // Safety check - should never happen with our fallback
   if (circulatingSupply === null) {
     return <SupplySkeleton />
   }
@@ -62,7 +82,9 @@ export function CirculatingSupplyDisplay({ maxSupply }: CirculatingSupplyDisplay
   return (
     <div className="mb-12">
       <div className="mb-8">
-        <h3 className="text-[14px] text-black/50 dark:text-white/50 mb-2">Circulating supply:</h3>
+        <h3 className="text-[14px] text-black/50 dark:text-white/50 mb-2">
+          Circulating supply{isEstimate ? ' (estimate)' : ''}:
+        </h3>
         <div className="text-[22px] md:text-[26px] font-medium dark:text-white text-verus-blue">
           {circulatingSupply.toLocaleString()} VRSC
         </div>

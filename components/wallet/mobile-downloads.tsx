@@ -1,7 +1,7 @@
 export function MobileDownloads() {
   return (
     <>
-      <h2 className="text-[22px] md:text-[32px] text-black tracking-tight font-medium leading-[1.1] mb-8">
+      <h2 className="text-[22px] md:text-[32px] text-black dark:text-white tracking-tight font-medium leading-[1.1] mb-8">
         Download Verus Mobile
       </h2>
       <div className="flex flex-col md:flex-row gap-4">
@@ -20,10 +20,10 @@ export function MobileDownloads() {
           />
         </a>
       </div>
-      <p className="text-[14px] md:text-[15px] text-black/60 mt-8">
+      <p className="text-[14px] md:text-[15px] text-black/60 dark:text-white/60 mt-8">
         🧪 Download experimental version for testing:{" "}
-        <a href="#" className="text-verus-blue hover:underline">iOS TestFlight</a>,{" "}
-        <a href="#" className="text-verus-blue hover:underline">Android .apk</a>
+        <a href="#" className="text-verus-blue dark:text-blue-400 hover:underline">iOS TestFlight</a>,{" "}
+        <a href="#" className="text-verus-blue dark:text-blue-400 hover:underline">Android .apk</a>
       </p>
     </>
   )

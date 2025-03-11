@@ -1,5 +1,9 @@
 import { NextResponse } from 'next/server';
 
+// Configure for static export
+export const dynamic = 'force-static';
+export const revalidate = 43200; // 12 hours
+
 type GithubAsset = {
   name: string;
   browser_download_url: string;
@@ -13,40 +17,63 @@ type GithubRelease = {
 }
 
 async function getLatestReleases() {
-  const [mainResponse, testnetResponse] = await Promise.all([
-    fetch(
-      'https://api.github.com/repos/VerusCoin/Verus-Desktop/releases/latest',
-      {
-        headers: {
-          'Accept': 'application/vnd.github.v3+json',
-          'User-Agent': 'Verus-Website'
-        }
-      }
-    ),
-    fetch(
-      'https://api.github.com/repos/VerusCoin/Verus-Desktop/releases',
-      {
-        headers: {
-          'Accept': 'application/vnd.github.v3+json',
-          'User-Agent': 'Verus-Website'
-        }
-      }
-    )
-  ]);
-
-  if (!mainResponse.ok || !testnetResponse.ok) {
-    throw new Error('Failed to fetch GitHub releases');
-  }
-
-  const mainRelease: GithubRelease = await mainResponse.json();
-  const allReleases: GithubRelease[] = await testnetResponse.json();
+  console.log('Fetching GitHub releases data...');
   
-  // Find latest testnet release
-  const testnetRelease = allReleases.find(release => 
-    release.tag_name.includes('-testnet')
-  );
+  try {
+    const [mainResponse, testnetResponse] = await Promise.all([
+      fetch(
+        'https://api.github.com/repos/VerusCoin/Verus-Desktop/releases/latest',
+        {
+          headers: {
+            'Accept': 'application/vnd.github.v3+json',
+            'User-Agent': 'Verus-Website'
+          },
+          next: { revalidate: 3600 } // Cache for 1 hour
+        }
+      ),
+      fetch(
+        'https://api.github.com/repos/VerusCoin/Verus-Desktop/releases',
+        {
+          headers: {
+            'Accept': 'application/vnd.github.v3+json',
+            'User-Agent': 'Verus-Website'
+          },
+          next: { revalidate: 3600 } // Cache for 1 hour
+        }
+      )
+    ]);
 
-  return { mainRelease, testnetRelease };
+    if (!mainResponse.ok) {
+      console.error(`Main release API returned status: ${mainResponse.status}`);
+      throw new Error(`Failed to fetch main GitHub release: ${mainResponse.status}`);
+    }
+    
+    if (!testnetResponse.ok) {
+      console.error(`Testnet release API returned status: ${testnetResponse.status}`);
+      throw new Error(`Failed to fetch testnet GitHub releases: ${testnetResponse.status}`);
+    }
+
+    const mainRelease: GithubRelease = await mainResponse.json();
+    const allReleases: GithubRelease[] = await testnetResponse.json();
+    
+    // Find latest testnet release with more robust checking
+    const testnetRelease = allReleases.find(release => 
+      release.tag_name.includes('-testnet') && 
+      release.assets && 
+      release.assets.length > 0
+    );
+
+    if (!testnetRelease) {
+      console.log('No valid testnet release found with assets');
+    } else {
+      console.log(`Found testnet release: ${testnetRelease.tag_name}`);
+    }
+
+    return { mainRelease, testnetRelease };
+  } catch (error) {
+    console.error('Error fetching from GitHub API:', error);
+    throw error;
+  }
 }
 
 function processAssets(assets: GithubAsset[]) {
@@ -78,7 +105,15 @@ export async function GET() {
     const mainAssets = processAssets(mainRelease.assets);
     const testnetAssets = testnetRelease ? processAssets(testnetRelease.assets) : {};
 
-    return NextResponse.json({
+    // More detailed logging for debugging
+    console.log(`Main release: ${mainRelease.tag_name}, assets count: ${Object.keys(mainAssets).length}`);
+    if (testnetRelease) {
+      console.log(`Testnet release: ${testnetRelease.tag_name}, assets count: ${Object.keys(testnetAssets).length}`);
+    } else {
+      console.log('No testnet release found to process');
+    }
+
+    const responseData = {
       version: mainRelease.tag_name.replace('v', ''),
       date: new Date(mainRelease.published_at).toLocaleDateString('en-US', {
         year: 'numeric',
@@ -95,9 +130,31 @@ export async function GET() {
         }),
         assets: testnetAssets
       } : null
+    };
+    
+    console.log('Successfully fetched GitHub release data');
+    
+    return NextResponse.json(responseData, {
+      headers: {
+        'Cache-Control': 'public, max-age=3600', // Cache for 1 hour
+      }
     });
   } catch (error) {
-    console.error('Error fetching GitHub release:', error);
-    return NextResponse.json({ error: 'Failed to fetch release info' }, { status: 500 });
+    console.error('Error in GitHub API route:', error);
+    
+    // Return a lightweight response instead of a 500 error
+    return NextResponse.json({
+      version: '1.2.8',
+      date: 'January 15, 2024',
+      assets: {
+        'Windows': { url: '#', size: 'GitHub API Error' },
+        'macOS': { url: '#', size: 'GitHub API Error' },
+        'Linux': { url: '#', size: 'GitHub API Error' },
+        'Linux ARM': { url: '#', size: 'GitHub API Error' }
+      },
+      error: error instanceof Error ? error.message : 'Unknown error',
+    }, { 
+      status: 200 // Return 200 even on error to avoid breaking the client
+    });
   }
 }
