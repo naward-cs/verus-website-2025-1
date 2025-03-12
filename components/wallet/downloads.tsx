@@ -26,7 +26,7 @@ export function WalletDownloads() {
         {/* Decorative elements */}
         <div className="absolute top-6 right-6 md:top-10 md:right-10 h-14 w-14 md:h-20 md:w-20 rounded-full bg-blue-400/5 dark:bg-blue-400/10 backdrop-blur-xl z-0"></div>
         <div className="absolute -bottom-10 -left-10 h-40 w-40 rounded-full bg-blue-500/3 dark:bg-blue-500/5 blur-[60px] z-0"></div>
-        <div className="absolute bottom-20 right-20 h-24 w-24 rounded-full bg-blue-400/5 dark:bg-blue-400/10 blur-[20px] z-0"></div>
+        <div className="absolute bottom-20 right-20 h-24 w-24 rounded-full bg-blue-400/5 dark:bg-blue-400/10 blur-[30px] z-0"></div>
         
         {/* Content with border */}
         <div className="relative z-10 border border-blue-100/80 dark:border-blue-900/30 p-8 md:p-16">

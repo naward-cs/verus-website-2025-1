@@ -6,24 +6,34 @@ import { RealWorldSection } from "@/components/verusid/real-world-section"
 
 export default function VerusIDPage() {
   return (
-    <main className="relative min-h-[calc(100vh-50px)] md:min-h-[calc(100vh-70px)] w-screen mt-[50px] md:mt-[70px]">
-      {/* Background wrapper with fixed height */}
-      <div className="absolute inset-0 overflow-hidden">
-        <img 
-          src="/img/hero-bg2-2.webp"
-          alt="Hero background"
-          className="w-full h-[1200px] md:h-[1000px] object-cover -translate-y-[250px] md:-translate-y-[50px]"
-        />
-      </div>
-
+    <main className="relative h-[calc(100vh-50px)] md:h-[calc(100vh-70px)] w-screen mt-[50px] md:mt-[70px]">
+      <img 
+        src="/img/hero-bg2-2.webp"
+        className="absolute h-full w-full object-cover dark:hidden"
+        alt="Hero background - light"
+      />
+      <img 
+        src="/img/bg-darkmode.webp"
+        className="absolute h-full w-full object-cover hidden dark:block"
+        alt="Hero background - dark"
+      />
+      
       <div className="relative z-10 flex flex-col items-center px-4">
         <div className="pt-[30px] md:pt-[70px]">
-          <h1 className="text-[32px] md:text-[75px] text-white font-medium text-center leading-[1.1] tracking-tight">
-            Own Your Digital Future
-          </h1>
-          <p className="text-[16px] md:text-[32px] pt-[10px] md:pt-[1px] leading-snug text-white font-normal text-center max-w-[400px] md:max-w-[900px] tracking-tight opacity-90 mx-auto">
-            VerusID—where your identity, data, and digital assets truly belong to you.
-          </p>
+          <div className="text-center max-w-[1220px] mx-auto">
+            <h1 className="text-[32px] md:text-[60px] text-white font-medium text-center leading-[1.1] tracking-tight mb-4 md:mb-8">
+              <span className="text-white">Own Your Digital Future—</span>{""}
+              <span className="relative">
+                <span className="relative inline-block">
+                  <span className="relative z-10 bg-gradient-to-r from-blue-300 to-verus-blue dark:from-blue-300 dark:to-verus-blue bg-clip-text text-transparent">
+                    Your Identity, Your Control
+                  </span>
+                  <span className="absolute -inset-1 bg-gradient-to-r from-blue-500/10 via-verus-blue/20 to-blue-500/10 rounded-lg blur-md" />
+                </span>
+              </span>
+            </h1>
+            
+          </div>
         </div>
 
         <div className="flex justify-center w-full">
