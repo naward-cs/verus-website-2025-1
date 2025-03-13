@@ -4,24 +4,6 @@ import { useState } from "react"
 import { Terminal, Code } from "lucide-react"
 
 export function TerminalExample() {
-  const [selectedExample, setSelectedExample] = useState<'basket' | 'simple'>('basket')
-
-  const basketExample = `./verus definecurrency '{
-  "name": "CommunityBasket",
-  "options": 33,
-  "currencies": ["vrsc", "CoinCommunity"],
-  "initialcontributions": [10, 200],
-  "initialsupply": 100,
-  "preallocations": [{"Jane@": 10}, {"John@": 5}]
-}'`
-
-  const simpleExample = `./verus definecurrency '{
-  "name": "CommunityToken",
-  "options": 32,
-  "proofprotocol": 2,
-  "preallocations": [{"SomeAddress@": 1000000}]
-}'`
-
   return (
     <section className="mb-24 md:mt-32 relative">
       <div className="flex flex-col items-center justify-center mb-16">
@@ -53,67 +35,43 @@ export function TerminalExample() {
         
         <div className="pt-8 font-mono text-[13px] md:text-[14px] leading-relaxed overflow-x-auto">
           <p className="text-green-400 mb-4">
-            # Launch a new fraction reserve currency with multiple reserves
+            # Creating a community currency with multiple reserve currencies
           </p>
           <p className="text-blue-400 mb-6">
             ./verus definecurrency {'{'}
           </p>
           <div className="pl-4 mb-6">
             <p className="text-gray-300">
-              <span className="text-pink-400">"name"</span>: <span className="text-yellow-300">"MYTOKN"</span>,
+              <span className="text-pink-400">"name"</span>: <span className="text-yellow-300">"Community Currency"</span>,
             </p>
             <p className="text-gray-300">
-              <span className="text-pink-400">"options"</span>: <span className="text-yellow-300">"64"</span>, <span className="text-blue-300">// fractional reserve</span>
+              <span className="text-pink-400">"options"</span>: <span className="text-yellow-300">33</span>, <span className="text-blue-300">// basket currency</span>
             </p>
             <p className="text-gray-300">
-              <span className="text-pink-400">"parent"</span>: <span className="text-yellow-300">"vrsctest@"</span>,
+              <span className="text-pink-400">"currencies"</span>: [<span className="text-yellow-300">"VRSC"</span>, <span className="text-yellow-300">"tBTC.vETH"</span>],
             </p>
             <p className="text-gray-300">
-              <span className="text-pink-400">"systemid"</span>: <span className="text-yellow-300">"myid@"</span>,
+              <span className="text-pink-400">"initialcontributions"</span>: [<span className="text-yellow-300">5000</span>, <span className="text-yellow-300">1</span>],
             </p>
             <p className="text-gray-300">
-              <span className="text-pink-400">"nativecurrencyid"</span>: <span className="text-yellow-300">"MYTOKN"</span>,
+              <span className="text-pink-400">"minpreconversion"</span>: [<span className="text-yellow-300">10000</span>, <span className="text-yellow-300">2</span>],
             </p>
             <p className="text-gray-300">
-              <span className="text-pink-400">"initialsupply"</span>: <span className="text-yellow-300">"0"</span>,
+              <span className="text-pink-400">"initialsupply"</span>: <span className="text-yellow-300">10000</span>,
             </p>
             <p className="text-gray-300">
-              <span className="text-pink-400">"prelaunchcarveout"</span>: <span className="text-yellow-300">"0"</span>,
+              <span className="text-pink-400">"prelaunchcarveout"</span>: <span className="text-yellow-300">"0.1"</span>,
             </p>
             <p className="text-gray-300">
-              <span className="text-pink-400">"initialcontributions"</span>: [
+              <span className="text-pink-400">"preallocations"</span>: [
             </p>
             <div className="pl-4">
-              <p className="text-gray-300">{"{"} <span className="text-pink-400">"currencyid"</span>: <span className="text-yellow-300">"vrsctest"</span>, <span className="text-pink-400">"amount"</span>: <span className="text-yellow-300">"25"</span>, <span className="text-pink-400">"weight"</span>: <span className="text-yellow-300">"50"</span> {"}"},</p>
-              <p className="text-gray-300">{"{"} <span className="text-pink-400">"currencyid"</span>: <span className="text-yellow-300">"VRSC"</span>, <span className="text-pink-400">"amount"</span>: <span className="text-yellow-300">"25"</span>, <span className="text-pink-400">"weight"</span>: <span className="text-yellow-300">"50"</span> {"}"}</p>
+              <p className="text-gray-300">{"{"} <span className="text-pink-400">"Marketing Fund@"</span>: <span className="text-yellow-300">2000</span> {"}"}</p>
             </div>
-            <p className="text-gray-300">],</p>
-            <p className="text-gray-300">
-              <span className="text-pink-400">"idregistrationfees"</span>: <span className="text-yellow-300">"0.1"</span>,
-            </p>
-            <p className="text-gray-300">
-              <span className="text-pink-400">"idreferrallevels"</span>: <span className="text-yellow-300">"1"</span>,
-            </p>
-            <p className="text-gray-300">
-              <span className="text-pink-400">"minpreconversion"</span>: <span className="text-yellow-300">"1000.0"</span>,
-            </p>
-            <p className="text-gray-300">
-              <span className="text-pink-400">"preallocations"</span>: [{"{"} 
-            </p>
-            <div className="pl-4">
-              <p className="text-gray-300"><span className="text-pink-400">"address"</span>: <span className="text-yellow-300">"myid@"</span>,</p>
-              <p className="text-gray-300"><span className="text-pink-400">"amount"</span>: <span className="text-yellow-300">"1000000"</span></p>
-            </div>
-            <p className="text-gray-300">{"}"}{"]"}</p>
+            <p className="text-gray-300">]</p>
           </div>
           <p className="text-blue-400 mb-4">
             {"}"}
-          </p>
-          <p className="text-gray-200">
-            Creating new currency MYTOKN as a fractional reserve currency...
-          </p>
-          <p className="text-gray-200">
-            Currency MYTOKN created with transaction ID: 47a2e8d7bc9f1e88b8d5ab7ebe4e4a8a1fcf7c7e8d3e1f0a3c8b0a7b5c1d8e9f
           </p>
         </div>
       </div>
@@ -125,23 +83,27 @@ export function TerminalExample() {
             <Code className="h-5 w-5" />
           </div>
           <div>
-            <h4 className="text-[18px] font-medium text-gray-900 dark:text-white mb-2">API Highlights</h4>
+            <h4 className="text-[18px] font-medium text-gray-900 dark:text-white mb-2">Key Parameters</h4>
             <ul className="space-y-2">
               <li className="relative text-[15px] text-gray-600 dark:text-gray-300 leading-relaxed pl-6">
                 <div className="absolute left-0 top-2 h-1.5 w-1.5 rounded-full bg-blue-500/60 dark:bg-blue-400/60"></div>
-                Configure multi-currency reserve baskets with custom weights
+                <strong>options:33</strong> - Creates a basket currency with reserve backing
               </li>
               <li className="relative text-[15px] text-gray-600 dark:text-gray-300 leading-relaxed pl-6">
                 <div className="absolute left-0 top-2 h-1.5 w-1.5 rounded-full bg-blue-500/60 dark:bg-blue-400/60"></div>
-                Set up pre-allocations and vesting schedules
+                <strong>currencies</strong> - Defines which currencies back the basket currency (VRSC and tBTC.vETH)
               </li>
               <li className="relative text-[15px] text-gray-600 dark:text-gray-300 leading-relaxed pl-6">
                 <div className="absolute left-0 top-2 h-1.5 w-1.5 rounded-full bg-blue-500/60 dark:bg-blue-400/60"></div>
-                Define minimum crowdfunding goals and contribution limits
+                <strong>initialcontributions</strong> - Initial reserve amounts developers must provide
               </li>
               <li className="relative text-[15px] text-gray-600 dark:text-gray-300 leading-relaxed pl-6">
                 <div className="absolute left-0 top-2 h-1.5 w-1.5 rounded-full bg-blue-500/60 dark:bg-blue-400/60"></div>
-                Configure ID registration fees and referral rewards
+                <strong>minpreconversion</strong> - Minimum funding thresholds for the preconversion phase
+              </li>
+              <li className="relative text-[15px] text-gray-600 dark:text-gray-300 leading-relaxed pl-6">
+                <div className="absolute left-0 top-2 h-1.5 w-1.5 rounded-full bg-blue-500/60 dark:bg-blue-400/60"></div>
+                <strong>prelaunchcarveout</strong> - Percentage of reserves sent to developer before launch (10%)
               </li>
             </ul>
           </div>

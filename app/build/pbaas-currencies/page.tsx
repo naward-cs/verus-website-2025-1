@@ -28,7 +28,7 @@ export default function PBaaSCurrenciesPage() {
         
         <div className="flex flex-col md:flex-row gap-4 mt-8 mb-16 md:mb-32">
           <a 
-            href="https://docs.verus.io/currencies/"
+            href="/build/start"
             target="_blank"
             rel="noopener noreferrer" 
             className="group h-[40px] md:h-[50px] px-6 bg-white/90 backdrop-blur-xl rounded-lg text-[14px] md:text-[16px] font-medium text-black flex items-center justify-center hover:bg-white transition-all duration-300 border border-white/60 hover:border-white/90 hover:shadow-lg hover:-translate-y-[1px]"
@@ -39,7 +39,7 @@ export default function PBaaSCurrenciesPage() {
             </svg>
           </a>
           <a 
-            href="https://discord.gg/veruscoin" 
+            href="https://www.verus.io/discord" 
             target="_blank"
             rel="noopener noreferrer"
             className="group h-[40px] md:h-[50px] px-6 bg-blue-950/40 backdrop-blur-sm rounded-lg text-[14px] md:text-[16px] font-medium text-blue-300 flex items-center justify-center gap-2 hover:text-blue-200 transition-all duration-300 border border-blue-800/60 hover:border-blue-700/80 hover:shadow-lg hover:-translate-y-[1px]"
