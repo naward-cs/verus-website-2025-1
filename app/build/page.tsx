@@ -21,10 +21,10 @@ export default function BuildPage() {
       
       <div className="relative z-10 flex flex-col items-center px-4 pt-[30px] md:pt-[70px]">
         <h1 className="text-[32px] md:text-[75px] text-white font-medium text-center tracking-tight">
-          Build Powerful dApps
+          Build dApps Without Limits
         </h1>
         <p className="text-[16px] md:text-[32px] pt-[10px] md:pt-[1px] leading-snug text-white font-normal text-center max-w-[400px] md:max-w-[900px] tracking-tight opacity-90 mx-auto">
-          Build dApps at any scale with the easy to use API. Focus on product while Verus supplies the open-source blockchain tools.
+        Skip the blockchain complexity and focus on what matters. The Verus API does the heavy lifting while you create at any scale.
         </p>
         
         <div className="flex flex-col md:flex-row gap-4 mt-8 mb-16 md:mb-32">

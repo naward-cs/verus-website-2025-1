@@ -46,7 +46,7 @@ export function WalletComparison() {
           <div className="p-6 border-b border-[#E9EFFC] dark:border-gray-800 bg-[#F8F9FB] dark:bg-gray-900">
             <h3 className="text-[18px] font-medium dark:text-white">VerusID support</h3>
             <p className="text-[14px] text-black/75 dark:text-white/70 mt-1">
-            The self-sovereign identity protocol for individuals. Take control over your digital identity and assets.
+              The self-sovereign identity protocol for individuals. Take control over your digital identity and assets.
             </p>
           </div>
           
