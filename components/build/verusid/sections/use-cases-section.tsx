@@ -11,17 +11,20 @@ export function UseCasesSection() {
       <div className="absolute top-20 right-10 h-60 w-60 rounded-full bg-blue-500/5 dark:bg-blue-500/5 blur-[80px] -z-10"></div>
       <div className="absolute bottom-20 left-20 h-60 w-60 rounded-full bg-blue-500/5 dark:bg-blue-500/5 blur-[80px] -z-10"></div>
 
-      <h2 className="text-[28px] md:text-[55px] text-gray-800 dark:text-white tracking-tight font-medium leading-[1.2] mb-6 md:mb-12">
-        <span className="text-gray-600 dark:text-white">Real-World </span>
-        <span className="relative">
-          <span className="relative inline-block">
-            <span className="relative z-10 bg-gradient-to-r from-verus-blue to-blue-600 dark:to-blue-400 bg-clip-text text-transparent">
-              Use Cases
+      {/* Centered Title */}
+      <div className="text-center mb-12">
+        <h2 className="text-[28px] md:text-[55px] text-gray-800 dark:text-white tracking-tight font-medium leading-[1.2] mb-6">
+          <span className="text-gray-600 dark:text-white">Real-World </span>
+          <span className="relative">
+            <span className="relative inline-block">
+              <span className="relative z-10 bg-gradient-to-r from-verus-blue to-blue-600 dark:to-blue-400 bg-clip-text text-transparent">
+                Use Cases
+              </span>
+              <span className="absolute -inset-1 bg-gradient-to-r from-blue-500/10 via-verus-blue/10 to-purple-500/10 rounded-lg blur-md" />
             </span>
-            <span className="absolute -inset-1 bg-gradient-to-r from-blue-500/10 via-verus-blue/10 to-purple-500/10 rounded-lg blur-md" />
           </span>
-        </span>
-      </h2>
+        </h2>
+      </div>
 
       <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8">
         {/* Tokenized Communities */}
