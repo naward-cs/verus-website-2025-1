@@ -2,55 +2,55 @@
 export const milestones = [
   {
     date: "MAY 2018",
-    title: "Verus blockchain launch",
-    description: "Start of the Verus blockchain with a 15 minute notice to the world. No premine, no ICO, no dev-fees. Ramping up of block rewards. Including VerusHash 1.0, Verus Proof of Power (50% proof-of-work, 50% proof-of-stake), zk-SNARKs private transactions.",
+    title: "Genesis: A Fair Beginning",
+    description: "The Verus blockchain began with just a 15-minute notice, launching without premine, ICO, or developer fees to ensure community ownership from the start. The initial release introduced VerusHash 1.0 and the balanced Verus Proof of Power consensus, combining proof-of-work and proof-of-stake in equal measure. Privacy was built into the foundation with zk-SNARKs technology, establishing core principles that would guide the project's development.",
     link: {
-      text: "Bitcointalk announcement thread →",
+      text: "Bitcointalk announcement thread",
       url: "https://bitcointalk.org/index.php?topic=4070404.0"
     }
   },
   {
     date: "OCT 2018",
-    title: "StakeGuard & Sapling",
-    description: "Verus solves the proof-of-stake 'Nothing at Stake'-problem. And adding Zcash's Sapling support.",
+    title: "StakeGuard Solution & Privacy Upgrade",
+    description: "Verus achieved a significant breakthrough by implementing StakeGuard, elegantly solving the long-standing Nothing at Stake problem that had plagued proof-of-stake systems since their inception. Simultaneously, the integration of Zcash's Sapling technology improved the performance of shielded transactions on the network. These technical improvements demonstrated the project's commitment to addressing foundational blockchain challenges.",
     link: {
-      text: "Read how Verus fixed 'nothing-at-stake' →",
+      text: "Read how Verus fixed 'nothing-at-stake'",
       url: "https://medium.com/veruscoin/verus-proof-of-stake-paper-1-overview-dc0b052dac"
     }
   },
   {
     date: "DEC 2018",
-    title: "VerusHash 2.0",
-    description: "Closing the performance gap between CPU, GPU and FPGA."
+    title: "VerusHash 2.0: Mining Equality",
+    description: "Verus developed and deployed VerusHash 2.0, an algorithm that substantially reduced the mining efficiency gap between everyday computers and specialized hardware. The update allowed regular CPUs to compete effectively with GPUs and FPGAs, expanding access to mining rewards beyond those with resources for expensive equipment. This development strengthened network decentralization by enabling a more diverse group of participants to secure the blockchain."
   },
   {
     date: "DEC 2019",
-    title: "VerusID & VerusHash 2.1",
-    description: "Enabling VerusID on Verus mainnet. VerusHash 2.1 introduces an adjustment to the equalization technology, which tilts the balance a bit more favorably towards CPUs."
+    title: "VerusID & Mining Refinement",
+    description: "December 2019 marked the activation of VerusID on mainnet, bringing blockchain-native self-sovereign identities to Verus users for the first time. Alongside this identity innovation, VerusHash 2.1 further refined the mining algorithm to better equalize participation across hardware types, with modest adjustments favoring consumer CPUs."
   },
   {
     date: "NOV 2021",
     title: "Verus Vault & Marketplace",
-    description: "Verus Vault and the completely decentralized, no third party required VerusID Marketplace are now on mainnet."
+    description: "Verus enhanced its identity system with the addition of Verus Vault, providing time-locking capabilities that protect funds stored in VerusIDs against theft or unauthorized access. The network also deployed the VerusID Marketplace, allowing users to trade VerusIDs and VRSC directly on-chain without requiring third parties. These developments strengthened the practical utility of the Verus ecosystem for both secure storage and trustless exchange."
   },
   {
     date: "MAY 2023",
-    title: "Multi-chain & multi-currency",
-    description: "Enabling the full Public Blockchains as a Service protocol. Launch currencies (e.g. tokens, liquidity pools) and interoperable blockchains. Enables MEV-resistant Verus DeFi."
+    title: "PBaaS & Protocol DeFi",
+    description: "May 2023 saw the deployment of complete PBaaS functionality, enabling the launch of interconnected blockchains and various currency types without requiring specialized technical knowledge. The update included protocol-level DeFi capabilities designed to resist manipulation through front-running and other common tactics. These advancements expanded Verus from a single blockchain to a scalable, interconnected ecosystem of chains and currencies."
   },
   {
     date: "OCT 2023",
     title: "Verus-Ethereum Bridge",
-    description: "Launch of the non-custodial, decentralized and consensus proven bridge between Verus and Ethereum. Including the liquidity pool currency BridgevETH with VRSC, ETH, DAI & MKR in its reserves."
+    description: "The Verus-Ethereum Bridge went live in October, establishing a secure pathway between the Verus and Ethereum ecosystems without requiring users to trust third-party custodians. Accompanying the bridge was Bridge.vETH, a basket currency (liquidity pool) combining VRSC, ETH, DAI, and MKR to facilitate efficient cross-chain conversions. This integration expanded the Verus network's reach while maintaining its consensus-proven security model."
   },
   {
     date: "DEC 2023",
     title: "Auto-arbitrage",
-    description: "Support for auto-arbitrage that uses the on-chain peer-to-peer marketplace of limit orders to crowdsource liquidity for Verus DeFi liquidity baskets."
+    description: "December brought support for auto-arbitrage functionality, connecting the on-chain marketplace's limit orders with DeFi liquidity baskets to improve overall market efficiency."
   },
   {
     date: "MAR 2024",
     title: "Verus Storage",
-    description: "With Verus Storage, every PBaaS chain immediately offers a fee-based storage capability for indexed data on the blockchain."
+    description: "March 2024 introduced Verus Storage, providing native data storage capabilities across all PBaaS chains in the ecosystem. This feature allows users to store indexed, retrievable data directly on-chain with a standardized fee structure based on storage size. This addition extends the capabilities of Verus and its PBaaS chains to serve as both transaction networks and decentralized data repositories."
   }
 ] as const;
