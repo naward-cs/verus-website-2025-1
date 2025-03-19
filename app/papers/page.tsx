@@ -24,7 +24,7 @@ export default function PapersPage() {
                 Verus whitepapers & technical documents.
               </h1>
               <p className="text-[16px] md:text-[20px] text-gray-700 dark:text-gray-300 mt-4 max-w-[800px]">
-                Learn about the technical foundations and innovations behind the Verus protocol.
+                Learn about the technical foundations and innovations behind the Verus Protocol.
               </p>
             </div>
             

@@ -64,26 +64,26 @@ export function PapersContent() {
 
 function PrimaryPaper({ paper }: { paper: typeof papers[number] }) {
   return (
-    <div className="rounded-2xl bg-white/70 dark:bg-gray-900/50 backdrop-blur-sm p-8 border border-blue-100/80 dark:border-blue-900/30 shadow-sm relative overflow-hidden group transition-all duration-300">
+    <div className="rounded-2xl bg-white/70 dark:bg-gray-900/50 backdrop-blur-sm p-6 md:p-8 border border-blue-100/80 dark:border-blue-900/30 shadow-sm relative overflow-hidden group transition-all duration-300">
       <div className="absolute top-6 left-6 h-32 w-32 rounded-full bg-blue-400/5 dark:bg-blue-400/10 blur-xl"></div>
       <div className="absolute -bottom-8 -right-8 h-32 w-32 rounded-full bg-blue-400/5 dark:bg-blue-400/10 blur-xl"></div>
       
-      <div className="flex flex-col md:flex-row md:items-start gap-6 relative">
-        <div className="md:w-2/3">
-          <div className="flex items-center gap-3 mb-4">
-            <div className="h-14 w-14 rounded-full bg-white/90 dark:bg-gray-800/90 border border-blue-100/80 dark:border-blue-900/30 group-hover:bg-blue-50 dark:group-hover:bg-gray-800 flex items-center justify-center transition-colors duration-300 shadow-sm">
-              <FileText className="h-7 w-7 text-verus-blue/80 dark:text-blue-400" />
+      <div className="flex flex-col gap-6 relative">
+        <div className="w-full">
+          <div className="flex flex-col md:flex-row md:items-center gap-4 mb-6">
+            <div className="flex-shrink-0 h-16 w-16 rounded-full bg-white/90 dark:bg-gray-800/90 border border-blue-100/80 dark:border-blue-900/30 group-hover:bg-blue-50 dark:group-hover:bg-gray-800 flex items-center justify-center transition-colors duration-300 shadow-sm">
+              <FileText className="h-8 w-8 text-verus-blue/80 dark:text-blue-400" />
             </div>
             <div>
-              <div className="flex items-center gap-2">
-                <h2 className="text-[22px] md:text-[26px] font-medium text-gray-900 dark:text-white">
+              <div className="flex flex-col md:flex-row md:items-center gap-2 mb-1">
+                <h2 className="text-2xl md:text-[26px] font-medium text-gray-900 dark:text-white">
                   {paper.title}
                 </h2>
-                <span className="bg-blue-100 dark:bg-blue-900/50 text-blue-600 dark:text-blue-300 text-xs px-2 py-1 rounded-full font-medium">
+                <span className="bg-blue-100 dark:bg-blue-900/50 text-blue-600 dark:text-blue-300 text-xs px-2 py-1 rounded-full font-medium w-fit">
                   Primary
                 </span>
               </div>
-              <p className="text-[16px] md:text-[18px] text-gray-700 dark:text-gray-300 mt-1">
+              <p className="text-[16px] md:text-[18px] text-gray-700 dark:text-gray-300">
                 {paper.subtitle}
               </p>
             </div>
@@ -104,18 +104,18 @@ function PrimaryPaper({ paper }: { paper: typeof papers[number] }) {
             {paper.description}
           </p>
           
-          <div className="flex items-center gap-2 text-green-600 dark:text-green-400 mb-6">
-            <CheckCircle className="h-5 w-5" />
+          <div className="flex items-center gap-2 text-green-600 dark:text-green-400 mb-8">
+            <CheckCircle className="h-5 w-5 flex-shrink-0" />
             <span className="text-[15px] font-medium">All aspects of the vision have been implemented</span>
           </div>
         </div>
         
-        <div className="md:w-1/3 flex justify-center md:justify-end items-center">
+        <div className="w-full flex justify-center md:justify-start">
           <a 
             href={paper.url} 
             target="_blank" 
             rel="noopener noreferrer" 
-            className="group h-[50px] px-6 bg-blue-600 dark:bg-white/90 text-white dark:text-black hover:bg-blue-700 dark:hover:bg-white backdrop-blur-sm rounded-lg text-[16px] font-medium flex items-center justify-center transition-all duration-300 border border-blue-500 dark:border-white/60 hover:shadow-lg hover:-translate-y-[1px]"
+            className="group h-[50px] px-6 bg-blue-600 dark:bg-white/90 text-white dark:text-black hover:bg-blue-700 dark:hover:bg-white backdrop-blur-sm rounded-lg text-[16px] font-medium flex items-center justify-center transition-all duration-300 border border-blue-500 dark:border-white/60 hover:shadow-lg hover:-translate-y-[1px] w-full md:w-auto"
           >
             Download Vision Paper
             <ArrowRight className="h-4 w-4 ml-2 transition-all duration-300 group-hover:translate-x-1" />

@@ -25,7 +25,7 @@ export function LearnSection() {
             description="Track the journey"
           />
           <NavLink 
-            href="/environment" 
+            href="/green" 
             icon={<LuLeaf className="h-5 w-5 text-gray-500 group-hover:text-verus-blue transition-colors" />}
             title="Environmentally Friendly"
             description="Green, secure, and sustainable"
