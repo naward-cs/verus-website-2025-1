@@ -22,7 +22,7 @@ export default function MigratePage() {
               Migrate to Verus
             </h1>
             <p className="text-[16px] md:text-[32px] pt-[10px] md:pt-[20px] leading-snug text-white/90 dark:text-white/80 font-normal text-center max-w-[400px] md:max-w-[900px] tracking-tight mx-auto">
-              Bring your coins, tokens, and communities to the next level with protocol-level security and advanced features.
+            Bring your token and community to a better, more secure ecosystem while maintaining full Ethereum compatibility.
             </p>
           </div>
         </div>
