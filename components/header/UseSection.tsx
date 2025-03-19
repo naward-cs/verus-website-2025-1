@@ -63,7 +63,7 @@ export function UseSection() {
             description="Stake VRSC on a full node"
           />
           <NavLink 
-            href="/exchanges" 
+            href="/get-vrsc" 
             icon={<Coins className="h-5 w-5 text-gray-500 group-hover:text-verus-blue transition-colors" />}
             title="Get VRSC"
             description="Get VRSC through various paths"

@@ -168,7 +168,7 @@ export function GetVrscSections() {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-2xl mx-auto">
             {/* SafeTrade */}
             <a 
-              href="https://safe.trade/trading/vrscbtc" 
+              href="https://safe.trade" 
               target="_blank" 
               rel="noopener noreferrer"
               className="flex flex-col items-center p-6 rounded-xl bg-gray-800 border border-gray-700 hover:border-blue-600 transition-all duration-300 hover:shadow-lg hover:shadow-blue-900/20 hover:-translate-y-1 group"
@@ -189,7 +189,7 @@ export function GetVrscSections() {
             
             {/* TradeOgre */}
             <a 
-              href="https://tradeogre.com/exchange/BTC-VRSC" 
+              href="https://tradeogre.com" 
               target="_blank" 
               rel="noopener noreferrer"
               className="flex flex-col items-center p-6 rounded-xl bg-gray-800 border border-gray-700 hover:border-blue-600 transition-all duration-300 hover:shadow-lg hover:shadow-blue-900/20 hover:-translate-y-1 group"

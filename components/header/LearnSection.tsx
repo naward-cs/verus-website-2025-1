@@ -1,6 +1,6 @@
 "use client"
 
-import { LuLightbulb, LuMilestone, LuMessageCircleQuestion, LuFileText, LuChartLine } from "react-icons/lu"
+import { LuLightbulb, LuMilestone, LuMessageCircleQuestion, LuFileText, LuChartLine, LuLeaf } from "react-icons/lu"
 import { FaMedium } from "react-icons/fa"
 import { ExternalLink } from "lucide-react"
 import { NavLink } from "./NavLink"
@@ -23,6 +23,12 @@ export function LearnSection() {
             icon={<LuMilestone className="h-5 w-5 text-gray-500 group-hover:text-verus-blue transition-colors" />}
             title="Milestones"
             description="Track the journey"
+          />
+          <NavLink 
+            href="/environment" 
+            icon={<LuLeaf className="h-5 w-5 text-gray-500 group-hover:text-verus-blue transition-colors" />}
+            title="Environmentally Friendly"
+            description="Green, secure, and sustainable"
           />
         </div>
       </div>

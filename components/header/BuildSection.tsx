@@ -76,7 +76,7 @@ export function BuildSection() {
             description="Developer information to get started"
           />
           <NavLink 
-            href="/#" 
+            href="/migrate" 
             icon={<LuUsers className="h-5 w-5 text-gray-500 group-hover:text-verus-blue transition-colors" />}
             title="Migrate Your Community"
             description="Join the Internet of Value"

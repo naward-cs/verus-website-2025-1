@@ -179,8 +179,35 @@ const faqData = [
 // Server component that provides the data
 export function FaqContent() {
   return (
-    <div className="px-4 md:px-0">
-      <FaqCategories data={faqData} />
+    <div className="grid grid-cols-1 md:grid-cols-3 gap-x-12 gap-y-10 px-4 md:px-0">
+      <div className="col-span-1">
+        <FaqCategories 
+          categories={faqData.map(cat => cat.title)}
+        />
+      </div>
+      
+      <div className="col-span-1 md:col-span-2">
+        {faqData.map((category, idx) => (
+          <div key={idx} className="mb-16" id={category.title.toLowerCase().replace(/\s+/g, '-')}>
+            <h2 className="text-[20px] md:text-[26px] font-medium text-gray-900 dark:text-white mb-8">
+              {category.title}
+            </h2>
+            
+            <div className="space-y-8 md:space-y-10">
+              {category.questions.map((item, i) => (
+                <div key={i} className="rounded-2xl bg-white/80 dark:bg-gray-900/30 backdrop-blur-sm shadow-sm p-6 border border-gray-200/60 dark:border-gray-800/30">
+                  <h3 className="text-[16px] md:text-[18px] font-medium text-gray-900 dark:text-white mb-3">
+                    {item.q}
+                  </h3>
+                  <p className="text-[14px] md:text-[16px] text-gray-600 dark:text-gray-300 leading-relaxed">
+                    {item.a}
+                  </p>
+                </div>
+              ))}
+            </div>
+          </div>
+        ))}
+      </div>
     </div>
   )
 }
