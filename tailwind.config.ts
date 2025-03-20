@@ -18,9 +18,18 @@ const config: Config = {
       fontFamily: {
         sans: ['var(--font-geomanist)', 'system-ui', 'sans-serif'],
       },
+      animation: {
+        // Speed up the animation durations for navigation menu
+        'in': 'enter 100ms ease-out',
+        'out': 'exit 100ms ease-in',
+        'fade-in': 'fade-in 100ms ease-out',
+        'fade-out': 'fade-out 100ms ease-in',
+        'zoom-in-90': 'zoom-in-90 100ms ease-out',
+        'zoom-out-95': 'zoom-out-95 100ms ease-in',
+      },
     },
   },
-  plugins: [],
+  plugins: [require('tailwindcss-animate')],
 };
 
 export default config;

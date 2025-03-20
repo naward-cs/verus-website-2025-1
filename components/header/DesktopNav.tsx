@@ -13,7 +13,7 @@ import { CommunitySection } from "./CommunitySection"
 export function DesktopNav() {
   return (
     <nav className="hidden md:flex items-center ml-12">
-      <NavigationMenu>
+      <NavigationMenu delayDuration={0}>
         <NavigationMenuList className="gap-4">
           {/* Use Verus */}
           <NavMenuItem title="Use">

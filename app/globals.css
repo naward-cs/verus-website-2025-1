@@ -148,3 +148,21 @@
     overflow: visible !important;
   }
 }
+
+/* Navigation Menu Animation Overrides */
+/* Speed up the animation durations for navigation menu */
+.data-\[motion\^\=from-\]\:animate-in[data-motion^=from-] {
+  animation-duration: 50ms !important;
+}
+
+.data-\[motion\^\=to-\]\:animate-out[data-motion^=to-] {
+  animation-duration: 50ms !important;
+}
+
+.data-\[state\=open\]\:animate-in[data-state=open] {
+  animation-duration: 50ms !important;
+}
+
+.data-\[state\=closed\]\:animate-out[data-state=closed] {
+  animation-duration: 50ms !important;
+}

@@ -168,25 +168,32 @@ export function OsSelector({ mainVersion, testnetInfo, error }: OsSelectorProps)
           <ChevronDown className={`h-4 w-4 transition-transform ${dropdownOpen ? 'rotate-180' : ''}`} />
         </button>
 
-        {/* Testnet Toggle - Moved below the dropdown button */}
+        {/* Testnet Toggle - Replaced with segmented control */}
         {testnetInfo && !isGitHubError && (
           <div className="mt-3 flex items-center">
-            <label htmlFor="testnet-toggle" className="flex items-center cursor-pointer">
-              <div className="relative">
-                <input 
-                  id="testnet-toggle" 
-                  type="checkbox" 
-                  className="sr-only" 
-                  checked={showTestnet}
-                  onChange={() => setShowTestnet(!showTestnet)}
-                />
-                <div className={`block w-10 h-6 rounded-full ${showTestnet ? 'bg-amber-500' : 'bg-gray-300 dark:bg-gray-600'}`}></div>
-                <div className={`absolute left-1 top-1 bg-white w-4 h-4 rounded-full transition-transform ${showTestnet ? 'transform translate-x-4' : ''}`}></div>
-              </div>
-              <div className="ml-3 text-sm font-medium text-black dark:text-white">
-                {showTestnet ? 'Testnet Version' : 'Mainnet Version'}
-              </div>
-            </label>
+            <div className="text-sm font-medium text-black dark:text-white mr-3">Version:</div>
+            <div className="flex rounded-md border border-gray-300 dark:border-gray-600 overflow-hidden">
+              <button
+                onClick={() => setShowTestnet(false)}
+                className={`px-4 py-1.5 text-sm font-medium transition-colors ${
+                  !showTestnet 
+                  ? 'bg-blue-600 text-white dark:bg-blue-700' 
+                  : 'bg-white text-gray-700 hover:bg-gray-100 dark:bg-gray-800 dark:text-gray-300 dark:hover:bg-gray-700'
+                }`}
+              >
+                Mainnet
+              </button>
+              <button
+                onClick={() => setShowTestnet(true)}
+                className={`px-4 py-1.5 text-sm font-medium transition-colors ${
+                  showTestnet 
+                  ? 'bg-amber-500 text-black' 
+                  : 'bg-white text-gray-700 hover:bg-gray-100 dark:bg-gray-800 dark:text-gray-300 dark:hover:bg-gray-700'
+                }`}
+              >
+                Testnet
+              </button>
+            </div>
           </div>
         )}
 
