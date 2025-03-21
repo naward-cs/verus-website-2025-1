@@ -18,7 +18,51 @@
   }
 }
 
+/* Community page vertical scrolling animations */
+@keyframes slideUp {
+  0% {
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY(-50%);
+  }
+}
 
+@keyframes slideDown {
+  0% {
+    transform: translateY(-50%);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+/* Continuous scrolling animations for image marquee */
+.scrolling-container-up {
+  animation: scrollUp 45s linear infinite;
+}
+
+.scrolling-container-down {
+  animation: scrollDown 50s linear infinite;
+}
+
+@keyframes scrollUp {
+  0% {
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY(-50%);
+  }
+}
+
+@keyframes scrollDown {
+  0% {
+    transform: translateY(-50%);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
 
 @layer base {
   :root {
@@ -44,8 +88,6 @@
     --radius: 0.5rem;
   }
 }
-
-
 
 /* Gradient borders */
 .border-gradient-red {
