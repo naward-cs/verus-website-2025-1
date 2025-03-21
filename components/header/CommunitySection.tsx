@@ -25,7 +25,7 @@ export function CommunitySection() {
             description="Explore community-built projects"
           />
           <NavLink 
-            href="/#" 
+            href="/people" 
             icon={<LuUsers className="h-5 w-5 text-gray-500 group-hover:text-verus-blue transition-colors" />}
             title="People"
             description="Meet the worldwide contributors"
