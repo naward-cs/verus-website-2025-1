@@ -38,7 +38,7 @@ export function ProtocolSection() {
             {/* Primary Button - Light/Dark Variants */}
             <a 
               href="/intro" 
-              className="group h-[40px] md:h-[50px] px-6 bg-blue-600 dark:bg-white/90 text-white dark:text-black hover:bg-blue-700 dark:hover:bg-white backdrop-blur-sm rounded-none md:rounded-lg text-[14px] md:text-[16px] font-medium flex items-center justify-center transition-all duration-300 border border-blue-500 dark:border-white/60 hover:shadow-lg hover:-translate-y-[1px]"
+              className="group h-[40px] md:h-[50px] px-6 bg-blue-600 dark:bg-white/90 text-white dark:text-black hover:bg-blue-700 dark:hover:bg-white backdrop-blur-sm rounded-lg text-[14px] md:text-[16px] font-medium flex items-center justify-center transition-all duration-300 border border-blue-500 dark:border-white/60 hover:shadow-lg hover:-translate-y-[1px]"
             >
               Learn more about the Verus Protocol
               <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 ml-2 transition-all duration-300 group-hover:translate-x-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -51,7 +51,7 @@ export function ProtocolSection() {
               href="https://docs.verus.io"
               target="_blank"
               rel="noopener noreferrer"
-              className="group h-[40px] md:h-[50px] px-6 bg-white/90 dark:bg-blue-950/40 text-gray-800 dark:text-blue-300 hover:bg-white dark:hover:text-blue-200 backdrop-blur-sm rounded-none md:rounded-lg text-[14px] md:text-[16px] font-medium flex items-center justify-center gap-2 transition-all duration-300 border border-gray-300 dark:border-blue-800/40 hover:border-gray-400 dark:hover:border-blue-700/60 hover:shadow-lg hover:-translate-y-[1px]"
+              className="group h-[40px] md:h-[50px] px-6 bg-white/90 dark:bg-blue-950/40 text-gray-800 dark:text-blue-300 hover:bg-white dark:hover:text-blue-200 backdrop-blur-sm rounded-lg text-[14px] md:text-[16px] font-medium flex items-center justify-center gap-2 transition-all duration-300 border border-gray-300 dark:border-blue-800/40 hover:border-gray-400 dark:hover:border-blue-700/60 hover:shadow-lg hover:-translate-y-[1px]"
             >
               <IoMdDownload className="h-5 w-5 group-hover:translate-y-[1px] transition-transform duration-300" />
               Download Vision Paper

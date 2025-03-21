@@ -94,16 +94,16 @@ export function GetStartedSection() {
           
           {/* Content */}
           <div className="relative z-10 h-full p-8 md:p-12 flex flex-col justify-between border border-indigo-400/10">
-            <h2 className="text-[24px] md:text-[36px] text-white tracking-tight font-medium leading-[1.1] flex items-center gap-4">
+            <h2 className="text-[24px] md:text-[36px] text-white tracking-tight font-medium leading-[1.1] flex items-center gap-4 mb-4 md:mb-0">
               <IoLogoDiscord className="h-10 w-10" />
               Join the Discord.
             </h2>
-            <div className="flex items-center gap-4">
+            <div className="flex flex-col sm:flex-row items-start sm:items-center gap-3 sm:gap-4">
               <a 
                 href="https://discord.gg/veruscoin"
                 target="_blank"
                 rel="noopener noreferrer" 
-                className="group h-[40px] md:h-[50px] px-8 bg-white/90 backdrop-blur-sm border border-white/10 rounded-lg text-[14px] md:text-[16px] font-medium text-[#5865F2] flex items-center justify-center hover:bg-white transition-all duration-300 hover:shadow-lg hover:shadow-indigo-700/20 hover:-translate-y-[1px] w-fit"
+                className="group h-[40px] md:h-[50px] px-8 bg-white/90 backdrop-blur-sm border border-white/10 rounded-lg text-[14px] md:text-[16px] font-medium text-[#5865F2] flex items-center justify-center hover:bg-white transition-all duration-300 hover:shadow-lg hover:shadow-indigo-700/20 hover:-translate-y-[1px] w-full sm:w-fit"
               >
                 Enter Discord server
                 <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 ml-2 transition-transform duration-300 group-hover:translate-x-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -111,7 +111,7 @@ export function GetStartedSection() {
                 </svg>
               </a>
               <span className="text-[12px] md:text-[14px] text-white/90">
-                10,575 joined before you!
+                More than 11k joined before you!
               </span>
             </div>
           </div>
