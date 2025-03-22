@@ -27,7 +27,7 @@ export default function ProjectsPage() {
                 Projects built with Verus.
               </h1>
               <p className="text-[16px] md:text-[20px] text-gray-700 dark:text-gray-300 mt-4 max-w-[800px]">
-                Explore applications, wallets, dashboards, and other projects leveraging the Verus blockchain ecosystem.
+                Explore applications, wallets, dashboards, and other projects leveraging the Verus Protocol and its ecosystem.
               </p>
             </div>
             
