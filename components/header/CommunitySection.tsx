@@ -19,7 +19,7 @@ export function CommunitySection() {
             description="Connect with the Verus community"
           />
           <NavLink 
-            href="/#" 
+            href="/projects" 
             icon={<LuBlocks className="h-5 w-5 text-gray-500 group-hover:text-verus-blue transition-colors" />}
             title="Community Projects"
             description="Explore community-built projects"
