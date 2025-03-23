@@ -4,7 +4,7 @@ export function BridgeContent() {
   return (
     <div className="flex flex-col md:flex-row gap-8 md:max-w-[1220px] w-screen md:w-full">
       {/* Info Box - Shows above on mobile, right side on desktop */}
-      <div className="md:order-2 md:w-[400px] flex-shrink-0 w-full ">
+      <div className="md:order-2 md:w-[400px] flex-shrink-0 w-full">
         <div className="w-full rounded-none md:rounded-lg border-x-0 md:border-x border-y border-[#EFEFEF] dark:border-gray-800 p-8 pt-8 pb-8 md:p-8 bg-white/50 dark:bg-gray-900/50 backdrop-blur-sm">
           <h2 className="text-[18px] md:text-[22px] tracking-tight text-black dark:text-white font-medium mb-4 leading-[1.3]">
             Verus Internet Protocol (VIP)—secure bridging.
@@ -35,11 +35,11 @@ export function BridgeContent() {
       </div>
 
       {/* Liquidity Info - Shows below on mobile, left side on desktop */}
-      <div className="md:order-1">
+      <div className="md:order-1 relative">
         <BridgeLiquidityInfo />
 
         {/* Security Info - Match width with liquidity info */}
-        <div className="w-screen md:w-[700px] bg-white dark:bg-gray-900 rounded-none md:rounded-lg border-x-0 md:border-x border-y border-[#E9EFFC] dark:border-gray-800 overflow-hidden mt-4 backdrop-blur-sm shadow-sm">
+        <div className="w-screen md:w-[700px] bg-white dark:bg-gray-900 rounded-none md:rounded-lg border-x-0 md:border-x border-y border-[#E9EFFC] dark:border-gray-800 mt-4 backdrop-blur-sm shadow-sm">
           <div className="p-6 md:p-8">
             <h2 className="text-[18px] md:text-[22px] text-black dark:text-white font-medium mb-4">
               Assets secured by miners and stakers.

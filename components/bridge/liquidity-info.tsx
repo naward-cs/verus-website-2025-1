@@ -2,9 +2,9 @@ import { LiquidityTooltip } from "./liquidity-tooltip"
 
 export function BridgeLiquidityInfo() {
   return (
-      <div className="w-screen md:w-[700px]">
+      <div className="w-screen md:w-[700px] relative">
       {/* Combined Table */}
-      <div className="w-full bg-white dark:bg-gray-900 rounded-none md:rounded-lg border-x-0 md:border-x border-y border-[#E9EFFC] dark:border-gray-800 overflow-hidden shadow-sm backdrop-blur-sm">
+      <div className="w-full bg-white dark:bg-gray-900 rounded-none md:rounded-lg border-x-0 md:border-x border-y border-[#E9EFFC] dark:border-gray-800 shadow-sm backdrop-blur-sm">
         {/* Bridge.vETH Section */}
         <div className="grid grid-cols-[1fr,1fr,1fr] gap-1 md:gap-4 p-3 md:p-4 border-b border-[#E9EFFC] dark:border-gray-800 bg-white/50 dark:bg-gray-900/50">
           <div className="flex items-center gap-3">
