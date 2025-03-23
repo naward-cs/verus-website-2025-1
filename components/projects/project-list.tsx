@@ -69,7 +69,7 @@ export const projects: ProjectCardProps[] = [
   },
   {
     name: "ValuVerse",
-    description: "Central hub for community resValuVerse Metaverse environment. Log in with a .valuid VerusID (currently offered for free on the Verus Discord in the #valuverse channel), explore, have meetings, transact. Under construction and much more being built.",
+    description: "ValuVerse Metaverse environment. Log in with a .valuid VerusID (currently offered for free on the Verus Discord in the #valuverse channel), explore, have meetings, transact. Under construction and much more being built.",
     url: "https://live.valuverse.net/auth",
     category: "Technology" as ProjectCategory
   },
@@ -78,6 +78,12 @@ export const projects: ProjectCardProps[] = [
     description: "Barebones, raw liquidity pool (basket currencies) reserve data.",
     url: "https://raw.verus.trading",
     category: "Dashboard" as ProjectCategory
+  },
+  {
+    name: "VerusInvoices",
+    description: "Easily ceate invoices to share and use with Verus Mobile.",
+    url: "https://www.verusinvoices.com",
+    category: "Technology" as ProjectCategory
   }
 ].sort((a, b) => a.name.localeCompare(b.name)) // Sort alphabetically by name
 
