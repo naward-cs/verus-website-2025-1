@@ -39,7 +39,7 @@ export function DesktopNav() {
           <NavMenuItem title="Media" href="/media" />
 
           {/* Donate */}
-          <NavMenuItem title="Donate" href="/#" />
+          <NavMenuItem title="Donate" href="/donate" />
         </NavigationMenuList>
       </NavigationMenu>
     </nav>

@@ -1,9 +1,10 @@
 "use client"
 
 import { LuLayoutGrid, LuRocket, LuUsers, LuScale, LuNetwork, LuCoins, LuDatabase, LuArrowUpDown, LuStore } from "react-icons/lu"
-import { ExternalLink } from "lucide-react"
+import { ExternalLink, MessageCircleQuestion } from "lucide-react"
 import { NavLink } from "./NavLink"
 import Link from "next/link"
+import { IoLogoDiscord } from "react-icons/io5"
 
 // Custom component for PBaaS links
 function PBaaSLink({ 
@@ -152,6 +153,35 @@ export function BuildSection() {
                 All API Commands
                 <ExternalLink className="h-4 w-4 opacity-50 group-hover:opacity-100" />
               </div>
+            </div>
+          </Link>
+          
+          {/* Discord Help Section */}
+          <Link 
+            href="https://www.verus.io/discord" 
+            target="_blank" 
+            rel="noopener noreferrer"
+            className="group mt-8 block rounded-lg bg-gradient-to-br from-[#5865F2] to-[#404EED] p-5 transition-all hover:shadow-lg hover:shadow-[#5865F2]/20"
+          >
+            <div className="flex items-center">
+              <IoLogoDiscord className="h-9 w-9 text-white" />
+              <div className="ml-4">
+                <div className="text-[17px] font-medium text-white">
+                  Need help building with Verus?
+                </div>
+                <p className="text-[14px] text-white/90 mt-1 font-light">
+                  Join the Discord for developer support
+                </p>
+              </div>
+            </div>
+            <div className="mt-3 bg-white/10 backdrop-blur-sm rounded-md py-2 px-3 text-white/90 text-[13px] flex items-center justify-between group-hover:bg-white/20 transition-colors">
+              <span>Ask questions, share ideas, collaborate</span>
+              <span className="flex items-center text-white/80 group-hover:text-white transition-colors">
+                Join now 
+                <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 ml-1 transition-all duration-300 group-hover:translate-x-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
+                </svg>
+              </span>
             </div>
           </Link>
         </div>

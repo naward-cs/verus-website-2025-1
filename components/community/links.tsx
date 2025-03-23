@@ -91,7 +91,7 @@ export function CommunityLinks() {
               Connect with the growing community.
             </h2>
             <p className="text-[16px] md:text-[18px] text-gray-600 dark:text-gray-300 tracking-tight mb-8 max-w-[500px]">
-              Join developers, miners, stakers and blockchain enthusiasts building a decentralized future. It's also the best place to stay up-to-date with all protocol updates.
+              Join developers, builders, entrepreneurs, miners, stakers and blockchain enthusiasts building a decentralized future. It's also the best place to stay up-to-date with all protocol updates.
             </p>
             
             <Link 

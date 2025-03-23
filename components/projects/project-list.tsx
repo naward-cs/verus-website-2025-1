@@ -73,6 +73,12 @@ export const projects: ProjectCardProps[] = [
     url: "https://live.valuverse.net/auth",
     category: "Technology" as ProjectCategory
   },
+  {
+    name: "raw.verus.trading",
+    description: "Barebones, raw liquidity pool (basket currencies) reserve data.",
+    url: "https://raw.verus.trading",
+    category: "Dashboard" as ProjectCategory
+  }
 ].sort((a, b) => a.name.localeCompare(b.name)) // Sort alphabetically by name
 
 export function ProjectList() {

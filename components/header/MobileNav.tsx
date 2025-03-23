@@ -4,7 +4,7 @@ import { useState, useRef, useEffect } from "react"
 import Link from "next/link"
 import { Menu, X, ChevronRight, ExternalLink } from "lucide-react"
 import { cn } from "@/lib/utils"
-import { IoLogoDiscord } from "react-icons/io5"
+import { IoLogoDiscord, IoLogoGithub } from "react-icons/io5"
 import { FaReddit, FaFacebook, FaTwitter } from "react-icons/fa"
 import { FaXTwitter, FaYoutube, FaTelegram } from "react-icons/fa6"
 
@@ -235,43 +235,45 @@ export function MobileNav() {
 
             <h3 className="text-[11px] font-medium text-gray-500 dark:text-gray-400 uppercase pt-8 pb-2 border-b border-gray-200 dark:border-gray-700">Get Involved</h3>
             <div className="space-y-2">
+              {/* Bounties link temporarily hidden
               <MenuLink href="/#" className="block text-[15px] py-2 pt-4 text-gray-700 dark:text-gray-300 hover:text-verus-blue dark:hover:text-blue-400 transition-colors">Bounties</MenuLink>
-              <MenuLink href="/#" className="block text-[15px] py-2 text-gray-700 dark:text-gray-300 hover:text-verus-blue dark:hover:text-blue-400 transition-colors">Contribute</MenuLink>
+              */}
+              <MenuLink href="/contribute" className="block text-[15px] py-2 text-gray-700 dark:text-gray-300 hover:text-verus-blue dark:hover:text-blue-400 transition-colors">Contribute</MenuLink>
             </div>
 
             <h3 className="text-[11px] font-medium text-gray-500 dark:text-gray-400 uppercase pt-8 pb-2 border-b border-gray-200 dark:border-gray-700">Social Media</h3>
             <div className="grid grid-cols-2 gap-x-4 gap-y-2 pt-2">
-              <MenuLink href="https://discord.gg/veruscoin" className="flex items-center gap-2 py-2 px-3 rounded-md hover:bg-verus-blue/10 group transition-colors">
+              <MenuLink href="https://www.verus.io/discord" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 py-2 px-3 rounded-md hover:bg-verus-blue/10 group transition-colors">
                 <div className="h-8 w-8 rounded-full bg-[#5865F2]/10 flex items-center justify-center">
                   <IoLogoDiscord className="h-4 w-4 text-[#5865F2]" />
                 </div>
                 <span className="text-[15px] text-gray-700 dark:text-gray-300 group-hover:text-verus-blue dark:group-hover:text-blue-400 transition-colors">Discord</span>
               </MenuLink>
-              <MenuLink href="https://twitter.com/veruscoin" className="flex items-center gap-2 py-2 px-3 rounded-md hover:bg-verus-blue/10 group transition-colors">
+              <MenuLink href="https://twitter.com/veruscoin" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 py-2 px-3 rounded-md hover:bg-verus-blue/10 group transition-colors">
                 <div className="h-8 w-8 rounded-full bg-black/10 dark:bg-white/10 flex items-center justify-center">
                   <FaXTwitter className="h-4 w-4 text-black dark:text-white" />
                 </div>
                 <span className="text-[15px] text-gray-700 dark:text-gray-300 group-hover:text-verus-blue dark:group-hover:text-blue-400 transition-colors">X</span>
               </MenuLink>
-              <MenuLink href="https://t.me/veruscoin" className="flex items-center gap-2 py-2 px-3 rounded-md hover:bg-verus-blue/10 group transition-colors">
+              <MenuLink href="https://t.me/veruscoin" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 py-2 px-3 rounded-md hover:bg-verus-blue/10 group transition-colors">
                 <div className="h-8 w-8 rounded-full bg-[#0088cc]/10 flex items-center justify-center">
                   <FaTelegram className="h-4 w-4 text-[#0088cc]" />
                 </div>
                 <span className="text-[15px] text-gray-700 dark:text-gray-300 group-hover:text-verus-blue dark:group-hover:text-blue-400 transition-colors">Telegram</span>
               </MenuLink>
-              <MenuLink href="https://reddit.com/r/veruscoin" className="flex items-center gap-2 py-2 px-3 rounded-md hover:bg-verus-blue/10 group transition-colors">
+              <MenuLink href="https://reddit.com/r/veruscoin" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 py-2 px-3 rounded-md hover:bg-verus-blue/10 group transition-colors">
                 <div className="h-8 w-8 rounded-full bg-[#FF4500]/10 flex items-center justify-center">
                   <FaReddit className="h-4 w-4 text-[#FF4500]" />
                 </div>
                 <span className="text-[15px] text-gray-700 dark:text-gray-300 group-hover:text-verus-blue dark:group-hover:text-blue-400 transition-colors">Reddit</span>
               </MenuLink>
-              <MenuLink href="https://facebook.com/veruscoin" className="flex items-center gap-2 py-2 px-3 rounded-md hover:bg-verus-blue/10 group transition-colors">
+              <MenuLink href="https://facebook.com/veruscoin" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 py-2 px-3 rounded-md hover:bg-verus-blue/10 group transition-colors">
                 <div className="h-8 w-8 rounded-full bg-[#1877F2]/10 flex items-center justify-center">
                   <FaFacebook className="h-4 w-4 text-[#1877F2]" />
                 </div>
                 <span className="text-[15px] text-gray-700 dark:text-gray-300 group-hover:text-verus-blue dark:group-hover:text-blue-400 transition-colors">Facebook</span>
               </MenuLink>
-              <MenuLink href="https://youtube.com/@veruscoin" className="flex items-center gap-2 py-2 px-3 rounded-md hover:bg-verus-blue/10 group transition-colors">
+              <MenuLink href="https://youtube.com/@veruscoincommunity" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 py-2 px-3 rounded-md hover:bg-verus-blue/10 group transition-colors">
                 <div className="h-8 w-8 rounded-full bg-[#FF0000]/10 flex items-center justify-center">
                   <FaYoutube className="h-4 w-4 text-[#FF0000]" />
                 </div>
@@ -310,6 +312,39 @@ export function MobileNav() {
                 </MenuLink>
               </div>
             </div>
+          </div>
+          
+          {/* Social Media Icons */}
+          <div className="pt-6 pb-4 flex justify-center gap-5">
+            <MenuLink 
+              href="https://twitter.com/veruscoin" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="flex items-center justify-center h-10 w-10 rounded-full bg-black/5 dark:bg-white/10 hover:bg-black/10 dark:hover:bg-white/20 transition-colors"
+              aria-label="X (Twitter)"
+            >
+              <FaXTwitter className="h-5 w-5 text-black dark:text-white" />
+            </MenuLink>
+            
+            <MenuLink 
+              href="https://www.verus.io/discord" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="flex items-center justify-center h-10 w-10 rounded-full bg-[#5865F2]/10 hover:bg-[#5865F2]/20 transition-colors"
+              aria-label="Discord"
+            >
+              <IoLogoDiscord className="h-5 w-5 text-[#5865F2]" />
+            </MenuLink>
+            
+            <MenuLink 
+              href="https://github.com/VerusCoin" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="flex items-center justify-center h-10 w-10 rounded-full bg-gray-800/10 dark:bg-gray-300/10 hover:bg-gray-800/20 dark:hover:bg-gray-300/20 transition-colors"
+              aria-label="GitHub"
+            >
+              <IoLogoGithub className="h-5 w-5 text-gray-800 dark:text-gray-300" />
+            </MenuLink>
           </div>
         </nav>
       </div>
