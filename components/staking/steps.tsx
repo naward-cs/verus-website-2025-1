@@ -32,9 +32,7 @@ export function StakingSteps() {
             <p className="text-[14px] md:text-[15px] text-gray-700 dark:text-gray-300 tracking-tight leading-[1.8]">
               It is a provable solution to 51% hash attacks.{" "}
               <a 
-                href="https://verus.io/papers/VerusPoP.pdf" 
-                target="_blank" 
-                rel="noopener noreferrer"
+                href="/papers"
                 className="text-verus-blue dark:text-blue-400 hover:underline transition-colors"
               >
                 Find the paper here
