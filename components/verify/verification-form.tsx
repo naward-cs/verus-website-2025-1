@@ -466,7 +466,7 @@ export function VerificationForm() {
           <div className="mt-8">
             <button
               type="submit"
-              disabled={verificationResult === "loading" || isCalculatingHash || (verificationType === "file" && fileContent && !fileHash)}
+              disabled={verificationResult === "loading" || isCalculatingHash || (verificationType === "file" && fileContent !== null && !fileHash)}
               className="h-[46px] px-6 py-2 bg-verus-blue hover:bg-blue-700 text-white font-medium rounded-lg shadow transition-colors disabled:opacity-50 disabled:cursor-not-allowed hover:shadow-lg hover:shadow-blue-600/20 dark:hover:shadow-blue-950/40 transition-all duration-300 hover:-translate-y-[1px]"
             >
               {verificationResult === "loading" ? (
