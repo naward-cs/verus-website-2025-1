@@ -70,7 +70,14 @@ export function BridgeLiquidityInfo() {
     const fetchBridgeData = async () => {
       try {
         // Use our internal API endpoint instead of calling Verus API directly
-        const response = await fetch('/api/bridge?t=' + Date.now()); // Add cache buster
+        // Add cache busting parameter and set cache control in request headers
+        const response = await fetch(`/api/bridge?t=${Date.now()}`, {
+          cache: 'no-store',
+          headers: {
+            'Cache-Control': 'no-cache, no-store, must-revalidate',
+            'Pragma': 'no-cache'
+          }
+        });
 
         if (!response.ok) {
           throw new Error('Network response was not ok');

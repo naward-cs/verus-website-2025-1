@@ -80,7 +80,7 @@ export function UseSection() {
             description="Find VerusIDs"
           />
           <NavLink 
-            href="/#" 
+            href="/verify" 
             icon={<LuBadgeCheck className="h-5 w-5 text-gray-500 group-hover:text-verus-blue transition-colors" />}
             title="Verify Signatures"
             description="Validate signed messages & files"

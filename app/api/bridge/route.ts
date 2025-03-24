@@ -1,8 +1,8 @@
 import { NextResponse } from 'next/server';
 
-// Configure for static export
-export const dynamic = 'force-static';
-export const revalidate = 3600; // 1 hour
+// Configure for dynamic data on each request
+export const dynamic = 'force-dynamic';
+// Remove static revalidation since we want fresh data every time
 
 // Interface for currency data from API
 interface ReserveCurrency {
@@ -82,7 +82,9 @@ async function fetchCoinpaprikaPrices() {
 
   try {
     // Fetch all tickers in a single request
-    const response = await fetch('https://api.coinpaprika.com/v1/tickers');
+    const response = await fetch('https://api.coinpaprika.com/v1/tickers', {
+      cache: 'no-store' // Ensure we always get fresh data
+    });
     const data = await response.json();
     
     // Extract prices for our tokens
@@ -129,8 +131,7 @@ export async function GET() {
           method: "getcurrency",
           params: ["bridge.veth"]
         }),
-        cache: 'no-cache',
-        next: { revalidate: 3600 } // Cache for 1 hour
+        cache: 'no-store', // Ensure we always get fresh data
       }),
       fetchCoinpaprikaPrices()
     ]);
@@ -211,7 +212,7 @@ export async function GET() {
     
     return NextResponse.json(responseData, {
       headers: {
-        'Cache-Control': 'public, max-age=3600', // Cache for 1 hour
+        'Cache-Control': 'no-store, max-age=0, must-revalidate', // Prevent caching
       }
     });
   } catch (error) {
@@ -225,7 +226,7 @@ export async function GET() {
     }, { 
       status: 200, // Still return 200 to avoid breaking the client
       headers: {
-        'Cache-Control': 'public, max-age=300', // Cache for 5 minutes on error
+        'Cache-Control': 'no-store, max-age=0, must-revalidate', // Prevent caching
       }
     });
   }
