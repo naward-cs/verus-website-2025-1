@@ -3,7 +3,7 @@ import { Footer } from "@/components/footer"
 
 export default function GetStartedPage() {
   return (
-    <main className="relative min-h-[calc(100vh-50px)] md:min-h-[calc(100vh-70px)] w-screen mt-[50px] md:mt-[70px]">
+    <main className="relative h-[calc(100vh-50px)] md:h-[calc(100vh-70px)] w-screen mt-[50px] md:mt-[70px]">
       {/* Background images - separate for light and dark mode */}
       <img 
         src="/img/bg-small.webp"
