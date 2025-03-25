@@ -45,7 +45,7 @@ export default function Home() {
               </svg>
             </a>
             <a 
-              href="https://discord.gg/veruscoin" 
+              href="https://www.verus.io/discord" 
               target="_blank"
               rel="noopener noreferrer"
               className="group h-[40px] md:h-[50px] px-6 bg-blue-950/40 backdrop-blur-sm rounded-lg text-[14px] md:text-[16px] font-medium text-blue-300 flex items-center justify-center gap-2 hover:text-blue-200 transition-all duration-300 border border-blue-800/60 hover:border-blue-700/80 hover:shadow-lg hover:-translate-y-[1px]"

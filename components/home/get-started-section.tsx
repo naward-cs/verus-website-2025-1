@@ -100,7 +100,7 @@ export function GetStartedSection() {
             </h2>
             <div className="flex flex-col sm:flex-row items-start sm:items-center gap-3 sm:gap-4">
               <a 
-                href="https://discord.gg/veruscoin"
+                href="https://www.verus.io/discord"
                 target="_blank"
                 rel="noopener noreferrer" 
                 className="group h-[40px] md:h-[50px] px-8 bg-white/90 backdrop-blur-sm border border-white/10 rounded-lg text-[14px] md:text-[16px] font-medium text-[#5865F2] flex items-center justify-center hover:bg-white transition-all duration-300 hover:shadow-lg hover:shadow-indigo-700/20 hover:-translate-y-[1px] w-full sm:w-fit"

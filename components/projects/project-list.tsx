@@ -51,7 +51,7 @@ export const projects: ProjectCardProps[] = [
   },
   {
     name: "Valu",
-    description: "Ecosystem project encompassing community economy.",
+    description: "Valu combines the power of the Verus Blockchain, Zero Knowledge Privacy, AI, Social Messengers and Mixed Reality to create Decentralized. Distributed, People Powered, Verified Community Network Economies. Valu bridges the physical and digital worlds, empoweringusers with ownership, privacy, and collaboration in gamified, open-source ecosystems. Aligning the interests of users and communities to create sustainable distributed decentralized network economies.",
     url: "https://www.valu.earth",
     category: "Technology" as ProjectCategory
   },

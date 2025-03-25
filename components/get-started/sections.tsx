@@ -443,7 +443,7 @@ export function GetStartedSections() {
 
       {/* Discord Help Box */}
       <a 
-        href="https://discord.gg/veruscoin"
+        href="https://www.verus.io/discord"
         target="_blank"
         rel="noopener noreferrer" 
         className="group w-full md:rounded-lg bg-[#444EE5] hover:bg-[#3942cc] p-4 md:p-6 h-[45px] md:h-[55px] flex items-center gap-3 transition-all duration-300 hover:shadow-md hover:-translate-y-[1px]"

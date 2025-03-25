@@ -30,7 +30,7 @@ export function Footer() {
           </h2>
           
           <a 
-            href="https://discord.gg/veruscoin" 
+            href="https://www.verus.io/discord" 
             target="_blank"
             rel="noopener noreferrer"
             className="h-[40px] md:h-[50px] px-6 bg-white rounded-lg text-[14px] md:text-[16px] font-medium text-black flex items-center justify-center gap-2 hover:bg-gray-100 transition-colors"
@@ -106,7 +106,7 @@ export function Footer() {
               </ul>
 
               <div className="grid grid-cols-4 gap-4">
-                <a href="https://discord.gg/veruscoin" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-[#5865F2] transition-colors">
+                <a href="https://www.verus.io/discord" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-[#5865F2] transition-colors">
                   <IoLogoDiscord className="h-5 w-5" />
                 </a>
                 <a href="https://twitter.com/veruscoin" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-white transition-colors">
@@ -204,7 +204,7 @@ export function Footer() {
               </ul>
 
               <div className="grid grid-cols-4 gap-4">
-                <a href="https://discord.gg/veruscoin" target="_blank" rel="noopener noreferrer" className="text-gray-400">
+                <a href="https://www.verus.io/discord" target="_blank" rel="noopener noreferrer" className="text-gray-400">
                   <IoLogoDiscord className="h-5 w-5" />
                 </a>
                 <a href="https://twitter.com/veruscoin" target="_blank" rel="noopener noreferrer" className="text-gray-400">
