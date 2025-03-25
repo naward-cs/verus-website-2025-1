@@ -10,6 +10,7 @@ import { BridgeSection } from "@/components/home/bridge-section"
 import { GetStartedSection } from "@/components/home/get-started-section"
 import { EndSection } from "@/components/home/end-section"
 import { MediumArticlesSection } from "@/components/home/medium-articles-section"
+import { EarlyAdoptionSection } from "@/components/home/early-adoption-section"
 import { Footer } from "@/components/footer"
 
 export default function Home() {
@@ -55,6 +56,7 @@ export default function Home() {
           </div>
 
           <FeaturesGrid />
+          <EarlyAdoptionSection />
           <CompareSection />
           <ProtocolSection />
           <ParticipationSection />
