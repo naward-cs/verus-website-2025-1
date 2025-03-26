@@ -1,7 +1,8 @@
 "use client"
 
-import { useState, useEffect } from "react"
-import { Upload, MessageSquare, FileText, ArrowRight, CheckCircle, XCircle } from "lucide-react"
+import { useState, useEffect, useRef } from "react"
+import { Upload, MessageSquare, FileText, ArrowRight, CheckCircle, XCircle, Info } from "lucide-react"
+import { useSearchParams, useRouter } from "next/navigation"
 
 // Define our API response types
 interface VerifyResponse {
@@ -21,12 +22,176 @@ export function VerificationForm() {
   const [verificationResult, setVerificationResult] = useState<"idle" | "loading" | "success" | "error" | "failed">("idle")
   const [verificationMessage, setVerificationMessage] = useState("")
   const [isCalculatingHash, setIsCalculatingHash] = useState(false)
+  const [autoVerified, setAutoVerified] = useState(false)
+  
+  // Get search params and router for URL manipulation
+  const searchParams = useSearchParams()
+  const router = useRouter()
+  const formRef = useRef<HTMLFormElement>(null)
+
+  // Process URL parameters and trigger verification if complete
+  const processUrlParams = async () => {
+    // Extract and decode parameters
+    const messageParam = searchParams.get('message')
+    const hashParam = searchParams.get('hash')
+    const verusIdParam = searchParams.get('verusid')
+    const signatureParam = searchParams.get('signature')
+    
+    let shouldAutoVerify = false
+    let paramUpdates: any = {}
+    
+    // Populate form fields if parameters exist
+    if (messageParam) {
+      paramUpdates.verificationType = "message"
+      paramUpdates.messageContent = messageParam
+      shouldAutoVerify = verusIdParam !== null && signatureParam !== null
+    } else if (hashParam) {
+      paramUpdates.verificationType = "hash"
+      paramUpdates.hashContent = hashParam
+      shouldAutoVerify = verusIdParam !== null && signatureParam !== null
+    }
+    
+    if (verusIdParam) paramUpdates.verusId = verusIdParam
+    if (signatureParam) paramUpdates.signature = signatureParam
+    
+    // Update state with all parameters at once
+    if (messageParam) setVerificationType("message")
+    if (hashParam) setVerificationType("hash")
+    if (messageParam) setMessageContent(messageParam)
+    if (hashParam) setHashContent(hashParam)
+    if (verusIdParam) setVerusId(verusIdParam)
+    if (signatureParam) setSignature(signatureParam)
+    
+    // Wait for state updates to complete
+    await new Promise(resolve => setTimeout(resolve, 0))
+    
+    // Trigger auto-verification if we have all necessary parameters
+    if (shouldAutoVerify) {
+      setAutoVerified(true)
+      // Use the current parameter values directly instead of relying on state
+      await verifyFromParams(
+        paramUpdates.verificationType || verificationType,
+        paramUpdates.verusId || verusIdParam,
+        paramUpdates.signature || signatureParam,
+        paramUpdates.messageContent || messageParam,
+        paramUpdates.hashContent || hashParam
+      )
+    }
+  }
+
+  // Verify directly from parameters without relying on component state
+  const verifyFromParams = async (
+    type: "message" | "hash" | "file",
+    id: string,
+    sig: string,
+    msg?: string,
+    hash?: string
+  ) => {
+    // Validate parameters
+    if (!id) {
+      setVerificationResult("error")
+      setVerificationMessage("Please enter a VerusID")
+      return
+    }
+    
+    if (!sig) {
+      setVerificationResult("error")
+      setVerificationMessage("Please enter a signature")
+      return
+    }
+    
+    if (type === "message" && !msg) {
+      setVerificationResult("error")
+      setVerificationMessage("Please enter a message")
+      return
+    }
+    
+    if (type === "hash" && !hash) {
+      setVerificationResult("error")
+      setVerificationMessage("Please enter a hash")
+      return
+    }
+    
+    // Set loading state
+    setVerificationResult("loading")
+    setVerificationMessage("Verifying signature...")
+    
+    try {
+      let isVerified = false;
+      
+      // Handle different verification types
+      switch (type) {
+        case "hash":
+          if (hash) isVerified = await verifyHash(id, sig, hash);
+          break;
+          
+        case "message":
+          if (msg) isVerified = await verifyMessage(id, sig, msg);
+          break;
+          
+        case "file":
+          // File verification is not supported via URL parameters
+          throw new Error("File verification is not supported via URL parameters");
+          
+        default:
+          throw new Error("Invalid verification type");
+      }
+      
+      if (isVerified) {
+        setVerificationResult("success")
+        setVerificationMessage(`${type === "message" ? "Message" : "Hash"} signature successfully verified!`)
+      } else {
+        setVerificationResult("failed")
+        setVerificationMessage(`Signature verification failed. The signature is not valid for this ${type === "message" ? "message" : "hash"} and VerusID.`)
+      }
+    } catch (error) {
+      setVerificationResult("error")
+      setVerificationMessage(error instanceof Error ? error.message : "An unknown error occurred")
+    }
+  }
+
+  // Handle URL parameters on component mount
+  useEffect(() => {
+    processUrlParams()
+  }, [searchParams])
+
+  // Update browser URL for shareability
+  const updateBrowserUrl = () => {
+    const params = new URLSearchParams()
+    
+    if (verificationType === "message" && messageContent) {
+      params.set("message", messageContent)
+    } else if (verificationType === "hash" && hashContent) {
+      params.set("hash", hashContent)
+    }
+    
+    if (verusId) params.set("verusid", verusId)
+    if (signature) params.set("signature", signature)
+    
+    // Only update URL if we have at least one parameter
+    if (params.toString()) {
+      window.history.replaceState(
+        {}, 
+        '', 
+        `${window.location.pathname}?${params.toString()}`
+      )
+    }
+  }
 
   // Handle verification type change
   const handleVerificationTypeChange = (type: "file" | "message" | "hash") => {
     setVerificationType(type)
     setVerificationResult("idle")
     setVerificationMessage("")
+    setAutoVerified(false)
+    
+    // Clear URL if changing to file verification (which doesn't support URL params)
+    if (type === "file") {
+      window.history.replaceState({}, '', window.location.pathname)
+    } else {
+      // Update URL for the new verification type
+      setTimeout(updateBrowserUrl, 0)
+    }
   }
 
   // Calculate file hash using Web Crypto API
@@ -102,7 +267,7 @@ export function VerificationForm() {
 
   // Handle form submission
   const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault()
+    if (e && e.preventDefault) e.preventDefault()
     
     // Form validation
     if (!verusId) {
@@ -133,6 +298,11 @@ export function VerificationForm() {
       setVerificationResult("error")
       setVerificationMessage("Please enter a hash")
       return
+    }
+    
+    // Update URL for shareability if not a file verification
+    if (verificationType !== "file") {
+      updateBrowserUrl()
     }
     
     // Set loading state
@@ -196,6 +366,47 @@ export function VerificationForm() {
     }
   }
 
+  // Handle form field changes with URL updates
+  const handleMessageChange = (e: React.ChangeEvent<HTMLTextAreaElement>) => {
+    setMessageContent(e.target.value)
+    
+    // Reset verification state when changing content
+    if (verificationResult !== "idle") {
+      setVerificationResult("idle")
+      setVerificationMessage("")
+    }
+  }
+
+  const handleHashChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    setHashContent(e.target.value)
+    
+    // Reset verification state when changing content
+    if (verificationResult !== "idle") {
+      setVerificationResult("idle")
+      setVerificationMessage("")
+    }
+  }
+
+  const handleVerusIdChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    setVerusId(e.target.value)
+    
+    // Reset verification state when changing content
+    if (verificationResult !== "idle") {
+      setVerificationResult("idle")
+      setVerificationMessage("")
+    }
+  }
+
+  const handleSignatureChange = (e: React.ChangeEvent<HTMLTextAreaElement>) => {
+    setSignature(e.target.value)
+    
+    // Reset verification state when changing content
+    if (verificationResult !== "idle") {
+      setVerificationResult("idle")
+      setVerificationMessage("")
+    }
+  }
+
   // Get icon for current verification type
   const getVerificationIcon = () => {
     switch(verificationType) {
@@ -227,7 +438,7 @@ export function VerificationForm() {
     };
 
     return (
-      <div className={`p-6 rounded-lg ${resultClasses[verificationResult]} backdrop-blur-sm`}>
+      <div className={`p-6 rounded-lg ${resultClasses[verificationResult]} backdrop-blur-sm mb-6`}>
         <div className="flex flex-col items-center text-center gap-2">
           {verificationResult !== "loading" && iconMap[verificationResult]}
           <p className="font-medium text-center">{verificationMessage}</p>
@@ -256,7 +467,15 @@ export function VerificationForm() {
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(59,130,246,0.08),transparent_50%)] dark:bg-[radial-gradient(circle_at_top_right,rgba(59,130,246,0.15),transparent_50%)]"></div>
       
       <div className="relative">
-        {/* Verification type selector and YouTube link */}
+        {/* Auto-verification notification */}
+        {autoVerified && verificationResult !== "idle" && (
+          <div className="px-4 py-2 mb-4 text-sm bg-blue-50 dark:bg-blue-900/20 text-blue-700 dark:text-blue-300 rounded-md border border-blue-200 dark:border-blue-800 flex items-center gap-2">
+            <Info className="h-4 w-4" />
+            <span>This verification was automatically performed using URL parameters.</span>
+          </div>
+        )}
+        
+        {/* Verification type selector and download wallet link */}
         <div className="mb-8 flex flex-wrap justify-between gap-4">
           <div className="flex flex-wrap gap-2">
             <button
@@ -307,7 +526,7 @@ export function VerificationForm() {
           </a>
         </div>
 
-        <form onSubmit={handleSubmit} className="space-y-6">
+        <form ref={formRef} onSubmit={handleSubmit} className="space-y-6">
           {/* Current verification type header */}
           <div className="flex items-center gap-2 mb-4">
             {getVerificationIcon()}
@@ -317,6 +536,9 @@ export function VerificationForm() {
                "Hash Verification"}
             </h3>
           </div>
+          
+          {/* Verification result - moved to top of form */}
+          {renderVerificationResult()}
           
           {/* Verification content based on selected type */}
           {verificationType === "file" && (
@@ -384,7 +606,7 @@ export function VerificationForm() {
                 name="message"
                 rows={4}
                 value={messageContent}
-                onChange={(e) => setMessageContent(e.target.value)}
+                onChange={handleMessageChange}
                 className="w-full p-3 border border-blue-200/70 dark:border-blue-800/30 rounded-lg shadow-sm focus:ring-verus-blue focus:border-verus-blue dark:bg-gray-800/50 dark:text-white backdrop-blur-sm"
                 placeholder="Enter the message to verify"
               />
@@ -407,7 +629,7 @@ export function VerificationForm() {
                 id="hash"
                 name="hash"
                 value={hashContent}
-                onChange={(e) => setHashContent(e.target.value)}
+                onChange={handleHashChange}
                 className="w-full p-3 border border-blue-200/70 dark:border-blue-800/30 rounded-lg shadow-sm focus:ring-verus-blue focus:border-verus-blue dark:bg-gray-800/50 dark:text-white backdrop-blur-sm font-mono"
                 placeholder="Enter the hash to verify (hex format)"
               />
@@ -431,7 +653,7 @@ export function VerificationForm() {
               name="verusId"
               autoComplete="off"
               value={verusId}
-              onChange={(e) => setVerusId(e.target.value)}
+              onChange={handleVerusIdChange}
               className="w-full p-3 border border-blue-200/70 dark:border-blue-800/30 rounded-lg shadow-sm focus:ring-verus-blue focus:border-verus-blue dark:bg-gray-800/50 dark:text-white backdrop-blur-sm"
               placeholder="Enter the VerusID of the signer"
             />
@@ -453,7 +675,7 @@ export function VerificationForm() {
               name="signature"
               rows={3}
               value={signature}
-              onChange={(e) => setSignature(e.target.value)}
+              onChange={handleSignatureChange}
               className="w-full p-3 border border-blue-200/70 dark:border-blue-800/30 rounded-lg shadow-sm focus:ring-verus-blue focus:border-verus-blue dark:bg-gray-800/50 dark:text-white backdrop-blur-sm font-mono text-sm"
               placeholder="Enter the signature to verify"
             />
@@ -482,9 +704,6 @@ export function VerificationForm() {
               )}
             </button>
           </div>
-
-          {/* Verification result */}
-          {renderVerificationResult()}
         </form>
       </div>
     </div>

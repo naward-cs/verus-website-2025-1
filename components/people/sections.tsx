@@ -14,8 +14,7 @@ const teamMembers: ProfileCardProps[] = [
   {
     name: "Michael F. Toutonghi",
     title: "Lead desktop & mobile wallet developer",
-    description: "Michael, the lead Verus wallets developer, has helped Verus set new standards in cryptocurrency ease of use on both Mobile and Desktop. Michael's passion for and understanding of user experience shows in Verus Desktop's user acclaimed design and implementation, which he works to improve and advance with every release.",
-    twitterHandle: "michaeltoutF"
+    description: "Michael, the lead Verus wallets developer, has helped Verus set new standards in cryptocurrency ease of use on both Mobile and Desktop. Michael's passion for and understanding of user experience shows in Verus Desktop's user acclaimed design and implementation, which he works to improve and advance with every release."
   },
   {
     name: "Lex (Alex) English",
