@@ -23,6 +23,7 @@ export function VerificationForm() {
   const [verificationMessage, setVerificationMessage] = useState("")
   const [isCalculatingHash, setIsCalculatingHash] = useState(false)
   const [autoVerified, setAutoVerified] = useState(false)
+  const [manualSubmission, setManualSubmission] = useState(false)
   
   // Get search params and router for URL manipulation
   const searchParams = useSearchParams()
@@ -31,6 +32,12 @@ export function VerificationForm() {
 
   // Process URL parameters and trigger verification if complete
   const processUrlParams = async () => {
+    // Skip if this is right after a manual submission
+    if (manualSubmission) {
+      setManualSubmission(false)
+      return
+    }
+    
     // Extract and decode parameters
     const messageParam = searchParams.get('message')
     const hashParam = searchParams.get('hash')
@@ -269,6 +276,11 @@ export function VerificationForm() {
   const handleSubmit = async (e: React.FormEvent) => {
     if (e && e.preventDefault) e.preventDefault()
     
+    // Reset autoVerified flag for manual submissions
+    setAutoVerified(false)
+    // Set manual submission flag to prevent auto-verification on URL change
+    setManualSubmission(true)
+    
     // Form validation
     if (!verusId) {
       setVerificationResult("error")
@@ -349,6 +361,9 @@ export function VerificationForm() {
 
   // Handle file selection and calculate hash
   const handleFileChange = async (e: React.ChangeEvent<HTMLInputElement>) => {
+    // Reset auto-verified flag when user selects a file
+    setAutoVerified(false)
+    
     if (e.target.files && e.target.files.length > 0) {
       const selectedFile = e.target.files[0];
       setFileContent(selectedFile);
@@ -374,6 +389,8 @@ export function VerificationForm() {
     if (verificationResult !== "idle") {
       setVerificationResult("idle")
       setVerificationMessage("")
+      // Reset auto-verified flag when user modifies form
+      setAutoVerified(false)
     }
   }
 
@@ -384,6 +401,8 @@ export function VerificationForm() {
     if (verificationResult !== "idle") {
       setVerificationResult("idle")
       setVerificationMessage("")
+      // Reset auto-verified flag when user modifies form
+      setAutoVerified(false)
     }
   }
 
@@ -394,6 +413,8 @@ export function VerificationForm() {
     if (verificationResult !== "idle") {
       setVerificationResult("idle")
       setVerificationMessage("")
+      // Reset auto-verified flag when user modifies form
+      setAutoVerified(false)
     }
   }
 
@@ -402,8 +423,10 @@ export function VerificationForm() {
     
     // Reset verification state when changing content
     if (verificationResult !== "idle") {
-      setVerificationResult("idle")
+      setVerificationResult("idle") 
       setVerificationMessage("")
+      // Reset auto-verified flag when user modifies form
+      setAutoVerified(false)
     }
   }
 
@@ -468,7 +491,7 @@ export function VerificationForm() {
       
       <div className="relative">
         {/* Auto-verification notification */}
-        {autoVerified && verificationResult !== "idle" && (
+        {autoVerified && verificationResult !== "idle" && verificationResult !== "loading" && (
           <div className="px-4 py-2 mb-4 text-sm bg-blue-50 dark:bg-blue-900/20 text-blue-700 dark:text-blue-300 rounded-md border border-blue-200 dark:border-blue-800 flex items-center gap-2">
             <Info className="h-4 w-4" />
             <span>This verification was automatically performed using URL parameters.</span>
@@ -700,7 +723,7 @@ export function VerificationForm() {
                   Verifying...
                 </span>
               ) : (
-                "Verify Signature"
+                "Verify signature"
               )}
             </button>
           </div>
