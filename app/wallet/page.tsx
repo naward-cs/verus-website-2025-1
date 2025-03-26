@@ -1,6 +1,28 @@
 import { WalletDownloads } from "@/components/wallet/downloads"
 import { WalletComparison } from "@/components/wallet/comparison"
 import { Footer } from "@/components/footer"
+import { Metadata } from "next"
+
+export const metadata: Metadata = {
+  title: "The Verus Wallet | Verus",
+  description: "Your ultimate crypto wallet and self-sovereign identity solution.",
+  keywords: "crypto wallet, blockchain wallet, self-sovereign identity, Verus wallet, identity wallet, digital wallet",
+  openGraph: {
+    title: "The Verus Wallet | Verus",
+    description: "Your ultimate crypto wallet and self-sovereign identity solution.",
+    url: "https://verus.io/wallet",
+    siteName: "Verus",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "The Verus Wallet | Verus",
+    description: "Your ultimate crypto wallet and self-sovereign identity solution.",
+  },
+  alternates: {
+    canonical: "https://verus.io/wallet",
+  },
+}
 
 export default function WalletPage() {
   return (

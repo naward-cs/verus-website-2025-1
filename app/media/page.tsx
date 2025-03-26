@@ -1,6 +1,28 @@
 // Media Page - Provides press kit, media coverage, and brand assets
 import { Footer } from "@/components/footer"
 import { MediaTabs } from "@/components/media/tabs"
+import { Metadata } from "next"
+
+export const metadata: Metadata = {
+  title: "Media & Press Resources | Verus",
+  description: "Everything you need to tell the Verus story accurately–press kits, media mentions, and brand assets.",
+  keywords: "Verus press kit, blockchain media, cryptocurrency press, brand assets, media coverage, Verus media",
+  openGraph: {
+    title: "Media & Press Resources | Verus",
+    description: "Everything you need to tell the Verus story accurately–press kits, media mentions, and brand assets.",
+    url: "https://verus.io/media",
+    siteName: "Verus",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Media & Press Resources | Verus",
+    description: "Everything you need to tell the Verus story accurately–press kits, media mentions, and brand assets.",
+  },
+  alternates: {
+    canonical: "https://verus.io/media",
+  },
+}
 
 export default function MediaPage() {
   return (

@@ -2,6 +2,28 @@
 import { Footer } from "@/components/footer"
 import { CommunityLinks } from "@/components/community/links"
 import { ImageMarquee } from "@/components/community/image-marquee"
+import { Metadata } from "next"
+
+export const metadata: Metadata = {
+  title: "Community Hub | Verus",
+  description: "Join the worldwide Verus community across various platforms. Connect, collaborate, and contribute to the future of blockchain technology.",
+  keywords: "Verus community, blockchain community, discord, social media, collaboration, contribute",
+  openGraph: {
+    title: "Community Hub | Verus",
+    description: "Join the worldwide Verus community across various platforms. Connect, collaborate, and contribute to the future of blockchain technology.",
+    url: "https://verus.io/community",
+    siteName: "Verus",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Community Hub | Verus",
+    description: "Join the worldwide Verus community across various platforms. Connect, collaborate, and contribute to the future of blockchain technology.",
+  },
+  alternates: {
+    canonical: "https://verus.io/community",
+  },
+}
 
 export default function CommunityPage() {
   return (

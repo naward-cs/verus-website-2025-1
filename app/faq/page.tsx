@@ -1,5 +1,27 @@
 import { FaqContent } from "@/components/faq/content"
 import { Footer } from "@/components/footer"
+import { Metadata } from "next"
+
+export const metadata: Metadata = {
+  title: "Frequently Asked Questions | Verus",
+  description: "Find answers to common questions about Verus technology, protocol features, and how to get involved in the ecosystem.",
+  keywords: "Verus FAQ, blockchain FAQ, cryptocurrency questions, Verus help, Verus information",
+  openGraph: {
+    title: "Frequently Asked Questions | Verus",
+    description: "Find answers to common questions about Verus technology, protocol features, and how to get involved in the ecosystem.",
+    url: "https://verus.io/faq",
+    siteName: "Verus",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Frequently Asked Questions | Verus",
+    description: "Find answers to common questions about Verus technology, protocol features, and how to get involved in the ecosystem.",
+  },
+  alternates: {
+    canonical: "https://verus.io/faq",
+  },
+}
 
 export default function FaqPage() {
   return (

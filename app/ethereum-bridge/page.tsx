@@ -1,7 +1,28 @@
 import { Footer } from "@/components/footer"
 import { BridgeContent } from "@/components/bridge/content"
 import { ExternalLink } from "lucide-react"
-import { IoLogoDiscord } from "react-icons/io5"
+import { Metadata } from "next"
+
+export const metadata: Metadata = {
+  title: "Verus-Ethereum Bridge | Verus",
+  description: "A bridge to the Ethereum network—non-custodial, based on cryptographic proofs & verified by miners and stakers.",
+  keywords: "blockchain bridge, ethereum bridge, cross-chain, non-custodial, Verus bridge, crypto bridge, decentralized bridge",
+  openGraph: {
+    title: "Verus-Ethereum Bridge | Verus",
+    description: "A bridge to the Ethereum network—non-custodial, based on cryptographic proofs & verified by miners and stakers.",
+    url: "https://verus.io/ethereum-bridge",
+    siteName: "Verus",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Verus-Ethereum Bridge | Verus",
+    description: "A bridge to the Ethereum network—non-custodial, based on cryptographic proofs & verified by miners and stakers.",
+  },
+  alternates: {
+    canonical: "https://verus.io/ethereum-bridge",
+  },
+}
 
 export default function EthereumBridgePage() {
   return (

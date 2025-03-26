@@ -3,6 +3,28 @@ import { FeaturesGrid } from "@/components/verusid/features-grid"
 import { FutureSection } from "@/components/verusid/future-section"
 import { DigitalControlSection } from "@/components/verusid/digital-control-section"
 import { RealWorldSection } from "@/components/verusid/real-world-section"
+import { Metadata } from "next"
+
+export const metadata: Metadata = {
+  title: "Own Your Digital Future with VerusID | Verus",
+  description: "Your Identity, Your Control. Self-sovereign identity solutions built on the Verus Protocol.",
+  keywords: "self-sovereign identity, digital identity, blockchain identity, decentralized identity, VerusID, identity control",
+  openGraph: {
+    title: "Own Your Digital Future with VerusID | Verus",
+    description: "Your Identity, Your Control. Self-sovereign identity solutions built on the Verus Protocol.",
+    url: "https://verus.io/verusid",
+    siteName: "Verus",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Own Your Digital Future with VerusID | Verus",
+    description: "Your Identity, Your Control. Self-sovereign identity solutions built on the Verus Protocol.",
+  },
+  alternates: {
+    canonical: "https://verus.io/verusid",
+  },
+}
 
 export default function VerusIDPage() {
   return (

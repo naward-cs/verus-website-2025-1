@@ -1,5 +1,27 @@
 import { Footer } from "@/components/footer"
 import { ComparisonTable } from "@/components/vs-evm/comparison-table"
+import { Metadata } from "next"
+
+export const metadata: Metadata = {
+  title: "VM-based Blockchains vs Verus | Verus",
+  description: "Compare the architectural approaches of traditional VM blockchains with Verus Protocol's built-in functionality.",
+  keywords: "blockchain comparison, EVM vs Verus, VM blockchain, smart contract alternatives, blockchain architecture, Verus advantage",
+  openGraph: {
+    title: "VM-based Blockchains vs Verus | Verus",
+    description: "Compare the architectural approaches of traditional VM blockchains with Verus Protocol's built-in functionality.",
+    url: "https://verus.io/vs-evm",
+    siteName: "Verus",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "VM-based Blockchains vs Verus | Verus",
+    description: "Compare the architectural approaches of traditional VM blockchains with Verus Protocol's built-in functionality.",
+  },
+  alternates: {
+    canonical: "https://verus.io/vs-evm",
+  },
+}
 
 // Updated VS EVM Page with dark mode support and improved styling
 export default function VsEvmPage() {

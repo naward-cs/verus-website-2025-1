@@ -1,5 +1,27 @@
 import { Footer } from "@/components/footer"
 import { ContributionWays } from "@/components/contribute/ways"
+import { Metadata } from "next"
+
+export const metadata: Metadata = {
+  title: "Contribute to Verus | Verus",
+  description: "Help shape the future of blockchain technology by contributing to Verus in various ways—from code and marketing to community support and financial backing.",
+  keywords: "contribute blockchain, Verus contribution, open source contribution, blockchain development, community support",
+  openGraph: {
+    title: "Contribute to Verus | Verus",
+    description: "Help shape the future of blockchain technology by contributing to Verus in various ways—from code and marketing to community support and financial backing.",
+    url: "https://verus.io/contribute",
+    siteName: "Verus",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Contribute to Verus | Verus",
+    description: "Help shape the future of blockchain technology by contributing to Verus in various ways—from code and marketing to community support and financial backing.",
+  },
+  alternates: {
+    canonical: "https://verus.io/contribute",
+  },
+}
 
 // Contribution Page showing ways to get involved with Verus
 export default function ContributePage() {
@@ -25,7 +47,7 @@ export default function ContributePage() {
                 Contribute to the Verus ecosystem.
               </h1>
               <p className="text-[16px] md:text-[20px] text-gray-700 dark:text-gray-300 mt-4 max-w-[800px]">
-                Help shape the future of blockchain technology by contributing to Verus in various ways—from code and design to community support and financial backing.
+                Help shape the future of blockchain technology by contributing to Verus in various ways—from code and marketing to community support and financial backing.
               </p>
             </div>
             

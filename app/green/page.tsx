@@ -2,6 +2,28 @@ import { Footer } from "@/components/footer"
 import { GreenFeaturesGrid } from "@/components/green/features-grid"
 import { GreenContent } from "@/components/green/content"
 import { IoLogoDiscord } from "react-icons/io5"
+import { Metadata } from "next"
+
+export const metadata: Metadata = {
+  title: "Environmentally Conscious Protocol | Verus",
+  description: "Combining the security of proof-of-work with the energy efficiency of proof-of-stake—sustainable by design.",
+  keywords: "sustainable blockchain, green cryptocurrency, energy efficient blockchain, eco-friendly crypto, environmental blockchain, Verus green",
+  openGraph: {
+    title: "Environmentally Conscious Protocol | Verus",
+    description: "Combining the security of proof-of-work with the energy efficiency of proof-of-stake—sustainable by design.",
+    url: "https://verus.io/green",
+    siteName: "Verus",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Environmentally Conscious Protocol | Verus",
+    description: "Combining the security of proof-of-work with the energy efficiency of proof-of-stake—sustainable by design.",
+  },
+  alternates: {
+    canonical: "https://verus.io/green",
+  },
+}
 
 export default function GreenPage() {
   return (

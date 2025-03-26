@@ -1,5 +1,27 @@
 import { GetVrscSections } from "@/components/get-vrsc/sections"
 import { Footer } from "@/components/footer"
+import { Metadata } from "next"
+
+export const metadata: Metadata = {
+  title: "Get VRSC | Verus",
+  description: "Multiple ways to acquire VRSC: through Verus DeFi, exchanges, mining, or staking.",
+  keywords: "get VRSC, buy VRSC, acquire cryptocurrency, Verus coin, crypto exchanges, mining VRSC, staking VRSC",
+  openGraph: {
+    title: "Get VRSC | Verus",
+    description: "Multiple ways to acquire VRSC: through Verus DeFi, exchanges, mining, or staking.",
+    url: "https://verus.io/get-vrsc",
+    siteName: "Verus",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Get VRSC | Verus",
+    description: "Multiple ways to acquire VRSC: through Verus DeFi, exchanges, mining, or staking.",
+  },
+  alternates: {
+    canonical: "https://verus.io/get-vrsc",
+  },
+}
 
 export default function GetVrscPage() {
   return (

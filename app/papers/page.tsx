@@ -1,5 +1,27 @@
 import { PapersContent } from "@/components/papers/content"
 import { Footer } from "@/components/footer"
+import { Metadata } from "next"
+
+export const metadata: Metadata = {
+  title: "Verus Whitepapers & Technical Documents | Verus",
+  description: "Learn about the technical foundations and innovations behind the Verus Protocol.",
+  keywords: "blockchain whitepaper, Verus technical documents, cryptocurrency research, blockchain technology papers, Verus documentation",
+  openGraph: {
+    title: "Verus Whitepapers & Technical Documents | Verus",
+    description: "Learn about the technical foundations and innovations behind the Verus Protocol.",
+    url: "https://verus.io/papers",
+    siteName: "Verus",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Verus Whitepapers & Technical Documents | Verus",
+    description: "Learn about the technical foundations and innovations behind the Verus Protocol.",
+  },
+  alternates: {
+    canonical: "https://verus.io/papers",
+  },
+}
 
 export default function PapersPage() {
   return (

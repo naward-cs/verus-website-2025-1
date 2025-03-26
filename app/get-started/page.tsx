@@ -1,5 +1,27 @@
 import { GetStartedSections } from "@/components/get-started/sections"
 import { Footer } from "@/components/footer"
+import { Metadata } from "next"
+
+export const metadata: Metadata = {
+  title: "Getting Started with Verus | Verus",
+  description: "Your guide to joining the Verus ecosystem, from setting up your first wallet to participating in the network.",
+  keywords: "get started blockchain, Verus wallet, cryptocurrency tutorial, Verus setup, blockchain beginners",
+  openGraph: {
+    title: "Getting Started with Verus | Verus",
+    description: "Your guide to joining the Verus ecosystem, from setting up your first wallet to participating in the network.",
+    url: "https://verus.io/get-started",
+    siteName: "Verus",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Getting Started with Verus | Verus",
+    description: "Your guide to joining the Verus ecosystem, from setting up your first wallet to participating in the network.",
+  },
+  alternates: {
+    canonical: "https://verus.io/get-started",
+  },
+}
 
 export default function GetStartedPage() {
   return (

@@ -1,6 +1,28 @@
 // People Page - Meet the Verus team and community
 import { Footer } from "@/components/footer"
 import { PeopleSections } from "@/components/people/sections"
+import { Metadata } from "next"
+
+export const metadata: Metadata = {
+  title: "Meet the People Behind Verus | Verus",
+  description: "Meet the developers, contributors, and community members building the Verus ecosystem.",
+  keywords: "Verus contributors, blockchain developers, cryptocurrency community, blockchain contributors, open source contributors",
+  openGraph: {
+    title: "Meet the People Behind Verus | Verus",
+    description: "Meet the developers, contributors, and community members building the Verus ecosystem.",
+    url: "https://verus.io/people",
+    siteName: "Verus",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Meet the People Behind Verus | Verus",
+    description: "Meet the developers, contributors, and community members building the Verus ecosystem.",
+  },
+  alternates: {
+    canonical: "https://verus.io/people",
+  },
+}
 
 export default function PeoplePage() {
   return (

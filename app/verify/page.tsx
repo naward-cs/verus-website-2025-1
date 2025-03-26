@@ -1,5 +1,27 @@
 import { Footer } from "@/components/footer"
 import { VerificationForm } from "@/components/verify/verification-form"
+import { Metadata } from "next"
+
+export const metadata: Metadata = {
+  title: "Verify Signatures | Verus",
+  description: "Verify signatures for files, messages, and hashes. Confirm the authenticity of digital signatures using VerusIDs to ensure data integrity and origin verification.",
+  keywords: "verify signature, digital signature, blockchain verification, message verification, file verification, hash verification, cryptographic proof, VerusID signature",
+  openGraph: {
+    title: "Verify Signatures | Verus",
+    description: "Verify signatures for files, messages, and hashes. Confirm the authenticity of digital signatures using VerusIDs to ensure data integrity and origin verification.",
+    url: "https://verus.io/verify",
+    siteName: "Verus",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Verify Signatures | Verus",
+    description: "Verify signatures for files, messages, and hashes. Confirm the authenticity of digital signatures using VerusIDs to ensure data integrity and origin verification.",
+  },
+  alternates: {
+    canonical: "https://verus.io/verify",
+  },
+}
 
 // Verify Signatures Page
 export default function VerifyPage() {

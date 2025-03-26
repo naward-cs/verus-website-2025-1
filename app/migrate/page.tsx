@@ -1,5 +1,27 @@
 import { MigrateContent } from "@/components/migrate/content"
 import { Footer } from "@/components/footer"
+import { Metadata } from "next"
+
+export const metadata: Metadata = {
+  title: "Migrate to Verus | Verus",
+  description: "Bring your token and community to a better, more secure ecosystem while maintaining full Ethereum compatibility.",
+  keywords: "blockchain migration, token migration, crypto migration, ethereum compatibility, secure token migration, Verus migration",
+  openGraph: {
+    title: "Migrate to Verus | Verus",
+    description: "Bring your token and community to a better, more secure ecosystem while maintaining full Ethereum compatibility.",
+    url: "https://verus.io/migrate",
+    siteName: "Verus",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Migrate to Verus | Verus",
+    description: "Bring your token and community to a better, more secure ecosystem while maintaining full Ethereum compatibility.",
+  },
+  alternates: {
+    canonical: "https://verus.io/migrate",
+  },
+}
 
 export default function MigratePage() {
   return (

@@ -3,6 +3,28 @@ import { Footer } from "@/components/footer"
 import { ProjectList } from "@/components/projects/project-list"
 import Link from "next/link"
 import { IoLogoDiscord } from "react-icons/io5"
+import { Metadata } from "next"
+
+export const metadata: Metadata = {
+  title: "Projects Built with Verus | Verus",
+  description: "Explore applications, wallets, dashboards, and other projects leveraging the Verus Protocol and its ecosystem.",
+  keywords: "Verus projects, blockchain applications, cryptocurrency projects, Web3 applications, dApps, blockchain ecosystem",
+  openGraph: {
+    title: "Projects Built with Verus | Verus",
+    description: "Explore applications, wallets, dashboards, and other projects leveraging the Verus Protocol and its ecosystem.",
+    url: "https://verus.io/projects",
+    siteName: "Verus",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Projects Built with Verus | Verus",
+    description: "Explore applications, wallets, dashboards, and other projects leveraging the Verus Protocol and its ecosystem.",
+  },
+  alternates: {
+    canonical: "https://verus.io/projects",
+  },
+}
 
 export default function ProjectsPage() {
   return (

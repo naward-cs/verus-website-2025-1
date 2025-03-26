@@ -5,6 +5,28 @@ import { ConsensusSection } from "@/components/intro/consensus-section"
 import { PrivacySection } from "@/components/intro/privacy-section"
 import { SmartTransactionsSection } from "@/components/intro/smart-transactions-section"
 import { Footer } from "@/components/footer"
+import { Metadata } from "next"
+
+export const metadata: Metadata = {
+  title: "The Protocol for Everyone | Verus",
+  description: "Verus is uniquely positioned to empower individuals, communities and developers around the world, sustainably.",
+  keywords: "blockchain protocol, Web3 technology, cryptocurrency, sustainable blockchain, scalable protocol, Verus introduction",
+  openGraph: {
+    title: "The Protocol for Everyone | Verus",
+    description: "Verus is uniquely positioned to empower individuals, communities and developers around the world, sustainably.",
+    url: "https://verus.io/intro",
+    siteName: "Verus",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "The Protocol for Everyone | Verus",
+    description: "Verus is uniquely positioned to empower individuals, communities and developers around the world, sustainably.",
+  },
+  alternates: {
+    canonical: "https://verus.io/intro",
+  },
+}
 
 export default function IntroPage() {
   return (
