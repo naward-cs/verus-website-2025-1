@@ -5,7 +5,7 @@ import { geomanist } from './fonts'
 import { ThemeProvider } from '@/context/ThemeContext'
 
 export const metadata: Metadata = {
-  title: 'Verus - The Internet of Value',
+  title: 'The Internet of Value | Verus',
   description: 'A fundamentally different and better protocol to build Web3, and to empower individuals & communities.',
 }
 

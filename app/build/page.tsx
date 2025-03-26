@@ -1,9 +1,32 @@
-
 import { Footer } from "@/components/footer"
 import { IoLogoDiscord } from "react-icons/io5"
 import { FeaturesGrid } from "@/components/build/features-grid"
 import { SolutionsGrid } from "@/components/build/solutions-grid"
 import { VerusIDLoginSection } from "@/components/build/verusid-login-section"
+import { Metadata } from "next"
+
+// Define metadata for SEO
+export const metadata: Metadata = {
+  title: "Build dApps Without Limits | Verus",
+  description: "Skip the blockchain complexity and focus on what matters. The Verus API does the heavy lifting while you create decentralized applications at any scale.",
+  openGraph: {
+    title: "Build dApps Without Limits | Verus",
+    description: "Skip the blockchain complexity and focus on what matters. The Verus API does the heavy lifting while you create decentralized applications at any scale.",
+    url: "https://verus.io/build",
+    siteName: "Verus",
+    type: "website",
+    // Note: opengraph-image.png is automatically used from the build directory
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Build dApps Without Limits | Verus",
+    description: "Skip the blockchain complexity and focus on what matters. The Verus API does the heavy lifting while you create decentralized applications at any scale.",
+    // Note: twitter-image.png is automatically used from the build directory
+  },
+  alternates: {
+    canonical: "https://verus.io/build",
+  },
+}
 
 export default function BuildPage() {
   return (
