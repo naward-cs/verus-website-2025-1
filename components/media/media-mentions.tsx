@@ -164,7 +164,7 @@ export function MediaMentions() {
       <div className="mt-8 text-center">
         <p className="text-[14px] text-gray-600 dark:text-gray-300">
           For press inquiries, please contact our media team at{" "}
-          <a href="mailto:press@verus.io" className="text-verus-blue dark:text-blue-400 hover:underline">
+          <a href="mailto:press@veruscoin.io" className="text-verus-blue dark:text-blue-400 hover:underline">
             press@verus.io
           </a>
         </p>
