@@ -48,9 +48,7 @@ export function ProtocolSection() {
             
             {/* Secondary Button - Light/Dark Variants */}
             <a
-              href="https://docs.verus.io"
-              target="_blank"
-              rel="noopener noreferrer"
+              href="/papers"
               className="group h-[40px] md:h-[50px] px-6 bg-white/90 dark:bg-blue-950/40 text-gray-800 dark:text-blue-300 hover:bg-white dark:hover:text-blue-200 backdrop-blur-sm rounded-lg text-[14px] md:text-[16px] font-medium flex items-center justify-center gap-2 transition-all duration-300 border border-gray-300 dark:border-blue-800/40 hover:border-gray-400 dark:hover:border-blue-700/60 hover:shadow-lg hover:-translate-y-[1px]"
             >
               <IoMdDownload className="h-5 w-5 group-hover:translate-y-[1px] transition-transform duration-300" />

@@ -265,7 +265,7 @@ export function CompareSection() {
                         <span className="text-blue-700 dark:text-blue-300 font-semibold text-sm">3</span>
                       </div>
                       <div className="space-y-1">
-                        <h4 className="text-[15px] md:text-[17px] font-medium text-blue-800 dark:text-blue-200">Same Security as Bitcoin</h4>
+                        <h4 className="text-[15px] md:text-[17px] font-medium text-blue-800 dark:text-blue-200">Same Security as VRSC</h4>
                         <p className="text-[14px] md:text-[15px] text-blue-700/80 dark:text-blue-200/70 leading-relaxed">
                           Verus currencies inherit the same cryptographic security as the underlying blockchain, making them inherently secure.
                         </p>
