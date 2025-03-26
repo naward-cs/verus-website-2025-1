@@ -2,6 +2,28 @@ import { Footer } from "@/components/footer"
 import { FeaturesGrid } from "@/components/marketplace/features-grid"
 import { MarketplaceContent } from "@/components/marketplace/content"
 import { IoLogoDiscord } from "react-icons/io5"
+import { Metadata } from "next"
+
+export const metadata: Metadata = {
+  title: "P2P Marketplace Protocol | Verus",
+  description: "Build decentralized trading applications and services without intermediaries—secured by consensus.",
+  keywords: "P2P marketplace, decentralized trading, blockchain marketplace, peer-to-peer, dApp platform, consensus-secured, Verus",
+  openGraph: {
+    title: "P2P Marketplace Protocol | Verus",
+    description: "Build decentralized trading applications and services without intermediaries—secured by consensus.",
+    url: "https://verus.io/build/marketplace",
+    siteName: "Verus",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "P2P Marketplace Protocol | Verus",
+    description: "Build decentralized trading applications and services without intermediaries—secured by consensus.",
+  },
+  alternates: {
+    canonical: "https://verus.io/build/marketplace",
+  },
+}
 
 export default function MarketplacePage() {
   return (

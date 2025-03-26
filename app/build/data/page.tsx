@@ -2,6 +2,28 @@ import { Footer } from "@/components/footer"
 import { FeaturesGrid } from "@/components/data/features-grid"
 import { DataContent } from "@/components/data/content"
 import { IoLogoDiscord } from "react-icons/io5"
+import { Metadata } from "next"
+
+export const metadata: Metadata = {
+  title: "Store & Retrieve Data On-Chain | Verus",
+  description: "A complete on-chain database system with encryption, indexing, and flexible storage options—secured by consensus.",
+  keywords: "blockchain data storage, on-chain database, encrypted data, blockchain indexing, data retrieval, Verus",
+  openGraph: {
+    title: "Store & Retrieve Data On-Chain | Verus",
+    description: "A complete on-chain database system with encryption, indexing, and flexible storage options—secured by consensus.",
+    url: "https://verus.io/build/data",
+    siteName: "Verus",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Store & Retrieve Data On-Chain | Verus",
+    description: "A complete on-chain database system with encryption, indexing, and flexible storage options—secured by consensus.",
+  },
+  alternates: {
+    canonical: "https://verus.io/build/data",
+  },
+}
 
 export default function DataPage() {
   return (

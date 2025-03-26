@@ -2,6 +2,28 @@ import { Footer } from "@/components/footer"
 import { FeaturesGrid } from "@/components/pbaas-chains/features-grid"
 import { PBaaSContent } from "@/components/pbaas-chains/content"
 import { IoLogoDiscord } from "react-icons/io5"
+import { Metadata } from "next"
+
+export const metadata: Metadata = {
+  title: "Public Blockchains as a Service | Verus",
+  description: "Create powerful, interoperable blockchains with all Verus features—secured by worldwide miners and stakers.",
+  keywords: "PBaaS, blockchain as a service, interoperable blockchains, custom blockchain, chain creation, Verus, multichain",
+  openGraph: {
+    title: "Public Blockchains as a Service | Verus",
+    description: "Create powerful, interoperable blockchains with all Verus features—secured by worldwide miners and stakers.",
+    url: "https://verus.io/build/pbaas-chains",
+    siteName: "Verus",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Public Blockchains as a Service | Verus",
+    description: "Create powerful, interoperable blockchains with all Verus features—secured by worldwide miners and stakers.",
+  },
+  alternates: {
+    canonical: "https://verus.io/build/pbaas-chains",
+  },
+}
 
 export default function PBaaSChainPage() {
   return (

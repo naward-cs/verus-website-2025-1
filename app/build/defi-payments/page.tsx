@@ -2,6 +2,28 @@ import { Footer } from "@/components/footer"
 import { FeaturesGrid } from "@/components/defi-payments/features-grid"
 import { DeFiContent } from "@/components/defi-payments/content"
 import { IoLogoDiscord } from "react-icons/io5"
+import { Metadata } from "next"
+
+export const metadata: Metadata = {
+  title: "DeFi & Payments | Verus",
+  description: "Fair DeFi without MEV exploitation. Low fees, secure payments, and protocol-level privacy—no smart contracts needed.",
+  keywords: "DeFi, decentralized finance, blockchain payments, MEV-free, MEV-resistant, low fees, secure transactions, privacy, Verus",
+  openGraph: {
+    title: "DeFi & Payments | Verus",
+    description: "Fair DeFi without MEV exploitation. Low fees, secure payments, and protocol-level privacy—no smart contracts needed.",
+    url: "https://verus.io/build/defi-payments",
+    siteName: "Verus",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "DeFi & Payments | Verus",
+    description: "Fair DeFi without MEV exploitation. Low fees, secure payments, and protocol-level privacy—no smart contracts needed.",
+  },
+  alternates: {
+    canonical: "https://verus.io/build/defi-payments",
+  },
+}
 
 export default function DeFiPaymentsPage() {
   return (
