@@ -168,7 +168,7 @@ export function MobileNav() {
             <div className="space-y-2">
               <MenuLink href="/build" className="block text-[15px] py-2 pt-4 text-gray-700 dark:text-gray-300 hover:text-verus-blue dark:hover:text-blue-400 transition-colors">Overview</MenuLink>
               <MenuLink href="/build/verusid/" className="block text-[15px] py-2 text-gray-700 dark:text-gray-300 hover:text-verus-blue dark:hover:text-blue-400 transition-colors">VerusID</MenuLink>
-              <MenuLink href="/#" className="block text-[15px] py-2 text-gray-700 dark:text-gray-300 hover:text-verus-blue dark:hover:text-blue-400 transition-colors">Get Started</MenuLink>
+              <MenuLink href="/build/start" className="block text-[15px] py-2 text-gray-700 dark:text-gray-300 hover:text-verus-blue dark:hover:text-blue-400 transition-colors">Get Started</MenuLink>
               <MenuLink href="/migrate/" className="block text-[15px] py-2 text-gray-700 dark:text-gray-300 hover:text-verus-blue dark:hover:text-blue-400 transition-colors">Migrate Your Community</MenuLink>
               <MenuLink href="/vs-evm/" className="block text-[15px] py-2 text-gray-700 dark:text-gray-300 hover:text-verus-blue dark:hover:text-blue-400 transition-colors">Verus vs EVMs</MenuLink>
             </div>
@@ -188,7 +188,7 @@ export function MobileNav() {
                 Documentation
                 <ExternalLink className="h-4 w-4 opacity-50 group-hover:opacity-100" />
               </MenuLink>
-              <MenuLink href="#" className="block text-[15px] py-2 text-gray-700 dark:text-gray-300 hover:text-verus-blue dark:hover:text-blue-400 transition-colors flex items-center gap-2">
+              <MenuLink href="https://monkins1010.github.io" className="block text-[15px] py-2 text-gray-700 dark:text-gray-300 hover:text-verus-blue dark:hover:text-blue-400 transition-colors flex items-center gap-2">
                 Integration Documentation
                 <ExternalLink className="h-4 w-4 opacity-50 group-hover:opacity-100" />
               </MenuLink>

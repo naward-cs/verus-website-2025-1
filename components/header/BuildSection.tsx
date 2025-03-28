@@ -71,7 +71,7 @@ export function BuildSection() {
             description="The root of everything"
           />
           <NavLink 
-            href="/#" 
+            href="/build/start" 
             icon={<LuRocket className="h-5 w-5 text-gray-500 group-hover:text-verus-blue transition-colors" />}
             title="Get Started"
             description="Developer information to get started"
@@ -131,7 +131,7 @@ export function BuildSection() {
       <div>
         <h3 className="mb-4 text-xs font-medium text-gray-500 dark:text-gray-400 uppercase border-b border-gray-200 dark:border-gray-700 pb-2">Documentation</h3>
         <div className="space-y-2">
-          <Link href="https://docs.verus.io" className="group flex items-start p-2 rounded-lg transition-colors [&>div>div]:hover:underline">
+          <Link href="https://docs.verus.io" target="_blank" rel="noopener noreferrer" className="group flex items-start p-2 rounded-lg transition-colors [&>div>div]:hover:underline">
             <div>
               <div className="text-[15px] font-[450] text-gray-800 dark:text-white mb-1 flex items-center gap-2">
                 Documentation
@@ -139,7 +139,7 @@ export function BuildSection() {
               </div>
             </div>
           </Link>
-          <Link href="#" className="group flex items-start p-2 rounded-lg transition-colors [&>div>div]:hover:underline">
+          <Link href="https://monkins1010.github.io" target="_blank" rel="noopener noreferrer" className="group flex items-start p-2 rounded-lg transition-colors [&>div>div]:hover:underline">
             <div>
               <div className="text-[15px] font-[450] text-gray-800 dark:text-white mb-1 flex items-center gap-2">
                 Integration Documentation
@@ -147,7 +147,7 @@ export function BuildSection() {
               </div>
             </div>
           </Link>
-          <Link href="https://wiki.verus.io/#!faq-cli/clifaq-02_verus_commands.md" className="group flex items-start p-2 rounded-lg transition-colors [&>div>div]:hover:underline">
+          <Link href="https://wiki.verus.io/#!faq-cli/clifaq-02_verus_commands.md" target="_blank" rel="noopener noreferrer" className="group flex items-start p-2 rounded-lg transition-colors [&>div>div]:hover:underline">
             <div>
               <div className="text-[15px] font-[450] text-gray-800 dark:text-white mb-1 flex items-center gap-2">
                 All API Commands

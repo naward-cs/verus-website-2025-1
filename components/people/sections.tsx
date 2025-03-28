@@ -19,7 +19,7 @@ const teamMembers: ProfileCardProps[] = [
   {
     name: "Lex (Alex) English",
     title: "Developer / program manager",
-    description: "Lex's background includes software development, system administration, and technical editing. He became a cryptocurrency user in 2012 and has followed the space since. Alex develops scripts to support community operations and works to coordinate effort within the Verus project and community.",
+    description: "Lex's background includes software development, system administration, and technical editing. He became a cryptocurrency user in 2012 and has followed the space since. Lex develops scripts to support community operations and works to coordinate effort within the Verus project and community.",
     twitterHandle: "solidfreez"
   },
   {
@@ -32,7 +32,6 @@ const teamMembers: ProfileCardProps[] = [
     name: "David Dawes",
     title: "Developer",
     description: "Decades of experience delivering successful products including real time financial engines moving billions of dollars in international remittances. Dave taught Mike assembly language over 30 years ago and has ensured that Verus Desktop can be used on all platforms.",
-    imageUrl: "/img/people/david.jpg",
     twitterHandle: "DavidLDawes"
   },
   {
