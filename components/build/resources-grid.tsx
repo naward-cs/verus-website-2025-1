@@ -59,7 +59,7 @@ function detectOS() {
 const developerResources: ResourceCardProps[] = [
   {
     title: "Registering VerusID",
-    description: "Learn how to create and manage your decentralized identity on Verus.",
+    description: "Learn how to create decentralized identities on Verus.",
     link: "https://monkins1010.github.io/verusid/"
   },
   {
@@ -69,7 +69,7 @@ const developerResources: ResourceCardProps[] = [
   },
   {
     title: "Storing Data in VerusID",
-    description: "Explore how to store and manage data within VerusID.",
+    description: "Explore how to store and manage data on a VerusID.",
     link: "https://monkins1010.github.io/verusstorage/getting-started/"
   },
   {
