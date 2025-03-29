@@ -31,8 +31,7 @@ const teamMembers: ProfileCardProps[] = [
   {
     name: "David Dawes",
     title: "Developer",
-    description: "Decades of experience delivering successful products including real time financial engines moving billions of dollars in international remittances. Dave taught Mike assembly language over 30 years ago and has ensured that Verus Desktop can be used on all platforms.",
-    twitterHandle: "DavidLDawes"
+    description: "Decades of experience delivering successful products including real time financial engines moving billions of dollars in international remittances. Dave taught Mike assembly language over 30 years ago and has ensured that Verus Desktop can be used on all platforms."
   },
   {
     name: "jl777",

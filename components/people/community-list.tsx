@@ -1,6 +1,4 @@
 // Component to display community members in a grid
-"use client"
-
 type CommunityMember = {
   name: string
 }

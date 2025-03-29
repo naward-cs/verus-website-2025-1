@@ -44,7 +44,7 @@ export function GreenContent() {
               </div>
               
               <p className="text-[16px] md:text-[18px] text-gray-600 dark:text-gray-300 leading-relaxed mb-6 max-w-4xl">
-                As the world grows increasingly concerned about the environmental impact of blockchain technology, Verus stands apart with its innovative approach that drastically reduces energy consumption while maintaining the highest standards of security and decentralization.
+                As the world grows increasingly concerned about the environmental impact of blockchain technology, Verus stands apart with its approach that drastically reduces energy consumption while maintaining the highest standards of security and decentralization.
               </p>
             </div>
           </div>
@@ -54,14 +54,14 @@ export function GreenContent() {
       {/* Why Proof of Work Is Essential Section */}
       <section className="mb-24 relative">
         <h2 className="text-[28px] md:text-[45px] text-gray-800 dark:text-white tracking-tight font-medium text-center leading-[1.2] mb-4 md:mb-10">
-          <span className="text-gray-600 dark:text-white">Why Proof of Work Is </span>{""}
+          <span className="text-gray-600 dark:text-white">Why proof-of-work is </span>{""}
           <span className="bg-gradient-to-r from-green-600 to-green-500 dark:to-green-400 bg-clip-text text-transparent">
             Essential
           </span>
         </h2>
         
         <p className="text-center text-[16px] md:text-[18px] text-gray-600 dark:text-gray-300 max-w-3xl mx-auto mb-16">
-          While Verus is committed to environmental sustainability, we also recognize the critical importance of maintaining a proof-of-work component in our consensus mechanism.
+          While Verus is committed to environmental sustainability, the protocol also recognizes the critical importance of maintaining a proof-of-work component in the consensus mechanism.
         </p>
         
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-10 mt-12">
@@ -81,7 +81,7 @@ export function GreenContent() {
               </div>
               
               <p className="text-[15px] md:text-[16px] text-gray-600 dark:text-gray-300 leading-relaxed">
-                Proof of Work (PoW) provides a level of security that is difficult to match with other consensus mechanisms. By requiring computational work to validate transactions, PoW ensures that no single entity can control the network without investing substantial resources, making attacks prohibitively expensive.
+                Proof-of-work (PoW) provides a level of security that is difficult to match with other consensus mechanisms. By requiring computational work to validate transactions, PoW ensures that no single entity can control the network without investing substantial resources, making attacks prohibitively expensive.
               </p>
             </div>
           </div>

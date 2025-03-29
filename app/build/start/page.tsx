@@ -1,7 +1,6 @@
 // Build start page showcasing developer resources and documentation
 import { ResourcesGrid } from "@/components/build/resources-grid"
 import { TerminalExample } from "@/components/build/terminal-example"
-import { TestnetNotice } from "@/components/build/testnet-notice"
 import { Footer } from "@/components/footer"
 import { Metadata } from "next"
 import { Info } from "lucide-react"
@@ -62,7 +61,6 @@ export default function BuildStartPage() {
             </div>
 
             <ResourcesGrid />
-            <TestnetNotice />
             <TerminalExample />
           </div>
         </div>
