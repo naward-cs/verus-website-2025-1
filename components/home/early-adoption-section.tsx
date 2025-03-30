@@ -34,7 +34,7 @@ export function EarlyAdoptionSection() {
             <div className="absolute top-0 right-0 w-[250px] h-[250px] bg-blue-500/5 dark:bg-blue-500/10 rounded-full blur-[60px] transform translate-x-1/3 -translate-y-1/3 z-0"></div>
             <div className="relative z-10">
               <span className="text-[80px] md:text-[100px] lg:text-[120px] bg-gradient-to-br from-blue-400 to-blue-600 dark:from-blue-300 dark:to-blue-500 bg-clip-text text-transparent tracking-tight leading-none">
-                $80M+
+                $70M+
               </span>
               <div className="mt-3">
                 <span className="text-[15px] md:text-[17px] text-gray-600 dark:text-gray-400 uppercase tracking-wider font-medium">
