@@ -53,7 +53,7 @@ export function LearnSection() {
         <h3 className="mb-4 text-xs font-medium text-gray-500 dark:text-gray-400 uppercase border-b border-gray-200 dark:border-gray-700 pb-2">Updates</h3>
         <div className="space-y-4">
           <NavLink 
-            href="/#" 
+            href="/statistics" 
             icon={<LuChartLine className="h-5 w-5 text-gray-500 group-hover:text-verus-blue transition-colors" />}
             title="Network Statistics"
             description="Live network metrics and data"

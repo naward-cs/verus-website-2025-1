@@ -262,16 +262,27 @@ export async function ProtocolStatistics() {
       
       {/* Data Attribution */}
       <div className="text-center mb-8">
-        <p className="text-[14px] text-gray-500 dark:text-gray-400 flex items-center justify-center gap-1">
+        <p className="text-[14px] text-gray-500 dark:text-gray-400 flex items-center justify-center gap-1 flex-wrap">
           Data provided by 
           <a 
             href="https://cryptodashboard.faldt.net/"
             target="_blank"
             rel="noopener noreferrer"
-            className="text-blue-600 dark:text-blue-400 hover:underline flex items-center gap-1"
+            className="text-blue-600 dark:text-blue-400 hover:underline flex items-center gap-1 mx-1"
           >
             cryptodashboard.faldt.net <ExternalLink className="h-3 w-3" />
           </a>
+          <span className="mx-1">•</span>
+          <a 
+            href="https://veruswisdom.com/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-blue-600 dark:text-blue-400 hover:underline flex items-center gap-1 mx-1"
+          >
+            veruswisdom.com <ExternalLink className="h-3 w-3" />
+          </a>
+          <span className="mx-1">•</span>
+          <span className="mx-1">Verus API</span>
         </p>
       </div>
     </div>
