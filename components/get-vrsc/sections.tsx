@@ -1,5 +1,6 @@
 import Link from "next/link"
 import { ArrowRight, ExternalLink, Wallet, ArrowLeftRight, Coins, Play, Shield, Download } from "lucide-react"
+import { parse } from 'node-html-parser';
 
 /*
 * Updated:
@@ -9,9 +10,84 @@ import { ArrowRight, ExternalLink, Wallet, ArrowLeftRight, Coins, Play, Shield, 
 * - Section 3: Getting VRSC through mining and staking with links to relevant pages
 * - Added dark mode support and modern SaaS-style design
 * - Used placeholder areas for exchange logos for easy replacement
+* - Added dynamic protocol data fetched from cryptodashboard.faldt.net
 */
 
-export function GetVrscSections() {
+// Fetch the volume and liquidity pool data directly
+async function fetchProtocolData() {
+  try {
+    // When running in a server component, we can fetch directly
+    const response = await fetch('https://cryptodashboard.faldt.net/', {
+      // Ensure we're not using browser cache
+      cache: 'no-store',
+      // Cache for up to 15 minutes with Next.js
+      next: { revalidate: 15 * 60 }
+    });
+    
+    if (!response.ok) {
+      throw new Error(`Failed to fetch data: ${response.status}`);
+    }
+    
+    const html = await response.text();
+    const root = parse(html);
+
+    // Get 24h volume data
+    let volumeElement = root.querySelector('#verus-basket-volume-24h > div > div:nth-child(15) > div:nth-child(2)');
+    
+    if (!volumeElement) {
+      // Alternative approach for volume
+      const basketSection = root.querySelector('#verus-basket-volume-24h');
+      
+      if (basketSection) {
+        const basketDivs = basketSection.querySelectorAll('div');
+        
+        for (let i = 0; i < basketDivs.length; i++) {
+          const text = basketDivs[i].text.trim();
+          if (text.startsWith('$') && /^\$[\d,]+(\.\d+)?$/.test(text)) {
+            volumeElement = basketDivs[i];
+            break;
+          }
+        }
+      }
+    }
+
+    // Get liquidity pool data
+    let liquidityElement = root.querySelector('#prices-card-verus > div > div:nth-child(17) > div:nth-child(2)');
+    
+    if (!liquidityElement) {
+      // Alternative approach for liquidity
+      const pricesSection = root.querySelector('#prices-card-verus');
+      
+      if (pricesSection) {
+        const pricesDivs = pricesSection.querySelectorAll('div');
+        
+        for (let i = 0; i < pricesDivs.length; i++) {
+          const text = pricesDivs[i].text.trim();
+          if (text.includes("VRSC") && /^[\d,]+(\.\d+)? VRSC$/.test(text)) {
+            liquidityElement = pricesDivs[i];
+            break;
+          }
+        }
+      }
+    }
+
+    return {
+      volume: volumeElement ? volumeElement.text.trim() : "N/A",
+      liquidity: liquidityElement ? liquidityElement.text.trim() : "N/A"
+    };
+  } catch (error) {
+    console.error("Error fetching protocol data:", error);
+    return {
+      volume: "N/A",
+      liquidity: "N/A"
+    };
+  }
+}
+
+export async function GetVrscSections() {
+  // Fetch the data
+  const protocolData = await fetchProtocolData();
+  
   return (
     <div className="flex flex-col gap-16 md:gap-24">
       {/* Section 1: Getting VRSC through Verus DeFi */}
@@ -25,7 +101,7 @@ export function GetVrscSections() {
               <ArrowLeftRight className="h-6 w-6" />
             </div>
             <h2 className="text-[20px] md:text-[28px] font-medium text-gray-900 dark:text-white">
-              Verus DeFi — The Preferred Way
+              Verus DeFi
             </h2>
           </div>
           
@@ -35,31 +111,63 @@ export function GetVrscSections() {
                 The most efficient way to acquire VRSC is directly through Verus DeFi. Native protocol-level liquidity pools allow you to exchange various cryptocurrencies for VRSC with minimal fees (0.025-0.05%).
               </p>
               
-              {/* 24H Volume Statistics Card */}
+              {/* Protocol Statistics Card */}
               <div className="bg-blue-600/10 dark:bg-blue-900/30 border border-blue-200/60 dark:border-blue-800/40 rounded-xl p-4 mb-8 backdrop-blur-sm">
-                <div className="flex items-center justify-between">
-                  <div>
-                    <div className="text-[12px] uppercase font-medium text-blue-600 dark:text-blue-400 tracking-wider mb-1">
-                      Protocol Activity
+                <div className="text-[12px] uppercase font-medium text-blue-600 dark:text-blue-400 tracking-wider mb-2">
+                  Protocol Activity
+                </div>
+                
+                <div className="flex flex-col gap-3">
+                  {/* Volume */}
+                  <div className="flex items-center justify-between">
+                    <div>
+                      <div className="flex items-center gap-1.5">
+                        <span className="text-[20px] md:text-[24px] font-medium text-gray-900 dark:text-white">
+                          {protocolData.volume}
+                        </span>
+                        <span className="text-[14px] font-medium text-gray-600 dark:text-gray-300">
+                          24H Protocol Volume
+                        </span>
+                      </div>
                     </div>
-                    <div className="flex items-center gap-1.5">
-                      <span className="text-[20px] md:text-[24px] font-medium text-gray-900 dark:text-white">
-                        $160,356
-                      </span>
-                      <span className="text-[14px] font-medium text-gray-600 dark:text-gray-300">
-                        24H VRSC Volume
-                      </span>
+                    <div className="h-12 w-12 rounded-full bg-gradient-to-br from-blue-500/20 to-blue-600/20 dark:from-blue-500/30 dark:to-blue-700/30 flex items-center justify-center">
+                      <ArrowLeftRight className="h-6 w-6 text-blue-600 dark:text-blue-400" />
                     </div>
                   </div>
-                  <div className="h-12 w-12 rounded-full bg-gradient-to-br from-blue-500/20 to-blue-600/20 dark:from-blue-500/30 dark:to-blue-700/30 flex items-center justify-center">
-                    <ArrowLeftRight className="h-6 w-6 text-blue-600 dark:text-blue-400" />
+                  
+                  {/* Liquidity */}
+                  <div className="flex items-center justify-between">
+                    <div>
+                      <div className="flex items-center gap-1.5">
+                        <span className="text-[20px] md:text-[24px] font-medium text-gray-900 dark:text-white">
+                          {protocolData.liquidity}
+                        </span>
+                        <span className="text-[14px] font-medium text-gray-600 dark:text-gray-300">
+                          VRSC in Liquidity Pools
+                        </span>
+                      </div>
+                    </div>
+                    <div className="h-12 w-12 rounded-full bg-gradient-to-br from-green-500/20 to-green-600/20 dark:from-green-500/30 dark:to-green-700/30 flex items-center justify-center">
+                      <Coins className="h-6 w-6 text-green-600 dark:text-green-400" />
+                    </div>
                   </div>
                 </div>
-                <div className="flex items-center gap-1 mt-2">
-                  <div className="h-2 w-2 rounded-full bg-green-500"></div>
-                  <span className="text-[13px] text-gray-600 dark:text-gray-400">
-                    Live on-chain trading with minimal fees
-                  </span>
+                
+                <div className="flex items-center justify-between mt-3 pt-2 border-t border-blue-200/30 dark:border-blue-800/30">
+                  <div className="flex items-center gap-1">
+                    <div className="h-2 w-2 rounded-full bg-green-500"></div>
+                    <span className="text-[13px] text-gray-600 dark:text-gray-400">
+                      Live on-chain conversions with minimal fees
+                    </span>
+                  </div>
+                  <a 
+                    href="https://cryptodashboard.faldt.net/" 
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-[12px] text-blue-600 dark:text-blue-400 hover:underline flex items-center gap-1"
+                  >
+                    Source: cryptodashboard.faldt.net <ExternalLink className="h-3 w-3" />
+                  </a>
                 </div>
               </div>
               
