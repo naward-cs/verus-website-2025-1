@@ -10,7 +10,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Verus-Ethereum Bridge | Verus",
     description: "A bridge to the Ethereum network—non-custodial, based on cryptographic proofs & verified by miners and stakers.",
-    url: "https://verus.io/ethereum-bridge",
+    url: "/ethereum-bridge",
     siteName: "Verus",
     type: "website",
   },
@@ -20,7 +20,7 @@ export const metadata: Metadata = {
     description: "A bridge to the Ethereum network—non-custodial, based on cryptographic proofs & verified by miners and stakers.",
   },
   alternates: {
-    canonical: "https://verus.io/ethereum-bridge",
+    canonical: "/ethereum-bridge",
   },
 }
 

@@ -12,7 +12,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Own Your Digital Future with VerusID | Verus",
     description: "Your Identity, Your Control. Self-sovereign identity solutions built on the Verus Protocol.",
-    url: "https://verus.io/verusid",
+    url: "/verusid",
     siteName: "Verus",
     type: "website",
   },
@@ -22,7 +22,7 @@ export const metadata: Metadata = {
     description: "Your Identity, Your Control. Self-sovereign identity solutions built on the Verus Protocol.",
   },
   alternates: {
-    canonical: "https://verus.io/verusid",
+    canonical: "/verusid",
   },
 }
 

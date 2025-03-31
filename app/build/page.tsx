@@ -12,7 +12,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Build dApps Without Limits | Verus",
     description: "Skip the blockchain complexity and focus on what matters. The Verus API does the heavy lifting while you create decentralized applications at any scale.",
-    url: "https://verus.io/build",
+    url: "/build",
     siteName: "Verus",
     type: "website",
     // Note: opengraph-image.png is automatically used from the build directory
@@ -24,7 +24,7 @@ export const metadata: Metadata = {
     // Note: twitter-image.png is automatically used from the build directory
   },
   alternates: {
-    canonical: "https://verus.io/build",
+    canonical: "/build",
   },
 }
 

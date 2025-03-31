@@ -11,7 +11,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Build with VerusID | Verus",
     description: "Build dApps with self-sovereign identity, namespace control, data storage, and blockchain interoperability—no smart contracts needed.",
-    url: "https://verus.io/build/verusid",
+    url: "/build/verusid",
     siteName: "Verus",
     type: "website",
   },
@@ -21,7 +21,7 @@ export const metadata: Metadata = {
     description: "Build dApps with self-sovereign identity, namespace control, data storage, and blockchain interoperability—no smart contracts needed.",
   },
   alternates: {
-    canonical: "https://verus.io/build/verusid",
+    canonical: "/build/verusid",
   },
 }
 

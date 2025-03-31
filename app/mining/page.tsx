@@ -9,7 +9,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Start Mining VRSC | Verus",
     description: "Contribute to network security while earning rewards with your computer or mining hardware.",
-    url: "https://verus.io/mining",
+    url: "/mining",
     siteName: "Verus",
     type: "website",
   },
@@ -19,7 +19,7 @@ export const metadata: Metadata = {
     description: "Contribute to network security while earning rewards with your computer or mining hardware.",
   },
   alternates: {
-    canonical: "https://verus.io/mining",
+    canonical: "/mining",
   },
 }
 

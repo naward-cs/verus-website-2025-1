@@ -9,7 +9,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Get VRSC | Verus",
     description: "Multiple ways to acquire VRSC: through Verus DeFi, exchanges, mining, or staking.",
-    url: "https://verus.io/get-vrsc",
+    url: "/get-vrsc",
     siteName: "Verus",
     type: "website",
   },
@@ -19,7 +19,7 @@ export const metadata: Metadata = {
     description: "Multiple ways to acquire VRSC: through Verus DeFi, exchanges, mining, or staking.",
   },
   alternates: {
-    canonical: "https://verus.io/get-vrsc",
+    canonical: "/get-vrsc",
   },
 }
 

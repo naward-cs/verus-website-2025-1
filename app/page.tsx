@@ -19,7 +19,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "The Internet of Value | Verus",
     description: "A fundamentally different and better protocol to build Web3, and to empower individuals & communities.",
-    url: "https://verus.io",
+    url: "/",
     siteName: "Verus",
     type: "website",
     // opengraph-image.png and opengraph-image.alt.txt files are already in the app directory
@@ -31,7 +31,7 @@ export const metadata: Metadata = {
     // twitter-image.png is already in the app directory
   },
   alternates: {
-    canonical: "https://verus.io",
+    canonical: "/",
   },
 }
 

@@ -9,7 +9,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "VM-based Blockchains vs Verus | Verus",
     description: "Compare the architectural approaches of traditional VM blockchains with Verus Protocol's built-in functionality.",
-    url: "https://verus.io/vs-evm",
+    url: "/vs-evm",
     siteName: "Verus",
     type: "website",
   },
@@ -19,7 +19,7 @@ export const metadata: Metadata = {
     description: "Compare the architectural approaches of traditional VM blockchains with Verus Protocol's built-in functionality.",
   },
   alternates: {
-    canonical: "https://verus.io/vs-evm",
+    canonical: "/vs-evm",
   },
 }
 

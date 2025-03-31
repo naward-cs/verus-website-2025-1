@@ -11,7 +11,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Launch Currencies & Liquidity Pools | Verus",
     description: "Create powerful currencies, tokens & liquidity pools—secured by consensus, not vulnerable smart contracts.",
-    url: "https://verus.io/build/pbaas-currencies",
+    url: "/build/pbaas-currencies",
     siteName: "Verus",
     type: "website",
   },
@@ -21,7 +21,7 @@ export const metadata: Metadata = {
     description: "Create powerful currencies, tokens & liquidity pools—secured by consensus, not vulnerable smart contracts.",
   },
   alternates: {
-    canonical: "https://verus.io/build/pbaas-currencies",
+    canonical: "/build/pbaas-currencies",
   },
 }
 

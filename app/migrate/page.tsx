@@ -9,7 +9,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Migrate to Verus | Verus",
     description: "Bring your token and community to a better, more secure ecosystem while maintaining full Ethereum compatibility.",
-    url: "https://verus.io/migrate",
+    url: "/migrate",
     siteName: "Verus",
     type: "website",
   },
@@ -19,7 +19,7 @@ export const metadata: Metadata = {
     description: "Bring your token and community to a better, more secure ecosystem while maintaining full Ethereum compatibility.",
   },
   alternates: {
-    canonical: "https://verus.io/migrate",
+    canonical: "/migrate",
   },
 }
 

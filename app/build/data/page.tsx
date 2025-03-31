@@ -11,7 +11,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Store & Retrieve Data On-Chain | Verus",
     description: "A complete on-chain database system with encryption, indexing, and flexible storage options—secured by consensus.",
-    url: "https://verus.io/build/data",
+    url: "/build/data",
     siteName: "Verus",
     type: "website",
   },
@@ -21,7 +21,7 @@ export const metadata: Metadata = {
     description: "A complete on-chain database system with encryption, indexing, and flexible storage options—secured by consensus.",
   },
   alternates: {
-    canonical: "https://verus.io/build/data",
+    canonical: "/build/data",
   },
 }
 

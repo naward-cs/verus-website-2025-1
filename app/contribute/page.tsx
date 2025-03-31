@@ -9,7 +9,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Contribute to Verus | Verus",
     description: "Help shape the future of blockchain technology by contributing to Verus in various ways—from code and marketing to community support and financial backing.",
-    url: "https://verus.io/contribute",
+    url: "/contribute",
     siteName: "Verus",
     type: "website",
   },
@@ -19,7 +19,7 @@ export const metadata: Metadata = {
     description: "Help shape the future of blockchain technology by contributing to Verus in various ways—from code and marketing to community support and financial backing.",
   },
   alternates: {
-    canonical: "https://verus.io/contribute",
+    canonical: "/contribute",
   },
 }
 

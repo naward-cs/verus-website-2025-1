@@ -11,7 +11,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Public Blockchains as a Service | Verus",
     description: "Create powerful, interoperable blockchains with all Verus features—secured by worldwide miners and stakers.",
-    url: "https://verus.io/build/pbaas-chains",
+    url: "/build/pbaas-chains",
     siteName: "Verus",
     type: "website",
   },
@@ -21,7 +21,7 @@ export const metadata: Metadata = {
     description: "Create powerful, interoperable blockchains with all Verus features—secured by worldwide miners and stakers.",
   },
   alternates: {
-    canonical: "https://verus.io/build/pbaas-chains",
+    canonical: "/build/pbaas-chains",
   },
 }
 

@@ -11,7 +11,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Community Hub | Verus",
     description: "Join the worldwide Verus community across various platforms. Connect, collaborate, and contribute to the future of blockchain technology.",
-    url: "https://verus.io/community",
+    url: "/community",
     siteName: "Verus",
     type: "website",
   },
@@ -21,7 +21,7 @@ export const metadata: Metadata = {
     description: "Join the worldwide Verus community across various platforms. Connect, collaborate, and contribute to the future of blockchain technology.",
   },
   alternates: {
-    canonical: "https://verus.io/community",
+    canonical: "/community",
   },
 }
 

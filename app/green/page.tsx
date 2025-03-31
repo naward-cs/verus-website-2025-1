@@ -11,7 +11,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Environmentally Conscious Protocol | Verus",
     description: "Combining the security of proof-of-work with the energy efficiency of proof-of-stake—sustainable by design.",
-    url: "https://verus.io/green",
+    url: "/green",
     siteName: "Verus",
     type: "website",
   },
@@ -21,7 +21,7 @@ export const metadata: Metadata = {
     description: "Combining the security of proof-of-work with the energy efficiency of proof-of-stake—sustainable by design.",
   },
   alternates: {
-    canonical: "https://verus.io/green",
+    canonical: "/green",
   },
 }
 

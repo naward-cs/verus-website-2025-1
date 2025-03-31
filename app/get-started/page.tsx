@@ -9,7 +9,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Getting Started with Verus | Verus",
     description: "Your guide to joining the Verus ecosystem, from setting up your first wallet to participating in the network.",
-    url: "https://verus.io/get-started",
+    url: "/get-started",
     siteName: "Verus",
     type: "website",
   },
@@ -19,7 +19,7 @@ export const metadata: Metadata = {
     description: "Your guide to joining the Verus ecosystem, from setting up your first wallet to participating in the network.",
   },
   alternates: {
-    canonical: "https://verus.io/get-started",
+    canonical: "/get-started",
   },
 }
 
