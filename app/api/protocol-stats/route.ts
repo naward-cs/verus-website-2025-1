@@ -1,16 +1,17 @@
 /*
 * Server-side API for fetching Verus protocol statistics
 * - Retrieves data from cryptodashboard.faldt.net using the HTML parser
-* - Scrapes protocol liquidity data using the specific selector
-* - Implements proper caching to reduce load on the source
+* - Implements strict data validation and sanitization
+* - Implements minimal caching to prevent overwhelming the source
 * - Returns structured JSON response with volume and liquidity data
 */
 
 import { NextResponse } from 'next/server';
 import { parse } from 'node-html-parser';
 
-// Cache configuration
-const CACHE_TIME = 15 * 60; // 15 minutes in seconds
+// Cache configuration - reduced to 60 seconds
+// This prevents overwhelming the source while still providing frequent updates
+const CACHE_TIME = 60; // 1 minute in seconds
 let cachedData: {
   volume24h: string;
   volume7d: string;
@@ -19,6 +20,37 @@ let cachedData: {
   vrscLiquidity: string;
   timestamp: number;
 } | null = null;
+
+// Response size limit - 1MB
+const MAX_RESPONSE_SIZE = 1 * 1024 * 1024;
+
+// Strict validation functions
+const validateCurrencyValue = (value: string): boolean => {
+  // Accept only properly formatted currency values: $X,XXX.XX
+  const currencyPattern = /^\$[\d,]+(\.\d+)?$/;
+  return currencyPattern.test(value);
+};
+
+const validateVrscValue = (value: string): boolean => {
+  // Accept only properly formatted VRSC values: X,XXX.XX VRSC
+  const vrscPattern = /^[\d,]+(\.\d+)?\s*VRSC$/i;
+  return vrscPattern.test(value);
+};
+
+// Safely extract text from an element with validation
+const extractCurrencyValue = (element: any): string => {
+  if (!element) return "N/A";
+  
+  const text = element.text?.trim() || "";
+  return validateCurrencyValue(text) ? text : "N/A";
+};
+
+const extractVrscValue = (element: any): string => {
+  if (!element) return "N/A";
+  
+  const text = element.text?.trim() || "";
+  return validateVrscValue(text) ? text : "N/A";
+};
 
 export async function GET() {
   try {
@@ -31,17 +63,27 @@ export async function GET() {
       );
     }
 
-    // Fetch fresh data
+    // Fetch fresh data - fixed cache configuration
     const response = await fetch('https://cryptodashboard.faldt.net/', {
-      cache: 'no-store',
-      next: { revalidate: 0 }, // Don't cache in Next.js
+      cache: 'no-store' // Use only one caching directive
     });
 
     if (!response.ok) {
       throw new Error(`HTTP error! status: ${response.status}`);
     }
 
+    // Verify content type (optional check)
+    const contentType = response.headers.get('content-type');
+    if (contentType && !contentType.includes('text/html')) {
+      throw new Error('Unexpected content type from external source');
+    }
+
+    // Apply size limit to response
     const html = await response.text();
+    if (html.length > MAX_RESPONSE_SIZE) {
+      throw new Error('Response exceeds size limit');
+    }
+
     const root = parse(html);
 
     // Get 24h volume data
@@ -56,8 +98,8 @@ export async function GET() {
         const basketDivs = basketSection.querySelectorAll('div');
         
         for (let i = 0; i < basketDivs.length; i++) {
-          const text = basketDivs[i].text.trim();
-          if (text.startsWith('$') && /^\$[\d,]+(\.\d+)?$/.test(text)) {
+          const text = basketDivs[i].text?.trim() || "";
+          if (validateCurrencyValue(text)) {
             volumeElement = basketDivs[i];
             break;
           }
@@ -65,9 +107,7 @@ export async function GET() {
       }
     }
     
-    if (volumeElement) {
-      volume24h = volumeElement.text.trim();
-    }
+    volume24h = extractCurrencyValue(volumeElement);
 
     // Get 7d volume data
     let volume7d = "N/A";
@@ -81,8 +121,8 @@ export async function GET() {
         const basket7dDivs = basket7dSection.querySelectorAll('div');
         
         for (let i = 0; i < basket7dDivs.length; i++) {
-          const text = basket7dDivs[i].text.trim();
-          if (text.startsWith('$') && /^\$[\d,]+(\.\d+)?$/.test(text)) {
+          const text = basket7dDivs[i].text?.trim() || "";
+          if (validateCurrencyValue(text)) {
             volume7dElement = basket7dDivs[i];
             break;
           }
@@ -90,9 +130,7 @@ export async function GET() {
       }
     }
     
-    if (volume7dElement) {
-      volume7d = volume7dElement.text.trim();
-    }
+    volume7d = extractCurrencyValue(volume7dElement);
 
     // Get 30d volume data
     let volume30d = "N/A";
@@ -106,8 +144,8 @@ export async function GET() {
         const basket30dDivs = basket30dSection.querySelectorAll('div');
         
         for (let i = 0; i < basket30dDivs.length; i++) {
-          const text = basket30dDivs[i].text.trim();
-          if (text.startsWith('$') && /^\$[\d,]+(\.\d+)?$/.test(text)) {
+          const text = basket30dDivs[i].text?.trim() || "";
+          if (validateCurrencyValue(text)) {
             volume30dElement = basket30dDivs[i];
             break;
           }
@@ -115,9 +153,7 @@ export async function GET() {
       }
     }
     
-    if (volume30dElement) {
-      volume30d = volume30dElement.text.trim();
-    }
+    volume30d = extractCurrencyValue(volume30dElement);
 
     // Get protocol liquidity data using the provided selector
     let totalLiquidity = "N/A";
@@ -131,8 +167,8 @@ export async function GET() {
         const reservesDivs = reservesSection.querySelectorAll('div');
         
         for (let i = 0; i < reservesDivs.length; i++) {
-          const text = reservesDivs[i].text.trim();
-          if (text.startsWith('$') && /^\$[\d,]+(\.\d+)?$/.test(text)) {
+          const text = reservesDivs[i].text?.trim() || "";
+          if (validateCurrencyValue(text)) {
             liquidityElement = reservesDivs[i];
             break;
           }
@@ -140,9 +176,7 @@ export async function GET() {
       }
     }
     
-    if (liquidityElement) {
-      totalLiquidity = liquidityElement.text.trim();
-    }
+    totalLiquidity = extractCurrencyValue(liquidityElement);
 
     // Get VRSC in liquidity pools
     let vrscLiquidity = "N/A";
@@ -156,34 +190,29 @@ export async function GET() {
         const pricesDivs = pricesSection.querySelectorAll('div');
         
         for (let i = 0; i < pricesDivs.length; i++) {
-          const text = pricesDivs[i].text.trim();
-          if (text.includes("VRSC") && /^[\d,]+(\.\d+)? VRSC$/.test(text)) {
-            vrscLiquidityElement = pricesDivs[i];
-            break;
+          const text = pricesDivs[i].text?.trim() || "";
+          // Basic pattern check before more detailed validation
+          if (text.includes("VRSC")) {
+            // Apply strict validation
+            if (validateVrscValue(text)) {
+              vrscLiquidityElement = pricesDivs[i];
+              break;
+            }
           }
         }
       }
     }
     
-    if (vrscLiquidityElement) {
-      vrscLiquidity = vrscLiquidityElement.text.trim();
-      console.log('Original VRSC liquidity data:', vrscLiquidity);
-      
-      // Make sure it has the proper format: Add " VRSC" if it's just a number
-      if (/^[\d,]+(\.\d+)?$/.test(vrscLiquidity) && !vrscLiquidity.includes('VRSC')) {
-        vrscLiquidity = vrscLiquidity + " VRSC";
-        console.log('Reformatted VRSC liquidity to:', vrscLiquidity);
-      }
-    } else {
-      console.log('VRSC liquidity element not found');
-    }
+    vrscLiquidity = extractVrscValue(vrscLiquidityElement);
 
-    // Ensure there's no space between $ and numbers
+    // Ensure there's no space between $ and numbers (additional sanitization)
     const cleanDollarAmount = (amount: string): string => {
+      if (amount === "N/A") return amount;
       if (amount.startsWith('$ ')) {
-        return amount.replace('$ ', '$');
+        amount = amount.replace('$ ', '$');
       }
-      return amount;
+      // Final validation check
+      return validateCurrencyValue(amount) ? amount : "N/A";
     };
 
     // Clean dollar amounts
@@ -192,7 +221,20 @@ export async function GET() {
     volume30d = cleanDollarAmount(volume30d);
     totalLiquidity = cleanDollarAmount(totalLiquidity);
 
-    // Prepare data for caching and response
+    // Ensure VRSC value is properly formatted
+    const cleanVrscAmount = (amount: string): string => {
+      if (amount === "N/A") return amount;
+      // Make sure it has the proper format: Add " VRSC" if it's just a number
+      if (/^[\d,]+(\.\d+)?$/.test(amount) && !amount.includes('VRSC')) {
+        amount = amount + " VRSC";
+      }
+      // Final validation check
+      return validateVrscValue(amount) ? amount : "N/A";
+    };
+    
+    vrscLiquidity = cleanVrscAmount(vrscLiquidity);
+
+    // Prepare sanitized data for caching and response
     const data = {
       volume24h,
       volume7d,
@@ -211,6 +253,18 @@ export async function GET() {
     );
   } catch (error) {
     console.error('Error fetching protocol stats:', error);
+    // Return cached data if available, otherwise default values
+    if (cachedData) {
+      return NextResponse.json(
+        { 
+          ...cachedData, 
+          cached: true,
+          error: 'Using cached data due to fetch error'
+        },
+        { status: 200 }
+      );
+    }
+    
     return NextResponse.json(
       { 
         error: 'Failed to retrieve protocol statistics', 

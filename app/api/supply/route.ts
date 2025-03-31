@@ -15,8 +15,7 @@ export async function GET() {
       headers: {
         'Accept': 'application/json',
       },
-      cache: 'no-cache',
-      next: { revalidate: 3600 } // Cache for 1 hour
+      next: { revalidate: 3600 } // Cache for 1 hour (single caching directive)
     });
 
     if (!response.ok) {

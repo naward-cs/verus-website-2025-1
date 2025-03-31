@@ -131,7 +131,7 @@ export async function GET() {
           method: "getcurrency",
           params: ["bridge.veth"]
         }),
-        cache: 'no-store', // Ensure we always get fresh data
+        cache: 'no-store' // Ensure we always get fresh data
       }),
       fetchCoinpaprikaPrices()
     ]);
@@ -210,24 +210,18 @@ export async function GET() {
       source: 'api'
     };
     
-    return NextResponse.json(responseData, {
-      headers: {
-        'Cache-Control': 'no-store, max-age=0, must-revalidate', // Prevent caching
-      }
-    });
+    // Return without Cache-Control header
+    return NextResponse.json(responseData);
   } catch (error) {
     console.error('Error fetching bridge data:', error);
     
-    // Return null values instead of fallback data
+    // Return null values without Cache-Control header
     return NextResponse.json({ 
       ...ERROR_RESPONSE,
       error: error instanceof Error ? error.message : 'Unknown error',
       timestamp: Date.now()
     }, { 
-      status: 200, // Still return 200 to avoid breaking the client
-      headers: {
-        'Cache-Control': 'no-store, max-age=0, must-revalidate', // Prevent caching
-      }
+      status: 200 // Still return 200 to avoid breaking the client
     });
   }
 } 

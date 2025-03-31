@@ -20,10 +20,9 @@ import { EcosystemStatsSection } from "@/components/statistics/sections/ecosyste
 // Fetch protocol data from our API endpoint
 async function fetchProtocolData() {
   try {
-    // Server component can fetch directly from API
+    // Server component can fetch directly from API - use single caching directive
     const response = await fetch(`${process.env.NEXT_PUBLIC_BASE_URL || 'http://localhost:3000'}/api/protocol-stats`, {
-      cache: 'no-store',
-      next: { revalidate: 300 } // Cache for 5 minutes on the server
+      cache: 'no-store' // Only use one caching directive
     });
     
     if (!response.ok) {
@@ -55,7 +54,7 @@ async function fetchProtocolData() {
 async function fetchCirculatingSupply() {
   try {
     const response = await fetch(`${process.env.NEXT_PUBLIC_BASE_URL || 'http://localhost:3000'}/api/supply`, {
-      next: { revalidate: 3600 } // Cache for 1 hour
+      next: { revalidate: 3600 } // Cache for 1 hour (single caching directive)
     });
     
     if (!response.ok) {
@@ -83,8 +82,7 @@ async function fetchCirculatingSupply() {
 async function fetchVRSCPrice() {
   try {
     const response = await fetch(`${process.env.NEXT_PUBLIC_BASE_URL || 'http://localhost:3000'}/api/bridge`, {
-      cache: 'no-store',
-      next: { revalidate: 300 } // Cache for 5 minutes
+      cache: 'no-store' // Only use one caching directive
     });
 
     if (!response.ok) {
@@ -109,8 +107,7 @@ async function fetchVRSCPrice() {
 async function fetchMiningInfo() {
   try {
     const response = await fetch(`${process.env.NEXT_PUBLIC_BASE_URL || 'http://localhost:3000'}/api/mining-info`, {
-      cache: 'no-store',
-      next: { revalidate: 300 } // Cache for 5 minutes
+      cache: 'no-store' // Only use one caching directive
     });
     
     if (!response.ok) {

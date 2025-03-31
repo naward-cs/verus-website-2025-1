@@ -64,11 +64,13 @@ export function Footer() {
             <div>
               <h3 className="text-sm font-medium mb-4">Use</h3>
               <ul className="space-y-2">
+                <li><Link href="/get-started" className="text-[15px] text-gray-400 hover:text-white transition-colors">Get Started</Link></li>
                 <li><Link href="/wallet" className="text-[15px] text-gray-400 hover:text-white transition-colors">Wallet</Link></li>
-                <li><Link href="/bridge" className="text-[15px] text-gray-400 hover:text-white transition-colors">Bridge</Link></li>
-                <li><Link href="/get-vrsc" className="text-[15px] text-gray-400 hover:text-white transition-colors">Get VRSC</Link></li>
+                <li><Link href="/verusid" className="text-[15px] text-gray-400 hover:text-white transition-colors">VerusID</Link></li>
+                <li><Link href="/ethereum-bridge" className="text-[15px] text-gray-400 hover:text-white transition-colors">Ethereum Bridge</Link></li>
                 <li><Link href="/mining" className="text-[15px] text-gray-400 hover:text-white transition-colors">Start Mining</Link></li>
                 <li><Link href="/staking" className="text-[15px] text-gray-400 hover:text-white transition-colors">Start Staking</Link></li>
+                <li><Link href="/get-vrsc" className="text-[15px] text-gray-400 hover:text-white transition-colors">Get VRSC</Link></li>
               </ul>
             </div>
 
@@ -77,9 +79,10 @@ export function Footer() {
               <h3 className="text-sm font-medium mb-4">Build</h3>
               <ul className="space-y-2">
                 <li><Link href="/build" className="text-[15px] text-gray-400 hover:text-white transition-colors">Overview</Link></li>
+                <li><Link href="/build/verusid" className="text-[15px] text-gray-400 hover:text-white transition-colors">VerusID</Link></li>
                 <li><Link href="/migrate" className="text-[15px] text-gray-400 hover:text-white transition-colors">Migrate Your Community</Link></li>
-                <li><Link href="/verusid" className="text-[15px] text-gray-400 hover:text-white transition-colors">VerusID</Link></li>
-                <li><Link href="/docs" className="text-[15px] text-gray-400 hover:text-white transition-colors">Documentation</Link></li>
+                <li><Link href="/vs-evm" className="text-[15px] text-gray-400 hover:text-white transition-colors">Verus vs EVMs</Link></li>
+                <li><a href="https://docs.verus.io" target="_blank" rel="noopener noreferrer" className="text-[15px] text-gray-400 hover:text-white transition-colors">Documentation</a></li>
               </ul>
             </div>
 
@@ -87,22 +90,26 @@ export function Footer() {
             <div>
               <h3 className="text-sm font-medium mb-4">Learn</h3>
               <ul className="space-y-2">
-                <li><Link href="/about" className="text-[15px] text-gray-400 hover:text-white transition-colors">What is Verus?</Link></li>
+                <li><Link href="/intro" className="text-[15px] text-gray-400 hover:text-white transition-colors">What is Verus?</Link></li>
                 <li><Link href="/milestones" className="text-[15px] text-gray-400 hover:text-white transition-colors">Milestones</Link></li>
+                <li><Link href="/green" className="text-[15px] text-gray-400 hover:text-white transition-colors">Environmentally Friendly</Link></li>
                 <li><Link href="/faq" className="text-[15px] text-gray-400 hover:text-white transition-colors">FAQ</Link></li>
-                <li><Link href="/whitepapers" className="text-[15px] text-gray-400 hover:text-white transition-colors">Whitepapers</Link></li>
-                <li><Link href="/stats" className="text-[15px] text-gray-400 hover:text-white transition-colors">Network Statistics</Link></li>
+                <li><Link href="/papers" className="text-[15px] text-gray-400 hover:text-white transition-colors">Whitepapers</Link></li>
+                <li><Link href="/statistics" className="text-[15px] text-gray-400 hover:text-white transition-colors">Statistics</Link></li>
               </ul>
             </div>
 
-            {/* Community & Social */}
+            {/* Community & Resources */}
             <div>
               <h3 className="text-sm font-medium mb-4">Community</h3>
               <ul className="space-y-2 mb-6">
                 <li><Link href="/community" className="text-[15px] text-gray-400 hover:text-white transition-colors">Community Hub</Link></li>
-                <li><Link href="/community-projects" className="text-[15px] text-gray-400 hover:text-white transition-colors">Community Projects</Link></li>
-                <li><Link href="/bounties" className="text-[15px] text-gray-400 hover:text-white transition-colors">Bounties</Link></li>
+                <li><Link href="/projects" className="text-[15px] text-gray-400 hover:text-white transition-colors">Community Projects</Link></li>
+                <li><Link href="/people" className="text-[15px] text-gray-400 hover:text-white transition-colors">People</Link></li>
                 <li><Link href="/contribute" className="text-[15px] text-gray-400 hover:text-white transition-colors">Contribute</Link></li>
+                <li><Link href="/media" className="text-[15px] text-gray-400 hover:text-white transition-colors">Media</Link></li>
+                <li><Link href="/media#brand-assets" className="text-[15px] text-gray-400 hover:text-white transition-colors">Brand Materials</Link></li>
+                <li><Link href="/donate" className="text-[15px] text-gray-400 hover:text-white transition-colors">Donate</Link></li>
               </ul>
 
               <div className="grid grid-cols-4 gap-4">
@@ -127,7 +134,7 @@ export function Footer() {
                 <a href="https://facebook.com/veruscoin" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-[#1877F2] transition-colors">
                   <FaFacebook className="h-5 w-5" />
                 </a>
-                <a href="https://youtube.com/@veruscoin" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-[#FF0000] transition-colors">
+                <a href="https://youtube.com/@veruscoincommunity" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-[#FF0000] transition-colors">
                   <FaYoutube className="h-5 w-5" />
                 </a>
               </div>
@@ -140,7 +147,7 @@ export function Footer() {
               © {new Date().getFullYear()} The Verus Protocol. All rights reserved.
             </div>
             <div className="flex gap-6">
-              <Link href="/privacy" className="text-[14px] text-gray-400 hover:text-white transition-colors">Privacy Policy</Link>
+              <Link href="/privacy-policy" className="text-[14px] text-gray-400 hover:text-white transition-colors">Privacy Policy</Link>
             </div>
           </div>
         </div>
@@ -162,11 +169,13 @@ export function Footer() {
             <div>
               <h3 className="text-sm font-medium mb-3">Use</h3>
               <ul className="space-y-2">
+                <li><Link href="/get-started" className="text-[14px] text-gray-400">Get Started</Link></li>
                 <li><Link href="/wallet" className="text-[14px] text-gray-400">Wallet</Link></li>
-                <li><Link href="/bridge" className="text-[14px] text-gray-400">Bridge</Link></li>
-                <li><Link href="/get-vrsc" className="text-[14px] text-gray-400">Get VRSC</Link></li>
+                <li><Link href="/verusid" className="text-[14px] text-gray-400">VerusID</Link></li>
+                <li><Link href="/ethereum-bridge" className="text-[14px] text-gray-400">Ethereum Bridge</Link></li>
                 <li><Link href="/mining" className="text-[14px] text-gray-400">Start Mining</Link></li>
                 <li><Link href="/staking" className="text-[14px] text-gray-400">Start Staking</Link></li>
+                <li><Link href="/get-vrsc" className="text-[14px] text-gray-400">Get VRSC</Link></li>
               </ul>
             </div>
 
@@ -175,9 +184,10 @@ export function Footer() {
               <h3 className="text-sm font-medium mb-3">Build</h3>
               <ul className="space-y-2">
                 <li><Link href="/build" className="text-[14px] text-gray-400">Overview</Link></li>
+                <li><Link href="/build/verusid" className="text-[14px] text-gray-400">VerusID</Link></li>
                 <li><Link href="/migrate" className="text-[14px] text-gray-400">Migrate Your Community</Link></li>
-                <li><Link href="/verusid" className="text-[14px] text-gray-400">VerusID</Link></li>
-                <li><Link href="/docs" className="text-[14px] text-gray-400">Documentation</Link></li>
+                <li><Link href="/vs-evm" className="text-[14px] text-gray-400">Verus vs EVMs</Link></li>
+                <li><a href="https://docs.verus.io" target="_blank" rel="noopener noreferrer" className="text-[14px] text-gray-400">Documentation</a></li>
               </ul>
             </div>
 
@@ -185,11 +195,12 @@ export function Footer() {
             <div>
               <h3 className="text-sm font-medium mb-3">Learn</h3>
               <ul className="space-y-2">
-                <li><Link href="/about" className="text-[14px] text-gray-400">What is Verus?</Link></li>
+                <li><Link href="/intro" className="text-[14px] text-gray-400">What is Verus?</Link></li>
                 <li><Link href="/milestones" className="text-[14px] text-gray-400">Milestones</Link></li>
+                <li><Link href="/green" className="text-[14px] text-gray-400">Environmentally Friendly</Link></li>
                 <li><Link href="/faq" className="text-[14px] text-gray-400">FAQ</Link></li>
-                <li><Link href="/whitepapers" className="text-[14px] text-gray-400">Whitepapers</Link></li>
-                <li><Link href="/stats" className="text-[14px] text-gray-400">Network Statistics</Link></li>
+                <li><Link href="/papers" className="text-[14px] text-gray-400">Whitepapers</Link></li>
+                <li><Link href="/statistics" className="text-[14px] text-gray-400">Statistics</Link></li>
               </ul>
             </div>
 
@@ -198,9 +209,12 @@ export function Footer() {
               <h3 className="text-sm font-medium mb-3">Community</h3>
               <ul className="space-y-2 mb-4">
                 <li><Link href="/community" className="text-[14px] text-gray-400">Community Hub</Link></li>
-                <li><Link href="/community-projects" className="text-[14px] text-gray-400">Community Projects</Link></li>
-                <li><Link href="/bounties" className="text-[14px] text-gray-400">Bounties</Link></li>
+                <li><Link href="/projects" className="text-[14px] text-gray-400">Community Projects</Link></li>
+                <li><Link href="/people" className="text-[14px] text-gray-400">People</Link></li>
                 <li><Link href="/contribute" className="text-[14px] text-gray-400">Contribute</Link></li>
+                <li><Link href="/media" className="text-[14px] text-gray-400">Media</Link></li>
+                <li><Link href="/media#brand-assets" className="text-[14px] text-gray-400">Brand Materials</Link></li>
+                <li><Link href="/donate" className="text-[14px] text-gray-400">Donate</Link></li>
               </ul>
 
               <div className="grid grid-cols-4 gap-4">
@@ -216,6 +230,18 @@ export function Footer() {
                 <a href="https://medium.com/veruscoin" target="_blank" rel="noopener noreferrer" className="text-gray-400">
                   <FaMedium className="h-5 w-5" />
                 </a>
+                <a href="https://t.me/veruscoin" target="_blank" rel="noopener noreferrer" className="text-gray-400">
+                  <FaTelegram className="h-5 w-5" />
+                </a>
+                <a href="https://reddit.com/r/veruscoin" target="_blank" rel="noopener noreferrer" className="text-gray-400">
+                  <FaReddit className="h-5 w-5" />
+                </a>
+                <a href="https://facebook.com/veruscoin" target="_blank" rel="noopener noreferrer" className="text-gray-400">
+                  <FaFacebook className="h-5 w-5" />
+                </a>
+                <a href="https://youtube.com/@veruscoincommunity" target="_blank" rel="noopener noreferrer" className="text-gray-400">
+                  <FaYoutube className="h-5 w-5" />
+                </a>
               </div>
             </div>
           </div>
@@ -223,10 +249,10 @@ export function Footer() {
           {/* Bottom Section */}
           <div className="border-t border-gray-800 mt-8 pt-8">
             <div className="text-[12px] text-gray-400 mb-4">
-              © {new Date().getFullYear()} Verus. All rights reserved.
+              © {new Date().getFullYear()} The Verus Protocol. All rights reserved.
             </div>
             <div className="flex gap-4">
-              <Link href="/privacy" className="text-[12px] text-gray-400">Privacy Policy</Link>
+              <Link href="/privacy-policy" className="text-[12px] text-gray-400">Privacy Policy</Link>
             </div>
           </div>
         </div>

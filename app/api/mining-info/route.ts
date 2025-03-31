@@ -1,7 +1,8 @@
 import { NextResponse } from 'next/server';
 
-// Cache configuration
-const CACHE_TIME = 5 * 60; // 5 minutes in seconds
+// Cache configuration - reduced to 60 seconds
+// This prevents overwhelming the source while still providing frequent updates
+const CACHE_TIME = 60; // 1 minute in seconds
 let cachedData: { 
   blocks: string;
   hashRate: string;
@@ -31,7 +32,7 @@ export async function GET() {
       );
     }
 
-    // Fetch fresh data
+    // Fetch fresh data - fixed cache configuration
     const response = await fetch('https://api.verus.services', {
       method: 'POST',
       headers: {
@@ -43,7 +44,7 @@ export async function GET() {
         method: "getmininginfo",
         params: []
       }),
-      cache: 'no-store'
+      cache: 'no-store' // Use only one caching directive
     });
 
     if (!response.ok) {
@@ -72,6 +73,18 @@ export async function GET() {
     );
   } catch (error) {
     console.error('Error fetching mining info:', error);
+    // Return cached data if available, otherwise default values
+    if (cachedData) {
+      return NextResponse.json(
+        { 
+          ...cachedData, 
+          cached: true,
+          error: 'Using cached data due to fetch error'
+        },
+        { status: 200 }
+      );
+    }
+    
     return NextResponse.json(
       { 
         error: 'Failed to retrieve mining info', 
