@@ -8,8 +8,8 @@ import { ChevronDown, ChevronUp, Globe2 } from "lucide-react"
 import Link from "next/link"
 
 // Define image paths for the vertical scrolling images (separated into left and right columns)
-const leftColumnImages = Array.from({ length: 10 }, (_, i) => `/img/community/${i + 1}.png`)
-const rightColumnImages = Array.from({ length: 9 }, (_, i) => `/img/community/${i + 11}.png`)
+const leftColumnImages = Array.from({ length: 10 }, (_, i) => `/img/community/${i + 1}.webp`)
+const rightColumnImages = Array.from({ length: 9 }, (_, i) => `/img/community/${i + 11}.webp`)
 
 const communityPlatforms = [
   {
