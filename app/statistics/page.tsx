@@ -9,7 +9,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Protocol Statistics | Verus",
     description: "Real-time statistics for the Verus protocol including network metrics, market data, and ecosystem growth.",
-    url: "https://verus.io/statistics",
+    url: "/statistics",
     siteName: "Verus",
     type: "website",
   },
@@ -19,7 +19,7 @@ export const metadata: Metadata = {
     description: "Real-time statistics for the Verus protocol including network metrics, market data, and ecosystem growth.",
   },
   alternates: {
-    canonical: "https://verus.io/statistics",
+    canonical: "/statistics",
   },
 }
 

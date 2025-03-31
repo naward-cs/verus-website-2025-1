@@ -4,8 +4,8 @@
 import { useEffect, useState } from "react"
 
 // Define image paths for both rows
-const row1Images = Array.from({ length: 10 }, (_, i) => `/img/community/${i + 1}.png`)
-const row2Images = Array.from({ length: 9 }, (_, i) => `/img/community/${i + 11}.png`)
+const row1Images = Array.from({ length: 10 }, (_, i) => `/img/community/${i + 1}.webp`)
+const row2Images = Array.from({ length: 9 }, (_, i) => `/img/community/${i + 11}.webp`)
 
 export function ImageMarquee() {
   // State to track if component has mounted (avoids hydration issues)

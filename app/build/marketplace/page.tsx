@@ -11,7 +11,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "P2P Marketplace Protocol | Verus",
     description: "Build decentralized trading applications and services without intermediaries—secured by consensus.",
-    url: "https://verus.io/build/marketplace",
+    url: "/build/marketplace",
     siteName: "Verus",
     type: "website",
   },
@@ -21,7 +21,7 @@ export const metadata: Metadata = {
     description: "Build decentralized trading applications and services without intermediaries—secured by consensus.",
   },
   alternates: {
-    canonical: "https://verus.io/build/marketplace",
+    canonical: "/build/marketplace",
   },
 }
 

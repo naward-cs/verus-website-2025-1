@@ -11,7 +11,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "DeFi & Payments | Verus",
     description: "Fair DeFi without MEV exploitation. Low fees, secure payments, and protocol-level privacy—no smart contracts needed.",
-    url: "https://verus.io/build/defi-payments",
+    url: "/build/defi-payments",
     siteName: "Verus",
     type: "website",
   },
@@ -21,7 +21,7 @@ export const metadata: Metadata = {
     description: "Fair DeFi without MEV exploitation. Low fees, secure payments, and protocol-level privacy—no smart contracts needed.",
   },
   alternates: {
-    canonical: "https://verus.io/build/defi-payments",
+    canonical: "/build/defi-payments",
   },
 }
 

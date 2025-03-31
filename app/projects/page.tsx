@@ -12,7 +12,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Projects Built with Verus | Verus",
     description: "Explore applications, wallets, dashboards, and other projects leveraging the Verus Protocol and its ecosystem.",
-    url: "https://verus.io/projects",
+    url: "/projects",
     siteName: "Verus",
     type: "website",
   },
@@ -22,7 +22,7 @@ export const metadata: Metadata = {
     description: "Explore applications, wallets, dashboards, and other projects leveraging the Verus Protocol and its ecosystem.",
   },
   alternates: {
-    canonical: "https://verus.io/projects",
+    canonical: "/projects",
   },
 }
 

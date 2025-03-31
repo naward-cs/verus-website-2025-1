@@ -9,7 +9,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Support Verus with Donations | Verus",
     description: "As a no-ICO, no premine, and no dev-fee project, Verus relies on community donations to fund development and marketing efforts. Your contributions help maintain and advance the technology.",
-    url: "https://verus.io/donate",
+    url: "/donate",
     siteName: "Verus",
     type: "website",
   },
@@ -19,7 +19,7 @@ export const metadata: Metadata = {
     description: "As a no-ICO, no premine, and no dev-fee project, Verus relies on community donations to fund development and marketing efforts. Your contributions help maintain and advance the technology.",
   },
   alternates: {
-    canonical: "https://verus.io/donate",
+    canonical: "/donate",
   },
 }
 

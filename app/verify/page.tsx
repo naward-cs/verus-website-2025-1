@@ -9,7 +9,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Verify Signatures | Verus",
     description: "Verify signatures for files, messages, and hashes. Confirm the authenticity of digital signatures using VerusIDs to ensure data integrity and origin verification.",
-    url: "https://verus.io/verify",
+    url: "/verify",
     siteName: "Verus",
     type: "website",
   },
@@ -19,7 +19,7 @@ export const metadata: Metadata = {
     description: "Verify signatures for files, messages, and hashes. Confirm the authenticity of digital signatures using VerusIDs to ensure data integrity and origin verification.",
   },
   alternates: {
-    canonical: "https://verus.io/verify",
+    canonical: "/verify",
   },
 }
 

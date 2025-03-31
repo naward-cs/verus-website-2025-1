@@ -10,7 +10,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Media & Press Resources | Verus",
     description: "Everything you need to tell the Verus story accurately–press kits, media mentions, and brand assets.",
-    url: "https://verus.io/media",
+    url: "/media",
     siteName: "Verus",
     type: "website",
   },
@@ -20,7 +20,7 @@ export const metadata: Metadata = {
     description: "Everything you need to tell the Verus story accurately–press kits, media mentions, and brand assets.",
   },
   alternates: {
-    canonical: "https://verus.io/media",
+    canonical: "/media",
   },
 }
 

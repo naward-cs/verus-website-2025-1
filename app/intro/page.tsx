@@ -14,7 +14,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "The Protocol for Everyone | Verus",
     description: "Verus is uniquely positioned to empower individuals, communities and developers around the world, sustainably.",
-    url: "https://verus.io/intro",
+    url: "/intro",
     siteName: "Verus",
     type: "website",
   },
@@ -24,7 +24,7 @@ export const metadata: Metadata = {
     description: "Verus is uniquely positioned to empower individuals, communities and developers around the world, sustainably.",
   },
   alternates: {
-    canonical: "https://verus.io/intro",
+    canonical: "/intro",
   },
 }
 

@@ -9,7 +9,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "VM-based Blockchains vs Verus | Verus",
     description: "Compare the architectural approaches of traditional VM blockchains with Verus Protocol's built-in functionality.",
-    url: "https://verus.io/vs-evm",
+    url: "/vs-evm",
     siteName: "Verus",
     type: "website",
   },
@@ -19,14 +19,14 @@ export const metadata: Metadata = {
     description: "Compare the architectural approaches of traditional VM blockchains with Verus Protocol's built-in functionality.",
   },
   alternates: {
-    canonical: "https://verus.io/vs-evm",
+    canonical: "/vs-evm",
   },
 }
 
 // Updated VS EVM Page with dark mode support and improved styling
 export default function VsEvmPage() {
   return (
-    <main className="relative min-h-[calc(100vh-50px)] md:min-h-[calc(100vh-70px)] w-screen mt-[50px] md:mt-[70px]">
+    <main className="relative h-[calc(100vh-50px)] md:h-[calc(100vh-70px)] w-screen mt-[50px] md:mt-[70px]">
       {/* Background images - separate for light and dark mode */}
       <img 
         src="/img/bg-small.webp"

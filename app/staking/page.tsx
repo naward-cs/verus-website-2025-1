@@ -9,7 +9,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Run a Full Node and Start Staking VRSC | Verus",
     description: "Participate in securing the network while earning rewards with minimal requirements.",
-    url: "https://verus.io/staking",
+    url: "/staking",
     siteName: "Verus",
     type: "website",
   },
@@ -19,7 +19,7 @@ export const metadata: Metadata = {
     description: "Participate in securing the network while earning rewards with minimal requirements.",
   },
   alternates: {
-    canonical: "https://verus.io/staking",
+    canonical: "/staking",
   },
 }
 
