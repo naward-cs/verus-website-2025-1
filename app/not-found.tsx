@@ -1,6 +1,5 @@
 import Link from "next/link"
 import { Footer } from "@/components/footer"
-import { Home, ArrowRight } from "lucide-react"
 
 export const metadata = {
   title: "Page Not Found | Verus",

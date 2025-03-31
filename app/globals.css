@@ -43,18 +43,22 @@
 
 /* Continuous scrolling animations for image marquee */
 .scrolling-container-up {
+  -webkit-animation: scrollUp 45s linear infinite;
   animation: scrollUp 45s linear infinite;
 }
 
 .scrolling-container-down {
+  -webkit-animation: scrollDown 50s linear infinite;
   animation: scrollDown 50s linear infinite;
 }
 
 @keyframes scrollUp {
   0% {
+    -webkit-transform: translateY(0);
     transform: translateY(0);
   }
   100% {
+    -webkit-transform: translateY(-50%);
     transform: translateY(-50%);
   }
 }
