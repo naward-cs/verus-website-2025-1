@@ -1,14 +1,13 @@
 /*
-* Server component for displaying Verus Protocol Statistics
-* - Uses consistent blue gradients to match site aesthetic
-* - Features large, impactful metrics with gradient text
-* - Fetches real-time data from multiple sources
-* - Split into smaller, more maintainable components
-* - Implements server-side data fetching with proper error handling
+* Protocol Statistics Component
+* - Server component serves as layout container
+* - Initial data fetched server-side for SEO and fast initial render
+* - Client components fetch their own live data for up-to-date statistics
+* - Minimizes data duplication between server and client
+* - Implements hybrid server/client rendering for optimal user experience
 */
 
 import { Zap, Server, Bitcoin, BarChart3, DollarSign, Droplet, Coins, Layers, Users, Landmark, Network, ArrowUpDown, ChevronUp, ChevronDown, ExternalLink, Activity } from "lucide-react"
-
 
 // Import smaller components
 import { PriceSection } from "@/components/statistics/sections/price-section"
@@ -17,40 +16,7 @@ import { BlockchainSection } from "@/components/statistics/sections/blockchain-s
 import { LiquiditySection } from "@/components/statistics/sections/liquidity-section"
 import { EcosystemStatsSection } from "@/components/statistics/sections/ecosystem-stats-section"
 
-// Fetch protocol data from our API endpoint
-async function fetchProtocolData() {
-  try {
-    // Server component can fetch directly from API - use single caching directive
-    const response = await fetch(`${process.env.NEXT_PUBLIC_BASE_URL || 'http://localhost:3000'}/api/protocol-stats`, {
-      cache: 'no-store' // Only use one caching directive
-    });
-    
-    if (!response.ok) {
-      throw new Error(`Failed to fetch data: ${response.status}`);
-    }
-    
-    const data = await response.json();
-    
-    return {
-      volume24h: data.volume24h || "N/A",
-      volume7d: data.volume7d || "N/A", 
-      volume30d: data.volume30d || "N/A",
-      totalLiquidity: data.totalLiquidity || "N/A",
-      vrscLiquidity: data.vrscLiquidity || "N/A"
-    };
-  } catch (error) {
-    console.error("Error fetching protocol data:", error);
-    return {
-      volume24h: "N/A",
-      volume7d: "N/A",
-      volume30d: "N/A",
-      totalLiquidity: "N/A",
-      vrscLiquidity: "N/A"
-    };
-  }
-}
-
-// Fetch circulating supply
+// Fetch circulating supply (used for price section only)
 async function fetchCirculatingSupply() {
   try {
     const response = await fetch(`${process.env.NEXT_PUBLIC_BASE_URL || 'http://localhost:3000'}/api/supply`, {
@@ -78,11 +44,11 @@ async function fetchCirculatingSupply() {
   }
 }
 
-// Fetch VRSC price from bridge API
+// Fetch VRSC price from bridge API (used for price section only)
 async function fetchVRSCPrice() {
   try {
     const response = await fetch(`${process.env.NEXT_PUBLIC_BASE_URL || 'http://localhost:3000'}/api/bridge`, {
-      cache: 'no-store' // Only use one caching directive
+      cache: 'no-store'
     });
 
     if (!response.ok) {
@@ -103,11 +69,11 @@ async function fetchVRSCPrice() {
   }
 }
 
-// Fetch mining info
+// Fetch mining info (used for blockchain section only)
 async function fetchMiningInfo() {
   try {
     const response = await fetch(`${process.env.NEXT_PUBLIC_BASE_URL || 'http://localhost:3000'}/api/mining-info`, {
-      cache: 'no-store' // Only use one caching directive
+      cache: 'no-store'
     });
     
     if (!response.ok) {
@@ -131,37 +97,6 @@ async function fetchMiningInfo() {
   }
 }
 
-// Calculate the percentage of VRSC in liquidity pools
-function calculateVrscLiquidityPercentage(vrscLiquidity: string, circulatingSupply: number | null): string {
-  if (vrscLiquidity === "N/A" || !circulatingSupply) return "N/A";
-  
-  let vrscLiquidityAmount: number | null = null;
-  
-  // Try to match the format with "VRSC" suffix first
-  const vrscLiquidityMatch = vrscLiquidity.match(/^([\d,]+)(\.\d+)? VRSC$/);
-  if (vrscLiquidityMatch) {
-    vrscLiquidityAmount = parseFloat(vrscLiquidityMatch[1].replace(/,/g, ''));
-  } else {
-    // If no match with VRSC suffix, try to parse the number directly
-    // Remove any commas and try to convert to number
-    const cleanedValue = vrscLiquidity.replace(/,/g, '');
-    if (!isNaN(parseFloat(cleanedValue))) {
-      vrscLiquidityAmount = parseFloat(cleanedValue);
-    }
-  }
-  
-  // If we couldn't parse a valid number, return N/A
-  if (vrscLiquidityAmount === null || isNaN(vrscLiquidityAmount)) {
-    console.error('Failed to parse VRSC liquidity amount:', vrscLiquidity);
-    return "N/A";
-  }
-  
-  // Calculate percentage
-  const percentage = (vrscLiquidityAmount / circulatingSupply) * 100;
-  
-  return percentage.toFixed(2) + "%";
-}
-
 // Calculate staking percentage
 function calculateStakingPercentage(stakingAmount: string, circulatingSupply: number | null): string {
   if (stakingAmount === "N/A" || !circulatingSupply) return "N/A";
@@ -180,29 +115,26 @@ function calculateStakingPercentage(stakingAmount: string, circulatingSupply: nu
 
 // Main component that fetches data and passes it to UI components
 export async function ProtocolStatistics() {
-  // Fetch all data in parallel
-  const [protocolData, circulatingSupply, vrscPrice, miningInfo] = await Promise.all([
-    fetchProtocolData(),
+  // Fetch only the price data and blockchain data on server side
+  // Other data like protocol stats will be fetched by client components
+  const [circulatingSupply, vrscPrice, miningInfo] = await Promise.all([
     fetchCirculatingSupply(),
     fetchVRSCPrice(),
     fetchMiningInfo()
   ]);
   
-  // Calculate market cap
+  // Calculate market cap - important for SEO
   let marketCap = "N/A";
   if (vrscPrice !== null && circulatingSupply !== null) {
     const marketCapValue = vrscPrice * circulatingSupply;
     marketCap = `$${marketCapValue.toLocaleString(undefined, { maximumFractionDigits: 0 })}`;
   }
 
-  // Format price
+  // Format price - important for SEO
   const formattedPrice = vrscPrice !== null 
     ? `$${vrscPrice.toFixed(2)}` 
     : "N/A";
     
-  // Calculate the percentage of VRSC in liquidity pools
-  const vrscLiquidityPercent = calculateVrscLiquidityPercentage(protocolData.vrscLiquidity, circulatingSupply);
-  
   // Calculate the percentage of VRSC being staked
   const stakingPercentage = calculateStakingPercentage(miningInfo.stakingAmount, circulatingSupply);
 
@@ -230,12 +162,8 @@ export async function ProtocolStatistics() {
             maxSupply={formattedMaxSupply}
           />
           
-          {/* Volume Section */}
-          <VolumeSection 
-            volume24h={protocolData.volume24h}
-            volume7d={protocolData.volume7d}
-            volume30d={protocolData.volume30d}
-          />
+          {/* Volume Section - Client component handles its own data fetching */}
+          <VolumeSection />
           
           {/* Blockchain Section */}
           <BlockchainSection 
@@ -245,12 +173,8 @@ export async function ProtocolStatistics() {
             stakingPercentage={stakingPercentage}
           />
           
-          {/* Liquidity Section */}
-          <LiquiditySection 
-            totalLiquidity={protocolData.totalLiquidity}
-            vrscLiquidity={protocolData.vrscLiquidity}
-            vrscLiquidityPercent={vrscLiquidityPercent}
-          />
+          {/* Liquidity Section - Client component handles its own data fetching */}
+          <LiquiditySection />
         </div>
       </div>
       
