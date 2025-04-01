@@ -68,6 +68,17 @@ export function CommunityLinks() {
   
   useEffect(() => {
     setIsMounted(true)
+    
+    // Safari animation fix - force animation recognition after mount
+    setTimeout(() => {
+      const containers = document.querySelectorAll('.scrolling-container-up, .scrolling-container-down');
+      containers.forEach(container => {
+        // Force a reflow by reading a layout property and making a tiny style change
+        const _ = container.getBoundingClientRect();
+        // Cast to HTMLElement to access style property
+        (container as HTMLElement).style.transform = 'translateZ(0)';
+      });
+    }, 50);
   }, [])
   
   // Only try to animate after component has mounted on client
