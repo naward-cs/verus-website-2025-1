@@ -72,10 +72,10 @@ export function ComparisonSection() {
             <div className="grid grid-cols-[1fr,1fr,1fr] border-t border-blue-100/60 dark:border-blue-900/20">
               <div className="p-6 md:p-8 font-medium text-gray-900 dark:text-white">Programming Required</div>
               <div className="p-6 md:p-8 text-[14px] md:text-[15px] text-gray-700 dark:text-gray-300 border-l border-blue-100/60 dark:border-blue-900/20">
-                🟢 Launch currencies, pools, and DeFi operations using simple API commands
+                Launch currencies, pools, and DeFi operations using simple API commands
               </div>
               <div className="p-6 md:p-8 text-[14px] md:text-[15px] text-gray-700 dark:text-gray-300 border-l border-blue-100/60 dark:border-blue-900/20">
-                🔴 Requires Solidity programming skills or using existing smart contracts
+                Requires Solidity programming skills or using existing smart contracts
               </div>
             </div>
 
@@ -83,16 +83,16 @@ export function ComparisonSection() {
             <div className="grid grid-cols-[1fr,1fr,1fr] border-t border-blue-100/60 dark:border-blue-900/20">
               <div className="p-6 md:p-8 font-medium text-gray-900 dark:text-white">Deployment Costs</div>
               <div className="p-6 md:p-8 text-[14px] md:text-[15px] text-gray-700 dark:text-gray-300 border-l border-blue-100/60 dark:border-blue-900/20">
-                <p>🟢 Fixed & Low:</p>
+                <p>Fixed & Low:</p>
                 <ul className="list-disc pl-4 space-y-1">
-                  <li>200 VRSC to launch a currency/token</li>
+                  <li>200 VRSC to launch a currency/token on the Verus blockchain (is chain dependent)</li>
                   <li>No gas volatility</li>
                 </ul>
               </div>
               <div className="p-6 md:p-8 text-[14px] md:text-[15px] text-gray-700 dark:text-gray-300 border-l border-blue-100/60 dark:border-blue-900/20">
-                <p>🔴 Variable & Often High:</p>
+                <p>Variable:</p>
                 <ul className="list-disc pl-4 space-y-1">
-                  <li>Smart contract deployment can cost hundreds to thousands of dollars during high traffic</li>
+                  <li>Smart contract deployment can be high, depending on hiring specialized developers</li>
                 </ul>
               </div>
             </div>
@@ -106,10 +106,10 @@ export function ComparisonSection() {
             <div className="grid grid-cols-[1fr,1fr,1fr] border-t border-blue-100/60 dark:border-blue-900/20">
               <div className="p-6 md:p-8 font-medium text-gray-900 dark:text-white">Smart Contract Risk</div>
               <div className="p-6 md:p-8 text-[14px] md:text-[15px] text-gray-700 dark:text-gray-300 border-l border-blue-100/60 dark:border-blue-900/20">
-                🟢 None: No smart contract vulnerabilities as DeFi operations are built into consensus
+                None: No smart contract vulnerabilities as DeFi operations are built into consensus
               </div>
               <div className="p-6 md:p-8 text-[14px] md:text-[15px] text-gray-700 dark:text-gray-300 border-l border-blue-100/60 dark:border-blue-900/20">
-                🔴 High: Vulnerable to smart contract bugs, hacks, and exploits ($3B+ lost to hacks since 2020)
+                High: Vulnerable to smart contract bugs, hacks, and exploits ($3B+ lost to hacks since 2020)
               </div>
             </div>
 
@@ -117,7 +117,7 @@ export function ComparisonSection() {
             <div className="grid grid-cols-[1fr,1fr,1fr] border-t border-blue-100/60 dark:border-blue-900/20">
               <div className="p-6 md:p-8 font-medium text-gray-900 dark:text-white">MEV Protection</div>
               <div className="p-6 md:p-8 text-[14px] md:text-[15px] text-gray-700 dark:text-gray-300 border-l border-blue-100/60 dark:border-blue-900/20">
-                <p>🟢 Built-in MEV Resistance:</p>
+                <p>Built-in MEV Resistance:</p>
                 <ul className="list-disc pl-4 space-y-1">
                   <li>All conversions processed simultaneously</li>
                   <li>No front-running attacks</li>
@@ -126,7 +126,7 @@ export function ComparisonSection() {
                 </ul>
               </div>
               <div className="p-6 md:p-8 text-[14px] md:text-[15px] text-gray-700 dark:text-gray-300 border-l border-blue-100/60 dark:border-blue-900/20">
-                <p>🔴 Vulnerable to MEV:</p>
+                <p>Vulnerable to MEV:</p>
                 <ul className="list-disc pl-4 space-y-1">
                   <li>Front-running common and profitable</li>
                   <li>Sandwich attacks frequent</li>
@@ -139,10 +139,10 @@ export function ComparisonSection() {
             <div className="grid grid-cols-[1fr,1fr,1fr] border-t border-blue-100/60 dark:border-blue-900/20">
               <div className="p-6 md:p-8 font-medium text-gray-900 dark:text-white">Wallet Approvals</div>
               <div className="p-6 md:p-8 text-[14px] md:text-[15px] text-gray-700 dark:text-gray-300 border-l border-blue-100/60 dark:border-blue-900/20">
-                🟢 No Approval Mechanism: Direct control of assets through protocol
+                Direct control of assets through protocol interactions
               </div>
               <div className="p-6 md:p-8 text-[14px] md:text-[15px] text-gray-700 dark:text-gray-300 border-l border-blue-100/60 dark:border-blue-900/20">
-                🔴 Unlimited Approvals Common: Users often grant unlimited token approvals to contracts
+                Unlimited Approvals Common: Users often grant unlimited token approvals to contracts
               </div>
             </div>
 
@@ -155,7 +155,7 @@ export function ComparisonSection() {
             <div className="grid grid-cols-[1fr,1fr,1fr] border-t border-blue-100/60 dark:border-blue-900/20">
               <div className="p-6 md:p-8 font-medium text-gray-900 dark:text-white">Swap/Trade Fees</div>
               <div className="p-6 md:p-8 text-[14px] md:text-[15px] text-gray-700 dark:text-gray-300 border-l border-blue-100/60 dark:border-blue-900/20">
-                <p>🟢 Ultra-Low:</p>
+                <p>Low:</p>
                 <ul className="list-disc pl-4 space-y-1">
                   <li>0.025% for currency-to-liquidity pool</li>
                   <li>0.05% for currency-to-currency</li>
@@ -163,7 +163,7 @@ export function ComparisonSection() {
                 </ul>
               </div>
               <div className="p-6 md:p-8 text-[14px] md:text-[15px] text-gray-700 dark:text-gray-300 border-l border-blue-100/60 dark:border-blue-900/20">
-                <p>🔴 Higher:</p>
+                <p>Higher:</p>
                 <ul className="list-disc pl-4 space-y-1">
                   <li>Typically 0.3% to 1% swap fee</li>
                   <li>Plus gas fees for each transaction</li>
@@ -176,14 +176,15 @@ export function ComparisonSection() {
             <div className="grid grid-cols-[1fr,1fr,1fr] border-t border-blue-100/60 dark:border-blue-900/20">
               <div className="p-6 md:p-8 font-medium text-gray-900 dark:text-white">Gas/Network Fees</div>
               <div className="p-6 md:p-8 text-[14px] md:text-[15px] text-gray-700 dark:text-gray-300 border-l border-blue-100/60 dark:border-blue-900/20">
-                <p>🟢 Fixed & Predictable:</p>
+                <p>Fixed & Predictable:</p>
                 <ul className="list-disc pl-4 space-y-1">
                   <li>0.0001 VRSC transaction fee</li>
                   <li>No fee auctions or congestion pricing</li>
+                  <li>If chain gets congested, move to other chain</li>
                 </ul>
               </div>
               <div className="p-6 md:p-8 text-[14px] md:text-[15px] text-gray-700 dark:text-gray-300 border-l border-blue-100/60 dark:border-blue-900/20">
-                <p>🔴 Variable & Unpredictable:</p>
+                <p>Variable & Unpredictable:</p>
                 <ul className="list-disc pl-4 space-y-1">
                   <li>Can range from $1 to $100+ during congestion</li>
                   <li>Fee auctions during high demand periods</li>
@@ -200,19 +201,18 @@ export function ComparisonSection() {
             <div className="grid grid-cols-[1fr,1fr,1fr] border-t border-blue-100/60 dark:border-blue-900/20">
               <div className="p-6 md:p-8 font-medium text-gray-900 dark:text-white">Multi-Currency Support</div>
               <div className="p-6 md:p-8 text-[14px] md:text-[15px] text-gray-700 dark:text-gray-300 border-l border-blue-100/60 dark:border-blue-900/20">
-                <p>🟢 Native Protocol Support:</p>
+                <p>Native Protocol Support:</p>
                 <ul className="list-disc pl-4 space-y-1">
                   <li>VRSC and all PBaaS currencies</li>
                   <li>Bridged Ethereum assets</li>
-                  <li>Multiple currency types in one transaction</li>
+                  <li>Liquidity pool currencies with up to 10 reserves</li>
                 </ul>
               </div>
               <div className="p-6 md:p-8 text-[14px] md:text-[15px] text-gray-700 dark:text-gray-300 border-l border-blue-100/60 dark:border-blue-900/20">
-                <p>🔴 Contract-Based Support:</p>
+                <p>Contract-Based Support:</p>
                 <ul className="list-disc pl-4 space-y-1">
                   <li>Only tokens implementing specific interfaces</li>
                   <li>ERC-20 tokens most common</li>
-                  <li>Usually one token type per transaction</li>
                 </ul>
               </div>
             </div>
@@ -221,7 +221,7 @@ export function ComparisonSection() {
             <div className="grid grid-cols-[1fr,1fr,1fr] border-t border-blue-100/60 dark:border-blue-900/20">
               <div className="p-6 md:p-8 font-medium text-gray-900 dark:text-white">Liquidity Pools</div>
               <div className="p-6 md:p-8 text-[14px] md:text-[15px] text-gray-700 dark:text-gray-300 border-l border-blue-100/60 dark:border-blue-900/20">
-                <p>🟢 Protocol-Level Baskets:</p>
+                <p>Protocol-Level Baskets:</p>
                 <ul className="list-disc pl-4 space-y-1">
                   <li>Up to 10 reserve currencies</li>
                   <li>Configurable reserve ratios (5% to 100%)</li>
@@ -230,7 +230,7 @@ export function ComparisonSection() {
                 </ul>
               </div>
               <div className="p-6 md:p-8 text-[14px] md:text-[15px] text-gray-700 dark:text-gray-300 border-l border-blue-100/60 dark:border-blue-900/20">
-                <p>🔴 Contract-Based Pools:</p>
+                <p>Contract-Based Pools:</p>
                 <ul className="list-disc pl-4 space-y-1">
                   <li>Usually limited to 2-3 tokens per pool</li>
                   <li>Fixed fee structures</li>
@@ -244,7 +244,7 @@ export function ComparisonSection() {
             <div className="grid grid-cols-[1fr,1fr,1fr] border-t border-blue-100/60 dark:border-blue-900/20">
               <div className="p-6 md:p-8 font-medium text-gray-900 dark:text-white">Identity Integration</div>
               <div className="p-6 md:p-8 text-[14px] md:text-[15px] text-gray-700 dark:text-gray-300 border-l border-blue-100/60 dark:border-blue-900/20">
-                <p>🟢 Built-in VerusID:</p>
+                <p>Built-in VerusID:</p>
                 <ul className="list-disc pl-4 space-y-1">
                   <li>Human-readable addresses</li>
                   <li>Revocable and recoverable</li>
@@ -252,7 +252,7 @@ export function ComparisonSection() {
                 </ul>
               </div>
               <div className="p-6 md:p-8 text-[14px] md:text-[15px] text-gray-700 dark:text-gray-300 border-l border-blue-100/60 dark:border-blue-900/20">
-                <p>🔴 Limited:</p>
+                <p>Limited:</p>
                 <ul className="list-disc pl-4 space-y-1">
                   <li>No native identity system</li>
                   <li>ENS and similar services are add-ons</li>
@@ -270,7 +270,7 @@ export function ComparisonSection() {
             <div className="grid grid-cols-[1fr,1fr,1fr] border-t border-blue-100/60 dark:border-blue-900/20">
               <div className="p-6 md:p-8 font-medium text-gray-900 dark:text-white">Throughput</div>
               <div className="p-6 md:p-8 text-[14px] md:text-[15px] text-gray-700 dark:text-gray-300 border-l border-blue-100/60 dark:border-blue-900/20">
-                <p>🟢 Scale-Out Architecture:</p>
+                <p>Scale-Out Architecture:</p>
                 <ul className="list-disc pl-4 space-y-1">
                   <li>75-800 TPS per chain</li>
                   <li>Unlimited scaling through PBaaS</li>
@@ -278,7 +278,7 @@ export function ComparisonSection() {
                 </ul>
               </div>
               <div className="p-6 md:p-8 text-[14px] md:text-[15px] text-gray-700 dark:text-gray-300 border-l border-blue-100/60 dark:border-blue-900/20">
-                <p>🔴 Limited Base Layer:</p>
+                <p>Limited Base Layer:</p>
                 <ul className="list-disc pl-4 space-y-1">
                   <li>15-30 TPS on Ethereum</li>
                   <li>Layer 2 solutions required for scaling</li>
@@ -291,17 +291,16 @@ export function ComparisonSection() {
             <div className="grid grid-cols-[1fr,1fr,1fr] border-t border-blue-100/60 dark:border-blue-900/20">
               <div className="p-6 md:p-8 font-medium text-gray-900 dark:text-white">Block Time</div>
               <div className="p-6 md:p-8 text-[14px] md:text-[15px] text-gray-700 dark:text-gray-300 border-l border-blue-100/60 dark:border-blue-900/20">
-                <p>🟢 Fast:</p>
+                <p>Fast:</p>
                 <ul className="list-disc pl-4 space-y-1">
-                  <li>1-minute blocks</li>
-                  <li>Fast transaction confirmation</li>
+                  <li>1-minute blocks (on Verus blockchain)</li>
+                  <li>PBaaS chains can have 10 second blocks</li>
                 </ul>
               </div>
               <div className="p-6 md:p-8 text-[14px] md:text-[15px] text-gray-700 dark:text-gray-300 border-l border-blue-100/60 dark:border-blue-900/20">
-                <p>🔴 Slower:</p>
+                <p>Fast:</p>
                 <ul className="list-disc pl-4 space-y-1">
                   <li>12-14 second blocks on Ethereum</li>
-                  <li>Longer finality time</li>
                 </ul>
               </div>
             </div>

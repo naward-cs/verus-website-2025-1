@@ -22,6 +22,12 @@ let cachedData: {
 // Safely get element by exact CSS selector
 const getElementBySelector = (root: any, selector: string): any => {
   try {
+    // If this is an ID selector, use getElementById directly
+    if (selector.startsWith('#')) {
+      const id = selector.substring(1); // Remove the # character
+      return root.getElementById(id);
+    }
+    
     const selectorParts = selector.split(' > ');
     let element = root.querySelector(selectorParts[0]);
     
@@ -96,26 +102,25 @@ export async function GET() {
     const html = await response.text();
     const root = parse(html);
 
-    // Get 24h volume data from the total volume value (child 52)
+    // Get 24h volume data using the new selector #total-volume-24h
     console.log('Getting 24h volume...');
     let volume24h = "N/A";
-    const volume24hContainer = getElementBySelector(root, '#verus-basket-volume-24h > div');
+    const volume24hElement = getElementBySelector(root, '#total-volume-24h');
     
-    if (volume24hContainer) {
-      const children = volume24hContainer.querySelectorAll('div');
-      if (children.length >= 52) {
-        let volumeText = children[51].text?.trim() || "N/A";
-        // Remove any space between $ and numbers
-        volumeText = volumeText.replace('$ ', '$');
-        volume24h = volumeText;
-        console.log('Found 24h volume:', volume24h);
-      }
+    if (volume24hElement) {
+      let volumeText = volume24hElement.text?.trim() || "N/A";
+      // Remove any space between $ and numbers
+      volumeText = volumeText.replace('$ ', '$');
+      volume24h = volumeText;
+      console.log('Found 24h volume:', volume24h);
+    } else {
+      console.log('Could not find 24h volume using #total-volume-24h selector');
     }
 
     // Get total liquidity using exact selector
     console.log('Getting total liquidity...');
     let totalLiquidity = "N/A";
-    const totalLiquidityElement = getElementBySelector(root, '#verus-basket-reserves > div > div:nth-child(56)');
+    const totalLiquidityElement = getElementBySelector(root, '#verus-basket-reserves > div > div:nth-child(16) > div:nth-child(2)');
     
     if (totalLiquidityElement) {
       let liquidityText = totalLiquidityElement.text?.trim() || "N/A";
