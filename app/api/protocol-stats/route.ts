@@ -1,7 +1,7 @@
 /*
 * Server-side API for fetching Verus protocol statistics
 * - Retrieves data from cryptodashboard.faldt.net using the HTML parser
-* - Fixed selectors to match current HTML structure (July 2024)
+* - Updated to use specific IDs provided by the cryptodashboard creator (July 2024)
 * - Provides essential data only: 24h volume, total liquidity, and VRSC in pools
 * - Implements minimal caching to prevent overwhelming the source
 * - Returns raw data in standard format for UI consumption
@@ -102,7 +102,7 @@ export async function GET() {
     const html = await response.text();
     const root = parse(html);
 
-    // Get 24h volume data using the new selector #total-volume-24h
+    // Get 24h volume data using the #total-volume-24h selector
     console.log('Getting 24h volume...');
     let volume24h = "N/A";
     const volume24hElement = getElementBySelector(root, '#total-volume-24h');
@@ -117,10 +117,10 @@ export async function GET() {
       console.log('Could not find 24h volume using #total-volume-24h selector');
     }
 
-    // Get total liquidity using exact selector
+    // Get total liquidity using the new #total-basket-reserve selector
     console.log('Getting total liquidity...');
     let totalLiquidity = "N/A";
-    const totalLiquidityElement = getElementBySelector(root, '#verus-basket-reserves > div > div:nth-child(16) > div:nth-child(2)');
+    const totalLiquidityElement = getElementBySelector(root, '#total-basket-reserve');
     
     if (totalLiquidityElement) {
       let liquidityText = totalLiquidityElement.text?.trim() || "N/A";
@@ -128,30 +128,21 @@ export async function GET() {
       liquidityText = liquidityText.replace('$ ', '$');
       totalLiquidity = liquidityText;
       console.log('Found total liquidity:', totalLiquidity);
+    } else {
+      console.log('Could not find total liquidity using #total-basket-reserve selector');
     }
 
-    // Get VRSC in liquidity pools using the exact verified selector (this one was correct)
+    // Get VRSC in liquidity pools using the new #vrsc-in-baskets selector
     console.log('Getting VRSC in pools...');
     let vrscLiquidity = "N/A";
-    const vrscSection = root.querySelector('#prices-card-verus');
-    if (vrscSection) {
-      // Find the row containing "VerusCoin in baskets"
-      const vrscLiquidityRows = vrscSection.querySelectorAll('.card-row-wrapper');
-      for (const row of vrscLiquidityRows) {
-        const labelElement = row.querySelector('.card-row-item:first-child');
-        if (labelElement && labelElement.text?.trim() === 'VerusCoin in baskets') {
-          const valueElement = row.querySelector('.card-row-item:nth-child(2)');
-          if (valueElement) {
-            const value = valueElement.text?.trim();
-            if (value) {
-              // Format it as "X VRSC"
-              vrscLiquidity = value + " VRSC";
-              console.log('Found VRSC in pools:', vrscLiquidity);
-              break;
-            }
-          }
-        }
-      }
+    const vrscLiquidityElement = getElementBySelector(root, '#vrsc-in-baskets');
+    
+    if (vrscLiquidityElement) {
+      let vrscText = vrscLiquidityElement.text?.trim() || "N/A";
+      vrscLiquidity = vrscText + " VRSC";
+      console.log('Found VRSC in pools:', vrscLiquidity);
+    } else {
+      console.log('Could not find VRSC in pools using #vrsc-in-baskets selector');
     }
 
     // Prepare data for response
