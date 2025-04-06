@@ -1,7 +1,5 @@
 import { HexToBase64, isBase64url } from './Validators.js'
 
-const endpoint = 'https://arweave.net/graphql'
-
 const FetchArweaveProfile = async (tag: string, publicVdxfid: string) => {
   if (!tag) {
     console.log("FetchArweaveProfile: No tag provided")
@@ -16,36 +14,32 @@ const FetchArweaveProfile = async (tag: string, publicVdxfid: string) => {
   if (isBase64url(address)) {
     console.log("FetchArweaveProfile: Valid base64url address", address)
     
-    // Step 1: First query to get all transactions by this owner
-    const ownerQueryStr = `query {
-      transactions(
-        first: 10
-        sort: HEIGHT_DESC
-        owners: ["${address}"]
-      ) {
-        edges {
-          node {
-            id
-            tags {
-              name
-              value
-            }
-          }
-        }
-      }
-    }`
-
     try {
-      console.log("FetchArweaveProfile: Querying Arweave for owner transactions")
-      // Execute owner query
-      const ownerResult = await fetch(endpoint, {
+      console.log("FetchArweaveProfile: Querying API for owner transactions")
+      
+      // Use the new API endpoint instead of direct GraphQL
+      const baseUrl = typeof window !== 'undefined' 
+        ? window.location.origin 
+        : process.env.NEXT_PUBLIC_SITE_URL || 'http://localhost:3000';
+        
+      const response = await fetch(`${baseUrl}/api/arweaveData`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
-          Accept: 'application/json',
         },
-        body: JSON.stringify({ query: ownerQueryStr }),
-      }).then((res) => res.json())
+        body: JSON.stringify({
+          action: 'findOwnerTransactions',
+          ownerAddress: address,
+          publicVdxfid: publicVdxfid
+        }),
+      });
+      
+      if (!response.ok) {
+        throw new Error(`API error: ${response.statusText}`)
+      }
+      
+      const apiResult = await response.json()
+      const ownerResult = apiResult.data
       
       console.log("FetchArweaveProfile: Received owner query result", 
         ownerResult?.data?.transactions?.edges?.length 

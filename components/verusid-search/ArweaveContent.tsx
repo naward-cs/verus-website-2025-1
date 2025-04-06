@@ -25,14 +25,25 @@ export function ArweaveContent({ content }: ArweaveContentProps) {
     setError(null)
 
     try {
-      // Direct fetch from Arweave
-      const response = await fetch(`https://arweave.net/${content.txid}`)
+      // Use our API instead of direct Arweave fetch
+      const baseUrl = window.location.origin
+      const response = await fetch(`${baseUrl}/api/arweaveData`, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          action: 'getTransactionData',
+          txId: content.txid
+        }),
+      })
       
       if (!response.ok) {
         throw new Error(`Failed to fetch content: ${response.statusText}`)
       }
       
-      const data = await response.text()
+      const apiResult = await response.json()
+      const data = apiResult.data
       
       // Try parsing as JSON if possible
       try {

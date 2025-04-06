@@ -1,4 +1,4 @@
-import Arweave from 'arweave'
+// import Arweave from 'arweave'
 import CreateProfile from './CreateProfile'
 import FetchArweaveProfile from './FetchArweaveProfile'
 import { reverseHex } from './Validators'
@@ -6,12 +6,13 @@ import { PublicProfileProps } from './ProfileTypes'
 import CollectionsJSON from '@/data/collectionsJSON'
 import IdentityJSON from '@/data/identityJSON'
 
-const arConfig = {
-  host: 'arweave.net', // Hostname or IP address for a Arweave host
-  port: 443, // Port
-  protocol: 'https', // Network protocol http or https
-}
-const arweave = Arweave.init(arConfig)
+// No need for arweave config or initialization
+// const arConfig = {
+//   host: 'arweave.net',
+//   port: 443,
+//   protocol: 'https',
+// }
+// const arweave = Arweave.init(arConfig)
 
 const FetchVerusProfile = async (content: Record<string, any>) => {
   console.log("FetchVerusProfile: Starting with content:", content)
@@ -63,24 +64,42 @@ const FetchVerusProfile = async (content: Record<string, any>) => {
     console.log("FetchVerusProfile: Arweave transaction ID found:", arweaveTxId)
     
     try {
-      // Fetch the transaction data from Arweave
-      console.log("FetchVerusProfile: Fetching Arweave transaction data...")
-      const arweaveData = await arweave.transactions.getData(arweaveTxId, {
-        decode: true,
-        string: true,
-      })
+      // Fetch the transaction data using the API instead of Arweave library
+      console.log("FetchVerusProfile: Fetching Arweave transaction data via API...")
       
-      console.log("FetchVerusProfile: Raw Arweave data length:", arweaveData?.toString()?.length || 0)
+      const baseUrl = typeof window !== 'undefined' 
+        ? window.location.origin 
+        : process.env.NEXT_PUBLIC_SITE_URL || 'http://localhost:3000';
+        
+      const response = await fetch(`${baseUrl}/api/arweaveData`, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          action: 'getTransactionData',
+          txId: arweaveTxId
+        }),
+      });
+      
+      if (!response.ok) {
+        throw new Error(`API error: ${response.statusText}`)
+      }
+      
+      const apiResult = await response.json();
+      const arweaveData = apiResult.data;
+      
+      console.log("FetchVerusProfile: Raw Arweave data length:", arweaveData?.length || 0)
       
       // Parse JSON data
       let arweaveJSON
       try {
-        arweaveJSON = JSON.parse(arweaveData.toString())
+        arweaveJSON = JSON.parse(arweaveData)
         console.log("FetchVerusProfile: Successfully parsed Arweave JSON data")
         console.log("FetchVerusProfile: Available keys in Arweave data:", Object.keys(arweaveJSON))
       } catch (parseError) {
         console.error("FetchVerusProfile: Error parsing Arweave data:", parseError)
-        console.log("FetchVerusProfile: Raw data:", arweaveData.toString().substring(0, 200) + "...")
+        console.log("FetchVerusProfile: Raw data:", arweaveData.substring(0, 200) + "...")
         return null
       }
 
@@ -98,15 +117,29 @@ const FetchVerusProfile = async (content: Record<string, any>) => {
           if (dataPath) {
             console.log("FetchVerusProfile: Found data path in manifest:", dataPath)
             
-            // Fetch the actual data transaction
-            console.log("FetchVerusProfile: Fetching data from path transaction...")
-            const pathData = await arweave.transactions.getData(dataPath, {
-              decode: true,
-              string: true,
-            })
+            // Fetch the actual data transaction using the API
+            console.log("FetchVerusProfile: Fetching data from path transaction via API...")
+            
+            const pathResponse = await fetch(`${baseUrl}/api/arweaveData`, {
+              method: 'POST',
+              headers: {
+                'Content-Type': 'application/json',
+              },
+              body: JSON.stringify({
+                action: 'getTransactionData',
+                txId: dataPath
+              }),
+            });
+            
+            if (!pathResponse.ok) {
+              throw new Error(`API error for path data: ${pathResponse.statusText}`)
+            }
+            
+            const pathApiResult = await pathResponse.json();
+            const pathData = pathApiResult.data;
             
             try {
-              arweaveJSON = JSON.parse(pathData.toString())
+              arweaveJSON = JSON.parse(pathData)
               console.log("FetchVerusProfile: Successfully parsed path data")
               console.log("FetchVerusProfile: Available keys in path data:", Object.keys(arweaveJSON))
             } catch (pathError) {
