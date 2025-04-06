@@ -6,7 +6,8 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "build:debug": "NODE_OPTIONS='--inspect' next build"
   },
   "dependencies": {
     "@hookform/resolvers": "^3.9.0",
@@ -47,7 +48,7 @@
     "bitcoinjs-message": "^2.2.0",
     "class-variance-authority": "^0.7.0",
     "clsx": "^2.1.1",
-    "crypto-js": "^4.2.0",
+    "crypto-js": "4.1.1",
     "date-fns": "^3.6.0",
     "embla-carousel-react": "^8.3.0",
     "eslint": "8.49.0",

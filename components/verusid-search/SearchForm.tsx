@@ -39,7 +39,7 @@ export function SearchForm({ onSearch, isLoading, initialValue = '' }: SearchFor
             <input
               type="text"
               id="verusId"
-              placeholder="Enter a VerusID (e.g. cragorn)"
+              placeholder="Enter a VerusID"
               className="w-full p-3 border border-blue-200/70 dark:border-blue-800/30 rounded-lg shadow-sm focus:ring-verus-blue focus:border-verus-blue dark:bg-gray-800/50 dark:text-white backdrop-blur-sm"
               value={verusId}
               onChange={(e) => setVerusId(e.target.value)}
