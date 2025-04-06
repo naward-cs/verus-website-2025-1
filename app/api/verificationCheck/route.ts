@@ -1,6 +1,7 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { isValidUrl, verusWebProof, verusBlockchainProof } from '@/components/VerusIdProfile/Validators';
 import ProofsJSON from '@/data/proofsJSON';
+import 'crypto-js/sha224';
 
 // Define clear types for the verification results
 type ValidStatus = 'true' | 'false' | 'error';

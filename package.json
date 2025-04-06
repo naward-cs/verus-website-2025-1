@@ -47,6 +47,7 @@
     "bitcoinjs-message": "^2.2.0",
     "class-variance-authority": "^0.7.0",
     "clsx": "^2.1.1",
+    "crypto-js": "^4.2.0",
     "date-fns": "^3.6.0",
     "embla-carousel-react": "^8.3.0",
     "eslint": "8.49.0",
@@ -77,5 +78,8 @@
     "vaul": "^0.9.9",
     "web3": "^4.16.0",
     "zod": "^3.23.8"
+  },
+  "devDependencies": {
+    "@types/crypto-js": "^4.2.2"
   }
 }
