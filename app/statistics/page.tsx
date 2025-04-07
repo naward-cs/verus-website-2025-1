@@ -1,3 +1,5 @@
+export const dynamic = 'force-dynamic'; // Ensures the page is rendered dynamically
+
 import { ProtocolStatistics } from "@/components/statistics/protocol-statistics"
 import { Footer } from "@/components/footer"
 import { Metadata } from "next"
