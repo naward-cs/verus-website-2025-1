@@ -3,11 +3,7 @@ import type { Metadata } from 'next'
 import { Header } from '@/components/header'
 import { geomanist } from './fonts'
 import { ThemeProvider } from '@/context/ThemeContext'
-
-// Helper function to get the base URL
-export function getSiteUrl() {
-  return process.env.NEXT_PUBLIC_BASE_URL || 'https://nextdev.verus.io'
-}
+import { getSiteUrl } from '@/lib/utils'
 
 export const metadata: Metadata = {
   title: 'The Internet of Value | Verus',

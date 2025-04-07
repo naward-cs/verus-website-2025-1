@@ -46,9 +46,9 @@
     "arweave": "^1.15.7",
     "autoprefixer": "10.4.15",
     "bitcoinjs-message": "^2.2.0",
+    "buffer": "^6.0.3",
     "class-variance-authority": "^0.7.0",
     "clsx": "^2.1.1",
-    "crypto-js": "4.1.1",
     "date-fns": "^3.6.0",
     "embla-carousel-react": "^8.3.0",
     "eslint": "8.49.0",
@@ -80,7 +80,5 @@
     "web3": "^4.16.0",
     "zod": "^3.23.8"
   },
-  "devDependencies": {
-    "@types/crypto-js": "^4.2.2"
-  }
+  "devDependencies": {}
 }

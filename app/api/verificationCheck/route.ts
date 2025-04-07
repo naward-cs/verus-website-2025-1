@@ -2,19 +2,7 @@ import { NextRequest, NextResponse } from 'next/server';
 import { isValidUrl, verusWebProof, verusBlockchainProof } from '@/components/VerusIdProfile/Validators';
 import ProofsJSON from '@/data/proofsJSON';
 
-// Initialize crypto-js safely - this prevents the "Cannot set properties of undefined (setting 'SHA224')" error
-let CryptoJS: any;
-try {
-  // Use dynamic import to prevent build-time issues with crypto-js
-  CryptoJS = require('crypto-js');
-} catch (error) {
-  console.warn('CryptoJS failed to initialize:', error);
-  // Provide a mock CryptoJS to prevent errors
-  CryptoJS = {
-    SHA224: function() { return { toString: () => '' }; },
-    enc: { Hex: { parse: () => ({}) }, Base64: { stringify: () => '' } }
-  };
-}
+
 
 // Define clear types for the verification results
 type ValidStatus = 'true' | 'false' | 'error';
