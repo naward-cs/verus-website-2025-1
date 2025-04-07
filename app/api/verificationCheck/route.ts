@@ -121,18 +121,26 @@ export async function POST(request: NextRequest) {
     // Handle URL verification (for social media)
     if (isValidUrl(verifyKey)) {
       let verifiedData: any;
-      
+      console.log(`Verification Check: Processing URL proof: ${verifyKey}`);
       try {
         if (verifyKey.includes('reddit')) {
-          // Reddit uses a different approach to fetch content
-          const redditResponse = await fetch(verifyKey + '.json');
+          console.log('Verification Check: Fetching Reddit content...');
+          // Add a realistic User-Agent header to avoid Reddit 403 error
+          const redditResponse = await fetch(verifyKey + '.json', {
+            headers: {
+              'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36'
+            }
+          });
           if (!redditResponse.ok) {
+            console.error(`Reddit API error: ${redditResponse.status} for ${verifyKey}`);
             throw new Error(`Reddit API error: ${redditResponse.status}`);
           }
           const redditData = await redditResponse.json();
           verifiedData = redditData[1]?.data?.children[0]?.data?.body;
+          console.log('Verification Check: Reddit content fetched.');
         } else {
-          // For other URLs, fetch the content directly
+          console.log(`Verification Check: Fetching content from ${verifyKey}...`);
+          // Consider adding a User-Agent here too if other sites cause issues
           const response = await fetch(verifyKey);
           if (!response.ok) {
             throw new Error(`URL fetch error: ${response.status}`);
