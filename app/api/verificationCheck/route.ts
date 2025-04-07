@@ -124,11 +124,13 @@ export async function POST(request: NextRequest) {
       console.log(`Verification Check: Processing URL proof: ${verifyKey}`);
       try {
         if (verifyKey.includes('reddit')) {
-          console.log('Verification Check: Fetching Reddit content...');
-          // Add a realistic User-Agent header to avoid Reddit 403 error
+          console.log('Verification Check: Fetching Reddit content with browser headers...');
+          // Add more realistic browser headers to avoid Reddit 403 error
           const redditResponse = await fetch(verifyKey + '.json', {
             headers: {
-              'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36'
+              'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36',
+              'Accept': 'application/json, text/plain, */*', // Common Accept header for JSON requests
+              'Accept-Language': 'en-US,en;q=0.9' // Common Accept-Language header
             }
           });
           if (!redditResponse.ok) {
@@ -137,7 +139,7 @@ export async function POST(request: NextRequest) {
           }
           const redditData = await redditResponse.json();
           verifiedData = redditData[1]?.data?.children[0]?.data?.body;
-          console.log('Verification Check: Reddit content fetched.');
+          console.log('Verification Check: Reddit content fetched successfully.'); // Changed log message slightly
         } else {
           console.log(`Verification Check: Fetching content from ${verifyKey}...`);
           // Consider adding a User-Agent here too if other sites cause issues
