@@ -138,6 +138,11 @@ export function VerifiedSocialLinks({ services, userId }: VerifiedSocialLinksPro
   return (
     <div className="flex flex-wrap gap-3">
       {Object.entries(services).map(([key, service]) => {
+        if (key.toLowerCase().includes('reddit')) {
+          console.log(`VerifiedSocialLinks: Skipping rendering for Reddit service key: ${key}`);
+          return null;
+        }
+        
         // Check if this is a social service with a URL
         const hasUrl = Object.values(service).some(val => 
           typeof val === 'string' && val.startsWith('http')

@@ -120,57 +120,48 @@ export async function POST(request: NextRequest) {
 
     // Handle URL verification (for social media)
     if (isValidUrl(verifyKey)) {
-      let verifiedData: any;
-      console.log(`Verification Check: Processing URL proof: ${verifyKey}`);
-      try {
-        if (verifyKey.includes('reddit')) {
-          console.log('Verification Check: Fetching Reddit content with browser headers...');
-          // Add more realistic browser headers to avoid Reddit 403 error
-          const redditResponse = await fetch(verifyKey + '.json', {
-            headers: {
-              'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36',
-              'Accept': 'application/json, text/plain, */*', // Common Accept header for JSON requests
-              'Accept-Language': 'en-US,en;q=0.9' // Common Accept-Language header
-            }
-          });
-          if (!redditResponse.ok) {
-            console.error(`Reddit API error: ${redditResponse.status} for ${verifyKey}`);
-            throw new Error(`Reddit API error: ${redditResponse.status}`);
-          }
-          const redditData = await redditResponse.json();
-          verifiedData = redditData[1]?.data?.children[0]?.data?.body;
-          console.log('Verification Check: Reddit content fetched successfully.'); // Changed log message slightly
-        } else {
+      if (verifyKey.includes('reddit')) {
+        console.log(`Verification Check: Skipping Reddit URL: ${verifyKey}`);
+        result = { valid: 'false', message: 'Reddit verification not performed' };
+      } else {
+        let verifiedData: any;
+        console.log(`Verification Check: Processing URL proof: ${verifyKey}`);
+        try {
           console.log(`Verification Check: Fetching content from ${verifyKey}...`);
-          // Consider adding a User-Agent here too if other sites cause issues
           const response = await fetch(verifyKey);
           if (!response.ok) {
+            console.error(`URL fetch error: ${response.status} for ${verifyKey}`);
             throw new Error(`URL fetch error: ${response.status}`);
           }
           verifiedData = await response.text();
-        }
-
-        // Extract proof from content
-        const parsedProof = verusWebProof(verifiedData);
-        if (parsedProof) {
-          // Verify the proof with Verus API
-          const verificationResult = await verifyVerusMessage(
-            user,
-            parsedProof.Signature,
-            parsedProof.Message
-          );
+          console.log(`Verification Check: Content fetched from ${verifyKey}. Length: ${verifiedData?.length}`);
           
-          // Add the proof link to the result
-          result = {
-            ...verificationResult,
-            proofLink: verifyKey
-          };
-        } else {
-          result = { valid: 'error', message: 'Could not parse proof from content' };
+          // Extract proof from content
+          console.log('Verification Check: Parsing web proof...');
+          const parsedProof = verusWebProof(verifiedData);
+          if (parsedProof && parsedProof.Signature && parsedProof.Message) {
+            console.log('Verification Check: Web proof parsed. Verifying...');
+            // Verify the proof with Verus API
+            const verificationResult = await verifyVerusMessage(
+              user,
+              parsedProof.Signature,
+              parsedProof.Message
+            );
+            console.log(`Verification Check: Web proof verification result: ${JSON.stringify(verificationResult)}`);
+            
+            // Add the proof link to the result
+            result = {
+              ...verificationResult,
+              proofLink: verifyKey
+            };
+          } else {
+            console.log('Verification Check: Could not parse proof from content.');
+            result = { valid: 'error', message: 'Could not parse proof from content' };
+          }
+        } catch (error) {
+          console.error('Error verifying URL content:', error);
+          result = { valid: 'error', message: 'Failed to verify URL content' };
         }
-      } catch (error) {
-        console.error('Error verifying URL content:', error);
-        result = { valid: 'error', message: 'Failed to verify URL content' };
       }
     } 
     // Handle blockchain address verification
