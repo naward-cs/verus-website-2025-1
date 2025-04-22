@@ -30,7 +30,7 @@ export function ScalingSection() {
             <div className="flex flex-col gap-4 mt-8">
               {/* Medium Article Link - Styled like homepage */}
               <a 
-                href="https://medium.com/veruscoin/verus-internet-protocol-vip-provable-decentralized-cross-chain-communication-2e7c7f16c759"
+                href="https://medium.com/veruscoin/verus-internet-protocol-vip-provable-decentralized-cross-chain-communication-8d9414a429c5"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="group inline-flex items-center gap-2 md:text-[15px] text-[13px] text-blue-600 hover:text-blue-700 dark:text-blue-300 dark:hover:text-blue-200 transition-all duration-300 bg-blue-50/80 hover:bg-blue-50 dark:bg-blue-950/40 dark:hover:bg-blue-950/50 backdrop-blur-sm px-5 py-3 rounded-lg border border-blue-200 dark:border-blue-800/40 hover:border-blue-300 dark:hover:border-blue-700/60 hover:shadow-md dark:hover:shadow-blue-950/40 hover:-translate-y-[1px] w-fit"
@@ -44,7 +44,7 @@ export function ScalingSection() {
               
               {/* Second Medium Article Link */}
               <a 
-                href="https://medium.com/veruscoin/scalability-decentralization-security-what-trilemma-68271695a80f"
+                href="https://medium.com/veruscoin/scalability-decentralization-security-what-trilemma-8d2d6869924d"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="group inline-flex items-center gap-2 md:text-[15px] text-[13px] text-blue-600 hover:text-blue-700 dark:text-blue-300 dark:hover:text-blue-200 transition-all duration-300 bg-blue-50/80 hover:bg-blue-50 dark:bg-blue-950/40 dark:hover:bg-blue-950/50 backdrop-blur-sm px-5 py-3 rounded-lg border border-blue-200 dark:border-blue-800/40 hover:border-blue-300 dark:hover:border-blue-700/60 hover:shadow-md dark:hover:shadow-blue-950/40 hover:-translate-y-[1px] w-fit"

@@ -15,7 +15,7 @@ export const milestones = [
     description: "Verus achieved a significant breakthrough by implementing StakeGuard, elegantly solving the long-standing Nothing at Stake problem that had plagued proof-of-stake systems since their inception. Simultaneously, the integration of Zcash's Sapling technology improved the performance of shielded transactions on the network. These technical improvements demonstrated the project's commitment to addressing foundational blockchain challenges.",
     link: {
       text: "Read how Verus fixed 'nothing-at-stake'",
-      url: "https://medium.com/veruscoin/verus-proof-of-stake-paper-1-overview-dc0b052dac"
+      url: "https://medium.com/veruscoin/how-verus-solved-nothing-at-stake-and-weak-subjectivity-proof-of-stake-problems-b4dd6a85086e"
     }
   },
   {

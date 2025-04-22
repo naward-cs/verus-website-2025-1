@@ -133,15 +133,15 @@ export function CliDownloads() {
       )}
       
       <p className="text-[14px] md:text-[15px] text-black/60 dark:text-white/60 mt-8">
-        Open-source:{" "}
+        Verus is open source. View the source code on{" "}
         <a 
           href="https://github.com/VerusCoin/VerusCoin" 
           target="_blank" 
-          rel="noopener noreferrer" 
+          rel="noopener noreferrer"
           className="text-verus-blue dark:text-blue-400 hover:underline"
         >
-          Go to GitHub
-        </a>
+          GitHub
+        </a>.
       </p>
     </div>
   )

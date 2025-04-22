@@ -227,7 +227,7 @@ export function StakingSteps() {
 
             <div className="mt-8 space-y-3">
               <a 
-                href="https://www.youtube.com/watch?v=example"
+                href="https://youtu.be/kyEqBX_erJo?si=7846soQuGwqIi6FS"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-verus-blue dark:text-blue-400 hover:underline flex items-center gap-2 text-[14px] md:text-[15px] group transition-colors"
@@ -237,7 +237,7 @@ export function StakingSteps() {
                 <ExternalLink className="h-4 w-4 opacity-50 group-hover:opacity-100 transition-opacity" />
               </a>
               <a 
-                href="https://www.youtube.com/watch?v=example"
+                href="https://youtu.be/Ml3bFNcpVjw?si=lY-puXXavW-0i3tY"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-verus-blue dark:text-blue-400 hover:underline flex items-center gap-2 text-[14px] md:text-[15px] group transition-colors"

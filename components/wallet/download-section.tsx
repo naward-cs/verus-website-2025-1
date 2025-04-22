@@ -94,12 +94,17 @@ export function DownloadSection() {
       </div>
 
       <div className="mt-8">
-        <p className="text-[14px] md:text-[15px] text-black/60 dark:text-white/60">
-          Open-source:{" "}
-          <a href="https://github.com/VerusCoin/Verus-Desktop" target="_blank" rel="noopener noreferrer" className="text-verus-blue dark:text-blue-400 hover:underline">
-            Go to GitHub
-          </a>
-        </p>
+      <p className="text-[14px] md:text-[15px] text-black/60 dark:text-white/60 mt-8">
+        Verus Desktop is open source. View the source code on{" "}
+        <a 
+          href="https://github.com/VerusCoin/Verus-Desktop" 
+          target="_blank" 
+          rel="noopener noreferrer"
+          className="text-verus-blue dark:text-blue-400 hover:underline"
+        >
+          GitHub
+        </a>.
+      </p>
       </div>
     </>
   )

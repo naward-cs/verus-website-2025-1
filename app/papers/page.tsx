@@ -3,11 +3,11 @@ import { Footer } from "@/components/footer"
 import { Metadata } from "next"
 
 export const metadata: Metadata = {
-  title: "Verus Whitepapers & Technical Documents | Verus",
+  title: "Published Papers & Literature | Verus",
   description: "Learn about the technical foundations and innovations behind the Verus Protocol.",
   keywords: "blockchain whitepaper, Verus technical documents, cryptocurrency research, blockchain technology papers, Verus documentation",
   openGraph: {
-    title: "Verus Whitepapers & Technical Documents | Verus",
+    title: "Published Papers & Literature | Verus",
     description: "Learn about the technical foundations and innovations behind the Verus Protocol.",
     url: "/papers",
     siteName: "Verus",
@@ -15,7 +15,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Verus Whitepapers & Technical Documents | Verus",
+    title: "Published Papers & Literature | Verus",
     description: "Learn about the technical foundations and innovations behind the Verus Protocol.",
   },
   alternates: {
@@ -43,7 +43,7 @@ export default function PapersPage() {
           <div className="max-w-[1220px] mx-auto md:px-8">
             <div className="px-4 md:px-0 mb-8 md:mb-16">
               <h1 className="text-[22px] md:text-[40px] leading-snug text-verus-blue dark:text-blue-400 font-medium tracking-tight">
-                Verus whitepapers & technical documents.
+                Verus published papers & literature.
               </h1>
               <p className="text-[16px] md:text-[20px] text-gray-700 dark:text-gray-300 mt-4 max-w-[800px]">
                 Learn about the technical foundations and innovations behind the Verus Protocol.

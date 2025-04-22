@@ -94,7 +94,7 @@ export function Footer() {
                 <li><Link href="/milestones" className="text-[15px] text-gray-400 hover:text-white transition-colors">Milestones</Link></li>
                 <li><Link href="/green" className="text-[15px] text-gray-400 hover:text-white transition-colors">Environmentally Friendly</Link></li>
                 <li><Link href="/faq" className="text-[15px] text-gray-400 hover:text-white transition-colors">FAQ</Link></li>
-                <li><Link href="/papers" className="text-[15px] text-gray-400 hover:text-white transition-colors">Whitepapers</Link></li>
+                <li><Link href="/papers" className="text-[15px] text-gray-400 hover:text-white transition-colors">Papers</Link></li>
                 <li><Link href="/statistics" className="text-[15px] text-gray-400 hover:text-white transition-colors">Statistics</Link></li>
               </ul>
             </div>
@@ -199,7 +199,7 @@ export function Footer() {
                 <li><Link href="/milestones" className="text-[14px] text-gray-400">Milestones</Link></li>
                 <li><Link href="/green" className="text-[14px] text-gray-400">Environmentally Friendly</Link></li>
                 <li><Link href="/faq" className="text-[14px] text-gray-400">FAQ</Link></li>
-                <li><Link href="/papers" className="text-[14px] text-gray-400">Whitepapers</Link></li>
+                <li><Link href="/papers" className="text-[14px] text-gray-400">Papers</Link></li>
                 <li><Link href="/statistics" className="text-[14px] text-gray-400">Statistics</Link></li>
               </ul>
             </div>

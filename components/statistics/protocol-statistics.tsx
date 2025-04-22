@@ -1,19 +1,19 @@
 /*
 * Protocol Statistics Component
 * - Server component serves as layout container
-* - Initial data fetched server-side for SEO and fast initial render
-* - Client components fetch their own live data for up-to-date statistics
-* - Minimizes data duplication between server and client
+* - Initial data fetched server-side for SEO and fast initial render (Price, Blockchain Info)
+* - Other components (EcosystemStatsSection) fetch their own live data for up-to-date statistics
+* - Displays Price and Blockchain sections side-by-side on desktop
+* - Removed Volume and Liquidity sections due to unreliable external API
+* - Added link to external dashboard for detailed DeFi stats
 * - Implements hybrid server/client rendering for optimal user experience
 */
 
-import { Zap, Server, Bitcoin, BarChart3, DollarSign, Droplet, Coins, Layers, Users, Landmark, Network, ArrowUpDown, ChevronUp, ChevronDown, ExternalLink, Activity } from "lucide-react"
+import { Zap, Server, Bitcoin, BarChart3, DollarSign, Layers, Users, Landmark, Network, ArrowUpDown, ChevronUp, ChevronDown, ExternalLink, Activity } from "lucide-react"
 
 // Import smaller components
 import { PriceSection } from "@/components/statistics/sections/price-section"
-import { VolumeSection } from "@/components/statistics/sections/volume-section"
 import { BlockchainSection } from "@/components/statistics/sections/blockchain-section"
-import { LiquiditySection } from "@/components/statistics/sections/liquidity-section"
 import { EcosystemStatsSection } from "@/components/statistics/sections/ecosystem-stats-section"
 
 // Fetch circulating supply (used for price section only)
@@ -162,9 +162,6 @@ export async function ProtocolStatistics() {
             maxSupply={formattedMaxSupply}
           />
           
-          {/* Volume Section - Client component handles its own data fetching */}
-          <VolumeSection />
-          
           {/* Blockchain Section */}
           <BlockchainSection 
             blockHeight={miningInfo.blockHeight}
@@ -172,10 +169,23 @@ export async function ProtocolStatistics() {
             stakingAmount={miningInfo.stakingAmount}
             stakingPercentage={stakingPercentage}
           />
-          
-          {/* Liquidity Section - Client component handles its own data fetching */}
-          <LiquiditySection />
         </div>
+      </div>
+      
+      {/* Link to External Dashboard */}
+      <div className="text-center mb-8 px-4">
+        <p className="text-[15px] text-gray-600 dark:text-gray-400">
+          For more in-depth protocol DeFi information, visit the 
+          <a 
+            href="https://cryptodashboard.faldt.net/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-blue-600 dark:text-blue-400 hover:underline font-medium mx-1"
+          >
+            Verus Community Dashboard
+          </a>
+          .
+        </p>
       </div>
       
       {/* Ecosystem Stats */}
