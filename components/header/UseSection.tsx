@@ -74,10 +74,10 @@ export function UseSection() {
         <h3 className="mb-4 text-xs font-medium text-gray-500 dark:text-gray-400 uppercase border-b border-gray-200 dark:border-gray-700 pb-2">Tools</h3>
         <div className="space-y-4">
           <NavLink 
-            href="/#" 
+            href="/verusid-search" 
             icon={<Search className="h-5 w-5 text-gray-500 group-hover:text-verus-blue transition-colors" />}
             title="VerusID Search"
-            description="Find VerusIDs"
+            description="Find & view VerusID profiles"
           />
           <NavLink 
             href="/verify" 

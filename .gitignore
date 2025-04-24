@@ -5,6 +5,15 @@
 /.pnp
 .pnp.js
 
+#package lock files
+package-lock.json
+pnpm-lock.yaml
+yarn.lock
+
+## ai stuff
+.bolt/
+.cursor/
+
 # testing
 /coverage
 

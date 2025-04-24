@@ -94,17 +94,15 @@ export function BuildSection() {
         <h3 className="mb-4 text-xs font-medium text-gray-500 dark:text-gray-400 uppercase border-b border-gray-200 dark:border-gray-700 pb-2">Solutions</h3>
         <div className="space-y-4">
           {/* Use custom PBaaS Link component */}
-          <PBaaSLink 
+          <NavLink 
             href="/build/pbaas-chains/" 
             icon={<LuNetwork className="h-5 w-5 text-gray-500 group-hover:text-verus-blue transition-colors" />}
-            label="PBaaS"
-            title="Blockchains"
+            title="Blockchains (PBaaS)"
             description="Rent-free, interoperable & independent"
           />
-          <PBaaSLink 
+          <NavLink 
             href="/build/pbaas-currencies/" 
             icon={<LuCoins className="h-5 w-5 text-gray-500 group-hover:text-verus-blue transition-colors" />}
-            label="PBaaS"
             title="Currencies"
             description="Currencies, tokens & liquidity pools"
           />

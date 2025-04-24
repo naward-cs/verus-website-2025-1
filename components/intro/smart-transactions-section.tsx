@@ -17,7 +17,10 @@ export function SmartTransactionsSection() {
                 All functionality on the Verus blockchain is programmed in the protocol. All Verus features are considered mission-critical and find their origin in the consensus layer. These functionalities are directly connected to the miners and stakers, they are called Smart Transactions.
               </p>
               <p className="text-[14px] md:text-[15px] text-gray-700 dark:text-gray-300 tracking-tight leading-[1.8]">
-                Verus prevents application developers from being responsible for systems security. Here's why that's an important design choice. We can see many problems arise with smart contracts on other (EVM-based) systems. Vulnerabilities, bugs, abuse. New smart contract incidents occur each day.
+              Verus shifts core security responsibilities from application developers to the protocol level, ensuring that critical functions are validated by consensus. This, combined with a transparent wallet approval mechanism, ensures users always understand exactly what they're authorizing.
+              </p>
+              <p className="text-[14px] md:text-[15px] text-gray-700 dark:text-gray-300 tracking-tight leading-[1.8]">
+              It's an important design choice because we can see many problems arise with smart contracts on other (EVM-based) systems. Vulnerabilities, bugs and abuse. New smart contract incidents occur each day.
               </p>
               <p className="text-[14px] md:text-[15px] text-gray-700 dark:text-gray-300 tracking-tight leading-[1.8]">
                 Smart Transactions represent a fundamental shift in blockchain architecture. Instead of relying on complex programmable contracts, Verus embeds core functionalities directly in the protocol—where they're validated by consensus and can't be exploited.

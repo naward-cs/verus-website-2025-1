@@ -83,7 +83,7 @@ export function ComparisonSection() {
               {/* Cost Structure */}
               <div className="grid grid-cols-[1fr,1fr,1fr,1fr] border-t border-blue-100/60 dark:border-blue-900/20">
                 <div className="p-6 md:p-8 font-medium text-gray-800 dark:text-white">Cost Structure</div>
-                <div className="p-6 md:p-8 text-[14px] md:text-[15px] text-gray-600 dark:text-gray-300 border-l border-blue-100/60 dark:border-blue-900/20">🟢 One-time fee for permanent storage (e.g., ~0.01 native coin per KB)</div>
+                <div className="p-6 md:p-8 text-[14px] md:text-[15px] text-gray-600 dark:text-gray-300 border-l border-blue-100/60 dark:border-blue-900/20">🟢 One-time fee for permanent storage (e.g., ~0.01 native coin per KB on the Verus blockchain, is chain dependent)</div>
                 <div className="p-6 md:p-8 text-[14px] md:text-[15px] text-gray-600 dark:text-gray-300 border-l border-blue-100/60 dark:border-blue-900/20">🟡 Free to use but requires pinning costs</div>
                 <div className="p-6 md:p-8 text-[14px] md:text-[15px] text-gray-600 dark:text-gray-300 border-l border-blue-100/60 dark:border-blue-900/20">🔴 Ongoing subscription costs</div>
               </div>
