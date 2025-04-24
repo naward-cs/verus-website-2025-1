@@ -11,8 +11,8 @@ pnpm-lock.yaml
 yarn.lock
 
 ## ai stuff
-/.bolt
-/.cursor
+.bolt/
+.cursor/
 
 # testing
 /coverage
