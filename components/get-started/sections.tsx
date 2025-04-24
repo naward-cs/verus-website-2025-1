@@ -69,7 +69,7 @@ export function GetStartedSections() {
                     CLI Wallet
                   </span>
                   <span className="text-[13px] md:text-[14px] text-gray-600 dark:text-gray-400">
-                    Advanced option for command-line users and technical setups
+                    Advanced option for command-line users and technical setups. Access to full protocol functionality and service deployment.
                   </span>
                 </div>
               </div>
@@ -185,8 +185,7 @@ export function GetStartedSections() {
             </div>
             
             <Link 
-              href="https://verus.io/exchanges"
-              target="_blank"
+              href="/get-vrsc/"
               className="group h-[40px] md:h-[50px] px-8 bg-white/80 dark:bg-blue-950/80 backdrop-blur-sm border border-blue-200 dark:border-blue-800/60 rounded-lg text-[14px] md:text-[16px] font-medium text-verus-blue dark:text-blue-300 flex items-center justify-center hover:border-blue-300 dark:hover:border-blue-700 transition-all duration-300 hover:shadow-lg dark:hover:shadow-blue-950/50 hover:text-blue-600 dark:hover:text-blue-200 hover:-translate-y-[1px] w-full md:w-fit self-start"
             >
               View exchanges
@@ -352,11 +351,15 @@ export function GetStartedSections() {
             
             <div className="space-y-4">
               <p className="text-[14px] md:text-[15px] text-gray-700 dark:text-gray-300">
-                VerusID is a self-sovereign identity system built on the Verus Protocol that gives you complete ownership and control over your digital identity, data, and assets.
+                VerusID is a self-sovereign identity system built on the Verus Protocol that gives you complete ownership and control over your digital identity, data, and assets. 
               </p>
               
               <p className="text-[14px] md:text-[15px] text-gray-700 dark:text-gray-300">
                 Unlike traditional identity systems where third parties control your information, VerusID puts you in charge, allowing you to selectively share information while maintaining privacy and security.
+              </p>
+
+              <p className="text-[14px] md:text-[15px] text-gray-700 dark:text-gray-300">
+              Verus Vault feature adds an extra layer of security to VerusID by allowing you to timelock your identity, preventing funds from being spent while still enabling staking and receiving transactions.
               </p>
               
               <div className="space-y-3 mt-4">

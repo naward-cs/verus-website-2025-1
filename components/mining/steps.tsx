@@ -119,6 +119,7 @@ export function MiningSteps() {
                 </a>
               </div>
               
+              
               {/* Image */}
               <div className="w-full md:w-auto md:mt-8 flex justify-center">
                 <img
