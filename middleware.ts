@@ -8,7 +8,8 @@ import type { NextRequest } from 'next/server';
 // Define allowed origins outside the function for efficiency
 const allowedOrigins = [
   'http://localhost:3000',    // Local development
-  'https://verus.io',         // Production domain
+  'https://verus.io', 
+  'https://www.verus.io',         // Production domain
   'https://nextdev.verus.io', // test domain
   'https://verus-website-2025-1-meyse.replit.app' // Replit deployment
 ];
