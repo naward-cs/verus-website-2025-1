@@ -19,8 +19,8 @@ import { EcosystemStatsSection } from "@/components/statistics/sections/ecosyste
 // Fetch circulating supply (used for price section only)
 async function fetchCirculatingSupply() {
   try {
-    const response = await fetch(`${process.env.NEXT_PUBLIC_BASE_URL || 'http://localhost:3000'}/api/supply`, {
-      next: { revalidate: 3600 } // Cache for 1 hour (single caching directive)
+    const response = await fetch("/api/supply", {
+      next: { revalidate: 3600 }, // Cache for 1 hour (single caching directive)
     });
     
     if (!response.ok) {
@@ -47,8 +47,8 @@ async function fetchCirculatingSupply() {
 // Fetch VRSC price from bridge API (used for price section only)
 async function fetchVRSCPrice() {
   try {
-    const response = await fetch(`${process.env.NEXT_PUBLIC_BASE_URL || 'http://localhost:3000'}/api/bridge`, {
-      cache: 'no-store'
+    const response = await fetch(`/api/bridge`, {
+      cache: "no-store",
     });
 
     if (!response.ok) {
@@ -72,8 +72,8 @@ async function fetchVRSCPrice() {
 // Fetch mining info (used for blockchain section only)
 async function fetchMiningInfo() {
   try {
-    const response = await fetch(`${process.env.NEXT_PUBLIC_BASE_URL || 'http://localhost:3000'}/api/mining-info`, {
-      cache: 'no-store'
+    const response = await fetch(`/api/mining-info`, {
+      cache: "no-store",
     });
     
     if (!response.ok) {
