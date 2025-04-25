@@ -64,15 +64,13 @@ async function fetchCirculatingSupply() {
 
 // Fetch VRSC price from bridge API (used for price section only)
 async function fetchVRSCPrice() {
+  const baseUrl = !!window
+    ? "http://localhost:3029"
+    : process.env.NEXT_PUBLIC_BASE_URL;
   try {
-    const response = await fetch(
-      `${
-        process.env.NEXT_PUBLIC_BASE_URL || "http://localhost:3000"
-      }/api/bridge`,
-      {
-        cache: "no-store",
-      }
-    );
+    const response = await fetch(`${baseUrl}/api/bridge`, {
+      cache: "no-store",
+    });
 
     if (!response.ok) {
       throw new Error("Network response was not ok");
@@ -94,15 +92,13 @@ async function fetchVRSCPrice() {
 
 // Fetch mining info (used for blockchain section only)
 async function fetchMiningInfo() {
+  const baseUrl = !!window
+    ? "http://localhost:3029"
+    : process.env.NEXT_PUBLIC_BASE_URL;
   try {
-    const response = await fetch(
-      `${
-        process.env.NEXT_PUBLIC_BASE_URL || "http://localhost:3000"
-      }/api/mining-info`,
-      {
-        cache: "no-store",
-      }
-    );
+    const response = await fetch(`${baseUrl}/api/mining-info`, {
+      cache: "no-store",
+    });
 
     if (!response.ok) {
       throw new Error(`Failed to fetch mining info: ${response.status}`);
