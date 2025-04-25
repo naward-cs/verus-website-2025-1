@@ -33,13 +33,13 @@ import { EcosystemStatsSection } from "@/components/statistics/sections/ecosyste
 
 // Fetch circulating supply (used for price section only)
 async function fetchCirculatingSupply() {
-  const baseUrl = !!window
-    ? "http://localhost:3029"
-    : process.env.NEXT_PUBLIC_BASE_URL;
   try {
-    const response = await fetch(`${baseUrl}/api/supply`, {
-      next: { revalidate: 3600 }, // Cache for 1 hour (single caching directive)
-    });
+    const response = await fetch(
+      `http://localhost:${process.env.PORT}/api/supply`,
+      {
+        next: { revalidate: 3600 }, // Cache for 1 hour (single caching directive)
+      }
+    );
 
     if (!response.ok) {
       console.error(`Supply API returned status: ${response.status}`);
@@ -64,13 +64,13 @@ async function fetchCirculatingSupply() {
 
 // Fetch VRSC price from bridge API (used for price section only)
 async function fetchVRSCPrice() {
-  const baseUrl = !!window
-    ? "http://localhost:3029"
-    : process.env.NEXT_PUBLIC_BASE_URL;
   try {
-    const response = await fetch(`${baseUrl}/api/bridge`, {
-      cache: "no-store",
-    });
+    const response = await fetch(
+      `http://localhost:${process.env.PORT}/api/bridge`,
+      {
+        cache: "no-store",
+      }
+    );
 
     if (!response.ok) {
       throw new Error("Network response was not ok");
@@ -92,13 +92,13 @@ async function fetchVRSCPrice() {
 
 // Fetch mining info (used for blockchain section only)
 async function fetchMiningInfo() {
-  const baseUrl = !!window
-    ? "http://localhost:3029"
-    : process.env.NEXT_PUBLIC_BASE_URL;
   try {
-    const response = await fetch(`${baseUrl}/api/mining-info`, {
-      cache: "no-store",
-    });
+    const response = await fetch(
+      `http://localhost:${process.env.PORT}/api/mining-info`,
+      {
+        cache: "no-store",
+      }
+    );
 
     if (!response.ok) {
       throw new Error(`Failed to fetch mining info: ${response.status}`);
@@ -144,11 +144,14 @@ function calculateStakingPercentage(
 export async function ProtocolStatistics() {
   // Fetch only the price data and blockchain data on server side
   // Other data like protocol stats will be fetched by client components
-  const [circulatingSupply, vrscPrice, miningInfo] = await Promise.all([
-    fetchCirculatingSupply(),
-    fetchVRSCPrice(),
-    fetchMiningInfo(),
-  ]);
+  const circulatingSupply = await fetchCirculatingSupply();
+  const vrscPrice = await fetchVRSCPrice();
+  const miningInfo = await fetchMiningInfo();
+  // const [circulatingSupply, vrscPrice, miningInfo] = await Promise.all([
+  //   fetchCirculatingSupply(),
+  //   fetchVRSCPrice(),
+  //   fetchMiningInfo(),
+  // ]);
 
   // Calculate market cap - important for SEO
   let marketCap = "N/A";

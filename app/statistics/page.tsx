@@ -57,9 +57,8 @@ export default function StatisticsPage() {
                 ecosystem, and financial data.
               </p>
             </div>
-            <Suspense>
-              <ProtocolStatistics />
-            </Suspense>
+
+            <ProtocolStatistics />
           </div>
         </div>
 
