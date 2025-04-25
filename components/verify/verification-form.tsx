@@ -225,49 +225,61 @@ export function VerificationForm() {
   };
 
   // Verify hash through API with proper type safety
-  const verifyHash = async (verusId: string, signature: string, hash: string): Promise<boolean> => {
+  const verifyHash = async (
+    verusId: string,
+    signature: string,
+    hash: string
+  ): Promise<boolean> => {
     try {
-      const response = await fetch('/api/verify/hash', {
-        method: 'POST',
+      const baseUrl =
+        window.location.origin || `http://localhost:${process.env.PORT}`;
+      const response = await fetch(`${baseUrl}/api/verify/hash`, {
+        method: "POST",
         headers: {
-          'Content-Type': 'application/json',
+          "Content-Type": "application/json",
         },
         body: JSON.stringify({ verusId, signature, hash }),
       });
 
-      const data = await response.json() as VerifyResponse;
+      const data = (await response.json()) as VerifyResponse;
 
       if (!response.ok) {
-        throw new Error(data.error || 'Failed to verify hash');
+        throw new Error(data.error || "Failed to verify hash");
       }
 
       return data.verified;
     } catch (error) {
-      console.error('Error verifying hash:', error);
+      console.error("Error verifying hash:", error);
       throw error;
     }
   };
 
   // Verify message through API with proper type safety
-  const verifyMessage = async (verusId: string, signature: string, message: string): Promise<boolean> => {
+  const verifyMessage = async (
+    verusId: string,
+    signature: string,
+    message: string
+  ): Promise<boolean> => {
     try {
-      const response = await fetch('/api/verify/message', {
-        method: 'POST',
+      const baseUrl =
+        window.location.origin || `http://localhost:${process.env.PORT}`;
+      const response = await fetch(`${baseUrl}/api/verify/message`, {
+        method: "POST",
         headers: {
-          'Content-Type': 'application/json',
+          "Content-Type": "application/json",
         },
         body: JSON.stringify({ verusId, signature, message }),
       });
 
-      const data = await response.json() as VerifyResponse;
+      const data = (await response.json()) as VerifyResponse;
 
       if (!response.ok) {
-        throw new Error(data.error || 'Failed to verify message');
+        throw new Error(data.error || "Failed to verify message");
       }
 
       return data.verified;
     } catch (error) {
-      console.error('Error verifying message:', error);
+      console.error("Error verifying message:", error);
       throw error;
     }
   };

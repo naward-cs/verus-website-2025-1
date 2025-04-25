@@ -58,7 +58,7 @@ function getBaseUrl() {
      return process.env.NEXT_PUBLIC_BASE_URL; // Use the value defined for client-side, likely localhost or dev URL
   }
   // 4. Absolute fallback for local development if no other variable is set
-  return 'http://localhost:3000';
+  return `http://localhost:${process.env.PORT}`;
 }
 
 /**
