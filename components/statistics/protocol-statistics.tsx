@@ -16,15 +16,19 @@ import { PriceSection } from "@/components/statistics/sections/price-section"
 import { BlockchainSection } from "@/components/statistics/sections/blockchain-section"
 import { EcosystemStatsSection } from "@/components/statistics/sections/ecosystem-stats-section"
 
+// Define the internal base URL for server-side fetches
+const INTERNAL_BASE_URL = 'http://localhost:3000';
+
 // Fetch circulating supply (used for price section only)
 async function fetchCirculatingSupply() {
   try {
-    const response = await fetch(`${process.env.NEXT_PUBLIC_BASE_URL || 'http://localhost:3000'}/api/supply`, {
+    // Use explicit internal base URL for server-side fetch
+    const response = await fetch(`${INTERNAL_BASE_URL}/api/supply`, {
       next: { revalidate: 3600 } // Cache for 1 hour (single caching directive)
     });
     
     if (!response.ok) {
-      console.error(`Supply API returned status: ${response.status}`);
+      console.error(`Supply API returned status: ${response.status} ${response.statusText}`);
       throw new Error(`Failed to fetch supply: ${response.status}`);
     }
     
@@ -47,11 +51,13 @@ async function fetchCirculatingSupply() {
 // Fetch VRSC price from bridge API (used for price section only)
 async function fetchVRSCPrice() {
   try {
-    const response = await fetch(`${process.env.NEXT_PUBLIC_BASE_URL || 'http://localhost:3000'}/api/bridge`, {
+    // Use explicit internal base URL for server-side fetch
+    const response = await fetch(`${INTERNAL_BASE_URL}/api/bridge`, {
       cache: 'no-store'
     });
 
     if (!response.ok) {
+      console.error(`Bridge API returned status: ${response.status} ${response.statusText}`);
       throw new Error('Network response was not ok');
     }
 
@@ -72,11 +78,13 @@ async function fetchVRSCPrice() {
 // Fetch mining info (used for blockchain section only)
 async function fetchMiningInfo() {
   try {
-    const response = await fetch(`${process.env.NEXT_PUBLIC_BASE_URL || 'http://localhost:3000'}/api/mining-info`, {
+    // Use explicit internal base URL for server-side fetch
+    const response = await fetch(`${INTERNAL_BASE_URL}/api/mining-info`, {
       cache: 'no-store'
     });
     
     if (!response.ok) {
+      console.error(`Mining Info API returned status: ${response.status} ${response.statusText}`);
       throw new Error(`Failed to fetch mining info: ${response.status}`);
     }
     
