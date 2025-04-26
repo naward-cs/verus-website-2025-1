@@ -31,9 +31,13 @@ import { PriceSection } from "@/components/statistics/sections/price-section";
 import { BlockchainSection } from "@/components/statistics/sections/blockchain-section";
 import { EcosystemStatsSection } from "@/components/statistics/sections/ecosystem-stats-section";
 
+// Define the internal base URL for server-side fetches
+const INTERNAL_BASE_URL = 'http://localhost:3000';
+
 // Fetch circulating supply (used for price section only)
 async function fetchCirculatingSupply() {
   try {
+
     const response = await fetch(
       `http://localhost:${process.env.PORT}/api/supply`,
       {
@@ -42,7 +46,7 @@ async function fetchCirculatingSupply() {
     );
 
     if (!response.ok) {
-      console.error(`Supply API returned status: ${response.status}`);
+      console.error(`Supply API returned status: ${response.status} ${response.statusText}`);
       throw new Error(`Failed to fetch supply: ${response.status}`);
     }
 
@@ -65,6 +69,7 @@ async function fetchCirculatingSupply() {
 // Fetch VRSC price from bridge API (used for price section only)
 async function fetchVRSCPrice() {
   try {
+
     const response = await fetch(
       `http://localhost:${process.env.PORT}/api/bridge`,
       {
@@ -74,6 +79,7 @@ async function fetchVRSCPrice() {
 
     if (!response.ok) {
       throw new Error("Network response was not ok");
+
     }
 
     const data = await response.json();
@@ -93,6 +99,7 @@ async function fetchVRSCPrice() {
 // Fetch mining info (used for blockchain section only)
 async function fetchMiningInfo() {
   try {
+
     const response = await fetch(
       `http://localhost:${process.env.PORT}/api/mining-info`,
       {
@@ -100,7 +107,9 @@ async function fetchMiningInfo() {
       }
     );
 
+
     if (!response.ok) {
+      console.error(`Mining Info API returned status: ${response.status} ${response.statusText}`);
       throw new Error(`Failed to fetch mining info: ${response.status}`);
     }
 
