@@ -42,23 +42,23 @@ try {
 
 // Helper function to get the base URL for server-side API calls
 function getBaseUrl() {
-  // 1. Prefer Vercel's runtime URL (available in serverless functions)
-  if (process.env.VERCEL_URL) {
-    // VERCEL_URL does not include the protocol, add https
-    return `https://${process.env.VERCEL_URL}`;
-  }
-  // 2. Fallback to a production-specific SITE_URL (set manually in Vercel UI)
-  // Use a non-public variable for server-side configuration
-  if (process.env.SITE_URL) {
-     return process.env.SITE_URL; // Assumes this includes the protocol
-  }
-  // 3. Fallback for local development (use NEXT_PUBLIC_BASE_URL if set in .env.development or similar)
-  // Check NODE_ENV to ensure this only applies locally
-  if (process.env.NODE_ENV === 'development' && process.env.NEXT_PUBLIC_BASE_URL) {
-     return process.env.NEXT_PUBLIC_BASE_URL; // Use the value defined for client-side, likely localhost or dev URL
-  }
+  // // 1. Prefer Vercel's runtime URL (available in serverless functions)
+  // if (process.env.VERCEL_URL) {
+  //   // VERCEL_URL does not include the protocol, add https
+  //   return `https://${process.env.VERCEL_URL}`;
+  // }
+  // // 2. Fallback to a production-specific SITE_URL (set manually in Vercel UI)
+  // // Use a non-public variable for server-side configuration
+  // if (process.env.SITE_URL) {
+  //    return process.env.SITE_URL; // Assumes this includes the protocol
+  // }
+  // // 3. Fallback for local development (use NEXT_PUBLIC_BASE_URL if set in .env.development or similar)
+  // // Check NODE_ENV to ensure this only applies locally
+  // if (process.env.NODE_ENV === 'development' && process.env.NEXT_PUBLIC_BASE_URL) {
+  //    return process.env.NEXT_PUBLIC_BASE_URL; // Use the value defined for client-side, likely localhost or dev URL
+  // }
   // 4. Absolute fallback for local development if no other variable is set
-  return 'http://localhost:3000';
+  return `http://localhost:${process.env.PORT}`;
 }
 
 /**
