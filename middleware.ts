@@ -1,7 +1,8 @@
-// This file applies CORS headers to API routes to ensure requests only come from allowed domains.
+// This file handles CORS headers for API routes and permanent redirects for old website URLs.
 // Changes:
-// - Moved allowedOrigins outside the middleware function for efficiency.
-// - Refactored static header setting using a corsHeaders constant and a loop for maintainability.
+// - Added permanent (301) redirects for legacy URLs.
+// - Updated the matcher to run middleware on relevant page routes as well as API routes.
+// - Integrated redirect logic before CORS logic.
 import { NextResponse } from 'next/server';
 import type { NextRequest } from 'next/server';
 
@@ -21,14 +22,41 @@ const corsHeaders = {
   'Access-Control-Allow-Credentials': 'true',
 };
 
+// Define permanent redirects from old paths to new paths
+const permanentRedirects: { [key: string]: string } = {
+  '/economy': '/statistics',
+  '/signatures': '/verify',
+  '/exchanges': '/get-vrsc',
+  '/wallet/desktop': '/wallet',
+  '/wallet/desktop-wallet': '/wallet',
+  '/wallet/mobile': '/wallet',
+  '/wallet/mobile-wallet': '/wallet',
+  '/verusid-lookup/mike': '/verusid-search?id=mike%40',
+  '/verusid-lookup': '/verusid-search',
+  '/create': '/build',
+  '/foundations': '/intro',
+};
+
 export function middleware(request: NextRequest) {
-  // Get the origin from the request headers
+  const pathname = request.nextUrl.pathname;
   const origin = request.headers.get('origin') || '';
-  
-  // Check if the path starts with /api
-  const isApiRoute = request.nextUrl.pathname.startsWith('/api');
-  
-  // Only apply CORS for API routes
+
+  // --- Handle Permanent Redirects ---
+  const redirectPath = permanentRedirects[pathname];
+  if (redirectPath) {
+    const newUrl = new URL(redirectPath, request.url);
+    // Ensure query parameters from the original request are preserved if not specified in the redirect target
+    if (redirectPath.includes('?')) {
+      // If the redirect target already has query params, use them directly
+    } else {
+      // Otherwise, copy existing search params
+      newUrl.search = request.nextUrl.search;
+    }
+    return NextResponse.redirect(newUrl, 301); // 301 Moved Permanently
+  }
+
+  // --- Handle CORS for API Routes ---
+  const isApiRoute = pathname.startsWith('/api');
   if (isApiRoute) {
     // Check if the origin is allowed
     const isAllowed = allowedOrigins.includes(origin);
@@ -56,12 +84,33 @@ export function middleware(request: NextRequest) {
 
     return response;
   }
-  
-  // If not an API route, just pass through
+
+  // If no redirect happened and it's not an API route needing CORS, continue
   return NextResponse.next();
 }
 
-// Configure the middleware to only run on API routes
+// Configure the middleware to run on specific paths
 export const config = {
-  matcher: '/api/:path*',
+  matcher: [
+    /*
+     * Match all request paths except for the ones starting with:
+     * - api (API routes) - Handled separately for CORS
+     * - _next/static (static files)
+     * - _next/image (image optimization files)
+     * - favicon.ico (favicon file)
+     * We also include the specific paths that need redirects.
+     * And explicitly include the API routes for CORS handling.
+     */
+    '/economy',
+    '/signatures',
+    '/exchanges',
+    '/wallet/desktop',
+    '/wallet/desktop-wallet',
+    '/wallet/mobile',
+    '/wallet/mobile-wallet',
+    '/verusid-lookup/:path*', // Match base and subpaths like /mike
+    '/create',
+    '/foundations',
+    '/api/:path*', // Keep API routes for CORS
+  ],
 }; 
