@@ -43,16 +43,36 @@ export function middleware(request: NextRequest) {
   const origin = request.headers.get('origin') || '';
 
   // --- Handle Permanent Redirects ---
-  const redirectPath = permanentRedirects[pathname];
+  // Check for exact match first
+  let redirectPath = permanentRedirects[pathname];
+
+  // If no exact match, check if it's a subpath of /verusid-lookup/
+  // This handles dynamic paths like /verusid-lookup/anything -> /verusid-search?id=anything%40
+  // We specifically exclude the /mike case which is handled above by exact match.
+  if (!redirectPath && pathname.startsWith('/verusid-lookup/')) {
+     const pathSegments = pathname.split('/');
+     // Expecting ['', 'verusid-lookup', 'id']
+     if (pathSegments.length === 3 && pathSegments[2]) {
+        const lookupId = pathSegments[2];
+        // Construct the new path with the query parameter
+        redirectPath = `/verusid-search?id=${encodeURIComponent(lookupId)}%40`;
+     } else if (pathname === '/verusid-lookup') {
+        // Handle the base /verusid-lookup case separately if needed, though it's in permanentRedirects
+        // This case is technically already handled by the permanentRedirects map, 
+        // but kept here for potential future adjustments.
+        redirectPath = permanentRedirects['/verusid-lookup']; // Use the map value
+     }
+  }
+
   if (redirectPath) {
     const newUrl = new URL(redirectPath, request.url);
-    // Ensure query parameters from the original request are preserved if not specified in the redirect target
-    if (redirectPath.includes('?')) {
-      // If the redirect target already has query params, use them directly
-    } else {
-      // Otherwise, copy existing search params
-      newUrl.search = request.nextUrl.search;
-    }
+
+    // Query parameters are now handled directly within the redirectPath for dynamic cases
+    // or are absent for simple cases. We don't need to manually copy search params here
+    // as new URL(redirectPath, ...) correctly includes them if they are part of redirectPath.
+    // If you *also* needed to preserve *additional* query params from the original request 
+    // (e.g., /verusid-lookup/cragorn?source=old), more complex merging logic would be needed here.
+
     return NextResponse.redirect(newUrl, 301); // 301 Moved Permanently
   }
 
