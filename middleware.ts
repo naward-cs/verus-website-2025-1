@@ -35,6 +35,7 @@ const permanentRedirects: { [key: string]: string } = {
   '/verusid-lookup': '/verusid-search',
   '/create': '/build',
   '/foundations': '/intro',
+  '/eth-bridge': '/ethereum-bridge',
 };
 
 export function middleware(request: NextRequest) {
@@ -110,6 +111,7 @@ export const config = {
     '/wallet/mobile-wallet',
     '/verusid-lookup/:path*', // Match base and subpaths like /mike
     '/create',
+    '/eth-bridge',
     '/foundations',
     '/api/:path*', // Keep API routes for CORS
   ],
