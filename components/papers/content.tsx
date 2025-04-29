@@ -7,7 +7,7 @@ const papers = [
     subtitle: "Privacy, Community, Power",
     authors: ["Michael J. Toutonghi", "Michael F. Toutonghi", "Alex R. English"],
     description: "The foundational vision that guides the Verus protocol development.",
-    url: "https://verus.io/papers/VerusVision.pdf",
+    url: "/papers/VerusVision.pdf",
     isPrimary: true
   },
   {
@@ -15,21 +15,21 @@ const papers = [
     subtitle: "zk-SNARK Privacy and a Holistic Approach to ASICs",
     authors: ["Michael J. Toutonghi"],
     description: "Technical deep dive into Verus's privacy features and ASIC-resistant approach.",
-    url: "https://verus.io/papers/VerusPhaseI.pdf"
+    url: "/papers/VerusPhaseI.pdf"
   },
   {
     title: "Verus Proof of Power",
     subtitle: "A Provable Hybrid Solution to 51% Hash Attacks",
     authors: ["Michael J. Toutonghi", "Michael F. Toutonghi", "John Westbrook"],
     description: "The technical specification for Verus's hybrid consensus mechanism.",
-    url: "https://verus.io/papers/VerusPoP.pdf"
+    url: "/papers/VerusPoP.pdf"
   },
   {
     title: "Building dApps at Any Scale",
     subtitle: "Your starting point to get familiar with the protocol that makes dApp development accessible.",
     authors: [],
     description: "A practical guide to building decentralized applications using Verus.",
-    url: "https://verus.io/papers/Building_dApps_at_Any_Scale.pdf"
+    url: "/papers/Building_dApps_at_Any_Scale.pdf"
   }
 ]
 

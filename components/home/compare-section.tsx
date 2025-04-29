@@ -6,7 +6,7 @@ export function CompareSection() {
   return (
     <div className="flex flex-col items-center justify-center">
       <div className="w-screen md:max-w-[1220px] rounded-none md:rounded-lg overflow-hidden bg-white dark:bg-gray-950 shadow-[0_4px_40px_-12px_rgba(0,0,0,0.1)] dark:shadow-[0_4px_40px_-12px_rgba(0,0,0,0.2)]">
-        <div className="w-full border-0 md:border border-gray-200 dark:border-gray-800 backdrop-blur-sm bg-white/90 dark:bg-black/30 overflow-hidden">
+        <div className="w-full border-0 md:border border-gray-200 dark:border-gray-800 bg-white/90 dark:bg-black/30 overflow-hidden">
           {/* First Compare Section */}
           <div className="w-full flex flex-col items-center justify-center py-16 md:py-24 px-4 md:px-8">
             <div className="mb-10 md:mb-20">
@@ -31,7 +31,7 @@ export function CompareSection() {
             <div className="w-full max-w-[1000px] grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8">
               {/* Problems with Smart Contracts */}
               <div className="w-full h-full">
-                <div className="h-full p-6 md:p-8 bg-gradient-to-br from-red-50 to-red-100 dark:from-red-950/70 dark:to-red-900/30 rounded-none md:rounded-lg backdrop-blur-sm border border-red-200 dark:border-red-800/40 shadow-lg shadow-red-100/20 dark:shadow-red-900/20">
+                <div className="h-full p-6 md:p-8 bg-gradient-to-br from-red-50 to-red-100 dark:from-red-950/70 dark:to-red-900/30 rounded-none md:rounded-lg border border-red-200 dark:border-red-800/40 shadow-lg shadow-red-100/20 dark:shadow-red-900/20">
                   <div className="flex items-center gap-2 mb-5">
                     <div className="p-1.5 bg-red-100 dark:bg-red-800/30 rounded-lg">
                       <AlertTriangle className="h-5 w-5 text-red-600 dark:text-red-400" />
@@ -81,7 +81,7 @@ export function CompareSection() {
 
               {/* The Verus Solution */}
               <div className="w-full h-full">
-                <div className="h-full p-6 md:p-8 bg-gradient-to-br from-blue-50 to-indigo-100 dark:from-blue-900/70 dark:to-indigo-900/30 rounded-none md:rounded-lg backdrop-blur-sm border border-blue-200 dark:border-blue-700/40 shadow-lg shadow-blue-100/20 dark:shadow-blue-900/20">
+                <div className="h-full p-6 md:p-8 bg-gradient-to-br from-blue-50 to-indigo-100 dark:from-blue-900/70 dark:to-indigo-900/30 rounded-none md:rounded-lg border border-blue-200 dark:border-blue-700/40 shadow-lg shadow-blue-100/20 dark:shadow-blue-900/20">
                   <div className="flex items-center gap-2 mb-5">
                     <div className="p-1.5 bg-blue-100 dark:bg-blue-800/30 rounded-lg">
                       <Image
@@ -141,7 +141,7 @@ export function CompareSection() {
               href="https://medium.com/veruscoin/verus-smart-transactions-vs-smart-contracts-f98079c00ed0"
               target="_blank"
               rel="noopener noreferrer"
-              className="group mt-12 flex items-center gap-2 md:text-[15px] text-[13px] text-blue-600 hover:text-blue-700 dark:text-blue-300 dark:hover:text-blue-200 transition-all duration-300 bg-blue-50/80 hover:bg-blue-50 dark:bg-blue-950/40 dark:hover:bg-blue-950/50 backdrop-blur-sm px-5 py-3 rounded-none md:rounded-lg border border-blue-200 dark:border-blue-800/40 hover:border-blue-300 dark:hover:border-blue-700/60 hover:shadow-md dark:hover:shadow-blue-950/40 hover:-translate-y-[1px]"
+              className="group mt-12 flex items-center gap-2 md:text-[15px] text-[13px] text-blue-600 hover:text-blue-700 dark:text-blue-300 dark:hover:text-blue-200 transition-all duration-300 bg-blue-50/80 hover:bg-blue-50 dark:bg-blue-950/40 dark:hover:bg-blue-950/50 px-5 py-3 rounded-none md:rounded-lg border border-blue-200 dark:border-blue-800/40 hover:border-blue-300 dark:hover:border-blue-700/60 hover:shadow-md dark:hover:shadow-blue-950/40 hover:-translate-y-[1px]"
             >
               <FaMedium className="h-5 w-5 text-gray-700 dark:text-gray-300" />
               <span>Read the article: Verus Smart Transactions vs. Smart Contracts</span>
@@ -177,7 +177,7 @@ export function CompareSection() {
             <div className="w-full max-w-[1000px] grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8">
               {/* Problems with Token Systems */}
               <div className="w-full h-full">
-                <div className="h-full p-6 md:p-8 bg-gradient-to-br from-red-50 to-red-100 dark:from-red-950/70 dark:to-red-900/30 rounded-none md:rounded-lg backdrop-blur-sm border border-red-200 dark:border-red-800/40 shadow-lg shadow-red-100/20 dark:shadow-red-900/20">
+                <div className="h-full p-6 md:p-8 bg-gradient-to-br from-red-50 to-red-100 dark:from-red-950/70 dark:to-red-900/30 rounded-none md:rounded-lg border border-red-200 dark:border-red-800/40 shadow-lg shadow-red-100/20 dark:shadow-red-900/20">
                   <div className="flex items-center gap-2 mb-5">
                     <div className="p-1.5 bg-red-100 dark:bg-red-800/30 rounded-lg">
                       <AlertCircle className="h-5 w-5 text-red-600 dark:text-red-400" />
@@ -227,7 +227,7 @@ export function CompareSection() {
 
               {/* The Verus Difference */}
               <div className="w-full h-full">
-                <div className="h-full p-6 md:p-8 bg-gradient-to-br from-blue-50 to-indigo-100 dark:from-blue-900/70 dark:to-indigo-900/30 rounded-none md:rounded-lg backdrop-blur-sm border border-blue-200 dark:border-blue-700/40 shadow-lg shadow-blue-100/20 dark:shadow-blue-900/20">
+                <div className="h-full p-6 md:p-8 bg-gradient-to-br from-blue-50 to-indigo-100 dark:from-blue-900/70 dark:to-indigo-900/30 rounded-none md:rounded-lg border border-blue-200 dark:border-blue-700/40 shadow-lg shadow-blue-100/20 dark:shadow-blue-900/20">
                   <div className="flex items-center gap-2 mb-5">
                     <div className="p-1.5 bg-blue-100 dark:bg-blue-800/30 rounded-lg">
                       <Shield className="h-5 w-5 text-blue-600 dark:text-blue-400" />
