@@ -22,7 +22,7 @@ const papers = [
     subtitle: "A Provable Hybrid Solution to 51% Hash Attacks",
     authors: ["Michael J. Toutonghi", "Michael F. Toutonghi", "John Westbrook"],
     description: "The technical specification for Verus's hybrid consensus mechanism.",
-    url: "/papers/VerusPoP-paper.pdf"
+    url: "/papers/VerusPoP.pdf"
   },
   {
     title: "Building dApps at Any Scale",
