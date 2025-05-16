@@ -2,6 +2,7 @@ import type {Metadata} from 'next'
 
 import Image from 'next/image'
 
+import {env} from '@/configs/env'
 import {GreenContent} from '@/features/green/content'
 import {GreenFeaturesGrid} from '@/features/green/features-grid'
 import {IoLogoDiscord} from 'react-icons/io5'
@@ -83,7 +84,7 @@ export default function GreenPage() {
             </svg>
           </a>
           <a
-            href="https://verus.io/discord"
+            href={env.NEXT_PUBLIC_DISCORD}
             target="_blank"
             rel="noopener noreferrer"
             className="group flex h-[40px] items-center justify-center gap-2 rounded-lg border border-green-800/60 bg-green-950/40 px-6 text-[14px] font-medium text-green-300 backdrop-blur-sm transition-all duration-300 hover:-translate-y-[1px] hover:border-green-700/80 hover:text-green-200 hover:shadow-lg md:h-[50px] md:text-[16px]"

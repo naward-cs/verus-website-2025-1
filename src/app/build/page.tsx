@@ -1,10 +1,14 @@
 import type {Metadata} from 'next'
 
-import {FeaturesGrid} from '@/features/build/build/features-grid'
-import {SolutionsGrid} from '@/features/build/build/solutions-grid'
-import {VerusIDLoginSection} from '@/features/build/build/verusid-login-section'
+import {env} from '@/configs/env'
+import {
+  FeaturesGrid,
+  SolutionsGrid,
+  VerusIDLoginSection,
+} from '@/features/build/build'
 import {IoLogoDiscord} from 'react-icons/io5'
 
+import {BodyBgHeroImages} from '@/components/background-images'
 import {Footer} from '@/components/footer'
 
 // Define metadata for SEO
@@ -36,16 +40,7 @@ export const metadata: Metadata = {
 export default function BuildPage() {
   return (
     <main className="relative mt-[50px] h-[calc(100vh-50px)] w-screen md:mt-[70px] md:h-[calc(100vh-70px)]">
-      <img
-        src="/img/hero-bg2-2.webp"
-        className="absolute h-full w-full object-cover dark:hidden"
-        alt="Hero background - light"
-      />
-      <img
-        src="/img/bg-darkmode.webp"
-        className="absolute hidden h-full w-full object-cover dark:block"
-        alt="Hero background - dark"
-      />
+      <BodyBgHeroImages />
 
       <div className="relative z-10 flex flex-col items-center px-4 pt-[30px] md:pt-[70px]">
         <h1 className="text-center text-[32px] font-medium tracking-tight text-white md:text-[75px]">
@@ -78,7 +73,7 @@ export default function BuildPage() {
             </svg>
           </a>
           <a
-            href="https://www.verus.io/discord"
+            href={env.NEXT_PUBLIC_DISCORD}
             target="_blank"
             rel="noopener noreferrer"
             className="group flex h-[40px] items-center justify-center gap-2 rounded-lg border border-blue-800/60 bg-blue-950/40 px-6 text-[14px] font-medium text-blue-300 backdrop-blur-sm transition-all duration-300 hover:-translate-y-[1px] hover:border-blue-700/80 hover:text-blue-200 hover:shadow-lg md:h-[50px] md:text-[16px]"

@@ -1,3 +1,4 @@
+import Image from 'next/image'
 import Link from 'next/link'
 
 import {ArrowUpDown, Coins, Database, Network, Store} from 'lucide-react'
@@ -136,9 +137,11 @@ export function SolutionsGrid() {
         <div className="relative flex h-full flex-col overflow-hidden rounded-lg border border-blue-100/80 bg-gradient-to-br from-blue-50/70 to-white p-8 shadow-[0_4px_40px_-12px_rgba(0,0,0,0.1)] dark:border-blue-900/30 dark:from-blue-950/40 dark:to-gray-950 dark:shadow-[0_4px_40px_-12px_rgba(0,0,0,0.3)]">
           <div className="relative flex flex-grow flex-col">
             <div className="mb-6 flex h-14 w-14 items-center justify-center rounded-full border border-blue-200/50 bg-white/80 dark:border-blue-900/50 dark:bg-gray-800/80">
-              <img
+              <Image
                 src="/img/at-full-black.svg"
                 alt="VerusID Icon"
+                width={7}
+                height={7}
                 className="h-7 w-7 [filter:invert(31%)_sepia(93%)_saturate(1352%)_hue-rotate(213deg)_brightness(97%)_contrast(87%)] dark:[filter:invert(67%)_sepia(12%)_saturate(1352%)_hue-rotate(183deg)_brightness(100%)_contrast(97%)]"
               />
             </div>

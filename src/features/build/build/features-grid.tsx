@@ -1,3 +1,5 @@
+import Image from 'next/image'
+
 export function FeaturesGrid() {
   return (
     <div className="-mx-4 w-screen md:mx-0 md:max-w-[1220px]">
@@ -8,10 +10,12 @@ export function FeaturesGrid() {
             {/* Low-cost, rapid & easy deployment */}
             <div className="flex flex-col p-6 md:p-8 md:pr-12">
               <div className="mb-4 flex items-center gap-4">
-                <img
+                <Image
                   src="/img/build/rapid.svg"
                   alt="Rapid Development"
-                  className="h-10 w-10 flex-shrink-0 dark:opacity-80 dark:invert"
+                  width={40}
+                  height={40}
+                  className="size-10 flex-shrink-0 dark:opacity-80 dark:invert"
                 />
                 <h3 className="text-[16px] font-medium text-gray-900 dark:text-white md:text-[20px]">
                   Simplified Development Path
@@ -28,10 +32,12 @@ export function FeaturesGrid() {
             {/* Layer-1 security */}
             <div className="flex flex-col p-6 md:p-8 md:pl-12">
               <div className="mb-4 flex items-center gap-4">
-                <img
+                <Image
                   src="/img/build/security.svg"
                   alt="Security"
-                  className="h-10 w-10 flex-shrink-0 dark:opacity-80 dark:invert"
+                  width={40}
+                  height={40}
+                  className="size-10 flex-shrink-0 dark:opacity-80 dark:invert"
                 />
                 <h3 className="text-[16px] font-medium text-gray-900 dark:text-white md:text-[20px]">
                   Security Without the Audits
@@ -56,10 +62,12 @@ export function FeaturesGrid() {
             {/* Publish & store data on-chain */}
             <div className="flex flex-col p-6 md:p-8 md:pr-12">
               <div className="mb-4 flex items-center gap-4">
-                <img
+                <Image
                   src="/img/build/data.svg"
                   alt="Data Storage"
-                  className="h-10 w-10 flex-shrink-0 dark:opacity-80 dark:invert"
+                  width={40}
+                  height={40}
+                  className="size-10 flex-shrink-0 dark:opacity-80 dark:invert"
                 />
                 <h3 className="text-[16px] font-medium text-gray-900 dark:text-white md:text-[20px]">
                   Structured On-Chain Data Storage
@@ -76,10 +84,12 @@ export function FeaturesGrid() {
             {/* Scale for world demand */}
             <div className="flex flex-col p-6 md:p-8 md:pl-12">
               <div className="mb-4 flex items-center gap-4">
-                <img
+                <Image
                   src="/img/hero/scale.svg"
                   alt="Scale for world demand"
-                  className="h-10 w-10 flex-shrink-0 dark:opacity-80 dark:invert"
+                  width={40}
+                  height={40}
+                  className="size-10 flex-shrink-0 dark:opacity-80 dark:invert"
                 />
                 <h3 className="text-[16px] font-medium text-gray-900 dark:text-white md:text-[20px]">
                   Horizontal Blockchain Scaling
@@ -103,10 +113,12 @@ export function FeaturesGrid() {
             {/* Full access with API calls */}
             <div className="flex flex-col p-6 md:p-8 md:pr-12">
               <div className="mb-4 flex items-center gap-4">
-                <img
+                <Image
                   src="/img/build/access.svg"
                   alt="API Access"
-                  className="h-10 w-10 flex-shrink-0 dark:opacity-80 dark:invert"
+                  width={40}
+                  height={40}
+                  className="size-10 flex-shrink-0 dark:opacity-80 dark:invert"
                 />
                 <h3 className="text-[16px] font-medium text-gray-900 dark:text-white md:text-[20px]">
                   Standard API Integration
@@ -122,10 +134,12 @@ export function FeaturesGrid() {
             {/* Build in any framework */}
             <div className="flex flex-col p-6 md:p-8 md:pl-12">
               <div className="mb-4 flex items-center gap-4">
-                <img
+                <Image
                   src="/img/build/build.svg"
                   alt="Build Framework"
-                  className="h-10 w-10 flex-shrink-0 dark:opacity-80 dark:invert"
+                  width={40}
+                  height={40}
+                  className="size-10 flex-shrink-0 dark:opacity-80 dark:invert"
                 />
                 <h3 className="text-[16px] font-medium text-gray-900 dark:text-white md:text-[20px]">
                   Technology Stack Freedom

@@ -1,3 +1,6 @@
+import Image from 'next/image'
+
+import {env} from '@/configs/env'
 import {ExternalLink} from 'lucide-react'
 
 export function VerusIDLoginSection() {
@@ -10,9 +13,11 @@ export function VerusIDLoginSection() {
 
         {/* Left Content */}
         <div className="relative z-10 w-full pl-4 md:w-1/2 md:pl-0">
-          <img
+          <Image
             src="/img/verusid-logo-white.svg"
             alt="VerusID Logo"
+            height={24}
+            width={100}
             className="mb-8 h-6 w-auto md:mb-8"
           />
           <h2 className="mb-4 text-[22px] font-medium leading-[1.1] tracking-tight text-white md:text-[40px]">
@@ -25,7 +30,7 @@ export function VerusIDLoginSection() {
           </p>
           <div className="flex flex-col gap-4 md:flex-row">
             <a
-              href="https://monkins1010.github.io/veruslogin/"
+              href={`${env.NEXT_PUBLIC_MONKINS_GITHUB}/veruslogin/`}
               target="_blank"
               rel="noopener noreferrer"
               className="group flex h-[40px] w-fit items-center justify-center rounded-lg border border-white/10 bg-white/90 px-8 text-[14px] font-medium text-black backdrop-blur-sm transition-all duration-300 hover:-translate-y-[1px] hover:bg-white hover:shadow-lg hover:shadow-blue-700/20 dark:bg-white/95 dark:hover:shadow-blue-900/20 md:h-[50px] md:text-[16px]"
@@ -58,9 +63,11 @@ export function VerusIDLoginSection() {
 
         {/* Right Image */}
         <div className="z-10 flex w-full justify-center md:relative md:w-1/2 md:justify-end">
-          <img
+          <Image
             src="/img/login-verusid.png"
             alt="VerusID Login"
+            width={300}
+            height={300}
             className="h-auto w-[300px] dark:opacity-90 md:w-[450px] md:translate-x-[20px]"
           />
         </div>
