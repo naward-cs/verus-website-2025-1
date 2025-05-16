@@ -1,3 +1,5 @@
+import {Suspense} from 'react'
+
 import {BridgeLiquidityInfo} from './liquidity-info'
 
 export function BridgeContent() {
@@ -47,7 +49,10 @@ export function BridgeContent() {
 
       {/* Liquidity Info - Shows below on mobile, left side on desktop */}
       <div className="relative md:order-1">
-        <BridgeLiquidityInfo />
+        {/* TODO add loading state if not one already existing */}
+        <Suspense>
+          <BridgeLiquidityInfo />
+        </Suspense>
 
         {/* Security Info - Match width with liquidity info */}
         <div className="mt-4 w-screen rounded-none border-x-0 border-y border-[#E9EFFC] bg-white shadow-sm backdrop-blur-sm dark:border-gray-800 dark:bg-gray-900 md:w-[700px] md:rounded-lg md:border-x">
