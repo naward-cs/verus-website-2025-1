@@ -18,11 +18,13 @@
   },
   "dependencies": {
     "@hookform/resolvers": "^5.0.1",
+    "@next-safe-action/adapter-react-hook-form": "^1.0.14",
     "@radix-ui/react-label": "^2.1.6",
     "@radix-ui/react-menubar": "^1.1.14",
     "@radix-ui/react-navigation-menu": "^1.2.12",
     "@radix-ui/react-slot": "^1.2.2",
     "@radix-ui/react-tabs": "^1.1.11",
+    "@t3-oss/env-nextjs": "^0.13.4",
     "arweave": "^1.15.7",
     "bitcoinjs-message": "^2.2.0",
     "class-variance-authority": "^0.7.1",
@@ -31,11 +33,14 @@
     "lucide-react": "^0.511.0",
     "next": "^15.3.2",
     "next-mdx-remote": "^5.0.0",
+    "next-safe-action": "^7.10.8",
     "next-themes": "^0.4.6",
+    "nextjs-toploader": "^3.8.16",
     "node-fetch": "^3.3.2",
     "node-html-parser": "^7.0.1",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
+    "react-dropzone": "^14.3.8",
     "react-hook-form": "^7.56.3",
     "react-icons": "^5.5.0",
     "react-markdown": "^10.1.0",
@@ -43,7 +48,8 @@
     "rss-parser": "^3.13.0",
     "tailwind-merge": "^3.2.0",
     "tailwindcss-animate": "^1.0.7",
-    "web3": "^4.16.0"
+    "web3": "^4.16.0",
+    "zod": "^3.24.4"
   },
   "devDependencies": {
     "@eslint/compat": "^1.2.9",
