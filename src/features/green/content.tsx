@@ -1,15 +1,4 @@
-import Link from 'next/link'
-
-import {
-  BarChart3,
-  Check,
-  Globe,
-  History,
-  Leaf,
-  Scale,
-  Shield,
-  Zap,
-} from 'lucide-react'
+import {Globe, History, Leaf, Scale, Shield, Zap} from 'lucide-react'
 
 export function GreenContent() {
   return (

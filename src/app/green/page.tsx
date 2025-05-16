@@ -1,10 +1,12 @@
-import {Metadata} from 'next'
+import type {Metadata} from 'next'
 
+import Image from 'next/image'
+
+import {GreenContent} from '@/features/green/content'
+import {GreenFeaturesGrid} from '@/features/green/features-grid'
 import {IoLogoDiscord} from 'react-icons/io5'
 
 import {Footer} from '@/components/footer'
-import {GreenContent} from '@/components/green/content'
-import {GreenFeaturesGrid} from '@/components/green/features-grid'
 
 export const metadata: Metadata = {
   title: 'Environmentally Conscious Protocol | Verus',
@@ -35,15 +37,19 @@ export default function GreenPage() {
   return (
     <main className="relative mt-[50px] h-[calc(100vh-50px)] w-screen md:mt-[70px] md:h-[calc(100vh-70px)]">
       {/* Background images - one for light mode, one for dark mode */}
-      <img
+      <Image
         src="/img/bg-green.webp"
         className="absolute h-full w-full object-cover dark:hidden"
         alt="Hero background - light"
+        width={500}
+        height={500}
       />
-      <img
+      <Image
         src="/img/bg-darkmode-green.webp"
         className="absolute hidden h-full w-full object-cover dark:block"
         alt="Hero background - dark"
+        width={1200}
+        height={1200}
       />
 
       <div className="relative z-10 flex flex-col items-center px-4 pt-[30px] md:pt-[70px]">
