@@ -1,10 +1,9 @@
 import {
   ArrowUpDown,
-  Code2,
   FileCode,
   Layers,
   QrCode,
-  Wallet,
+  Wallet
 } from 'lucide-react'
 
 /*

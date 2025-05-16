@@ -1,10 +1,10 @@
-import {Metadata} from 'next'
+import type {Metadata} from 'next'
 
+import {MarketplaceContent} from '@/features/build/marketplace/content'
+import {FeaturesGrid} from '@/features/build/marketplace/features-grid'
 import {IoLogoDiscord} from 'react-icons/io5'
 
 import {Footer} from '@/components/footer'
-import {MarketplaceContent} from '@/components/marketplace/content'
-import {FeaturesGrid} from '@/components/marketplace/features-grid'
 
 export const metadata: Metadata = {
   title: 'P2P Marketplace Protocol | Verus',

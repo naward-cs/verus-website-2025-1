@@ -1,8 +1,4 @@
-'use client'
-
-import {useState} from 'react'
-
-import {Code, Terminal} from 'lucide-react'
+import {Code} from 'lucide-react'
 
 export function TerminalExample() {
   return (
@@ -52,7 +48,7 @@ export function TerminalExample() {
             <p className="text-gray-300">
               <span className="text-pink-400">"options"</span>:{' '}
               <span className="text-yellow-300">33</span>,{' '}
-              <span className="text-blue-300">// basket currency</span>
+              <span className="text-blue-300">{'// basket currency'}</span>
             </p>
             <p className="text-gray-300">
               <span className="text-pink-400">"currencies"</span>: [

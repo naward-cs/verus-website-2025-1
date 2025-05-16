@@ -4,8 +4,7 @@ import {
   Coins,
   FileCode,
   Layers,
-  Shield,
-  Store,
+  Store
 } from 'lucide-react'
 
 /*

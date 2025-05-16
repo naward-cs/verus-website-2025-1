@@ -1,4 +1,3 @@
-import {Code, Download} from 'lucide-react'
 
 export function FutureSection() {
   return (
