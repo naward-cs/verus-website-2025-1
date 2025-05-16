@@ -1,10 +1,11 @@
-import {fetchSupply} from '../actions/fetch-supply'
+import {getSupply} from '@/features/intro/server/get-supply'
+
 import {SupplySkeleton} from './supply-skeleton'
 
 const maxSupply = 83_540_184
 
 export async function CirculatingSupplyDisplay() {
-  const {circulatingSupply, isEstimate} = await fetchSupply()
+  const {circulatingSupply, isEstimate} = await getSupply()
 
   // Safety check - should never happen with our fallback
   if (circulatingSupply === null) {
