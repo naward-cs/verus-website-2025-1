@@ -1,7 +1,4 @@
 // Press kit component with introduction, fact sheet, and other information about Verus
-import Link from 'next/link'
-
-import {Download} from 'lucide-react'
 
 export function PressKit() {
   return (
