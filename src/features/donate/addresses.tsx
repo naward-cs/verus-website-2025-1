@@ -1,8 +1,10 @@
 'use client'
 
-import {useState} from 'react'
+import Image from 'next/image'
 import Link from 'next/link'
+import {useState} from 'react'
 
+import {env} from '@/configs/env'
 import {Check, Copy} from 'lucide-react'
 import {IoLogoDiscord} from 'react-icons/io5'
 
@@ -38,8 +40,8 @@ export function DonationAddresses() {
     },
   ]
 
-  const copyAddress = (address: string) => {
-    navigator.clipboard.writeText(address)
+  const copyAddress = async(address: string) => {
+    await navigator.clipboard.writeText(address)
     setCopiedAddress(address)
 
     // Reset after 2 seconds
@@ -71,10 +73,12 @@ export function DonationAddresses() {
               >
                 <div className="mb-3 flex items-center gap-4 md:mb-4">
                   <div className="flex h-10 w-10 items-center justify-center rounded-full bg-gray-100 p-2 dark:bg-gray-800">
-                    <img
+                    <Image
                       src={item.logo}
                       alt={`${item.currency} logo`}
-                      className="h-6 w-6"
+                      width={6}
+                      height={6}
+                      className="size-6"
                       onError={(e) => {
                         // Fallback for missing logos
                         ;(e.target as HTMLImageElement).src =
@@ -166,7 +170,7 @@ export function DonationAddresses() {
               shape the future of Verus.
             </p>
             <Link
-              href="https://www.verus.io/discord"
+              href={env.NEXT_PUBLIC_DISCORD}
               target="_blank"
               rel="noopener noreferrer"
               className="group flex h-[40px] w-fit items-center justify-center rounded-lg border border-blue-200 bg-white/80 px-8 text-[14px] font-medium text-verus-blue backdrop-blur-sm transition-all duration-300 hover:-translate-y-[1px] hover:border-blue-300 hover:text-blue-600 hover:shadow-lg dark:border-blue-800/60 dark:bg-blue-950/80 dark:text-blue-300 dark:hover:border-blue-700 dark:hover:text-blue-200 dark:hover:shadow-blue-950/50 md:h-[50px] md:text-[16px]"

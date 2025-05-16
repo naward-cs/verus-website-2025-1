@@ -1,7 +1,6 @@
 import Link from 'next/link'
 
-import {ArrowRight, Check, Download, ExternalLink} from 'lucide-react'
-import {FaYoutube} from 'react-icons/fa'
+import {Check, Download} from 'lucide-react'
 import {IoLogoDiscord} from 'react-icons/io5'
 
 export function GetStartedSections() {
