@@ -1,11 +1,18 @@
+;
 // import Arweave from 'arweave'
-import CollectionsJSON from '@/data/collectionsJSON'
-import IdentityJSON from '@/data/identityJSON'
+import CollectionsJSON from '@/data/vdxfid/collectionsJSON';
+import IdentityJSON from '@/data/vdxfid/identityJSON';
 
-import CreateProfile from './CreateProfile'
-import FetchArweaveProfile from './FetchArweaveProfile'
-import {PublicProfileProps} from './ProfileTypes'
-import {reverseHex} from './Validators'
+
+
+import CreateProfile from './CreateProfile';
+import FetchArweaveProfile from './FetchArweaveProfile';
+import { PublicProfileProps } from './ProfileTypes';
+import { reverseHex } from './Validators';
+
+
+
+
 
 // No need for arweave config or initialization
 // const arConfig = {

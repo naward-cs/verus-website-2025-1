@@ -1,4 +1,4 @@
-import {VDXFID} from '@/lib/VerusIdProfile'
+import type {VDXFID} from './types'
 
 const ProofsJSON: Record<string, VDXFID> = {
   controller: {

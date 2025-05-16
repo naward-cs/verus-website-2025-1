@@ -1,10 +1,10 @@
 //Import known vdxfid JSONs for profile
 //TODO: need a way to either reverse vdxfid or
 // a vdxfid library needs to be created
-import CollectionsJSON from '@/data/collectionsJSON'
-import IdentityJSON from '@/data/identityJSON'
-import KeysJSON from '@/data/keysJSON'
-import ServicesJSON from '@/data/servicesJSON'
+import CollectionsJSON from '@/data/vdxfid/collectionsJSON'
+import IdentityJSON from '@/data/vdxfid/identityJSON'
+import KeysJSON from '@/data/vdxfid/keysJSON'
+import ServicesJSON from '@/data/vdxfid/servicesJSON'
 
 //TODO: need to reverse vdxfid value instead of storing them all.
 

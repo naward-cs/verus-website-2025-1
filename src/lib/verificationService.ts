@@ -1,6 +1,4 @@
-import ProofsJSON from '@/data/proofsJSON'
-
-import {verusWebProof} from '@/components/VerusIdProfile/Validators'
+import ProofsJSON from '@/data/vdxfid/proofsJSON'
 
 // Fallback controller VDXFID in case import fails
 const CONTROLLER_VDXFID = 'i9TbCypmPKRpKPZDjk3YcCEZXK6wmPTXjw'

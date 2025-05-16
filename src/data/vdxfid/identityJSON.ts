@@ -1,4 +1,4 @@
-import {VDXFID} from '@/lib/VerusIdProfile'
+import type {VDXFID} from './types'
 
 const IdentityJSON: Record<string, VDXFID> = {
   public: {

@@ -1,4 +1,3 @@
-'use client'
 
 import {Check, ExternalLink} from 'lucide-react'
 import {FaYoutube} from 'react-icons/fa'
