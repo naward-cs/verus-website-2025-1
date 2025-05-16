@@ -1,17 +1,12 @@
 'use client'
 
+import type {ControllerProps, FieldPath, FieldValues} from 'react-hook-form'
+import type * as LabelPrimitive from '@radix-ui/react-label'
+
 import * as React from 'react'
 
-import * as LabelPrimitive from '@radix-ui/react-label'
 import {Slot} from '@radix-ui/react-slot'
-import {
-  Controller,
-  ControllerProps,
-  FieldPath,
-  FieldValues,
-  FormProvider,
-  useFormContext,
-} from 'react-hook-form'
+import {Controller, FormProvider, useFormContext} from 'react-hook-form'
 
 import {cn} from '@/lib/utils'
 
@@ -50,6 +45,7 @@ const useFormField = () => {
 
   const fieldState = getFieldState(fieldContext.name, formState)
 
+  // eslint-disable-next-line @typescript-eslint/no-unnecessary-condition
   if (!fieldContext) {
     throw new Error('useFormField should be used within <FormField>')
   }
@@ -149,7 +145,7 @@ const FormMessage = React.forwardRef<
   React.HTMLAttributes<HTMLParagraphElement>
 >(({className, children, ...props}, ref) => {
   const {error, formMessageId} = useFormField()
-  const body = error ? String(error?.message) : children
+  const body = error ? String(error.message ?? '') : children
 
   if (!body) {
     return null
@@ -169,12 +165,12 @@ const FormMessage = React.forwardRef<
 FormMessage.displayName = 'FormMessage'
 
 export {
-  useFormField,
   Form,
-  FormItem,
-  FormLabel,
   FormControl,
   FormDescription,
-  FormMessage,
   FormField,
+  FormItem,
+  FormLabel,
+  FormMessage,
+  useFormField,
 }
