@@ -1,9 +1,10 @@
-import {Metadata} from 'next'
+import type {Metadata} from 'next'
 
+import {VerusIDContent} from '@/features/build/verusid/content'
+import {FeaturesGrid} from '@/features/build/verusid/features-grid'
 import {IoLogoDiscord} from 'react-icons/io5'
 
-import {VerusIDContent} from '@/components/build/verusid/content'
-import {FeaturesGrid} from '@/components/build/verusid/features-grid'
+import {BodyBgHeroImages} from '@/components/background-images'
 import {Footer} from '@/components/footer'
 
 export const metadata: Metadata = {
@@ -38,17 +39,7 @@ export const metadata: Metadata = {
 export default function VerusIDPage() {
   return (
     <main className="relative mt-[50px] h-[calc(100vh-50px)] w-screen md:mt-[70px] md:min-h-[calc(100vh-70px)]">
-      {/* Background images */}
-      <img
-        src="/img/hero-bg2-2.webp"
-        className="absolute h-full w-full object-cover dark:hidden"
-        alt="Hero background - light"
-      />
-      <img
-        src="/img/bg-darkmode.webp"
-        className="absolute hidden h-full w-full object-cover dark:block"
-        alt="Hero background - dark"
-      />
+      <BodyBgHeroImages />
 
       <div className="relative z-10 flex flex-col items-center px-4">
         <div className="pt-[30px] md:pt-[70px]">

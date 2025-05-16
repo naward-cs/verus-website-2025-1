@@ -1,8 +1,9 @@
-import {Metadata} from 'next'
+import type {Metadata} from 'next'
 
+import {WalletComparison, WalletDownloads} from '@/features/wallet/components'
+
+import {BodyBgHeroImages} from '@/components/background-images'
 import {Footer} from '@/components/footer'
-import {WalletComparison} from '@/components/wallet/comparison'
-import {WalletDownloads} from '@/components/wallet/downloads'
 
 export const metadata: Metadata = {
   title: 'The Verus Wallet | Verus',
@@ -32,18 +33,7 @@ export const metadata: Metadata = {
 export default function WalletPage() {
   return (
     <main className="relative mt-[50px] min-h-[calc(100vh-50px)] w-screen md:mt-[70px] md:min-h-[calc(100vh-70px)]">
-      {/* Background images with dark mode support */}
-      <img
-        src="/img/hero-bg2-2.webp"
-        alt="Hero background - light"
-        className="absolute h-[1200px] w-full -translate-y-[250px] object-cover dark:hidden md:h-[1000px] md:-translate-y-[50px]"
-      />
-      <img
-        src="/img/bg-darkmode.webp"
-        alt="Hero background - dark"
-        className="absolute hidden h-[1200px] w-full -translate-y-[250px] object-cover dark:block md:h-[1000px] md:-translate-y-[50px]"
-      />
-
+      <BodyBgHeroImages />
       <div className="relative z-10 flex flex-col items-center md:px-4">
         <div className="pt-[30px] md:pt-[70px]">
           <h1 className="text-center text-[32px] font-medium leading-[1.1] tracking-tight text-white md:text-[75px]">

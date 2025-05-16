@@ -1,10 +1,10 @@
-import {Metadata} from 'next'
+import type {Metadata} from 'next'
 
+import {FeaturesGrid} from '@/features/build/build/features-grid'
+import {SolutionsGrid} from '@/features/build/build/solutions-grid'
+import {VerusIDLoginSection} from '@/features/build/build/verusid-login-section'
 import {IoLogoDiscord} from 'react-icons/io5'
 
-import {FeaturesGrid} from '@/components/build/features-grid'
-import {SolutionsGrid} from '@/components/build/solutions-grid'
-import {VerusIDLoginSection} from '@/components/build/verusid-login-section'
 import {Footer} from '@/components/footer'
 
 // Define metadata for SEO

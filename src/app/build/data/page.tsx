@@ -1,6 +1,6 @@
 import type {Metadata} from 'next'
 
-import {DataContent, FeaturesGrid} from '@/features/dataPage'
+import {DataContent, FeaturesGrid} from '@/features/build/data'
 import {IoLogoDiscord} from 'react-icons/io5'
 
 import {BodyBgHeroImages} from '@/components/background-images'

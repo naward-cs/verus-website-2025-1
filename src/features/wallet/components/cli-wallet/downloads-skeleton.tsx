@@ -1,9 +1,6 @@
 export function CliDownloadsSkeleton() {
   return (
-    <div className="pt-8 md:mt-0 md:pt-16">
-      <h2 className="mb-4 text-[22px] font-medium leading-[1.1] tracking-tight text-black dark:text-white md:text-[32px]">
-        Command-Line Interface (CLI) for advanced users
-      </h2>
+    <>
       <div className="mb-8 flex items-center gap-8 text-[14px] text-black/60 dark:text-white/60 md:text-[16px]">
         <div className="h-6 w-32 animate-pulse rounded bg-gray-200 dark:bg-gray-700" />
         <div className="h-6 w-48 animate-pulse rounded bg-gray-200 dark:bg-gray-700" />
@@ -17,6 +14,6 @@ export function CliDownloadsSkeleton() {
         ))}
       </div>
       <div className="mt-8 h-5 w-48 animate-pulse rounded bg-gray-200 dark:bg-gray-700" />
-    </div>
+    </>
   )
 }

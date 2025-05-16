@@ -1,11 +1,19 @@
+;
 // Build start page showcasing developer resources and documentation
-import {Metadata} from 'next'
+import type { Metadata } from 'next';
 
-import {Info} from 'lucide-react'
 
-import {ResourcesGrid} from '@/components/build/resources-grid'
-import {TerminalExample} from '@/components/build/terminal-example'
-import {Footer} from '@/components/footer'
+
+import { ResourcesGrid, TerminalExample } from '@/features/build/start';
+import { Info } from 'lucide-react';
+
+
+
+import { Footer } from '@/components/footer';
+
+
+
+
 
 export const metadata: Metadata = {
   title: 'Build on Verus | Developer Documentation',

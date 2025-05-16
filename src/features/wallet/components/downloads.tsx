@@ -1,9 +1,9 @@
+import Image from 'next/image'
 import {Suspense} from 'react'
 
-import {CliDownloads} from './cli-downloads'
-import {CliDownloadsSkeleton} from './cli-downloads-skeleton'
-import {DownloadSection} from './download-section'
-import {DownloadSectionSkeleton} from './download-section-skeleton'
+import {CliDownloads} from './cli-wallet/downloads'
+import {CliDownloadsSkeleton} from './cli-wallet/downloads-skeleton'
+import {DownloadSection} from './desktop-wallet/download-section'
 import {MobileDownloads} from './mobile-downloads'
 
 export function WalletDownloads() {
@@ -11,9 +11,11 @@ export function WalletDownloads() {
     <div className="mt-8 w-full max-w-[1220px] md:mt-16">
       {/* Wallet Image */}
       <div className="relative flex w-full justify-center">
-        <img
+        <Image
           src="/img/wallets-big.png"
           alt="Verus Wallet Interface"
+          width={500}
+          height={260}
           className="relative z-10 h-auto w-[220px] object-contain md:w-[500px]"
         />
       </div>
@@ -39,9 +41,7 @@ export function WalletDownloads() {
 
             {/* Left Column - Desktop */}
             <div className="md:pr-16">
-              <Suspense fallback={<DownloadSectionSkeleton />}>
-                <DownloadSection />
-              </Suspense>
+              <DownloadSection />
             </div>
 
             {/* Right Column - Mobile & CLI */}
