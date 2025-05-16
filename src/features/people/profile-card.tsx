@@ -1,16 +1,15 @@
 // Profile card component for team members
-'use client'
 
-import Image from 'next/image'
 import Link from 'next/link'
 
+import {env} from '@/configs/env'
 import {FaXTwitter} from 'react-icons/fa6'
 
 export type ProfileCardProps = {
   name: string
   title: string
   description: string
-  imageUrl?: string
+
   twitterHandle?: string
 }
 
@@ -18,7 +17,7 @@ export function ProfileCard({
   name,
   title,
   description,
-  imageUrl,
+
   twitterHandle,
 }: ProfileCardProps) {
   return (
@@ -44,7 +43,7 @@ export function ProfileCard({
         {/* Twitter link */}
         {twitterHandle && (
           <Link
-            href={`https://x.com/${twitterHandle}`}
+            href={`${env.NEXT_PUBLIC_TWITTER}/${twitterHandle}`}
             target="_blank"
             rel="noopener noreferrer"
             className="group mt-auto flex items-center text-gray-600 transition-colors hover:text-black dark:text-gray-400 dark:hover:text-white"

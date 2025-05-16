@@ -1,10 +1,7 @@
-'use client'
-
-import {CommunityList, CommunityListProps} from './community-list'
-import {ProfileCard, ProfileCardProps} from './profile-card'
+import type {ProfileCardProps} from '@/features/people/profile-card'
 
 // Combined team members data
-const teamMembers: ProfileCardProps[] = [
+export const teamMembers: ProfileCardProps[] = [
   {
     name: 'Michael J. Toutonghi',
     title: 'Lead developer',
@@ -79,79 +76,3 @@ const teamMembers: ProfileCardProps[] = [
     twitterHandle: 'BitcoinMinerNC',
   },
 ]
-
-// Data for community members (just names, no detailed profiles)
-const communityMembers: CommunityListProps['members'] = [
-  {name: '5aubermann'},
-  {name: 'aelder'},
-  {name: 'Alright'},
-  {name: 'allbits'},
-  {name: 'av-roomful'},
-  {name: 'バーコード'},
-  {name: "Ben O'Hanlon"},
-  {name: 'Biz'},
-  {name: 'brainchild'},
-  {name: 'Brian Day (a.k.a Nair Biad)'},
-  {name: 'castlejack'},
-  {name: 'Coinminer'},
-  {name: 'Cragorn'},
-  {name: 'Crypto278'},
-  {name: 'Crupti'},
-  {name: 'DeckerSu'},
-  {name: 'dude'},
-  {name: 'DudezMobi'},
-  {name: 'ejuliano'},
-  {name: 'faldt'},
-  {name: 'FishyGuts'},
-  {name: 'Godballz'},
-  {name: 'grewalsatinder'},
-  {name: 'Hellcatz'},
-  {name: 'Hollowman'},
-  {name: 'JessicaZartler'},
-  {name: 'Joe McWeirdo'},
-  {name: 'JohnMcleod'},
-  {name: 'jorian'},
-  {name: 'Letters'},
-  {name: 'LOUD Mining'},
-  {name: 'Lucivere'},
-  {name: 'Lyn'},
-  {name: 'MeanTime'},
-  {name: 'Mekanine'},
-  {name: 'mox'},
-  {name: 'mylo'},
-  {name: 'nmnm'},
-  {name: 'nward'},
-  {name: 'ok88'},
-  {name: 'Oliver Westbrook'},
-  {name: 'Paia'},
-  {name: 'quipacorn'},
-  {name: 'SafeCoin'},
-  {name: 'SadykovT'},
-  {name: 'santosthegreat'},
-  {name: 'SHossain'},
-  {name: 'Shreyas'},
-  {name: 'stretcher83'},
-  {name: 'tango808'},
-  {name: 'Thoskk'},
-  {name: 'zpajk'},
-]
-
-export function PeopleSections() {
-  return (
-    <div className="flex flex-col gap-16">
-      {/* Team Members Section */}
-      <div>
-        <div className="grid grid-cols-1 gap-8 md:grid-cols-2 md:gap-10 lg:grid-cols-3">
-          {teamMembers.map((profile, index) => (
-            <ProfileCard key={index} {...profile} />
-          ))}
-        </div>
-      </div>
-
-      {/* Community Members Section */}
-      <div>
-        <CommunityList members={communityMembers} />
-      </div>
-    </div>
-  )
-}
