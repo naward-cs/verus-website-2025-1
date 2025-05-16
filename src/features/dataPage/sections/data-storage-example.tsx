@@ -1,6 +1,5 @@
-'use client'
 
-import {Code, Database, Terminal} from 'lucide-react'
+import {Code, Database} from 'lucide-react'
 
 /*
  * Created:
@@ -105,7 +104,7 @@ export function DataStorageExample() {
               <div className="pl-0 text-gray-300">
                 <p>
                   <span className="text-blue-300">
-                    // Additional data entries omitted for clarity
+                    {'// Additional data entries omitted for clarity'}
                   </span>
                 </p>
               </div>
