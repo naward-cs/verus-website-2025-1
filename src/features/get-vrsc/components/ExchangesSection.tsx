@@ -1,3 +1,5 @@
+import Image from 'next/image'
+
 import {Coins, ExternalLink} from 'lucide-react'
 
 /*
@@ -37,9 +39,11 @@ export function ExchangesSection() {
             className="group flex flex-col items-center rounded-xl border border-gray-700 bg-gray-800 p-6 transition-all duration-300 hover:-translate-y-1 hover:border-blue-600 hover:shadow-lg hover:shadow-blue-900/20"
           >
             <div className="mb-3 flex h-20 w-48 items-center justify-center">
-              <img
+              <Image
                 src="/img/exchanges/safe-trade.png"
                 alt="SafeTrade Exchange"
+                width={500}
+                height={500}
                 className="max-h-full max-w-full object-contain"
               />
             </div>
@@ -60,9 +64,11 @@ export function ExchangesSection() {
             className="group flex flex-col items-center rounded-xl border border-gray-700 bg-gray-800 p-6 transition-all duration-300 hover:-translate-y-1 hover:border-blue-600 hover:shadow-lg hover:shadow-blue-900/20"
           >
             <div className="mb-3 flex h-20 w-48 items-center justify-center">
-              <img
+              <Image
                 src="/img/exchanges/tradeogre.png"
                 alt="TradeOgre Exchange"
+                width={500}
+                height={500}
                 className="max-h-full max-w-full object-contain"
               />
             </div>

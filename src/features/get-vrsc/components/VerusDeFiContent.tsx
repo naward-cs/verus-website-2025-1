@@ -1,6 +1,10 @@
 import Link from 'next/link'
+import {Suspense} from 'react'
 
+import {env} from '@/configs/env'
 import {ArrowLeftRight, Coins, ExternalLink} from 'lucide-react'
+
+import {LiquidSection, VolumeSection} from './VerusDeFiSection'
 
 /*
  * VerusDeFiSection - Server Component
@@ -9,21 +13,7 @@ import {ArrowLeftRight, Coins, ExternalLink} from 'lucide-react'
  * - Includes video tutorials and wallet download links
  * - Fully server-rendered except for the data fetching
  */
-
-export interface ProtocolData {
-  volume: string
-  liquidity: string
-}
-
-interface VerusDeFiSectionProps {
-  protocolData: ProtocolData
-  isLoading: boolean
-}
-
-export function VerusDeFiSection({
-  protocolData,
-  isLoading,
-}: VerusDeFiSectionProps) {
+export function VerusDeFiContent() {
   return (
     <section className="relative w-full overflow-hidden rounded-2xl border border-blue-100/80 bg-white/80 backdrop-blur-sm dark:border-blue-900/30 dark:bg-gray-800/50">
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(59,130,246,0.08),transparent_50%)] dark:bg-[radial-gradient(circle_at_center,rgba(59,130,246,0.15),transparent_50%)]"></div>
@@ -59,11 +49,13 @@ export function VerusDeFiSection({
                   <div>
                     <div className="flex items-center gap-1.5">
                       <span className="text-[20px] font-medium text-gray-900 dark:text-white md:text-[24px]">
-                        {isLoading ? (
-                          <div className="h-6 w-24 animate-pulse rounded bg-gray-200 dark:bg-gray-700"></div>
-                        ) : (
-                          protocolData.volume
-                        )}
+                        <Suspense
+                          fallback={
+                            <div className="h-6 w-24 animate-pulse rounded bg-gray-200 dark:bg-gray-700" />
+                          }
+                        >
+                          <VolumeSection />
+                        </Suspense>
                       </span>
                       <span className="text-[14px] font-medium text-gray-600 dark:text-gray-300">
                         24H Protocol Volume
@@ -80,11 +72,13 @@ export function VerusDeFiSection({
                   <div>
                     <div className="flex items-center gap-1.5">
                       <span className="text-[20px] font-medium text-gray-900 dark:text-white md:text-[24px]">
-                        {isLoading ? (
-                          <div className="h-6 w-24 animate-pulse rounded bg-gray-200 dark:bg-gray-700"></div>
-                        ) : (
-                          protocolData.liquidity
-                        )}
+                        <Suspense
+                          fallback={
+                            <div className="h-6 w-24 animate-pulse rounded bg-gray-200 dark:bg-gray-700" />
+                          }
+                        >
+                          <LiquidSection />
+                        </Suspense>
                       </span>
                       <span className="text-[14px] font-medium text-gray-600 dark:text-gray-300">
                         VRSC in Liquidity Pools
@@ -105,7 +99,7 @@ export function VerusDeFiSection({
                   </span>
                 </div>
                 <a
-                  href="https://cryptodashboard.faldt.net/"
+                  href={env.NEXT_PUBLIC_CRYPTO_DASHBOARD}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="flex items-center gap-1 text-[12px] text-blue-600 hover:underline dark:text-blue-400"
@@ -219,7 +213,7 @@ export function VerusDeFiSection({
                 Bridge Documentation
               </h4>
               <a
-                href="https://docs.verus.io/eth-bridge/ethereum-to-verus.html"
+                href={`${env.NEXT_PUBLIC_VERUS_DOCS}/eth-bridge/ethereum-to-verus.html`}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="group flex items-center gap-3 rounded-lg border border-blue-100/60 bg-blue-50/80 p-3 transition-all duration-300 hover:border-blue-300 dark:border-blue-800/40 dark:bg-blue-900/30 dark:hover:border-blue-700"

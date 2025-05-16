@@ -1,7 +1,6 @@
 import {EarnVRSCSection} from './EarnVRSCSection'
 import {ExchangesSection} from './ExchangesSection'
-import {ProtocolDataProvider} from './ProtocolDataProvider'
-import {VerusDeFiContentWrapper} from './VerusDeFiContentWrapper'
+import {VerusDeFiContent} from './VerusDeFiContent'
 
 /*
  * GetVrscSections Component - Main container component for get-vrsc page
@@ -14,9 +13,7 @@ import {VerusDeFiContentWrapper} from './VerusDeFiContentWrapper'
 export function GetVrscSections() {
   return (
     <div className="flex flex-col gap-16 md:gap-24">
-      <ProtocolDataProvider>
-        <VerusDeFiContentWrapper />
-      </ProtocolDataProvider>
+      <VerusDeFiContent />
       <ExchangesSection />
       <EarnVRSCSection />
     </div>
