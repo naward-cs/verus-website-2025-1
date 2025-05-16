@@ -1,4 +1,4 @@
-import { VDXFID } from '@/lib/VerusIdProfile'
+import {VDXFID} from '@/lib/VerusIdProfile'
 
 const KeysJSON: Record<string, VDXFID> = {
   'vrsc.address': {

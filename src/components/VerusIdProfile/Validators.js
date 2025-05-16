@@ -1,4 +1,4 @@
-import { Buffer } from 'buffer/' // Import Buffer for web environment
+import {Buffer} from 'buffer/' // Import Buffer for web environment
 
 // Remove the safe import logic for crypto-js
 // let CryptoJS;
@@ -20,6 +20,7 @@ import { Buffer } from 'buffer/' // Import Buffer for web environment
 // }
 
 import he from 'he'
+
 // const he = require('he')
 const hexCharsregex = /[0-9A-Fa-f]{6}/g
 const base64urlregex = /^[A-Za-z0-9_-]+$/
@@ -43,12 +44,12 @@ export const isBase64url = (str) => {
 export const reverseHex = (hex) => {
   // Ensure hex is not null or undefined, and is a string
   if (typeof hex !== 'string' || hex === null) {
-    console.warn("reverseHex: Input is not a valid string", hex)
+    console.warn('reverseHex: Input is not a valid string', hex)
     return '' // Return empty string or handle as appropriate
   }
   const match = hex.match(/../g)
   if (!match) {
-    console.warn("reverseHex: No pairs found in hex string", hex)
+    console.warn('reverseHex: No pairs found in hex string', hex)
     return '' // Return empty if no pairs are found
   }
   return match.reverse().join('')
@@ -57,7 +58,7 @@ export const reverseHex = (hex) => {
 // Rewrite HexToBase64 using Buffer from the 'buffer' package
 export const HexToBase64 = (hex) => {
   if (!hex || typeof hex !== 'string') {
-    console.log("HexToBase64: No valid hex string provided")
+    console.log('HexToBase64: No valid hex string provided')
     return false
   }
 
@@ -72,11 +73,13 @@ export const HexToBase64 = (hex) => {
       .replace(/\//g, '_') // Replace / with _
       .replace(/=+$/, '') // Remove trailing padding
 
-    console.log(`HexToBase64: Converted ${hex} to ${base64url} using Buffer package`)
+    console.log(
+      `HexToBase64: Converted ${hex} to ${base64url} using Buffer package`
+    )
     return base64url
   } catch (error) {
     // Catch errors during buffer creation or conversion (e.g., invalid hex)
-    console.error("HexToBase64 error with Buffer package:", error)
+    console.error('HexToBase64 error with Buffer package:', error)
     return false
   }
 }
@@ -111,7 +114,7 @@ const cleanupProofMsg = (msg) => {
 
 export const verusWebProof = (content) => {
   if (typeof content !== 'string') {
-    console.warn("verusWebProof: Input content is not a string", content)
+    console.warn('verusWebProof: Input content is not a string', content)
     return false // Expecting a string to match against regex
   }
   const proofs = content.match(verusProofMsgRegex)
@@ -123,27 +126,32 @@ export const verusWebProof = (content) => {
     })
 
     if (proof.length < 1 && proofs.length > 0) {
-      proof = [ proofs[ 0 ] ] // Ensure proof is an array for consistency
+      proof = [proofs[0]] // Ensure proof is an array for consistency
     } else if (proof.length >= 1) {
-      proof = [ proof[ proof.length - 1 ] ] // Take the last valid proof as an array
+      proof = [proof[proof.length - 1]] // Take the last valid proof as an array
     }
 
     // Ensure proof is a non-empty array and its first element is a string
-    if (proof.length === 0 || typeof proof[ 0 ] !== 'string') {
-      console.warn("verusWebProof: Filtered proof is not a valid string array", proof)
+    if (proof.length === 0 || typeof proof[0] !== 'string') {
+      console.warn(
+        'verusWebProof: Filtered proof is not a valid string array',
+        proof
+      )
       return false
     }
 
-    let processedProof = he.decode(cleanupProofMsg(proof[ 0 ].replace(htmlStripRegex, '')))
+    let processedProof = he.decode(
+      cleanupProofMsg(proof[0].replace(htmlStripRegex, ''))
+    )
     const s = processedProof.split(':')
     let message = ''
     let signature = ''
     if (s.length > 2) {
-      message = s[ 0 ] + ':' + s[ 1 ]
-      signature = s[ 2 ]
+      message = s[0] + ':' + s[1]
+      signature = s[2]
     }
 
-    const result = { Message: message, Signature: signature }
+    const result = {Message: message, Signature: signature}
     return result
   }
   return false
@@ -155,14 +163,20 @@ export const verusBlockchainProof = (context) => {
     // Basic validation to ensure enough parts exist
     if (s.length >= 4) {
       return {
-        key1: { Message: s[ 0 ] + ':' + s[ 1 ], Signature: s[ 2 ] },
-        key2: { Message: s[ 0 ] + ':' + s[ 1 ] + ':' + s[ 2 ], Signature: s[ 3 ] },
+        key1: {Message: s[0] + ':' + s[1], Signature: s[2]},
+        key2: {Message: s[0] + ':' + s[1] + ':' + s[2], Signature: s[3]},
       }
     } else {
-      console.warn("verusBlockchainProof: Context string does not have enough parts after split:", context)
+      console.warn(
+        'verusBlockchainProof: Context string does not have enough parts after split:',
+        context
+      )
     }
   } else {
-    console.warn("verusBlockchainProof: Input context is not a valid string", context)
+    console.warn(
+      'verusBlockchainProof: Input context is not a valid string',
+      context
+    )
   }
   return false
 }

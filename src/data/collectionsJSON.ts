@@ -1,4 +1,4 @@
-import { VDXFID } from '@/lib/VerusIdProfile'
+import {VDXFID} from '@/lib/VerusIdProfile'
 
 const CollectionsJSON: Record<string, VDXFID> = {
   arweave: {

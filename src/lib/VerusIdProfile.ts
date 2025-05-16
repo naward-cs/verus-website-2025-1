@@ -1,9 +1,9 @@
-import FetchVerusId from '@/components/VerusIdProfile/FetchVerusId'
 import CreateProfile from '@/components/VerusIdProfile/CreateProfile'
 import FetchArweaveProfile from '@/components/VerusIdProfile/FetchArweaveProfile'
+import FetchVerusId from '@/components/VerusIdProfile/FetchVerusId'
 import FetchVerusProfile from '@/components/VerusIdProfile/FetchVerusProfile'
-import { reverseHex } from '@/components/VerusIdProfile/Validators'
 import * as Types from '@/components/VerusIdProfile/ProfileTypes'
+import {reverseHex} from '@/components/VerusIdProfile/Validators'
 
 export {
   FetchVerusId,
@@ -11,8 +11,8 @@ export {
   FetchArweaveProfile,
   FetchVerusProfile,
   reverseHex,
-  Types
+  Types,
 }
 
 // Re-export types for convenience
-export * from '@/components/VerusIdProfile/ProfileTypes' 
+export * from '@/components/VerusIdProfile/ProfileTypes'

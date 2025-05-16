@@ -1,8 +1,8 @@
-import type { NextConfig } from "next";
+import type {NextConfig} from 'next'
 
-import { env } from "@/configs/env";
+import {env} from '@/configs/env'
 
-const _env = env;
+const _env = env
 const nextConfig: NextConfig = {
   /* config options here */
   // For development, we'll use the standard Next.js build
@@ -10,15 +10,15 @@ const nextConfig: NextConfig = {
   compiler: {
     // Remove all console logs except console.error in production builds
     removeConsole: {
-      exclude: ["error"],
+      exclude: ['error'],
     },
   },
   images: {
     unoptimized: true,
     remotePatterns: [
       {
-        protocol: "https",
-        hostname: "**",
+        protocol: 'https',
+        hostname: '**',
       },
     ],
   },
@@ -33,39 +33,39 @@ const nextConfig: NextConfig = {
   },
   async redirects() {
     return [
-      { source: "/economy", destination: "/statistics", permanent: true },
-      { source: "/signatures", destination: "/verify", permanent: true },
-      { source: "/exchanges", destination: "/get-vrsc", permanent: true },
-      { source: "/create", destination: "/build", permanent: true },
-      { source: "/foundations", destination: "/intro", permanent: true },
-      { source: "/eth-bridge", destination: "/build", permanent: true },
+      {source: '/economy', destination: '/statistics', permanent: true},
+      {source: '/signatures', destination: '/verify', permanent: true},
+      {source: '/exchanges', destination: '/get-vrsc', permanent: true},
+      {source: '/create', destination: '/build', permanent: true},
+      {source: '/foundations', destination: '/intro', permanent: true},
+      {source: '/eth-bridge', destination: '/build', permanent: true},
       {
-        source: "/media#brand-assets",
-        destination: "/media/brand-assets",
+        source: '/media#brand-assets',
+        destination: '/media/brand-assets',
         permanent: true,
       },
       {
-        source: "/wallet/:slug",
-        destination: "/ethereum-bridge",
+        source: '/wallet/:slug',
+        destination: '/ethereum-bridge',
         permanent: true,
       },
       {
-        source: "/verusid-lookup",
-        destination: "/verusid-search",
+        source: '/verusid-lookup',
+        destination: '/verusid-search',
         permanent: true,
       },
       {
-        source: "/verusid-lookup/:verusId",
-        destination: "/verusid-search/:verusId",
+        source: '/verusid-lookup/:verusId',
+        destination: '/verusid-search/:verusId',
         permanent: true,
       },
       {
-        source: "/free-verusid.pdf",
-        destination: "/papers/free-verusid.pdf",
+        source: '/free-verusid.pdf',
+        destination: '/papers/free-verusid.pdf',
         permanent: true,
       },
-    ];
+    ]
   },
-};
+}
 
-export default nextConfig;
+export default nextConfig

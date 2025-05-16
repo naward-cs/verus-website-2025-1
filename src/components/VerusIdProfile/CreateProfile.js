@@ -2,32 +2,41 @@
 //TODO: need a way to either reverse vdxfid or
 // a vdxfid library needs to be created
 import CollectionsJSON from '@/data/collectionsJSON'
-import KeysJSON from '@/data/keysJSON'
 import IdentityJSON from '@/data/identityJSON'
+import KeysJSON from '@/data/keysJSON'
 import ServicesJSON from '@/data/servicesJSON'
 
 //TODO: need to reverse vdxfid value instead of storing them all.
 
 const CreateProfile = (profileJSON) => {
-  console.log("CreateProfile: Starting profile creation", profileJSON ? "with data" : "with NO data")
-  
+  console.log(
+    'CreateProfile: Starting profile creation',
+    profileJSON ? 'with data' : 'with NO data'
+  )
+
   if (!profileJSON) {
-    console.error("CreateProfile: No profile JSON provided")
+    console.error('CreateProfile: No profile JSON provided')
     return {}
   }
 
   let profile = {}
   //First: Get identity information
   try {
-    console.log("CreateProfile: Processing identity information with keys:", 
-      IdentityJSON ? Object.keys(IdentityJSON).join(", ") : "NO IDENTITY JSON AVAILABLE")
-    
+    console.log(
+      'CreateProfile: Processing identity information with keys:',
+      IdentityJSON
+        ? Object.keys(IdentityJSON).join(', ')
+        : 'NO IDENTITY JSON AVAILABLE'
+    )
+
     if (!IdentityJSON) {
-      throw new Error("IdentityJSON not available")
+      throw new Error('IdentityJSON not available')
     }
-    
+
     for (const [key, value] of Object.entries(IdentityJSON)) {
-      console.log(`CreateProfile: Checking for identity key ${key} with VDXFID ${value?.vdxfid}`)
+      console.log(
+        `CreateProfile: Checking for identity key ${key} with VDXFID ${value?.vdxfid}`
+      )
       if (value && value.vdxfid && profileJSON[value.vdxfid]) {
         console.log(`CreateProfile: Found match for ${key}`)
         if (profile.public) {
@@ -39,9 +48,9 @@ const CreateProfile = (profileJSON) => {
         delete profileJSON[value.vdxfid]
       }
     }
-    
+
     //Second: Get services
-    console.log("CreateProfile: Processing services")
+    console.log('CreateProfile: Processing services')
     if (ServicesJSON) {
       for (const [key, value] of Object.entries(ServicesJSON)) {
         if (value && value.vdxfid && profileJSON[value.vdxfid]) {
@@ -56,9 +65,9 @@ const CreateProfile = (profileJSON) => {
         }
       }
     }
-    
+
     //Third: Get blockchain addresses
-    console.log("CreateProfile: Processing blockchain keys")
+    console.log('CreateProfile: Processing blockchain keys')
     if (KeysJSON) {
       for (const [key, value] of Object.entries(KeysJSON)) {
         if (value && value.vdxfid && profileJSON[value.vdxfid]) {
@@ -73,9 +82,9 @@ const CreateProfile = (profileJSON) => {
         }
       }
     }
-    
+
     //Lastly: Get collections to display
-    console.log("CreateProfile: Processing collections")
+    console.log('CreateProfile: Processing collections')
     if (CollectionsJSON) {
       for (const [key, value] of Object.entries(CollectionsJSON)) {
         if (value && value.vdxfid && profileJSON[value.vdxfid]) {
@@ -91,10 +100,13 @@ const CreateProfile = (profileJSON) => {
       }
     }
 
-    console.log("CreateProfile: Final profile structure:", Object.keys(profile).join(", "))
+    console.log(
+      'CreateProfile: Final profile structure:',
+      Object.keys(profile).join(', ')
+    )
     return profile
   } catch (error) {
-    console.error("CreateProfile error:", error)
+    console.error('CreateProfile error:', error)
     return profile
   }
 }

@@ -1,13 +1,13 @@
-"use client"
+'use client'
 
-import { useState, useRef, useEffect } from "react"
+import {useEffect, useRef, useState} from 'react'
 
 interface FeatureTooltipProps {
   children: React.ReactNode
   description: string
 }
 
-export function FeatureTooltip({ children, description }: FeatureTooltipProps) {
+export function FeatureTooltip({children, description}: FeatureTooltipProps) {
   const [isOpen, setIsOpen] = useState(false)
   const [isMobile, setIsMobile] = useState(false)
   const [isHovering, setIsHovering] = useState(false)
@@ -18,13 +18,13 @@ export function FeatureTooltip({ children, description }: FeatureTooltipProps) {
     const checkMobile = () => {
       setIsMobile(window.innerWidth < 768)
     }
-    
+
     // Initial check
     checkMobile()
-    
+
     // Add resize listener
     window.addEventListener('resize', checkMobile)
-    
+
     return () => window.removeEventListener('resize', checkMobile)
   }, [])
 
@@ -52,14 +52,13 @@ export function FeatureTooltip({ children, description }: FeatureTooltipProps) {
   // Mobile implementation with click behavior
   if (isMobile) {
     return (
-      <div 
-        ref={ref} 
-        onClick={handleClick}
-        className="relative cursor-pointer"
-      >
+      <div ref={ref} onClick={handleClick} className="relative cursor-pointer">
         {children}
         {isOpen && (
-          <div className="fixed md:hidden left-4 right-4 bottom-4 bg-white dark:bg-gray-800 text-gray-600 dark:text-gray-300 border border-gray-200 dark:border-gray-700 p-4 rounded-lg shadow-lg z-50 mx-auto" style={{ maxWidth: '90vw' }}>
+          <div
+            className="fixed bottom-4 left-4 right-4 z-50 mx-auto rounded-lg border border-gray-200 bg-white p-4 text-gray-600 shadow-lg dark:border-gray-700 dark:bg-gray-800 dark:text-gray-300 md:hidden"
+            style={{maxWidth: '90vw'}}
+          >
             <p className="text-sm">{description}</p>
           </div>
         )}
@@ -69,16 +68,16 @@ export function FeatureTooltip({ children, description }: FeatureTooltipProps) {
 
   // Desktop implementation with pure hover behavior using standard event handlers
   return (
-    <div 
+    <div
       className="relative inline-block"
       onMouseEnter={() => setIsHovering(true)}
       onMouseLeave={() => setIsHovering(false)}
     >
       {children}
-      
+
       {isHovering && (
-        <div className="hidden md:block absolute bottom-[-8px] left-1/2 transform -translate-x-1/2 translate-y-full bg-white dark:bg-gray-800 text-gray-600 dark:text-gray-300 border border-gray-200 dark:border-gray-700 p-4 rounded-lg shadow-lg z-[9999] min-w-[320px] max-w-[400px]">
-          <div className="w-3 h-3 bg-white dark:bg-gray-800 border-t border-l border-gray-200 dark:border-gray-700 transform rotate-45 absolute -top-1.5 left-1/2 ml-[-6px]"></div>
+        <div className="absolute bottom-[-8px] left-1/2 z-[9999] hidden min-w-[320px] max-w-[400px] -translate-x-1/2 translate-y-full transform rounded-lg border border-gray-200 bg-white p-4 text-gray-600 shadow-lg dark:border-gray-700 dark:bg-gray-800 dark:text-gray-300 md:block">
+          <div className="absolute -top-1.5 left-1/2 ml-[-6px] h-3 w-3 rotate-45 transform border-l border-t border-gray-200 bg-white dark:border-gray-700 dark:bg-gray-800"></div>
           <p className="text-sm">{description}</p>
         </div>
       )}

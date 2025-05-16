@@ -1,9 +1,8 @@
-import FetchVerusId from './FetchVerusId'
 import CreateProfile from './CreateProfile.js'
-import { reverseHex } from './Validators'
-
 import FetchArweaveProfile from './FetchArweaveProfile'
+import FetchVerusId from './FetchVerusId'
 import FetchVerusProfile from './FetchVerusProfile'
+import {reverseHex} from './Validators'
 
 export * from './ProfileTypes'
 

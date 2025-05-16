@@ -13,20 +13,20 @@ const FetchVerusId = async (query: Query) => {
         'Content-Type': 'text/plain',
       },
       body: JSON.stringify({
-        jsonrpc: "2.0", 
-        id: "search", 
-        method: "getidentity", 
-        params: [query.id as string]
+        jsonrpc: '2.0',
+        id: 'search',
+        method: 'getidentity',
+        params: [query.id as string],
       }),
     }).then((res) => res.json())
   } catch (error) {
-    return { result: null, error: { code: -5, message: 'network issue' } }
+    return {result: null, error: {code: -5, message: 'network issue'}}
   }
 
   if (result?.result) {
-    return { result: result.result, error: null }
+    return {result: result.result, error: null}
   } else {
-    return { result: null, error: result.error }
+    return {result: null, error: result.error}
   }
 }
 

@@ -1,43 +1,51 @@
-import { NextRequest, NextResponse } from 'next/server';
-import { isValidUrl, verusWebProof, verusBlockchainProof } from '@/components/VerusIdProfile/Validators';
-import ProofsJSON from '@/data/proofsJSON';
+import {NextRequest, NextResponse} from 'next/server'
 
+import ProofsJSON from '@/data/proofsJSON'
 
+import {
+  isValidUrl,
+  verusBlockchainProof,
+  verusWebProof,
+} from '@/components/VerusIdProfile/Validators'
 
 // Define clear types for the verification results
-type ValidStatus = 'true' | 'false' | 'error';
+type ValidStatus = 'true' | 'false' | 'error'
 
 interface VerificationResult {
-  valid: ValidStatus;
-  message?: string;
+  valid: ValidStatus
+  message?: string
 }
 
 interface BlockchainVerificationResult {
-  key1?: VerificationResult;
-  key2?: VerificationResult;
-  overall?: VerificationResult;
-  address?: string;
-  proofLink?: string;
-  valid: ValidStatus;
-  message?: string;
+  key1?: VerificationResult
+  key2?: VerificationResult
+  overall?: VerificationResult
+  address?: string
+  proofLink?: string
+  valid: ValidStatus
+  message?: string
 }
 
 // For Ethereum verification
 // Optional: Import web3 only if needed for Ethereum verification
-let Web3: any;
+let Web3: any
 try {
-  Web3 = require('web3');
+  Web3 = require('web3')
 } catch (error) {
-  console.warn('Web3 package not available. Ethereum verification will not work.');
+  console.warn(
+    'Web3 package not available. Ethereum verification will not work.'
+  )
 }
 
 // For Bitcoin verification
 // Optional: Import bitcoinjs-message only if needed for Bitcoin verification
-let bitcoinMessage: any;
+let bitcoinMessage: any
 try {
-  bitcoinMessage = require('bitcoinjs-message');
+  bitcoinMessage = require('bitcoinjs-message')
 } catch (error) {
-  console.warn('bitcoinjs-message package not available. Bitcoin verification will not work.');
+  console.warn(
+    'bitcoinjs-message package not available. Bitcoin verification will not work.'
+  )
 }
 
 // Helper function to get the base URL for server-side API calls
@@ -58,22 +66,22 @@ function getBaseUrl() {
   //    return process.env.NEXT_PUBLIC_BASE_URL; // Use the value defined for client-side, likely localhost or dev URL
   // }
   // 4. Absolute fallback for local development if no other variable is set
-  return `http://localhost:${process.env.PORT}`;
+  return `http://localhost:${process.env.PORT}`
 }
 
 /**
  * Verifies a message against the Verus API
  */
 async function verifyVerusMessage(
-  identity: string, 
-  signature: string, 
+  identity: string,
+  signature: string,
   message: string
 ): Promise<VerificationResult> {
   try {
     // Use the helper function to determine the correct base URL
-    const baseUrl = getBaseUrl();
-    console.log(`verifyVerusMessage: Using baseUrl: ${baseUrl}`); // Add logging
-      
+    const baseUrl = getBaseUrl()
+    console.log(`verifyVerusMessage: Using baseUrl: ${baseUrl}`) // Add logging
+
     const response = await fetch(`${baseUrl}/api/verify/message`, {
       method: 'POST',
       headers: {
@@ -84,17 +92,17 @@ async function verifyVerusMessage(
         signature,
         message,
       }),
-    });
+    })
 
     if (!response.ok) {
-      throw new Error(`Message verification failed: ${response.statusText}`);
+      throw new Error(`Message verification failed: ${response.statusText}`)
     }
 
-    const result = await response.json();
-    return { valid: result.verified ? 'true' : 'false' };
+    const result = await response.json()
+    return {valid: result.verified ? 'true' : 'false'}
   } catch (error) {
-    console.error('Error verifying Verus message:', error);
-    return { valid: 'error', message: 'Verification failed' };
+    console.error('Error verifying Verus message:', error)
+    return {valid: 'error', message: 'Verification failed'}
   }
 }
 
@@ -103,117 +111,137 @@ async function verifyVerusMessage(
  */
 export async function POST(request: NextRequest) {
   try {
-    const data = await request.json();
-    
+    const data = await request.json()
+
     // Normalize the user ID
-    let user = data.user?.toLowerCase() || '';
+    let user = data.user?.toLowerCase() || ''
     if (user && !user.endsWith('@')) {
-      user = user + '@';
+      user = user + '@'
     }
 
     // Initialize result
-    let result: BlockchainVerificationResult = { valid: 'error' };
+    let result: BlockchainVerificationResult = {valid: 'error'}
 
     // Get the controller key from ProofsJSON
-    const controllerVdxfid = ProofsJSON?.controller?.vdxfid || 'i9TbCypmPKRpKPZDjk3YcCEZXK6wmPTXjw';
-    const verifyKey = data[controllerVdxfid];
+    const controllerVdxfid =
+      ProofsJSON?.controller?.vdxfid || 'i9TbCypmPKRpKPZDjk3YcCEZXK6wmPTXjw'
+    const verifyKey = data[controllerVdxfid]
 
     // Handle URL verification (for social media)
     if (isValidUrl(verifyKey)) {
       if (verifyKey.includes('reddit')) {
-        console.log(`Verification Check: Skipping Reddit URL: ${verifyKey}`);
-        result = { valid: 'false', message: 'Reddit verification not performed' };
+        console.log(`Verification Check: Skipping Reddit URL: ${verifyKey}`)
+        result = {valid: 'false', message: 'Reddit verification not performed'}
       } else {
-        let verifiedData: any;
-        console.log(`Verification Check: Processing URL proof: ${verifyKey}`);
+        let verifiedData: any
+        console.log(`Verification Check: Processing URL proof: ${verifyKey}`)
         try {
-          console.log(`Verification Check: Fetching content from ${verifyKey}...`);
-          const response = await fetch(verifyKey);
+          console.log(
+            `Verification Check: Fetching content from ${verifyKey}...`
+          )
+          const response = await fetch(verifyKey)
           if (!response.ok) {
-            console.error(`URL fetch error: ${response.status} for ${verifyKey}`);
-            throw new Error(`URL fetch error: ${response.status}`);
+            console.error(
+              `URL fetch error: ${response.status} for ${verifyKey}`
+            )
+            throw new Error(`URL fetch error: ${response.status}`)
           }
-          verifiedData = await response.text();
-          console.log(`Verification Check: Content fetched from ${verifyKey}. Length: ${verifiedData?.length}`);
-          
+          verifiedData = await response.text()
+          console.log(
+            `Verification Check: Content fetched from ${verifyKey}. Length: ${verifiedData?.length}`
+          )
+
           // Extract proof from content
-          console.log('Verification Check: Parsing web proof...');
-          const parsedProof = verusWebProof(verifiedData);
+          console.log('Verification Check: Parsing web proof...')
+          const parsedProof = verusWebProof(verifiedData)
           if (parsedProof && parsedProof.Signature && parsedProof.Message) {
-            console.log('Verification Check: Web proof parsed. Verifying...');
+            console.log('Verification Check: Web proof parsed. Verifying...')
             // Verify the proof with Verus API
             const verificationResult = await verifyVerusMessage(
               user,
               parsedProof.Signature,
               parsedProof.Message
-            );
-            console.log(`Verification Check: Web proof verification result: ${JSON.stringify(verificationResult)}`);
-            
+            )
+            console.log(
+              `Verification Check: Web proof verification result: ${JSON.stringify(verificationResult)}`
+            )
+
             // Add the proof link to the result
             result = {
               ...verificationResult,
-              proofLink: verifyKey
-            };
+              proofLink: verifyKey,
+            }
           } else {
-            console.log('Verification Check: Could not parse proof from content.');
-            result = { valid: 'error', message: 'Could not parse proof from content' };
+            console.log(
+              'Verification Check: Could not parse proof from content.'
+            )
+            result = {
+              valid: 'error',
+              message: 'Could not parse proof from content',
+            }
           }
         } catch (error) {
-          console.error('Error verifying URL content:', error);
-          result = { valid: 'error', message: 'Failed to verify URL content' };
+          console.error('Error verifying URL content:', error)
+          result = {valid: 'error', message: 'Failed to verify URL content'}
         }
       }
-    } 
+    }
     // Handle blockchain address verification
     else if (data.type === 'blockchain') {
-      console.log("Verifying blockchain address:", data);
+      console.log('Verifying blockchain address:', data)
       try {
         // Check for required fields
         if (!data.address || !data.qualifiedname) {
-          console.warn("Missing address or qualifiedname for blockchain verification");
-          return NextResponse.json({ 
-            valid: 'error', 
-            message: 'Missing required blockchain data (address or qualifiedname)'
-          });
+          console.warn(
+            'Missing address or qualifiedname for blockchain verification'
+          )
+          return NextResponse.json({
+            valid: 'error',
+            message:
+              'Missing required blockchain data (address or qualifiedname)',
+          })
         }
 
         // Extract proofs
-        const proofChecks: any = verusBlockchainProof(verifyKey);
+        const proofChecks: any = verusBlockchainProof(verifyKey)
         if (!proofChecks) {
-          console.warn("Invalid proof format:", verifyKey);
-          return NextResponse.json({ valid: 'error', message: 'Invalid proof format' });
+          console.warn('Invalid proof format:', verifyKey)
+          return NextResponse.json({
+            valid: 'error',
+            message: 'Invalid proof format',
+          })
         }
-        
-        console.log("Extracted proofs:", proofChecks);
+
+        console.log('Extracted proofs:', proofChecks)
 
         // First key: verify against Verus ID
-        console.log("Verifying key1 with user:", user);
+        console.log('Verifying key1 with user:', user)
         const key1Result = await verifyVerusMessage(
           user,
           proofChecks.key1.Signature,
           proofChecks.key1.Message
-        );
-        console.log("Key1 verification result:", key1Result);
+        )
+        console.log('Key1 verification result:', key1Result)
 
         // Get blockchain type from qualified name
-        const chain = data.qualifiedname?.split('.')?.[2] || '';
-        console.log("Blockchain type:", chain);
-        
-        let key2Result: VerificationResult = { valid: 'error' };
-        
+        const chain = data.qualifiedname?.split('.')?.[2] || ''
+        console.log('Blockchain type:', chain)
+
+        let key2Result: VerificationResult = {valid: 'error'}
+
         // Verify second key based on blockchain type
         switch (chain) {
           case 'vrsc':
             // For Verus, use Verus API
-            console.log("Verifying VRSC key2 with address:", data.address);
+            console.log('Verifying VRSC key2 with address:', data.address)
             key2Result = await verifyVerusMessage(
               data.address,
               proofChecks.key2.Signature,
               proofChecks.key2.Message
-            );
-            console.log("Key2 VRSC verification result:", key2Result);
-            break;
-            
+            )
+            console.log('Key2 VRSC verification result:', key2Result)
+            break
+
           case 'eth':
             // Ethereum verification commented out
             /*
@@ -237,9 +265,9 @@ export async function POST(request: NextRequest) {
             }
             */
             // Temporarily returning success for Ethereum verification
-            key2Result = { valid: 'true' };
-            break;
-            
+            key2Result = {valid: 'true'}
+            break
+
           case 'btc':
             // Bitcoin verification commented out
             /*
@@ -263,35 +291,38 @@ export async function POST(request: NextRequest) {
             }
             */
             // Temporarily returning success for Bitcoin verification
-            key2Result = { valid: 'true' };
-            break;
-            
+            key2Result = {valid: 'true'}
+            break
+
           default:
-            key2Result = { valid: 'error', message: 'Unsupported blockchain' };
+            key2Result = {valid: 'error', message: 'Unsupported blockchain'}
         }
 
         // Combine results
-        const overallValid = key1Result.valid === 'true' && key2Result.valid === 'true' ? 'true' : 'false';
-        
+        const overallValid =
+          key1Result.valid === 'true' && key2Result.valid === 'true'
+            ? 'true'
+            : 'false'
+
         result = {
           key1: key1Result,
           key2: key2Result,
-          overall: { valid: overallValid },
+          overall: {valid: overallValid},
           address: data.address,
-          valid: overallValid
-        };
+          valid: overallValid,
+        }
       } catch (error) {
-        console.error('Error in blockchain verification:', error);
-        result = { valid: 'error', message: 'Failed to verify blockchain proof' };
+        console.error('Error in blockchain verification:', error)
+        result = {valid: 'error', message: 'Failed to verify blockchain proof'}
       }
     }
 
-    return NextResponse.json(result);
+    return NextResponse.json(result)
   } catch (error) {
-    console.error('Error in verification check:', error);
+    console.error('Error in verification check:', error)
     return NextResponse.json(
-      { valid: 'error', message: 'Verification check failed' },
-      { status: 500 }
-    );
+      {valid: 'error', message: 'Verification check failed'},
+      {status: 500}
+    )
   }
-} 
+}

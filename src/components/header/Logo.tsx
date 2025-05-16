@@ -1,7 +1,7 @@
-"use client"
+'use client'
 
-import Image from "next/image"
-import Link from "next/link"
+import Image from 'next/image'
+import Link from 'next/link'
 
 export function Logo() {
   return (
@@ -12,19 +12,19 @@ export function Logo() {
           alt="Verus Logo"
           width={120}
           height={32}
-          className="h-6 md:h-8 w-auto dark:hidden"
+          className="h-6 w-auto dark:hidden md:h-8"
         />
         <Image
           src="/img/verus-logo-white.svg"
           alt="Verus Logo"
           width={120}
           height={32}
-          className="h-6 md:h-8 w-auto hidden dark:block"
+          className="hidden h-6 w-auto dark:block md:h-8"
         />
       </div>
-      <span className="text-[12px] md:text-[14px] italic text-verus-blue dark:text-white/80 opacity-[.73]">
+      <span className="text-[12px] italic text-verus-blue opacity-[.73] dark:text-white/80 md:text-[14px]">
         Truth & Privacy for All
       </span>
     </Link>
   )
-} 
+}

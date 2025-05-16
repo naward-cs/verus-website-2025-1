@@ -1,18 +1,19 @@
-"use client"
+'use client'
 
 import {
   NavigationMenu,
   NavigationMenuList,
-} from "@/components/ui/navigation-menu"
-import { NavMenuItem } from "./NavMenuItem"
-import { UseSection } from "./UseSection"
-import { BuildSection } from "./BuildSection"
-import { LearnSection } from "./LearnSection"
-import { CommunitySection } from "./CommunitySection"
+} from '@/components/ui/navigation-menu'
+
+import {BuildSection} from './BuildSection'
+import {CommunitySection} from './CommunitySection'
+import {LearnSection} from './LearnSection'
+import {NavMenuItem} from './NavMenuItem'
+import {UseSection} from './UseSection'
 
 export function DesktopNav() {
   return (
-    <nav className="hidden md:flex items-center ml-12">
+    <nav className="ml-12 hidden items-center md:flex">
       <NavigationMenu delayDuration={0}>
         <NavigationMenuList className="gap-4">
           {/* Use Verus */}
@@ -44,4 +45,4 @@ export function DesktopNav() {
       </NavigationMenu>
     </nav>
   )
-} 
+}

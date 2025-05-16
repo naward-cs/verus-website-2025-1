@@ -1,4 +1,4 @@
-import { TimelineClient } from './timeline'
+import {TimelineClient} from './timeline'
 
 export function MilestonesTimeline() {
   return (

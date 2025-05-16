@@ -1,79 +1,97 @@
-import { Footer } from "@/components/footer"
-import { FeaturesGrid } from "@/components/marketplace/features-grid"
-import { MarketplaceContent } from "@/components/marketplace/content"
-import { IoLogoDiscord } from "react-icons/io5"
-import { Metadata } from "next"
+import {Metadata} from 'next'
+
+import {IoLogoDiscord} from 'react-icons/io5'
+
+import {Footer} from '@/components/footer'
+import {MarketplaceContent} from '@/components/marketplace/content'
+import {FeaturesGrid} from '@/components/marketplace/features-grid'
 
 export const metadata: Metadata = {
-  title: "P2P Marketplace Protocol | Verus",
-  description: "Build decentralized trading applications and services without intermediaries—secured by consensus.",
-  keywords: "P2P marketplace, decentralized trading, blockchain marketplace, peer-to-peer, dApp platform, consensus-secured, Verus",
+  title: 'P2P Marketplace Protocol | Verus',
+  description:
+    'Build decentralized trading applications and services without intermediaries—secured by consensus.',
+  keywords:
+    'P2P marketplace, decentralized trading, blockchain marketplace, peer-to-peer, dApp platform, consensus-secured, Verus',
   openGraph: {
-    title: "P2P Marketplace Protocol | Verus",
-    description: "Build decentralized trading applications and services without intermediaries—secured by consensus.",
-    url: "/build/marketplace",
-    siteName: "Verus",
-    type: "website",
+    title: 'P2P Marketplace Protocol | Verus',
+    description:
+      'Build decentralized trading applications and services without intermediaries—secured by consensus.',
+    url: '/build/marketplace',
+    siteName: 'Verus',
+    type: 'website',
   },
   twitter: {
-    card: "summary_large_image",
-    title: "P2P Marketplace Protocol | Verus",
-    description: "Build decentralized trading applications and services without intermediaries—secured by consensus.",
+    card: 'summary_large_image',
+    title: 'P2P Marketplace Protocol | Verus',
+    description:
+      'Build decentralized trading applications and services without intermediaries—secured by consensus.',
   },
   alternates: {
-    canonical: "/build/marketplace",
+    canonical: '/build/marketplace',
   },
 }
 
 export default function MarketplacePage() {
   return (
-    <main className="relative h-[calc(100vh-50px)] md:h-[calc(100vh-70px)] w-screen mt-[50px] md:mt-[70px]">
+    <main className="relative mt-[50px] h-[calc(100vh-50px)] w-screen md:mt-[70px] md:h-[calc(100vh-70px)]">
       {/* Background images - one for light mode, one for dark mode */}
-      <img 
+      <img
         src="/img/hero-bg2-2.webp"
         className="absolute h-full w-full object-cover dark:hidden"
         alt="Hero background - light"
       />
-      <img 
+      <img
         src="/img/bg-darkmode.webp"
-        className="absolute h-full w-full object-cover hidden dark:block"
+        className="absolute hidden h-full w-full object-cover dark:block"
         alt="Hero background - dark"
       />
-      
+
       <div className="relative z-10 flex flex-col items-center px-4 pt-[30px] md:pt-[70px]">
-        <h1 className="text-[32px] md:text-[75px] text-white font-medium text-center tracking-tight">
+        <h1 className="text-center text-[32px] font-medium tracking-tight text-white md:text-[75px]">
           P2P Marketplace Protocol
         </h1>
-        <p className="text-[16px] md:text-[32px] pt-[10px] md:pt-[1px] leading-snug text-white font-normal text-center max-w-[400px] md:max-w-[900px] tracking-tight opacity-90 mx-auto">
-          Build decentralized trading applications and services without intermediaries—secured by consensus.
+        <p className="mx-auto max-w-[400px] pt-[10px] text-center text-[16px] font-normal leading-snug tracking-tight text-white opacity-90 md:max-w-[900px] md:pt-[1px] md:text-[32px]">
+          Build decentralized trading applications and services without
+          intermediaries—secured by consensus.
         </p>
-        
-        <div className="flex flex-col md:flex-row gap-4 mt-8 mb-16 md:mb-32">
-          <a 
+
+        <div className="mb-16 mt-8 flex flex-col gap-4 md:mb-32 md:flex-row">
+          <a
             href="/build/start"
-            className="group h-[40px] md:h-[50px] px-6 bg-white/90 backdrop-blur-xl rounded-lg text-[14px] md:text-[16px] font-medium text-black flex items-center justify-center hover:bg-white transition-all duration-300 border border-white/60 hover:border-white/90 hover:shadow-lg hover:-translate-y-[1px]"
+            className="group flex h-[40px] items-center justify-center rounded-lg border border-white/60 bg-white/90 px-6 text-[14px] font-medium text-black backdrop-blur-xl transition-all duration-300 hover:-translate-y-[1px] hover:border-white/90 hover:bg-white hover:shadow-lg md:h-[50px] md:text-[16px]"
           >
             Get started
-            <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 ml-2 transition-transform duration-300 group-hover:translate-x-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              className="ml-2 h-4 w-4 transition-transform duration-300 group-hover:translate-x-1"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth={2}
+                d="M14 5l7 7m0 0l-7 7m7-7H3"
+              />
             </svg>
           </a>
-          <a 
-            href="https://www.verus.io/discord" 
+          <a
+            href="https://www.verus.io/discord"
             target="_blank"
             rel="noopener noreferrer"
-            className="group h-[40px] md:h-[50px] px-6 bg-blue-950/40 backdrop-blur-sm rounded-lg text-[14px] md:text-[16px] font-medium text-blue-300 flex items-center justify-center gap-2 hover:text-blue-200 transition-all duration-300 border border-blue-800/60 hover:border-blue-700/80 hover:shadow-lg hover:-translate-y-[1px]"
+            className="group flex h-[40px] items-center justify-center gap-2 rounded-lg border border-blue-800/60 bg-blue-950/40 px-6 text-[14px] font-medium text-blue-300 backdrop-blur-sm transition-all duration-300 hover:-translate-y-[1px] hover:border-blue-700/80 hover:text-blue-200 hover:shadow-lg md:h-[50px] md:text-[16px]"
           >
             Get help from the community
-            <IoLogoDiscord className="h-5 w-5 md:h-6 md:w-6 group-hover:translate-x-[1px] transition-transform duration-300" />
+            <IoLogoDiscord className="h-5 w-5 transition-transform duration-300 group-hover:translate-x-[1px] md:h-6 md:w-6" />
           </a>
         </div>
 
-        <div className="flex justify-center w-full">
+        <div className="flex w-full justify-center">
           <FeaturesGrid />
         </div>
 
-        <div className="flex justify-center w-full">
+        <div className="flex w-full justify-center">
           <MarketplaceContent />
         </div>
 

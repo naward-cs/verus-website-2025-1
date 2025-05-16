@@ -1,80 +1,86 @@
-import { VisionMissionSection } from "@/components/intro/vision-mission"
-import { TokenomicsSection } from "@/components/intro/tokenomics-section"
-import { ScalingSection } from "@/components/intro/scaling-section"
-import { ConsensusSection } from "@/components/intro/consensus-section"
-import { PrivacySection } from "@/components/intro/privacy-section"
-import { SmartTransactionsSection } from "@/components/intro/smart-transactions-section"
-import { Footer } from "@/components/footer"
-import { Metadata } from "next"
+import {Metadata} from 'next'
+
+import {Footer} from '@/components/footer'
+import {ConsensusSection} from '@/components/intro/consensus-section'
+import {PrivacySection} from '@/components/intro/privacy-section'
+import {ScalingSection} from '@/components/intro/scaling-section'
+import {SmartTransactionsSection} from '@/components/intro/smart-transactions-section'
+import {TokenomicsSection} from '@/components/intro/tokenomics-section'
+import {VisionMissionSection} from '@/components/intro/vision-mission'
 
 export const metadata: Metadata = {
-  title: "The Protocol for Everyone | Verus",
-  description: "Verus is uniquely positioned to empower individuals, communities and developers around the world, sustainably.",
-  keywords: "blockchain protocol, Web3 technology, cryptocurrency, sustainable blockchain, scalable protocol, Verus introduction",
+  title: 'The Protocol for Everyone | Verus',
+  description:
+    'Verus is uniquely positioned to empower individuals, communities and developers around the world, sustainably.',
+  keywords:
+    'blockchain protocol, Web3 technology, cryptocurrency, sustainable blockchain, scalable protocol, Verus introduction',
   openGraph: {
-    title: "The Protocol for Everyone | Verus",
-    description: "Verus is uniquely positioned to empower individuals, communities and developers around the world, sustainably.",
-    url: "/intro",
-    siteName: "Verus",
-    type: "website",
+    title: 'The Protocol for Everyone | Verus',
+    description:
+      'Verus is uniquely positioned to empower individuals, communities and developers around the world, sustainably.',
+    url: '/intro',
+    siteName: 'Verus',
+    type: 'website',
   },
   twitter: {
-    card: "summary_large_image",
-    title: "The Protocol for Everyone | Verus",
-    description: "Verus is uniquely positioned to empower individuals, communities and developers around the world, sustainably.",
+    card: 'summary_large_image',
+    title: 'The Protocol for Everyone | Verus',
+    description:
+      'Verus is uniquely positioned to empower individuals, communities and developers around the world, sustainably.',
   },
   alternates: {
-    canonical: "/intro",
+    canonical: '/intro',
   },
 }
 
 export default function IntroPage() {
   return (
-    <main className="relative h-[calc(100vh-50px)] md:h-[calc(100vh-70px)] w-screen mt-[50px] md:mt-[70px]">
-      <img 
+    <main className="relative mt-[50px] h-[calc(100vh-50px)] w-screen md:mt-[70px] md:h-[calc(100vh-70px)]">
+      <img
         src="/img/hero-bg2-2.webp"
         className="absolute h-full w-full object-cover dark:hidden"
         alt="Hero background - light"
       />
-      <img 
+      <img
         src="/img/bg-darkmode.webp"
-        className="absolute h-full w-full object-cover hidden dark:block"
+        className="absolute hidden h-full w-full object-cover dark:block"
         alt="Hero background - dark"
       />
-      
+
       <div className="relative z-10 flex flex-col items-center px-4">
         <div className="pt-[30px] md:pt-[70px]">
-          <div className="text-center max-w-[1220px] mx-auto">
-            <h1 className="text-[32px] md:text-[75px] text-white font-medium text-center leading-[1.1] tracking-tight">
+          <div className="mx-auto max-w-[1220px] text-center">
+            <h1 className="text-center text-[32px] font-medium leading-[1.1] tracking-tight text-white md:text-[75px]">
               The Protocol for Everyone
             </h1>
-            <p className="text-[16px] md:text-[32px] pt-[10px] md:pt-[20px] leading-snug text-white/90 dark:text-white/80 font-normal text-center max-w-[400px] md:max-w-[900px] tracking-tight mx-auto">
-              Verus is uniquely positioned to empower individuals, communities and developers around the world, sustainably.
+            <p className="mx-auto max-w-[400px] pt-[10px] text-center text-[16px] font-normal leading-snug tracking-tight text-white/90 dark:text-white/80 md:max-w-[900px] md:pt-[20px] md:text-[32px]">
+              Verus is uniquely positioned to empower individuals, communities
+              and developers around the world, sustainably.
             </p>
           </div>
         </div>
 
-        <div className="flex justify-center w-full">
+        <div className="flex w-full justify-center">
           <VisionMissionSection />
         </div>
 
-        <div className="flex justify-center w-full">
+        <div className="flex w-full justify-center">
           <TokenomicsSection />
         </div>
 
-        <div className="flex justify-center w-full">
+        <div className="flex w-full justify-center">
           <ScalingSection />
         </div>
 
-        <div className="flex justify-center w-full">
+        <div className="flex w-full justify-center">
           <ConsensusSection />
         </div>
 
-        <div className="flex justify-center w-full">
+        <div className="flex w-full justify-center">
           <PrivacySection />
         </div>
 
-        <div className="flex justify-center w-full">
+        <div className="flex w-full justify-center">
           <SmartTransactionsSection />
         </div>
 

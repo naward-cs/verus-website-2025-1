@@ -1,31 +1,33 @@
-"use client"
+'use client'
 
 import React from 'react'
-import { FaMedium } from "react-icons/fa"
+
+import {FaMedium} from 'react-icons/fa'
+
 import MediumFeed from '../MediumFeed'
 
 // Error boundary component for MediumFeed
 class MediumErrorBoundary extends React.Component<
-  { children: React.ReactNode },
-  { hasError: boolean }
+  {children: React.ReactNode},
+  {hasError: boolean}
 > {
-  constructor(props: { children: React.ReactNode }) {
+  constructor(props: {children: React.ReactNode}) {
     super(props)
-    this.state = { hasError: false }
+    this.state = {hasError: false}
   }
 
   static getDerivedStateFromError() {
-    return { hasError: true }
+    return {hasError: true}
   }
 
   componentDidCatch(error: Error) {
-    console.error("Medium feed error:", error)
+    console.error('Medium feed error:', error)
   }
 
   render() {
     if (this.state.hasError) {
       return (
-        <div className="text-center py-12">
+        <div className="py-12 text-center">
           <p className="text-gray-500 dark:text-gray-400">
             Unable to load articles at this time. Please check back later.
           </p>
@@ -39,20 +41,21 @@ class MediumErrorBoundary extends React.Component<
 
 export function MediumArticlesSection() {
   return (
-    <section className="pt-16 md:pt-20 w-full">
-      <div className="max-w-[1220px] mx-auto px-4">
-        <div className="text-center mb-10">
-          <h2 className="text-2xl md:text-3xl font-medium tracking-tight text-gray-900 dark:text-white mb-3">
+    <section className="w-full pt-16 md:pt-20">
+      <div className="mx-auto max-w-[1220px] px-4">
+        <div className="mb-10 text-center">
+          <h2 className="mb-3 text-2xl font-medium tracking-tight text-gray-900 dark:text-white md:text-3xl">
             Latest Articles
           </h2>
-          <p className="text-gray-600 dark:text-gray-400 tracking-tight max-w-2xl mx-auto">
-            Stay up to date with the latest news and developments from the Verus community.
+          <p className="mx-auto max-w-2xl tracking-tight text-gray-600 dark:text-gray-400">
+            Stay up to date with the latest news and developments from the Verus
+            community.
           </p>
-          <a 
+          <a
             href="https://medium.com/veruscoin"
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 mt-3 text-verus-blue dark:text-blue-400 hover:underline"
+            className="mt-3 inline-flex items-center gap-2 text-verus-blue hover:underline dark:text-blue-400"
           >
             <FaMedium className="h-4 w-4" />
             Follow Verus on Medium

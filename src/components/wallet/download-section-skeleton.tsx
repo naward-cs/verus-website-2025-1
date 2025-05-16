@@ -1,34 +1,34 @@
 export function DownloadSectionSkeleton() {
   return (
     <>
-      <h2 className="text-[22px] md:text-[32px] text-black dark:text-white tracking-tight font-medium leading-[1.1] mb-4">
+      <h2 className="mb-4 text-[22px] font-medium leading-[1.1] tracking-tight text-black dark:text-white md:text-[32px]">
         Download Verus Desktop
       </h2>
-      <div className="flex items-center gap-8 text-[14px] md:text-[16px] text-black/60 dark:text-white/60 mb-8">
-        <div className="h-6 w-32 bg-gray-200 dark:bg-gray-700 animate-pulse rounded" />
-        <div className="h-6 w-48 bg-gray-200 dark:bg-gray-700 animate-pulse rounded" />
+      <div className="mb-8 flex items-center gap-8 text-[14px] text-black/60 dark:text-white/60 md:text-[16px]">
+        <div className="h-6 w-32 animate-pulse rounded bg-gray-200 dark:bg-gray-700" />
+        <div className="h-6 w-48 animate-pulse rounded bg-gray-200 dark:bg-gray-700" />
       </div>
 
-      <div className="space-y-4 relative">
+      <div className="relative space-y-4">
         {/* Main Download Button */}
-        <div className="h-[50px] bg-gray-200 dark:bg-gray-700 animate-pulse rounded-lg" />
-        
+        <div className="h-[50px] animate-pulse rounded-lg bg-gray-200 dark:bg-gray-700" />
+
         {/* Other Downloads Button */}
-        <div className="h-[50px] bg-gray-200 dark:bg-gray-700 animate-pulse rounded-lg" />
+        <div className="h-[50px] animate-pulse rounded-lg bg-gray-200 dark:bg-gray-700" />
       </div>
 
       <div className="mt-8">
-        <div className="h-5 w-48 bg-gray-200 dark:bg-gray-700 animate-pulse rounded mb-8" />
-        
-        <div className="mt-8 pt-8 border-t border-[#E9EFFC] dark:border-gray-700">
-          <h3 className="text-[16px] md:text-[18px] font-medium text-black dark:text-white mb-4">
+        <div className="mb-8 h-5 w-48 animate-pulse rounded bg-gray-200 dark:bg-gray-700" />
+
+        <div className="mt-8 border-t border-[#E9EFFC] pt-8 dark:border-gray-700">
+          <h3 className="mb-4 text-[16px] font-medium text-black dark:text-white md:text-[18px]">
             🧪 Testnet Downloads
           </h3>
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-2">
+          <div className="grid grid-cols-2 gap-2 md:grid-cols-4">
             {[...Array(4)].map((_, i) => (
-              <div 
+              <div
                 key={i}
-                className="h-[66px] bg-gray-200 dark:bg-gray-700 animate-pulse rounded-lg"
+                className="h-[66px] animate-pulse rounded-lg bg-gray-200 dark:bg-gray-700"
               />
             ))}
           </div>

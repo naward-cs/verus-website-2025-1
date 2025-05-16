@@ -61,7 +61,6 @@ const eslintConfig = [
     extends: ['next/core-web-vitals', 'next/typescript', 'prettier'],
 
     rules: {
-
       'react/no-unescaped-entities': 'off',
       '@next/next/no-html-link-for-pages': 'error',
       'import/consistent-type-specifier-style': ['error', 'prefer-top-level'],
@@ -86,7 +85,7 @@ const eslintConfig = [
         },
       ],
       '@typescript-eslint/no-non-null-assertion': 'off',
-      '@typescript-elstin/no-require-imports': "warn",
+      '@typescript-elstin/no-require-imports': 'warn',
       '@typescript-eslint/no-explicit-any': 'warn',
       '@typescript-eslint/no-unsafe-member-access': 'off',
       '@typescript-eslint/no-unsafe-assignment': 'off',

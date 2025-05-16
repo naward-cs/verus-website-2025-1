@@ -1,4 +1,4 @@
-import { PublicProfileLib } from './ProfileTypes'
+import {PublicProfileLib} from './ProfileTypes'
 
 const GroupContent = (profileContent: PublicProfileLib[]) => {
   const arweave: PublicProfileLib[] = []
@@ -19,7 +19,7 @@ const GroupContent = (profileContent: PublicProfileLib[]) => {
     }
   })
 
-  return { arweave: arweave, web: web, unknown: unknown }
+  return {arweave: arweave, web: web, unknown: unknown}
 }
 
 export default GroupContent

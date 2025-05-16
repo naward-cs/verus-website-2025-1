@@ -1,15 +1,15 @@
-import { VerusDeFiContentWrapper } from './VerusDeFiContentWrapper'
-import { ExchangesSection } from './ExchangesSection'
-import { EarnVRSCSection } from './EarnVRSCSection'
-import { ProtocolDataProvider } from './ProtocolDataProvider'
+import {EarnVRSCSection} from './EarnVRSCSection'
+import {ExchangesSection} from './ExchangesSection'
+import {ProtocolDataProvider} from './ProtocolDataProvider'
+import {VerusDeFiContentWrapper} from './VerusDeFiContentWrapper'
 
 /*
-* GetVrscSections Component - Main container component for get-vrsc page
-* - Uses a modular architecture with separate components for each section
-* - Only the data provider and wrapper components are client components
-* - All UI rendering is done in server components whenever possible
-* - Minimizes client-side JavaScript for better performance and SEO
-*/
+ * GetVrscSections Component - Main container component for get-vrsc page
+ * - Uses a modular architecture with separate components for each section
+ * - Only the data provider and wrapper components are client components
+ * - All UI rendering is done in server components whenever possible
+ * - Minimizes client-side JavaScript for better performance and SEO
+ */
 
 export function GetVrscSections() {
   return (
@@ -20,5 +20,5 @@ export function GetVrscSections() {
       <ExchangesSection />
       <EarnVRSCSection />
     </div>
-  );
-} 
+  )
+}

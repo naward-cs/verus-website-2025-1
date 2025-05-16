@@ -4,27 +4,30 @@
 
 /* Custom styling for markdown content */
 .prose pre {
-  @apply bg-gray-900 text-gray-100 p-4 rounded-md overflow-x-auto my-4 border border-gray-800;
+  @apply my-4 overflow-x-auto rounded-md border border-gray-800 bg-gray-900 p-4 text-gray-100;
 }
 
 .prose code {
-  @apply bg-gray-100 dark:bg-gray-800 px-1 py-0.5 rounded text-gray-800 dark:text-gray-200;
+  @apply rounded bg-gray-100 px-1 py-0.5 text-gray-800 dark:bg-gray-800 dark:text-gray-200;
 }
 
 .prose pre code {
-  @apply bg-transparent p-0 text-gray-100 border-0;
+  @apply border-0 bg-transparent p-0 text-gray-100;
 }
 
 .prose img {
-  @apply my-4 rounded-md max-w-full h-auto border dark:border-gray-700 shadow-sm;
+  @apply my-4 h-auto max-w-full rounded-md border shadow-sm dark:border-gray-700;
 }
 
 .prose a {
-  @apply text-blue-600 dark:text-blue-400 hover:underline;
+  @apply text-blue-600 hover:underline dark:text-blue-400;
 }
 
-.prose h1, .prose h2, .prose h3, .prose h4 {
-  @apply font-bold text-gray-900 dark:text-white mt-6 mb-4;
+.prose h1,
+.prose h2,
+.prose h3,
+.prose h4 {
+  @apply mb-4 mt-6 font-bold text-gray-900 dark:text-white;
 }
 
 .prose h1 {
@@ -47,7 +50,8 @@
   @apply my-4 text-gray-800 dark:text-gray-200;
 }
 
-.prose ul, .prose ol {
+.prose ul,
+.prose ol {
   @apply my-4 pl-5 text-gray-800 dark:text-gray-200;
 }
 
@@ -60,7 +64,7 @@
 }
 
 .prose blockquote {
-  @apply border-l-4 border-gray-300 dark:border-gray-700 pl-4 italic text-gray-700 dark:text-gray-300 my-4 bg-gray-50 dark:bg-gray-800/50 py-2 pr-2 rounded-r;
+  @apply my-4 rounded-r border-l-4 border-gray-300 bg-gray-50 py-2 pl-4 pr-2 italic text-gray-700 dark:border-gray-700 dark:bg-gray-800/50 dark:text-gray-300;
 }
 
 .prose hr {
@@ -69,18 +73,18 @@
 
 /* Add a subtle container for markdown content in dark mode */
 .dark .prose {
-  @apply bg-gray-800/80 p-5 rounded-lg border border-gray-700/50;
+  @apply rounded-lg border border-gray-700/50 bg-gray-800/80 p-5;
 }
 
 @layer base {
-  html, 
+  html,
   body {
-    @apply h-full w-full m-0 p-0 overflow-x-hidden antialiased;
+    @apply m-0 h-full w-full overflow-x-hidden p-0 antialiased;
   }
 
   /* Dark mode background color */
   .dark {
-    background-color: #020A1A;
+    background-color: #020a1a;
   }
 
   body > div {
@@ -180,11 +184,11 @@
   inset: 0;
   padding: 1px;
   background: linear-gradient(to bottom, rgb(254 226 226 / 0.5), transparent);
-  -webkit-mask: 
-    linear-gradient(#fff 0 0) content-box, 
+  -webkit-mask:
+    linear-gradient(#fff 0 0) content-box,
     linear-gradient(#fff 0 0);
-  mask: 
-    linear-gradient(#fff 0 0) content-box, 
+  mask:
+    linear-gradient(#fff 0 0) content-box,
     linear-gradient(#fff 0 0);
   -webkit-mask-composite: xor;
   mask-composite: exclude;
@@ -204,11 +208,11 @@
   inset: 0;
   padding: 1px;
   background: linear-gradient(to bottom, rgb(49 101 212 / 0.1), transparent);
-  -webkit-mask: 
-    linear-gradient(#fff 0 0) content-box, 
+  -webkit-mask:
+    linear-gradient(#fff 0 0) content-box,
     linear-gradient(#fff 0 0);
-  mask: 
-    linear-gradient(#fff 0 0) content-box, 
+  mask:
+    linear-gradient(#fff 0 0) content-box,
     linear-gradient(#fff 0 0);
   -webkit-mask-composite: xor;
   mask-composite: exclude;
@@ -238,11 +242,11 @@
   .timeline-item:nth-child(odd) {
     transform: translate(20px, 16px);
   }
-  
+
   .timeline-item:nth-child(even) {
     transform: translate(-20px, 16px);
   }
-  
+
   .timeline-item.animate-in:nth-child(odd),
   .timeline-item.animate-in:nth-child(even),
   .timeline-item.initial-item:nth-child(odd),
@@ -262,7 +266,7 @@
   opacity: 0 !important;
 }
 
-@media screen and (-webkit-min-device-pixel-ratio:0) {
+@media screen and (-webkit-min-device-pixel-ratio: 0) {
   style {
     -webkit-overflow-scrolling: auto !important;
     overflow: visible !important;
@@ -271,18 +275,18 @@
 
 /* Navigation Menu Animation Overrides */
 /* Speed up the animation durations for navigation menu */
-.data-\[motion\^\=from-\]\:animate-in[data-motion^=from-] {
+.data-\[motion\^\=from-\]\:animate-in[data-motion^='from-'] {
   animation-duration: 50ms !important;
 }
 
-.data-\[motion\^\=to-\]\:animate-out[data-motion^=to-] {
+.data-\[motion\^\=to-\]\:animate-out[data-motion^='to-'] {
   animation-duration: 50ms !important;
 }
 
-.data-\[state\=open\]\:animate-in[data-state=open] {
+.data-\[state\=open\]\:animate-in[data-state='open'] {
   animation-duration: 50ms !important;
 }
 
-.data-\[state\=closed\]\:animate-out[data-state=closed] {
+.data-\[state\=closed\]\:animate-out[data-state='closed'] {
   animation-duration: 50ms !important;
 }

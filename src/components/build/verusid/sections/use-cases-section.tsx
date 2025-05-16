@@ -1,61 +1,75 @@
-import { Users, Building, Globe, Calendar, Wallet, ShieldCheck } from "lucide-react"
+import {
+  Building,
+  Calendar,
+  Globe,
+  ShieldCheck,
+  Users,
+  Wallet,
+} from 'lucide-react'
 
 /*
-* Updated: Transformed the use cases section to have a modern SaaS-like design
-* with dark mode support, decorative background elements, and consistent card styling.
-*/
+ * Updated: Transformed the use cases section to have a modern SaaS-like design
+ * with dark mode support, decorative background elements, and consistent card styling.
+ */
 export function UseCasesSection() {
   return (
-    <section className="my-24 relative">
-      <div className="absolute top-0 left-0 right-0 max-w-7xl mx-auto h-[1px] bg-gradient-to-r from-transparent via-blue-300/30 dark:via-blue-700/20 to-transparent"></div>
-      <div className="absolute top-20 right-10 h-60 w-60 rounded-full bg-blue-500/5 dark:bg-blue-500/5 blur-[80px] -z-10"></div>
-      <div className="absolute bottom-20 left-20 h-60 w-60 rounded-full bg-blue-500/5 dark:bg-blue-500/5 blur-[80px] -z-10"></div>
+    <section className="relative my-24">
+      <div className="absolute left-0 right-0 top-0 mx-auto h-[1px] max-w-7xl bg-gradient-to-r from-transparent via-blue-300/30 to-transparent dark:via-blue-700/20"></div>
+      <div className="absolute right-10 top-20 -z-10 h-60 w-60 rounded-full bg-blue-500/5 blur-[80px] dark:bg-blue-500/5"></div>
+      <div className="absolute bottom-20 left-20 -z-10 h-60 w-60 rounded-full bg-blue-500/5 blur-[80px] dark:bg-blue-500/5"></div>
 
       {/* Centered Title */}
-      <div className="text-center mb-12">
-        <h2 className="text-[28px] md:text-[55px] text-gray-800 dark:text-white tracking-tight font-medium leading-[1.2] mb-6">
+      <div className="mb-12 text-center">
+        <h2 className="mb-6 text-[28px] font-medium leading-[1.2] tracking-tight text-gray-800 dark:text-white md:text-[55px]">
           <span className="text-gray-600 dark:text-white">Real-World </span>
           <span className="relative">
             <span className="relative inline-block">
-              <span className="relative z-10 bg-gradient-to-r from-verus-blue to-blue-600 dark:to-blue-400 bg-clip-text text-transparent">
+              <span className="relative z-10 bg-gradient-to-r from-verus-blue to-blue-600 bg-clip-text text-transparent dark:to-blue-400">
                 Use Cases
               </span>
-              <span className="absolute -inset-1 bg-gradient-to-r from-blue-500/10 via-verus-blue/10 to-purple-500/10 rounded-lg blur-md" />
+              <span className="absolute -inset-1 rounded-lg bg-gradient-to-r from-blue-500/10 via-verus-blue/10 to-purple-500/10 blur-md" />
             </span>
           </span>
         </h2>
       </div>
 
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8">
+      <div className="grid grid-cols-1 gap-6 md:grid-cols-3 md:gap-8">
         {/* Tokenized Communities */}
-        <div className="bg-white/70 dark:bg-gray-900/50 backdrop-blur-sm border border-blue-100/80 dark:border-blue-900/30 rounded-xl p-6 md:p-8 relative overflow-hidden group transition-all duration-300">
+        <div className="group relative overflow-hidden rounded-xl border border-blue-100/80 bg-white/70 p-6 backdrop-blur-sm transition-all duration-300 dark:border-blue-900/30 dark:bg-gray-900/50 md:p-8">
           <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(59,130,246,0.08),transparent_50%)] dark:bg-[radial-gradient(circle_at_top_right,rgba(59,130,246,0.15),transparent_50%)]"></div>
-          <div className="absolute -top-10 -right-10 h-40 w-40 rounded-full bg-blue-400/10 dark:bg-blue-400/20 blur-2xl"></div>
+          <div className="absolute -right-10 -top-10 h-40 w-40 rounded-full bg-blue-400/10 blur-2xl dark:bg-blue-400/20"></div>
           <div className="relative">
-            <div className="flex items-center gap-4 mb-6">
-              <div className="h-12 w-12 rounded-xl bg-white/90 dark:bg-gray-800/90 border border-blue-100/80 dark:border-blue-900/30 flex items-center justify-center text-blue-600 dark:text-blue-400 shadow-sm">
+            <div className="mb-6 flex items-center gap-4">
+              <div className="flex h-12 w-12 items-center justify-center rounded-xl border border-blue-100/80 bg-white/90 text-blue-600 shadow-sm dark:border-blue-900/30 dark:bg-gray-800/90 dark:text-blue-400">
                 <Users className="h-6 w-6" />
               </div>
-              <h3 className="text-[18px] md:text-[22px] font-medium text-gray-900 dark:text-white">
+              <h3 className="text-[18px] font-medium text-gray-900 dark:text-white md:text-[22px]">
                 Tokenized Communities
               </h3>
             </div>
             <div className="space-y-6">
-              <p className="text-[15px] text-gray-600 dark:text-gray-300 leading-relaxed">
-                Create tokenized communities where membership and governance are managed through VerusIDs and associated tokens.
+              <p className="text-[15px] leading-relaxed text-gray-600 dark:text-gray-300">
+                Create tokenized communities where membership and governance are
+                managed through VerusIDs and associated tokens.
               </p>
               <div className="space-y-4">
-                <div className="bg-white/80 dark:bg-gray-800/50 backdrop-blur-sm px-5 py-4 rounded-xl border border-blue-100/60 dark:border-blue-900/20">
-                  <h4 className="text-[16px] font-medium text-gray-900 dark:text-white mb-2">Governance Tokens</h4>
-                  <p className="text-[14px] text-gray-600 dark:text-gray-300 leading-relaxed">
-                    Issue governance tokens to community members, enabling voting on proposals and community decisions.
+                <div className="rounded-xl border border-blue-100/60 bg-white/80 px-5 py-4 backdrop-blur-sm dark:border-blue-900/20 dark:bg-gray-800/50">
+                  <h4 className="mb-2 text-[16px] font-medium text-gray-900 dark:text-white">
+                    Governance Tokens
+                  </h4>
+                  <p className="text-[14px] leading-relaxed text-gray-600 dark:text-gray-300">
+                    Issue governance tokens to community members, enabling
+                    voting on proposals and community decisions.
                   </p>
                 </div>
-                
-                <div className="bg-white/80 dark:bg-gray-800/50 backdrop-blur-sm px-5 py-4 rounded-xl border border-blue-100/60 dark:border-blue-900/20">
-                  <h4 className="text-[16px] font-medium text-gray-900 dark:text-white mb-2">Digital Collectives</h4>
-                  <p className="text-[14px] text-gray-600 dark:text-gray-300 leading-relaxed">
-                    Create digital collectives with shared ownership and decision-making capabilities through VerusID namespaces.
+
+                <div className="rounded-xl border border-blue-100/60 bg-white/80 px-5 py-4 backdrop-blur-sm dark:border-blue-900/20 dark:bg-gray-800/50">
+                  <h4 className="mb-2 text-[16px] font-medium text-gray-900 dark:text-white">
+                    Digital Collectives
+                  </h4>
+                  <p className="text-[14px] leading-relaxed text-gray-600 dark:text-gray-300">
+                    Create digital collectives with shared ownership and
+                    decision-making capabilities through VerusID namespaces.
                   </p>
                 </div>
               </div>
@@ -64,33 +78,40 @@ export function UseCasesSection() {
         </div>
 
         {/* Enterprise Solutions */}
-        <div className="bg-white/70 dark:bg-gray-900/50 backdrop-blur-sm border border-blue-100/80 dark:border-blue-900/30 rounded-xl p-6 md:p-8 relative overflow-hidden group transition-all duration-300">
-          <div className="absolute -bottom-8 -right-8 h-32 w-32 rounded-full bg-blue-400/5 dark:bg-blue-400/10 blur-xl"></div>
+        <div className="group relative overflow-hidden rounded-xl border border-blue-100/80 bg-white/70 p-6 backdrop-blur-sm transition-all duration-300 dark:border-blue-900/30 dark:bg-gray-900/50 md:p-8">
+          <div className="absolute -bottom-8 -right-8 h-32 w-32 rounded-full bg-blue-400/5 blur-xl dark:bg-blue-400/10"></div>
           <div className="relative">
-            <div className="flex items-center gap-4 mb-6">
-              <div className="h-12 w-12 rounded-xl bg-white/90 dark:bg-gray-800/90 border border-blue-100/80 dark:border-blue-900/30 flex items-center justify-center text-blue-600 dark:text-blue-400 shadow-sm">
+            <div className="mb-6 flex items-center gap-4">
+              <div className="flex h-12 w-12 items-center justify-center rounded-xl border border-blue-100/80 bg-white/90 text-blue-600 shadow-sm dark:border-blue-900/30 dark:bg-gray-800/90 dark:text-blue-400">
                 <Building className="h-6 w-6" />
               </div>
-              <h3 className="text-[18px] md:text-[22px] font-medium text-gray-900 dark:text-white">
+              <h3 className="text-[18px] font-medium text-gray-900 dark:text-white md:text-[22px]">
                 Enterprise Solutions
               </h3>
             </div>
             <div className="space-y-6">
-              <p className="text-[15px] text-gray-600 dark:text-gray-300 leading-relaxed">
-                Deploy enterprise-grade identity and digital asset solutions with VerusID's powerful security and management features.
+              <p className="text-[15px] leading-relaxed text-gray-600 dark:text-gray-300">
+                Deploy enterprise-grade identity and digital asset solutions
+                with VerusID's powerful security and management features.
               </p>
               <div className="space-y-4">
-                <div className="bg-white/80 dark:bg-gray-800/50 backdrop-blur-sm px-5 py-4 rounded-xl border border-blue-100/60 dark:border-blue-900/20">
-                  <h4 className="text-[16px] font-medium text-gray-900 dark:text-white mb-2">Asset Tokenization</h4>
-                  <p className="text-[14px] text-gray-600 dark:text-gray-300 leading-relaxed">
-                    Tokenize real-world assets and manage them through verifiable identities in a secure blockchain environment.
+                <div className="rounded-xl border border-blue-100/60 bg-white/80 px-5 py-4 backdrop-blur-sm dark:border-blue-900/20 dark:bg-gray-800/50">
+                  <h4 className="mb-2 text-[16px] font-medium text-gray-900 dark:text-white">
+                    Asset Tokenization
+                  </h4>
+                  <p className="text-[14px] leading-relaxed text-gray-600 dark:text-gray-300">
+                    Tokenize real-world assets and manage them through
+                    verifiable identities in a secure blockchain environment.
                   </p>
                 </div>
-                
-                <div className="bg-white/80 dark:bg-gray-800/50 backdrop-blur-sm px-5 py-4 rounded-xl border border-blue-100/60 dark:border-blue-900/20">
-                  <h4 className="text-[16px] font-medium text-gray-900 dark:text-white mb-2">Supply Chain Tracking</h4>
-                  <p className="text-[14px] text-gray-600 dark:text-gray-300 leading-relaxed">
-                    Track products and components through the entire supply chain with immutable identity records.
+
+                <div className="rounded-xl border border-blue-100/60 bg-white/80 px-5 py-4 backdrop-blur-sm dark:border-blue-900/20 dark:bg-gray-800/50">
+                  <h4 className="mb-2 text-[16px] font-medium text-gray-900 dark:text-white">
+                    Supply Chain Tracking
+                  </h4>
+                  <p className="text-[14px] leading-relaxed text-gray-600 dark:text-gray-300">
+                    Track products and components through the entire supply
+                    chain with immutable identity records.
                   </p>
                 </div>
               </div>
@@ -99,33 +120,40 @@ export function UseCasesSection() {
         </div>
 
         {/* Decentralized Social Networks */}
-        <div className="bg-gradient-to-br from-blue-50/70 to-white dark:from-blue-950/40 dark:to-gray-950 backdrop-blur-sm border border-blue-100/80 dark:border-blue-900/30 rounded-xl p-6 md:p-8 relative overflow-hidden group transition-all duration-300">
-          <div className="absolute top-6 left-6 h-32 w-32 rounded-full bg-blue-400/5 dark:bg-blue-400/10 blur-xl"></div>
+        <div className="group relative overflow-hidden rounded-xl border border-blue-100/80 bg-gradient-to-br from-blue-50/70 to-white p-6 backdrop-blur-sm transition-all duration-300 dark:border-blue-900/30 dark:from-blue-950/40 dark:to-gray-950 md:p-8">
+          <div className="absolute left-6 top-6 h-32 w-32 rounded-full bg-blue-400/5 blur-xl dark:bg-blue-400/10"></div>
           <div className="relative">
-            <div className="flex items-center gap-4 mb-6">
-              <div className="h-12 w-12 rounded-xl bg-white/90 dark:bg-gray-800/90 border border-blue-100/80 dark:border-blue-900/30 flex items-center justify-center text-blue-600 dark:text-blue-400 shadow-sm">
+            <div className="mb-6 flex items-center gap-4">
+              <div className="flex h-12 w-12 items-center justify-center rounded-xl border border-blue-100/80 bg-white/90 text-blue-600 shadow-sm dark:border-blue-900/30 dark:bg-gray-800/90 dark:text-blue-400">
                 <Globe className="h-6 w-6" />
               </div>
-              <h3 className="text-[18px] md:text-[22px] font-medium text-gray-900 dark:text-white">
+              <h3 className="text-[18px] font-medium text-gray-900 dark:text-white md:text-[22px]">
                 Decentralized Social
               </h3>
             </div>
             <div className="space-y-6">
-              <p className="text-[15px] text-gray-600 dark:text-gray-300 leading-relaxed">
-                Build decentralized social platforms where users own their identities, data, and social connections.
+              <p className="text-[15px] leading-relaxed text-gray-600 dark:text-gray-300">
+                Build decentralized social platforms where users own their
+                identities, data, and social connections.
               </p>
               <div className="space-y-4">
-                <div className="bg-white/80 dark:bg-gray-800/50 backdrop-blur-sm px-5 py-4 rounded-xl border border-blue-100/60 dark:border-blue-900/20">
-                  <h4 className="text-[16px] font-medium text-gray-900 dark:text-white mb-2">Self-Sovereign Profiles</h4>
-                  <p className="text-[14px] text-gray-600 dark:text-gray-300 leading-relaxed">
-                    Users control their profiles, content, and connections through their own VerusIDs across multiple platforms.
+                <div className="rounded-xl border border-blue-100/60 bg-white/80 px-5 py-4 backdrop-blur-sm dark:border-blue-900/20 dark:bg-gray-800/50">
+                  <h4 className="mb-2 text-[16px] font-medium text-gray-900 dark:text-white">
+                    Self-Sovereign Profiles
+                  </h4>
+                  <p className="text-[14px] leading-relaxed text-gray-600 dark:text-gray-300">
+                    Users control their profiles, content, and connections
+                    through their own VerusIDs across multiple platforms.
                   </p>
                 </div>
-                
-                <div className="bg-white/80 dark:bg-gray-800/50 backdrop-blur-sm px-5 py-4 rounded-xl border border-blue-100/60 dark:border-blue-900/20">
-                  <h4 className="text-[16px] font-medium text-gray-900 dark:text-white mb-2">Content Monetization</h4>
-                  <p className="text-[14px] text-gray-600 dark:text-gray-300 leading-relaxed">
-                    Enable direct monetization of content through tokens tied to creator VerusIDs.
+
+                <div className="rounded-xl border border-blue-100/60 bg-white/80 px-5 py-4 backdrop-blur-sm dark:border-blue-900/20 dark:bg-gray-800/50">
+                  <h4 className="mb-2 text-[16px] font-medium text-gray-900 dark:text-white">
+                    Content Monetization
+                  </h4>
+                  <p className="text-[14px] leading-relaxed text-gray-600 dark:text-gray-300">
+                    Enable direct monetization of content through tokens tied to
+                    creator VerusIDs.
                   </p>
                 </div>
               </div>
@@ -134,34 +162,41 @@ export function UseCasesSection() {
         </div>
 
         {/* Event Management */}
-        <div className="bg-gradient-to-br from-blue-50/70 to-white dark:from-blue-950/40 dark:to-gray-950 backdrop-blur-sm border border-blue-100/80 dark:border-blue-900/30 rounded-xl p-6 md:p-8 relative overflow-hidden group transition-all duration-300">
+        <div className="group relative overflow-hidden rounded-xl border border-blue-100/80 bg-gradient-to-br from-blue-50/70 to-white p-6 backdrop-blur-sm transition-all duration-300 dark:border-blue-900/30 dark:from-blue-950/40 dark:to-gray-950 md:p-8">
           <div className="absolute inset-0 bg-[radial-gradient(circle_at_bottom_right,rgba(59,130,246,0.08),transparent_50%)] dark:bg-[radial-gradient(circle_at_bottom_right,rgba(59,130,246,0.15),transparent_50%)]"></div>
-          <div className="absolute -bottom-8 -left-8 h-40 w-40 rounded-full bg-blue-400/10 dark:bg-blue-400/20 blur-2xl"></div>
+          <div className="absolute -bottom-8 -left-8 h-40 w-40 rounded-full bg-blue-400/10 blur-2xl dark:bg-blue-400/20"></div>
           <div className="relative">
-            <div className="flex items-center gap-4 mb-6">
-              <div className="h-12 w-12 rounded-xl bg-white/90 dark:bg-gray-800/90 border border-blue-100/80 dark:border-blue-900/30 flex items-center justify-center text-blue-600 dark:text-blue-400 shadow-sm">
+            <div className="mb-6 flex items-center gap-4">
+              <div className="flex h-12 w-12 items-center justify-center rounded-xl border border-blue-100/80 bg-white/90 text-blue-600 shadow-sm dark:border-blue-900/30 dark:bg-gray-800/90 dark:text-blue-400">
                 <Calendar className="h-6 w-6" />
               </div>
-              <h3 className="text-[18px] md:text-[22px] font-medium text-gray-900 dark:text-white">
+              <h3 className="text-[18px] font-medium text-gray-900 dark:text-white md:text-[22px]">
                 Event Management
               </h3>
             </div>
             <div className="space-y-6">
-              <p className="text-[15px] text-gray-600 dark:text-gray-300 leading-relaxed">
-                Create verifiable and fraud-resistant event ticketing and management systems using VerusID and tokenization.
+              <p className="text-[15px] leading-relaxed text-gray-600 dark:text-gray-300">
+                Create verifiable and fraud-resistant event ticketing and
+                management systems using VerusID and tokenization.
               </p>
               <div className="space-y-4">
-                <div className="bg-white/80 dark:bg-gray-800/50 backdrop-blur-sm px-5 py-4 rounded-xl border border-blue-100/60 dark:border-blue-900/20">
-                  <h4 className="text-[16px] font-medium text-gray-900 dark:text-white mb-2">NFT Ticketing</h4>
-                  <p className="text-[14px] text-gray-600 dark:text-gray-300 leading-relaxed">
-                    Issue verifiable and transferable tickets as NFTs tied to attendee VerusIDs.
+                <div className="rounded-xl border border-blue-100/60 bg-white/80 px-5 py-4 backdrop-blur-sm dark:border-blue-900/20 dark:bg-gray-800/50">
+                  <h4 className="mb-2 text-[16px] font-medium text-gray-900 dark:text-white">
+                    NFT Ticketing
+                  </h4>
+                  <p className="text-[14px] leading-relaxed text-gray-600 dark:text-gray-300">
+                    Issue verifiable and transferable tickets as NFTs tied to
+                    attendee VerusIDs.
                   </p>
                 </div>
-                
-                <div className="bg-white/80 dark:bg-gray-800/50 backdrop-blur-sm px-5 py-4 rounded-xl border border-blue-100/60 dark:border-blue-900/20">
-                  <h4 className="text-[16px] font-medium text-gray-900 dark:text-white mb-2">Credential Verification</h4>
-                  <p className="text-[14px] text-gray-600 dark:text-gray-300 leading-relaxed">
-                    Provide secure verification for event entry and special access with privacy-preserving features.
+
+                <div className="rounded-xl border border-blue-100/60 bg-white/80 px-5 py-4 backdrop-blur-sm dark:border-blue-900/20 dark:bg-gray-800/50">
+                  <h4 className="mb-2 text-[16px] font-medium text-gray-900 dark:text-white">
+                    Credential Verification
+                  </h4>
+                  <p className="text-[14px] leading-relaxed text-gray-600 dark:text-gray-300">
+                    Provide secure verification for event entry and special
+                    access with privacy-preserving features.
                   </p>
                 </div>
               </div>
@@ -170,33 +205,40 @@ export function UseCasesSection() {
         </div>
 
         {/* Financial Applications */}
-        <div className="bg-white/70 dark:bg-gray-900/50 backdrop-blur-sm border border-blue-100/80 dark:border-blue-900/30 rounded-xl p-6 md:p-8 relative overflow-hidden group transition-all duration-300">
-          <div className="absolute -bottom-8 -right-8 h-32 w-32 rounded-full bg-blue-400/5 dark:bg-blue-400/10 blur-xl"></div>
+        <div className="group relative overflow-hidden rounded-xl border border-blue-100/80 bg-white/70 p-6 backdrop-blur-sm transition-all duration-300 dark:border-blue-900/30 dark:bg-gray-900/50 md:p-8">
+          <div className="absolute -bottom-8 -right-8 h-32 w-32 rounded-full bg-blue-400/5 blur-xl dark:bg-blue-400/10"></div>
           <div className="relative">
-            <div className="flex items-center gap-4 mb-6">
-              <div className="h-12 w-12 rounded-xl bg-white/90 dark:bg-gray-800/90 border border-blue-100/80 dark:border-blue-900/30 flex items-center justify-center text-blue-600 dark:text-blue-400 shadow-sm">
+            <div className="mb-6 flex items-center gap-4">
+              <div className="flex h-12 w-12 items-center justify-center rounded-xl border border-blue-100/80 bg-white/90 text-blue-600 shadow-sm dark:border-blue-900/30 dark:bg-gray-800/90 dark:text-blue-400">
                 <Wallet className="h-6 w-6" />
               </div>
-              <h3 className="text-[18px] md:text-[22px] font-medium text-gray-900 dark:text-white">
+              <h3 className="text-[18px] font-medium text-gray-900 dark:text-white md:text-[22px]">
                 Financial Applications
               </h3>
             </div>
             <div className="space-y-6">
-              <p className="text-[15px] text-gray-600 dark:text-gray-300 leading-relaxed">
-                Build financial applications with verifiable identities and programmable currencies using VerusID's capabilities.
+              <p className="text-[15px] leading-relaxed text-gray-600 dark:text-gray-300">
+                Build financial applications with verifiable identities and
+                programmable currencies using VerusID's capabilities.
               </p>
               <div className="space-y-4">
-                <div className="bg-white/80 dark:bg-gray-800/50 backdrop-blur-sm px-5 py-4 rounded-xl border border-blue-100/60 dark:border-blue-900/20">
-                  <h4 className="text-[16px] font-medium text-gray-900 dark:text-white mb-2">DeFi Platforms</h4>
-                  <p className="text-[14px] text-gray-600 dark:text-gray-300 leading-relaxed">
-                    Build decentralized finance platforms with identity-based access controls and verifiable transactions.
+                <div className="rounded-xl border border-blue-100/60 bg-white/80 px-5 py-4 backdrop-blur-sm dark:border-blue-900/20 dark:bg-gray-800/50">
+                  <h4 className="mb-2 text-[16px] font-medium text-gray-900 dark:text-white">
+                    DeFi Platforms
+                  </h4>
+                  <p className="text-[14px] leading-relaxed text-gray-600 dark:text-gray-300">
+                    Build decentralized finance platforms with identity-based
+                    access controls and verifiable transactions.
                   </p>
                 </div>
-                
-                <div className="bg-white/80 dark:bg-gray-800/50 backdrop-blur-sm px-5 py-4 rounded-xl border border-blue-100/60 dark:border-blue-900/20">
-                  <h4 className="text-[16px] font-medium text-gray-900 dark:text-white mb-2">Multi-Chain Applications</h4>
-                  <p className="text-[14px] text-gray-600 dark:text-gray-300 leading-relaxed">
-                    Create financial applications that operate across multiple blockchains with unified identity.
+
+                <div className="rounded-xl border border-blue-100/60 bg-white/80 px-5 py-4 backdrop-blur-sm dark:border-blue-900/20 dark:bg-gray-800/50">
+                  <h4 className="mb-2 text-[16px] font-medium text-gray-900 dark:text-white">
+                    Multi-Chain Applications
+                  </h4>
+                  <p className="text-[14px] leading-relaxed text-gray-600 dark:text-gray-300">
+                    Create financial applications that operate across multiple
+                    blockchains with unified identity.
                   </p>
                 </div>
               </div>
@@ -205,33 +247,40 @@ export function UseCasesSection() {
         </div>
 
         {/* Identity & Privacy */}
-        <div className="bg-white/70 dark:bg-gray-900/50 backdrop-blur-sm border border-blue-100/80 dark:border-blue-900/30 rounded-xl p-6 md:p-8 relative overflow-hidden group transition-all duration-300">
-          <div className="absolute top-6 left-6 h-32 w-32 rounded-full bg-blue-400/5 dark:bg-blue-400/10 blur-xl"></div>
+        <div className="group relative overflow-hidden rounded-xl border border-blue-100/80 bg-white/70 p-6 backdrop-blur-sm transition-all duration-300 dark:border-blue-900/30 dark:bg-gray-900/50 md:p-8">
+          <div className="absolute left-6 top-6 h-32 w-32 rounded-full bg-blue-400/5 blur-xl dark:bg-blue-400/10"></div>
           <div className="relative">
-            <div className="flex items-center gap-4 mb-6">
-              <div className="h-12 w-12 rounded-xl bg-white/90 dark:bg-gray-800/90 border border-blue-100/80 dark:border-blue-900/30 flex items-center justify-center text-blue-600 dark:text-blue-400 shadow-sm">
+            <div className="mb-6 flex items-center gap-4">
+              <div className="flex h-12 w-12 items-center justify-center rounded-xl border border-blue-100/80 bg-white/90 text-blue-600 shadow-sm dark:border-blue-900/30 dark:bg-gray-800/90 dark:text-blue-400">
                 <ShieldCheck className="h-6 w-6" />
               </div>
-              <h3 className="text-[18px] md:text-[22px] font-medium text-gray-900 dark:text-white">
+              <h3 className="text-[18px] font-medium text-gray-900 dark:text-white md:text-[22px]">
                 Identity & Privacy
               </h3>
             </div>
             <div className="space-y-6">
-              <p className="text-[15px] text-gray-600 dark:text-gray-300 leading-relaxed">
-                Implement privacy-focused identity solutions that put users in control of their personal data.
+              <p className="text-[15px] leading-relaxed text-gray-600 dark:text-gray-300">
+                Implement privacy-focused identity solutions that put users in
+                control of their personal data.
               </p>
               <div className="space-y-4">
-                <div className="bg-white/80 dark:bg-gray-800/50 backdrop-blur-sm px-5 py-4 rounded-xl border border-blue-100/60 dark:border-blue-900/20">
-                  <h4 className="text-[16px] font-medium text-gray-900 dark:text-white mb-2">Zero-Knowledge Proofs</h4>
-                  <p className="text-[14px] text-gray-600 dark:text-gray-300 leading-relaxed">
-                    Enable users to prove identity attributes without revealing sensitive information using Verus privacy features.
+                <div className="rounded-xl border border-blue-100/60 bg-white/80 px-5 py-4 backdrop-blur-sm dark:border-blue-900/20 dark:bg-gray-800/50">
+                  <h4 className="mb-2 text-[16px] font-medium text-gray-900 dark:text-white">
+                    Zero-Knowledge Proofs
+                  </h4>
+                  <p className="text-[14px] leading-relaxed text-gray-600 dark:text-gray-300">
+                    Enable users to prove identity attributes without revealing
+                    sensitive information using Verus privacy features.
                   </p>
                 </div>
-                
-                <div className="bg-white/80 dark:bg-gray-800/50 backdrop-blur-sm px-5 py-4 rounded-xl border border-blue-100/60 dark:border-blue-900/20">
-                  <h4 className="text-[16px] font-medium text-gray-900 dark:text-white mb-2">Identity Verification</h4>
-                  <p className="text-[14px] text-gray-600 dark:text-gray-300 leading-relaxed">
-                    Create KYC and identity verification systems that preserve user privacy while meeting compliance requirements.
+
+                <div className="rounded-xl border border-blue-100/60 bg-white/80 px-5 py-4 backdrop-blur-sm dark:border-blue-900/20 dark:bg-gray-800/50">
+                  <h4 className="mb-2 text-[16px] font-medium text-gray-900 dark:text-white">
+                    Identity Verification
+                  </h4>
+                  <p className="text-[14px] leading-relaxed text-gray-600 dark:text-gray-300">
+                    Create KYC and identity verification systems that preserve
+                    user privacy while meeting compliance requirements.
                   </p>
                 </div>
               </div>

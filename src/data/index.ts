@@ -1,7 +1,7 @@
 import CollectionsJSON from './collectionsJSON'
-import KeysJSON from './keysJSON'
 import IdentityJSON from './identityJSON'
-import ServicesJSON from './servicesJSON'
+import KeysJSON from './keysJSON'
 import ProofsJSON from './proofsJSON'
+import ServicesJSON from './servicesJSON'
 
-export { CollectionsJSON, KeysJSON, IdentityJSON, ServicesJSON, ProofsJSON }
+export {CollectionsJSON, KeysJSON, IdentityJSON, ServicesJSON, ProofsJSON}
