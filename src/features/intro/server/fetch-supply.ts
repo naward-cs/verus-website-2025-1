@@ -1,18 +1,15 @@
-import {NextResponse} from 'next/server'
+import 'server-only'
 
-// Configure for static export
-export const dynamic = 'force-static'
-export const revalidate = 43200 // 12 hours
+import {env} from '@/configs/env'
 
 // Cached/fallback supply value (accurate as of development time)
 const FALLBACK_SUPPLY = 75_000_000
-
-export async function GET() {
+export async function fetchSupply() {
   try {
     console.log('Fetching Verus supply data...')
 
     const response = await fetch(
-      'https://explorer.verus.io/ext/getmoneysupply',
+      `${env.VERUS_EXPLORER_API}/ext/getmoneysupply`,
       {
         headers: {
           Accept: 'application/json',
@@ -39,36 +36,21 @@ export async function GET() {
     const supply = Math.round(supplyValue)
     console.log('Processed supply:', supply)
 
-    return NextResponse.json(
-      {
-        supply,
-        source: 'api',
-        timestamp: Date.now(),
-      },
-      {
-        headers: {
-          'Cache-Control': 'public, max-age=3600', // Cache for 1 hour
-        },
-      }
-    )
+    return {
+      supply,
+      source: 'api',
+      timestamp: Date.now(),
+    }
   } catch (error) {
     console.error('Error fetching supply:', error)
 
     // Return a fallback value with clear indication it's an estimate
-    return NextResponse.json(
-      {
-        supply: FALLBACK_SUPPLY,
-        source: 'fallback',
-        isEstimate: true,
-        error: error instanceof Error ? error.message : 'Unknown error',
-        timestamp: Date.now(),
-      },
-      {
-        status: 200, // Still return 200 to avoid breaking the client
-        headers: {
-          'Cache-Control': 'public, max-age=1800', // Cache for 30 minutes
-        },
-      }
-    )
+    return {
+      supply: FALLBACK_SUPPLY,
+      source: 'fallback',
+      isEstimate: true,
+      error: error instanceof Error ? error.message : 'Unknown error',
+      timestamp: Date.now(),
+    }
   }
 }

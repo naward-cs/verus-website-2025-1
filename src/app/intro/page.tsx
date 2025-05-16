@@ -1,12 +1,16 @@
-import {Metadata} from 'next'
+import type {Metadata} from 'next'
 
+import {
+  ConsensusSection,
+  PrivacySection,
+  ScalingSection,
+  SmartTransactionsSection,
+  TokenomicsSection,
+  VisionMissionSection,
+} from '@/features/intro/components'
+
+import {BodyBgHeroImages} from '@/components/background-images'
 import {Footer} from '@/components/footer'
-import {ConsensusSection} from '@/components/intro/consensus-section'
-import {PrivacySection} from '@/components/intro/privacy-section'
-import {ScalingSection} from '@/components/intro/scaling-section'
-import {SmartTransactionsSection} from '@/components/intro/smart-transactions-section'
-import {TokenomicsSection} from '@/components/intro/tokenomics-section'
-import {VisionMissionSection} from '@/components/intro/vision-mission'
 
 export const metadata: Metadata = {
   title: 'The Protocol for Everyone | Verus',
@@ -36,16 +40,7 @@ export const metadata: Metadata = {
 export default function IntroPage() {
   return (
     <main className="relative mt-[50px] h-[calc(100vh-50px)] w-screen md:mt-[70px] md:h-[calc(100vh-70px)]">
-      <img
-        src="/img/hero-bg2-2.webp"
-        className="absolute h-full w-full object-cover dark:hidden"
-        alt="Hero background - light"
-      />
-      <img
-        src="/img/bg-darkmode.webp"
-        className="absolute hidden h-full w-full object-cover dark:block"
-        alt="Hero background - dark"
-      />
+      <BodyBgHeroImages />
 
       <div className="relative z-10 flex flex-col items-center px-4">
         <div className="pt-[30px] md:pt-[70px]">

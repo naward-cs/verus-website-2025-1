@@ -1,6 +1,7 @@
-import {CirculatingSupplyDisplay} from './tokenomics/circulating-supply'
+import {Suspense} from 'react'
 
-const maxSupply = 83_540_184
+import {CirculatingSupplyDisplay} from './circulating-supply'
+import {SupplySkeleton} from './supply-skeleton'
 
 export function TokenomicsSection() {
   return (
@@ -47,7 +48,9 @@ export function TokenomicsSection() {
           {/* Supply Stats & Distribution */}
           <div className="w-full border-gray-200 dark:border-gray-700 md:w-1/3 md:border-l md:pl-16">
             {/* Supply Stats */}
-            <CirculatingSupplyDisplay maxSupply={maxSupply} />
+            <Suspense fallback={<SupplySkeleton />}>
+              <CirculatingSupplyDisplay />
+            </Suspense>
 
             {/* Distribution List */}
             <div className="w-full space-y-3">

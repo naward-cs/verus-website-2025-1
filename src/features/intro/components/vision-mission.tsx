@@ -1,3 +1,4 @@
+import {env} from '@/configs/env'
 import {Download} from 'lucide-react'
 
 // Updated component with dark mode support and improved styling
@@ -25,7 +26,7 @@ export function VisionMissionSection() {
               funds, data and identity.
             </p>
             <a
-              href="https://docs.verus.io"
+              href={env.NEXT_PUBLIC_VERUS_DOCS}
               target="_blank"
               rel="noopener noreferrer"
               className="group mt-8 flex items-center gap-2 text-[14px] text-verus-blue transition-all duration-300 hover:underline dark:text-blue-400 md:mt-8 md:text-[15px]"

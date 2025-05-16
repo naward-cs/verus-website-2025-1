@@ -1,5 +1,4 @@
 import {Download, Server, ShieldCheck, Smartphone} from 'lucide-react'
-import {FaMedium} from 'react-icons/fa'
 
 // Updated component with dark mode support
 export function ConsensusSection() {
@@ -37,7 +36,7 @@ export function ConsensusSection() {
 
             {/* Download Link - Styled consistently */}
             <a
-              href="https://verus.io/papers/VerusPoP.pdf"
+              href="/papers/VerusPoP.pdf"
               target="_blank"
               rel="noopener noreferrer"
               className="group mt-8 inline-flex w-fit items-center gap-2 rounded-lg border border-blue-200 bg-blue-50/80 px-5 py-3 text-[13px] text-blue-600 backdrop-blur-sm transition-all duration-300 hover:-translate-y-[1px] hover:border-blue-300 hover:bg-blue-50 hover:text-blue-700 hover:shadow-md dark:border-blue-800/40 dark:bg-blue-950/40 dark:text-blue-300 dark:hover:border-blue-700/60 dark:hover:bg-blue-950/50 dark:hover:text-blue-200 dark:hover:shadow-blue-950/40 md:text-[15px]"

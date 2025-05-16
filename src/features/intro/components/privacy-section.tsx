@@ -1,5 +1,4 @@
 import {Eye, Lock, Shield} from 'lucide-react'
-import {FaMedium} from 'react-icons/fa'
 
 // Updated component with dark mode support
 export function PrivacySection() {
