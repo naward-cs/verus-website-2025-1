@@ -1,3 +1,4 @@
+import {env} from '@/configs/env'
 import {FaGithub} from 'react-icons/fa'
 import {LuCode, LuHistory} from 'react-icons/lu'
 
@@ -77,7 +78,7 @@ export function EndSection() {
           </div>
           <div className="mt-auto">
             <a
-              href="https://github.com/VerusCoin"
+              href={env.NEXT_PUBLIC_VERUS_GITHUB}
               target="_blank"
               rel="noopener noreferrer"
               className="group flex h-[40px] w-fit items-center justify-center gap-2 rounded-lg border border-indigo-200 bg-white/80 px-8 text-[14px] font-medium text-indigo-600 backdrop-blur-sm transition-all duration-300 hover:-translate-y-[1px] hover:border-indigo-300 hover:text-indigo-700 hover:shadow-lg dark:border-indigo-800/40 dark:bg-indigo-950/80 dark:text-indigo-300 dark:hover:border-indigo-700 dark:hover:text-indigo-200 dark:hover:shadow-indigo-950/50 md:h-[50px] md:text-[16px]"

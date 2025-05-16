@@ -3,6 +3,7 @@ import type {Metadata} from 'next'
 
 import Link from 'next/link'
 
+import {env} from '@/configs/env'
 import {ProjectList} from '@/features/projects/project-list'
 import {IoLogoDiscord} from 'react-icons/io5'
 
@@ -67,7 +68,7 @@ export default function ProjectsPage() {
                   your project with the community.
                 </p>
                 <Link
-                  href="https://www.verus.io/discord"
+                  href={env.NEXT_PUBLIC_DISCORD}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="group flex h-[40px] w-fit items-center justify-center gap-2 rounded-lg border border-blue-800/60 bg-blue-950/40 px-6 text-[14px] font-medium text-blue-300 backdrop-blur-sm transition-all duration-300 hover:-translate-y-[1px] hover:border-blue-700/80 hover:text-blue-200 hover:shadow-lg md:h-[50px] md:text-[16px]"

@@ -6,6 +6,7 @@ const _env = env
 const nextConfig: NextConfig = {
   /* config options here */
   // For development, we'll use the standard Next.js build
+  allowedDevOrigins: ['local-origin.dev', '*.local-origin.dev', 'localhost'],
   // For production on Replit, we'll use the 'export' output
   compiler: {
     // Remove all console logs except console.error in production builds

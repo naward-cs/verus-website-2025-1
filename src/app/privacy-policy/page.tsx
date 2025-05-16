@@ -1,5 +1,7 @@
 import type {Metadata} from 'next'
 
+import {env} from '@/configs/env'
+
 import {BodyBgSmallImages} from '@/components/background-images'
 import {Footer} from '@/components/footer'
 
@@ -95,7 +97,7 @@ export default function PrivacyPolicyPage() {
                         If you have any questions or concerns about this policy
                         please contact us on our{' '}
                         <a
-                          href="https://www.verus.io/discord"
+                          href={env.NEXT_PUBLIC_DISCORD}
                           target="_blank"
                           rel="noopener noreferrer"
                           className="text-verus-blue hover:underline dark:text-blue-400"

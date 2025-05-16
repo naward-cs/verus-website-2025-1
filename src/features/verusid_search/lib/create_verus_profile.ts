@@ -1,5 +1,5 @@
 //Import known vdxfid JSONs for profile
-//TODO: need a way to either reverse vdxfid or
+
 // a vdxfid library needs to be created
 
 import CollectionsJSON from '@/data/vdxfid/collectionsJSON'
@@ -7,7 +7,6 @@ import IdentityJSON from '@/data/vdxfid/identityJSON'
 import KeysJSON from '@/data/vdxfid/keysJSON'
 import ServicesJSON from '@/data/vdxfid/servicesJSON'
 
-//TODO: need to reverse vdxfid value instead of storing them all.
 export type ProfileJSONType = {
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   [key: string]: Record<string, any>

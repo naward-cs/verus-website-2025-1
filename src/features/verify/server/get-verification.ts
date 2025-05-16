@@ -49,9 +49,6 @@ export async function getVerification(formInfo: VerifySchema) {
         auto: true,
       }
     }
-
-    // //TODO handle result
-    // return {hash, message, verusid, signature, auto: true}
   } else {
     return {auto: false}
   }

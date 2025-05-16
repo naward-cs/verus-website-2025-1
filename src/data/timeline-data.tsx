@@ -1,3 +1,5 @@
+import {env} from '@/configs/env'
+
 // Static milestone data that can be server-rendered
 export const milestones = [
   {
@@ -17,7 +19,7 @@ export const milestones = [
       "Verus achieved a significant breakthrough by implementing StakeGuard, elegantly solving the long-standing Nothing at Stake problem that had plagued proof-of-stake systems since their inception. Simultaneously, the integration of Zcash's Sapling technology improved the performance of shielded transactions on the network. These technical improvements demonstrated the project's commitment to addressing foundational blockchain challenges.",
     link: {
       text: "Read how Verus fixed 'nothing-at-stake'",
-      url: 'https://medium.com/veruscoin/how-verus-solved-nothing-at-stake-and-weak-subjectivity-proof-of-stake-problems-b4dd6a85086e',
+      url: `${env.NEXT_PUBLIC_VERUS_MEDIUM}/how-verus-solved-nothing-at-stake-and-weak-subjectivity-proof-of-stake-problems-b4dd6a85086e`,
     },
   },
   {

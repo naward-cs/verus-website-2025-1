@@ -1,5 +1,6 @@
 import Link from 'next/link'
 
+import {env} from '@/configs/env'
 import {Terminal} from 'lucide-react'
 
 export function TerminalExample() {
@@ -49,7 +50,7 @@ export function TerminalExample() {
           <Terminal className="h-4 w-4" />
         </div>
         <Link
-          href="https://wiki.verus.io/#!faq-cli/clifaq-02_verus_commands.md"
+          href={`${env.NEXT_PUBLIC_VERUS_WIKI}/#!faq-cli/clifaq-02_verus_commands.md`}
           target="_blank"
           className="text-[14px] font-medium text-blue-600 hover:text-blue-700 dark:text-blue-400 dark:hover:text-blue-300"
         >

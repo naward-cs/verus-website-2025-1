@@ -29,7 +29,7 @@ export const metadata: Metadata = {
     canonical: '/get-started',
   },
 }
-//TODO:confirm image is not absolute and is fixed
+
 export default function GetStartedPage() {
   return (
     <main className="relative mt-[50px] h-[calc(100vh-50px)] w-screen md:mt-[70px] md:h-[calc(100vh-70px)]">

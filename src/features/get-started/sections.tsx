@@ -1,5 +1,6 @@
 import Link from 'next/link'
 
+import {env} from '@/configs/env'
 import {Check, Download} from 'lucide-react'
 import {IoLogoDiscord} from 'react-icons/io5'
 
@@ -573,7 +574,7 @@ export function GetStartedSections() {
 
       {/* Discord Help Box */}
       <a
-        href="https://www.verus.io/discord"
+        href={env.NEXT_PUBLIC_DISCORD}
         target="_blank"
         rel="noopener noreferrer"
         className="group flex h-[45px] w-full items-center gap-3 bg-[#444EE5] p-4 transition-all duration-300 hover:-translate-y-[1px] hover:bg-[#3942cc] hover:shadow-md md:h-[55px] md:rounded-lg md:p-6"
