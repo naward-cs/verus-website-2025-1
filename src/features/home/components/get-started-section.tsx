@@ -1,7 +1,8 @@
 import Image from 'next/image'
 
+import {env} from '@/configs/env'
 import {IoLogoDiscord} from 'react-icons/io5'
-import {LuCoins, LuWallet} from 'react-icons/lu'
+import {LuWallet} from 'react-icons/lu'
 
 export function GetStartedSection() {
   return (
@@ -125,7 +126,7 @@ export function GetStartedSection() {
             </h2>
             <div className="flex flex-col items-start gap-3 sm:flex-row sm:items-center sm:gap-4">
               <a
-                href="https://www.verus.io/discord"
+                href={env.NEXT_PUBLIC_DISCORD}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="group flex h-[40px] w-full items-center justify-center rounded-lg border border-white/10 bg-white/90 px-8 text-[14px] font-medium text-[#5865F2] backdrop-blur-sm transition-all duration-300 hover:-translate-y-[1px] hover:bg-white hover:shadow-lg hover:shadow-indigo-700/20 sm:w-fit md:h-[50px] md:text-[16px]"

@@ -1,10 +1,13 @@
 'use client'
 
+import type {AnchorHTMLAttributes} from 'react'
+
 import {useEffect, useRef, useState} from 'react'
 import Link from 'next/link'
 
-import {ChevronRight, ExternalLink, Menu, X} from 'lucide-react'
-import {FaFacebook, FaReddit, FaTwitter} from 'react-icons/fa'
+import {env} from '@/configs/env'
+import {ChevronRight, ExternalLink} from 'lucide-react'
+import {FaFacebook, FaReddit} from 'react-icons/fa'
 import {FaTelegram, FaXTwitter, FaYoutube} from 'react-icons/fa6'
 import {IoLogoDiscord, IoLogoGithub} from 'react-icons/io5'
 
@@ -16,7 +19,8 @@ type SectionProps = {
   toggleSection: (section: string) => void
   children: React.ReactNode
 }
-
+//TODO:clean this up
+//?? maybe split this up
 // Component for expandable mobile navigation sections
 function MobileSection({title, isOpen, toggleSection, children}: SectionProps) {
   const contentRef = useRef<HTMLDivElement>(null)
@@ -81,7 +85,9 @@ function MobileSection({title, isOpen, toggleSection, children}: SectionProps) {
     </div>
   )
 }
-
+type MenuLinkProps = AnchorHTMLAttributes<HTMLAnchorElement> & {
+  href: string
+}
 export function MobileNav() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
   const [openSection, setOpenSection] = useState<string | null>(null)
@@ -96,7 +102,7 @@ export function MobileNav() {
   }
 
   // Modified Link component that closes the menu on click
-  const MenuLink = ({href, children, className, ...props}: any) => (
+  const MenuLink = ({href, children, className, ...props}: MenuLinkProps) => (
     <Link href={href} className={className} onClick={closeMenu} {...props}>
       {children}
     </Link>
@@ -220,8 +226,8 @@ export function MobileNav() {
                 Verify Signatures
               </MenuLink>
               <MenuLink
-                href="https://insight.verus.io"
-                className="group block flex items-center gap-2 py-2 text-[15px] text-gray-700 transition-colors hover:text-verus-blue dark:text-gray-300 dark:hover:text-blue-400"
+                href={env.NEXT_PUBLIC_VERUS_EXPLORER}
+                className="group flex items-center gap-2 py-2 text-[15px] text-gray-700 transition-colors hover:text-verus-blue dark:text-gray-300 dark:hover:text-blue-400"
               >
                 Explorer
                 <ExternalLink className="h-4 w-4 opacity-50 group-hover:opacity-100" />
@@ -312,22 +318,22 @@ export function MobileNav() {
             </h3>
             <div className="space-y-2">
               <MenuLink
-                href="https://docs.verus.io"
-                className="block flex items-center gap-2 py-2 pt-4 text-[15px] text-gray-700 transition-colors hover:text-verus-blue dark:text-gray-300 dark:hover:text-blue-400"
+                href={env.NEXT_PUBLIC_VERUS_DOCS}
+                className="flex items-center gap-2 py-2 pt-4 text-[15px] text-gray-700 transition-colors hover:text-verus-blue dark:text-gray-300 dark:hover:text-blue-400"
               >
                 Documentation
                 <ExternalLink className="h-4 w-4 opacity-50 group-hover:opacity-100" />
               </MenuLink>
               <MenuLink
-                href="https://monkins1010.github.io"
-                className="block flex items-center gap-2 py-2 text-[15px] text-gray-700 transition-colors hover:text-verus-blue dark:text-gray-300 dark:hover:text-blue-400"
+                href={env.NEXT_PUBLIC_MONKINS_GITHUB}
+                className="flex items-center gap-2 py-2 text-[15px] text-gray-700 transition-colors hover:text-verus-blue dark:text-gray-300 dark:hover:text-blue-400"
               >
                 Integration Documentation
                 <ExternalLink className="h-4 w-4 opacity-50 group-hover:opacity-100" />
               </MenuLink>
               <MenuLink
-                href="https://wiki.verus.io/#!faq-cli/clifaq-02_verus_commands.md"
-                className="block flex items-center gap-2 py-2 text-[15px] text-gray-700 transition-colors hover:text-verus-blue dark:text-gray-300 dark:hover:text-blue-400"
+                href={`${env.NEXT_PUBLIC_VERUS_WIKI}/#!faq-cli/clifaq-02_verus_commands.md`}
+                className="flex items-center gap-2 py-2 text-[15px] text-gray-700 transition-colors hover:text-verus-blue dark:text-gray-300 dark:hover:text-blue-400"
               >
                 All API Commands
                 <ExternalLink className="h-4 w-4 opacity-50 group-hover:opacity-100" />
@@ -394,8 +400,8 @@ export function MobileNav() {
                 Network Statistics
               </MenuLink>
               <MenuLink
-                href="https://medium.com/veruscoin"
-                className="block flex items-center gap-2 py-2 text-[15px] text-gray-700 transition-colors hover:text-verus-blue dark:text-gray-300 dark:hover:text-blue-400"
+                href={env.NEXT_PUBLIC_VERUS_MEDIUM}
+                className="flex items-center gap-2 py-2 text-[15px] text-gray-700 transition-colors hover:text-verus-blue dark:text-gray-300 dark:hover:text-blue-400"
               >
                 Blog
                 <ExternalLink className="h-4 w-4 opacity-50 group-hover:opacity-100" />
@@ -453,7 +459,7 @@ export function MobileNav() {
             </h3>
             <div className="grid grid-cols-2 gap-x-4 gap-y-2 pt-2">
               <MenuLink
-                href="https://www.verus.io/discord"
+                href={env.NEXT_PUBLIC_DISCORD}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="group flex items-center gap-2 rounded-md px-3 py-2 transition-colors hover:bg-verus-blue/10"
@@ -466,7 +472,7 @@ export function MobileNav() {
                 </span>
               </MenuLink>
               <MenuLink
-                href="https://twitter.com/veruscoin"
+                href={env.NEXT_PUBLIC_VERUS_TWITTER}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="group flex items-center gap-2 rounded-md px-3 py-2 transition-colors hover:bg-verus-blue/10"
@@ -479,7 +485,7 @@ export function MobileNav() {
                 </span>
               </MenuLink>
               <MenuLink
-                href="https://t.me/veruscoin"
+                href={env.NEXT_PUBLIC_VERUS_TELEGRAM}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="group flex items-center gap-2 rounded-md px-3 py-2 transition-colors hover:bg-verus-blue/10"
@@ -492,7 +498,7 @@ export function MobileNav() {
                 </span>
               </MenuLink>
               <MenuLink
-                href="https://reddit.com/r/veruscoin"
+                href={env.NEXT_PUBLIC_VERUS_REDDIT}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="group flex items-center gap-2 rounded-md px-3 py-2 transition-colors hover:bg-verus-blue/10"
@@ -505,7 +511,7 @@ export function MobileNav() {
                 </span>
               </MenuLink>
               <MenuLink
-                href="https://facebook.com/veruscoin"
+                href={env.NEXT_PUBLIC_VERUS_FACEBOOK}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="group flex items-center gap-2 rounded-md px-3 py-2 transition-colors hover:bg-verus-blue/10"
@@ -518,7 +524,7 @@ export function MobileNav() {
                 </span>
               </MenuLink>
               <MenuLink
-                href="https://youtube.com/@veruscoincommunity"
+                href={env.NEXT_PUBLIC_VERUS_YOUTUBE}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="group flex items-center gap-2 rounded-md px-3 py-2 transition-colors hover:bg-verus-blue/10"
@@ -568,7 +574,7 @@ export function MobileNav() {
           {/* Social Media Icons */}
           <div className="flex justify-center gap-5 pb-4 pt-6">
             <MenuLink
-              href="https://twitter.com/veruscoin"
+              href={env.NEXT_PUBLIC_VERUS_TWITTER}
               target="_blank"
               rel="noopener noreferrer"
               className="flex h-10 w-10 items-center justify-center rounded-full bg-black/5 transition-colors hover:bg-black/10 dark:bg-white/10 dark:hover:bg-white/20"
@@ -578,7 +584,7 @@ export function MobileNav() {
             </MenuLink>
 
             <MenuLink
-              href="https://www.verus.io/discord"
+              href={env.NEXT_PUBLIC_DISCORD}
               target="_blank"
               rel="noopener noreferrer"
               className="flex h-10 w-10 items-center justify-center rounded-full bg-[#5865F2]/10 transition-colors hover:bg-[#5865F2]/20"
@@ -588,7 +594,7 @@ export function MobileNav() {
             </MenuLink>
 
             <MenuLink
-              href="https://github.com/VerusCoin"
+              href={env.NEXT_PUBLIC_VERUS_GITHUB}
               target="_blank"
               rel="noopener noreferrer"
               className="flex h-10 w-10 items-center justify-center rounded-full bg-gray-800/10 transition-colors hover:bg-gray-800/20 dark:bg-gray-300/10 dark:hover:bg-gray-300/20"

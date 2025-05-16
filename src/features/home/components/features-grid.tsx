@@ -1,4 +1,4 @@
-'use client'
+import Image from 'next/image'
 
 import {FeatureTooltip} from './feature-tooltip'
 
@@ -38,10 +38,12 @@ export function FeaturesGrid() {
     return (
       <FeatureTooltip description={featureDescriptions[feature]}>
         <div className="relative flex flex-col items-center">
-          <img
+          <Image
             src={src}
             alt={alt}
-            className="mb-2 h-[40px] w-[40px] md:mb-3 md:h-[48px] md:w-[48px]"
+            width={40}
+            height={40}
+            className="mb-2 md:mb-3 md:h-[48px] md:w-[48px]"
           />
           <span className="text-center text-[16px] font-medium text-black dark:text-white md:text-[22px]">
             {title}
@@ -54,16 +56,20 @@ export function FeaturesGrid() {
   return (
     <div className="relative w-screen md:max-w-[1220px]">
       {/* Hover indicator - desktop only */}
-      <img
+      <Image
         src="/img/hero/hoverme.svg"
         alt="Hover for more info"
+        width={500}
+        height={500}
         className="absolute -top-8 left-8 hidden h-auto w-32 md:block"
       />
 
       {/* Click indicator - mobile only */}
-      <img
+      <Image
         src="/img/hero/clickme.svg"
         alt="Click for more info"
+        width={500}
+        height={500}
         className="absolute -top-6 left-8 h-auto w-24 md:hidden"
       />
 

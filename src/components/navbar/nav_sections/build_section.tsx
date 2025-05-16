@@ -1,8 +1,8 @@
-'use client'
-
+import Image from 'next/image'
 import Link from 'next/link'
 
-import {ExternalLink, MessageCircleQuestion} from 'lucide-react'
+import {env} from '@/configs/env'
+import {ExternalLink} from 'lucide-react'
 import {IoLogoDiscord} from 'react-icons/io5'
 import {
   LuArrowUpDown,
@@ -16,45 +16,11 @@ import {
   LuUsers,
 } from 'react-icons/lu'
 
-import {NavLink} from './NavLink'
+import {NavLink} from '../nav_link'
 
-// Custom component for PBaaS links
-function PBaaSLink({
-  href,
-  icon,
-  label,
-  title,
-  description,
-}: {
-  href: string
-  icon: React.ReactNode
-  label: string
-  title: string
-  description: string
-}) {
-  return (
-    <Link
-      href={href}
-      className="group flex items-start rounded-lg pb-3 pt-3 transition-colors"
-    >
-      <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-gray-100 transition-colors group-hover:bg-verus-blue/10 dark:bg-gray-800 dark:group-hover:bg-verus-blue/20">
-        {icon}
-      </div>
-      <div className="ml-3">
-        <div className="mb-1 flex items-center gap-2 text-[15px] font-[450] text-gray-800 dark:text-white">
-          <span className="rounded bg-verus-blue/10 px-1.5 py-0.5 text-[11px] font-medium text-verus-blue">
-            {label}
-          </span>
-          <span className="group-hover:underline">{title}</span>
-        </div>
-        <p className="text-sm text-gray-500 dark:text-gray-300">
-          {description}
-        </p>
-      </div>
-    </Link>
-  )
-}
-
+//TODO:clean up
+//??maybe a data json file containing links
+//??shouldn't have to write /build for everyone of these links
 export function BuildSection() {
   return (
     <div className="grid grid-cols-3 gap-8">
@@ -74,16 +40,14 @@ export function BuildSection() {
           <NavLink
             href="/build/verusid/"
             icon={
+              // ?? Why relative wrapper
               <div className="relative">
-                <img
+                <Image
                   src="/img/at-full-black.svg"
                   alt="VerusID Icon"
-                  className="h-5 w-5 opacity-50 transition-all group-hover:opacity-100 group-hover:[filter:invert(31%)_sepia(93%)_saturate(1352%)_hue-rotate(213deg)_brightness(97%)_contrast(87%)] dark:hidden"
-                />
-                <img
-                  src="/img/at-full-black.svg"
-                  alt="VerusID Icon"
-                  className="hidden h-5 w-5 opacity-50 transition-all [filter:invert(100%)] group-hover:opacity-100 group-hover:[filter:invert(31%)_sepia(93%)_saturate(1352%)_hue-rotate(213deg)_brightness(97%)_contrast(87%)] dark:block"
+                  width={5}
+                  height={5}
+                  className="h-5 w-5 opacity-50 transition-all group-hover:opacity-100 group-hover:[filter:invert(31%)_sepia(93%)_saturate(1352%)_hue-rotate(213deg)_brightness(97%)_contrast(87%)]"
                 />
               </div>
             }
@@ -170,7 +134,7 @@ export function BuildSection() {
         </h3>
         <div className="space-y-2">
           <Link
-            href="https://docs.verus.io"
+            href={env.NEXT_PUBLIC_VERUS_DOCS}
             target="_blank"
             rel="noopener noreferrer"
             className="group flex items-start rounded-lg p-2 transition-colors [&>div>div]:hover:underline"
@@ -183,7 +147,7 @@ export function BuildSection() {
             </div>
           </Link>
           <Link
-            href="https://monkins1010.github.io"
+            href={env.NEXT_PUBLIC_MONKINS_GITHUB}
             target="_blank"
             rel="noopener noreferrer"
             className="group flex items-start rounded-lg p-2 transition-colors [&>div>div]:hover:underline"
@@ -196,7 +160,7 @@ export function BuildSection() {
             </div>
           </Link>
           <Link
-            href="https://wiki.verus.io/#!faq-cli/clifaq-02_verus_commands.md"
+            href={`${env.NEXT_PUBLIC_VERUS_WIKI}/#!faq-cli/clifaq-02_verus_commands.md`}
             target="_blank"
             rel="noopener noreferrer"
             className="group flex items-start rounded-lg p-2 transition-colors [&>div>div]:hover:underline"
@@ -211,7 +175,7 @@ export function BuildSection() {
 
           {/* Discord Help Section */}
           <Link
-            href="https://www.verus.io/discord"
+            href={env.NEXT_PUBLIC_DISCORD}
             target="_blank"
             rel="noopener noreferrer"
             className="group mt-8 block rounded-lg bg-gradient-to-br from-[#5865F2] to-[#404EED] p-5 transition-all hover:shadow-lg hover:shadow-[#5865F2]/20"

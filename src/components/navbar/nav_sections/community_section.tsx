@@ -1,7 +1,6 @@
-'use client'
-
 import Link from 'next/link'
 
+import {env} from '@/configs/env'
 import {
   FaFacebook,
   FaReddit,
@@ -10,15 +9,9 @@ import {
   FaYoutube,
 } from 'react-icons/fa6'
 import {IoLogoDiscord} from 'react-icons/io5'
-import {
-  LuAward,
-  LuBlocks,
-  LuHeart,
-  LuMessagesSquare,
-  LuUsers,
-} from 'react-icons/lu'
+import {LuBlocks, LuHeart, LuMessagesSquare, LuUsers} from 'react-icons/lu'
 
-import {NavLink} from './NavLink'
+import {NavLink} from '../nav_link'
 
 export function CommunitySection() {
   return (
@@ -83,7 +76,7 @@ export function CommunitySection() {
         </h3>
         <div className="space-y-2">
           <Link
-            href="https://www.verus.io/discord"
+            href={env.NEXT_PUBLIC_DISCORD}
             className="group flex items-center p-2"
             target="_blank"
             rel="noopener noreferrer"
@@ -94,7 +87,7 @@ export function CommunitySection() {
             </span>
           </Link>
           <Link
-            href="https://twitter.com/veruscoin"
+            href={env.NEXT_PUBLIC_VERUS_TWITTER}
             className="group flex items-center p-2"
             target="_blank"
             rel="noopener noreferrer"
@@ -105,7 +98,7 @@ export function CommunitySection() {
             </span>
           </Link>
           <Link
-            href="https://t.me/veruscoin"
+            href={env.NEXT_PUBLIC_VERUS_TELEGRAM}
             className="group flex items-center p-2"
             target="_blank"
             rel="noopener noreferrer"
@@ -116,7 +109,7 @@ export function CommunitySection() {
             </span>
           </Link>
           <Link
-            href="https://reddit.com/r/veruscoin"
+            href={env.NEXT_PUBLIC_VERUS_REDDIT}
             className="group flex items-center p-2"
             target="_blank"
             rel="noopener noreferrer"
@@ -127,7 +120,7 @@ export function CommunitySection() {
             </span>
           </Link>
           <Link
-            href="https://facebook.com/veruscoin"
+            href={env.NEXT_PUBLIC_VERUS_FACEBOOK}
             className="group flex items-center p-2"
             target="_blank"
             rel="noopener noreferrer"
@@ -138,7 +131,7 @@ export function CommunitySection() {
             </span>
           </Link>
           <Link
-            href="https://youtube.com/@veruscoincommunity"
+            href={env.NEXT_PUBLIC_VERUS_YOUTUBE}
             className="group flex items-center p-2"
             target="_blank"
             rel="noopener noreferrer"

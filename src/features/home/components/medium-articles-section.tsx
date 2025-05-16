@@ -1,43 +1,10 @@
-'use client'
+import {Suspense} from 'react'
 
-import React from 'react'
-
+import {env} from '@/configs/env'
 import {FaMedium} from 'react-icons/fa'
 
-import MediumFeed from '../MediumFeed'
-
-// Error boundary component for MediumFeed
-class MediumErrorBoundary extends React.Component<
-  {children: React.ReactNode},
-  {hasError: boolean}
-> {
-  constructor(props: {children: React.ReactNode}) {
-    super(props)
-    this.state = {hasError: false}
-  }
-
-  static getDerivedStateFromError() {
-    return {hasError: true}
-  }
-
-  componentDidCatch(error: Error) {
-    console.error('Medium feed error:', error)
-  }
-
-  render() {
-    if (this.state.hasError) {
-      return (
-        <div className="py-12 text-center">
-          <p className="text-gray-500 dark:text-gray-400">
-            Unable to load articles at this time. Please check back later.
-          </p>
-        </div>
-      )
-    }
-
-    return this.props.children
-  }
-}
+import MediumArticlesLoading from './medium-articles-loading'
+import MediumFeed from './medium-feed'
 
 export function MediumArticlesSection() {
   return (
@@ -52,7 +19,7 @@ export function MediumArticlesSection() {
             community.
           </p>
           <a
-            href="https://medium.com/veruscoin"
+            href={env.NEXT_PUBLIC_VERUS_MEDIUM}
             target="_blank"
             rel="noopener noreferrer"
             className="mt-3 inline-flex items-center gap-2 text-verus-blue hover:underline dark:text-blue-400"
@@ -61,9 +28,9 @@ export function MediumArticlesSection() {
             Follow Verus on Medium
           </a>
         </div>
-        <MediumErrorBoundary>
+        <Suspense fallback={<MediumArticlesLoading />}>
           <MediumFeed />
-        </MediumErrorBoundary>
+        </Suspense>
       </div>
     </section>
   )

@@ -1,6 +1,4 @@
-'use client'
-
-import {Code, Layers, LineChart} from 'lucide-react'
+import {Layers, LineChart} from 'lucide-react'
 
 export function EarlyAdoptionSection() {
   return (

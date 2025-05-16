@@ -1,28 +1,29 @@
-'use client'
+import Link from 'next/link';
 
-import Link from 'next/link'
 
+
+import {env} from '@/configs/env'
 import {FaGithub} from 'react-icons/fa'
 import {IoLogoDiscord} from 'react-icons/io5'
 
 export function SocialIcons() {
   return (
-    <div className="hidden items-center gap-4 md:flex">
+    <div className="ml-2 hidden items-center gap-4 md:flex">
       <Link
-        href="https://www.verus.io/discord"
+        href={env.NEXT_PUBLIC_DISCORD}
         target="_blank"
         rel="noopener noreferrer"
         className="text-verus-blue opacity-50 transition-opacity hover:opacity-100 dark:text-white"
       >
-        <IoLogoDiscord className="h-5 w-5" />
+        <IoLogoDiscord className="size-5" />
       </Link>
       <Link
-        href="https://github.com/veruscoin"
+        href={env.NEXT_PUBLIC_VERUS_GITHUB}
         target="_blank"
         rel="noopener noreferrer"
         className="text-verus-blue opacity-50 transition-opacity hover:opacity-100 dark:text-white"
       >
-        <FaGithub className="h-5 w-5" />
+        <FaGithub className="size-5" />
       </Link>
     </div>
   )

@@ -1,8 +1,4 @@
-'use client'
-
-import Link from 'next/link'
-
-import {ExternalLink} from 'lucide-react'
+import {env} from '@/configs/env'
 import {FaMedium} from 'react-icons/fa'
 import {
   LuChartLine,
@@ -13,7 +9,7 @@ import {
   LuMilestone,
 } from 'react-icons/lu'
 
-import {NavLink} from './NavLink'
+import {NavLink} from '../nav_link'
 
 export function LearnSection() {
   return (
@@ -86,7 +82,7 @@ export function LearnSection() {
             description="Live network metrics and data"
           />
           <NavLink
-            href="https://medium.com/veruscoin"
+            href={env.NEXT_PUBLIC_VERUS_MEDIUM}
             icon={
               <FaMedium className="h-5 w-5 text-gray-700 transition-colors group-hover:text-verus-blue dark:text-gray-300" />
             }

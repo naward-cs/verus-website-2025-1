@@ -1,15 +1,13 @@
-'use client'
-
 import {
   NavigationMenu,
   NavigationMenuList,
 } from '@/components/ui/navigation-menu'
 
-import {BuildSection} from './BuildSection'
-import {CommunitySection} from './CommunitySection'
-import {LearnSection} from './LearnSection'
-import {NavMenuItem} from './NavMenuItem'
-import {UseSection} from './UseSection'
+import {NavMenuItem} from './nav_menu_item'
+import {BuildSection} from './nav_sections/build_section'
+import {CommunitySection} from './nav_sections/community_section'
+import {LearnSection} from './nav_sections/learn_section'
+import {UseSection} from './nav_sections/use_section'
 
 export function DesktopNav() {
   return (

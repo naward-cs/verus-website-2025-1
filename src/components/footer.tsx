@@ -1,8 +1,7 @@
-'use client'
-
 import Image from 'next/image'
 import Link from 'next/link'
 
+import {env} from '@/configs/env'
 import {
   FaFacebook,
   FaGithub,
@@ -18,17 +17,20 @@ export function Footer() {
   return (
     <footer className="-mx-4 mt-16 w-screen md:mx-0 md:mt-0">
       <div className="relative">
-        <img
+        <Image
           src="/img/bg-footer.webp"
           alt=""
-          className="w-full scale-y-[-1] object-cover dark:hidden"
+          width={500}
+          height={500}
+          className="h-auto w-full scale-y-[-1] object-cover dark:hidden"
         />
-        <img
+        <Image
           src="/img/bg-darkmode.webp"
           alt=""
-          className="hidden w-full scale-y-[-1] object-cover dark:block"
+          width={500}
+          height={500}
+          className="hidden h-auto w-full scale-y-[-1] object-cover dark:block"
         />
-
         {/* Centered Text and Button */}
         <div className="absolute inset-0 flex flex-col items-center justify-center gap-8">
           <h2 className="max-w-[700px] text-center text-[32px] font-medium leading-[1.1] tracking-tight text-white [text-shadow:_0_1px_20px_rgb(8_32_84_/_100%)] dark:[text-shadow:_0_1px_20px_rgb(0_0_0_/_60%)] md:text-[75px] md:[text-shadow:_0_1px_35px_rgb(8_32_84_/_100%)] dark:md:[text-shadow:_0_1px_35px_rgb(0_0_0_/_60%)]">
@@ -40,7 +42,7 @@ export function Footer() {
           </h2>
 
           <a
-            href="https://www.verus.io/discord"
+            href={env.NEXT_PUBLIC_DISCORD}
             target="_blank"
             rel="noopener noreferrer"
             className="flex h-[40px] items-center justify-center gap-2 rounded-lg bg-white px-6 text-[14px] font-medium text-black transition-colors hover:bg-gray-100 md:h-[50px] md:text-[16px]"
@@ -62,7 +64,7 @@ export function Footer() {
                 src="/img/verus-logo-white.svg"
                 alt="Verus Logo"
                 width={120}
-                height={32}
+                height={24}
                 className="mb-6 h-8 w-auto"
               />
               <p className="max-w-[300px] text-[15px] text-gray-400">
@@ -172,7 +174,7 @@ export function Footer() {
                 </li>
                 <li>
                   <a
-                    href="https://docs.verus.io"
+                    href={env.NEXT_PUBLIC_VERUS_DOCS}
                     target="_blank"
                     rel="noopener noreferrer"
                     className="text-[15px] text-gray-400 transition-colors hover:text-white"
@@ -284,7 +286,7 @@ export function Footer() {
                 </li>
                 <li>
                   <Link
-                    href="/media#brand-assets"
+                    href="/media/brand-assets"
                     className="text-[15px] text-gray-400 transition-colors hover:text-white"
                   >
                     Brand Materials
@@ -302,7 +304,7 @@ export function Footer() {
 
               <div className="grid grid-cols-4 gap-4">
                 <a
-                  href="https://www.verus.io/discord"
+                  href={env.NEXT_PUBLIC_DISCORD}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="text-gray-400 transition-colors hover:text-[#5865F2]"
@@ -310,7 +312,7 @@ export function Footer() {
                   <IoLogoDiscord className="h-5 w-5" />
                 </a>
                 <a
-                  href="https://twitter.com/veruscoin"
+                  href={env.NEXT_PUBLIC_VERUS_TWITTER}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="text-gray-400 transition-colors hover:text-white"
@@ -318,7 +320,7 @@ export function Footer() {
                   <FaXTwitter className="h-5 w-5" />
                 </a>
                 <a
-                  href="https://github.com/veruscoin"
+                  href={env.NEXT_PUBLIC_VERUS_GITHUB}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="text-gray-400 transition-colors hover:text-white"
@@ -326,7 +328,7 @@ export function Footer() {
                   <FaGithub className="h-5 w-5" />
                 </a>
                 <a
-                  href="https://medium.com/veruscoin"
+                  href={env.NEXT_PUBLIC_VERUS_MEDIUM}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="text-gray-400 transition-colors hover:text-white"
@@ -334,7 +336,7 @@ export function Footer() {
                   <FaMedium className="h-5 w-5" />
                 </a>
                 <a
-                  href="https://t.me/veruscoin"
+                  href={env.NEXT_PUBLIC_VERUS_TELEGRAM}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="text-gray-400 transition-colors hover:text-[#0088cc]"
@@ -342,7 +344,7 @@ export function Footer() {
                   <FaTelegram className="h-5 w-5" />
                 </a>
                 <a
-                  href="https://reddit.com/r/veruscoin"
+                  href={env.NEXT_PUBLIC_VERUS_REDDIT}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="text-gray-400 transition-colors hover:text-[#FF4500]"
@@ -350,7 +352,7 @@ export function Footer() {
                   <FaReddit className="h-5 w-5" />
                 </a>
                 <a
-                  href="https://facebook.com/veruscoin"
+                  href={env.NEXT_PUBLIC_VERUS_FACEBOOK}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="text-gray-400 transition-colors hover:text-[#1877F2]"
@@ -358,7 +360,7 @@ export function Footer() {
                   <FaFacebook className="h-5 w-5" />
                 </a>
                 <a
-                  href="https://youtube.com/@veruscoincommunity"
+                  href={env.NEXT_PUBLIC_VERUS_YOUTUBE}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="text-gray-400 transition-colors hover:text-[#FF0000]"
@@ -375,13 +377,18 @@ export function Footer() {
               © {new Date().getFullYear()} The Verus Protocol. All rights
               reserved.
             </div>
-            <div className="flex gap-6">
+            <div className="flex gap-2">
               <Link
                 href="/privacy-policy"
                 className="text-[14px] text-gray-400 transition-colors hover:text-white"
               >
                 Privacy Policy
               </Link>
+              {env.NEXT_PUBLIC_HOST_ID !== undefined && (
+                <p className="text-[14px] text-gray-400">
+                  ({env.NEXT_PUBLIC_HOST_ID})
+                </p>
+              )}
             </div>
           </div>
         </div>
@@ -393,7 +400,7 @@ export function Footer() {
             src="/img/verus-logo-white.svg"
             alt="Verus Logo"
             width={100}
-            height={26}
+            height={24}
             className="mb-8 h-6 w-auto"
           />
 
@@ -476,7 +483,7 @@ export function Footer() {
                 </li>
                 <li>
                   <a
-                    href="https://docs.verus.io"
+                    href={env.NEXT_PUBLIC_VERUS_DOCS}
                     target="_blank"
                     rel="noopener noreferrer"
                     className="text-[14px] text-gray-400"
@@ -564,7 +571,7 @@ export function Footer() {
                 </li>
                 <li>
                   <Link
-                    href="/media#brand-assets"
+                    href="/media/brand-assets"
                     className="text-[14px] text-gray-400"
                   >
                     Brand Materials
@@ -579,7 +586,7 @@ export function Footer() {
 
               <div className="grid grid-cols-4 gap-4">
                 <a
-                  href="https://www.verus.io/discord"
+                  href={env.NEXT_PUBLIC_DISCORD}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="text-gray-400"
@@ -587,7 +594,7 @@ export function Footer() {
                   <IoLogoDiscord className="h-5 w-5" />
                 </a>
                 <a
-                  href="https://twitter.com/veruscoin"
+                  href={env.NEXT_PUBLIC_VERUS_TWITTER}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="text-gray-400"
@@ -595,7 +602,7 @@ export function Footer() {
                   <FaXTwitter className="h-5 w-5" />
                 </a>
                 <a
-                  href="https://github.com/veruscoin"
+                  href={env.NEXT_PUBLIC_VERUS_GITHUB}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="text-gray-400"
@@ -603,7 +610,7 @@ export function Footer() {
                   <FaGithub className="h-5 w-5" />
                 </a>
                 <a
-                  href="https://medium.com/veruscoin"
+                  href={env.NEXT_PUBLIC_VERUS_MEDIUM}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="text-gray-400"
@@ -611,7 +618,7 @@ export function Footer() {
                   <FaMedium className="h-5 w-5" />
                 </a>
                 <a
-                  href="https://t.me/veruscoin"
+                  href={env.NEXT_PUBLIC_VERUS_TELEGRAM}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="text-gray-400"
@@ -619,7 +626,7 @@ export function Footer() {
                   <FaTelegram className="h-5 w-5" />
                 </a>
                 <a
-                  href="https://reddit.com/r/veruscoin"
+                  href={env.NEXT_PUBLIC_VERUS_REDDIT}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="text-gray-400"
@@ -627,7 +634,7 @@ export function Footer() {
                   <FaReddit className="h-5 w-5" />
                 </a>
                 <a
-                  href="https://facebook.com/veruscoin"
+                  href={env.NEXT_PUBLIC_VERUS_FACEBOOK}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="text-gray-400"
@@ -635,7 +642,7 @@ export function Footer() {
                   <FaFacebook className="h-5 w-5" />
                 </a>
                 <a
-                  href="https://youtube.com/@veruscoincommunity"
+                  href={env.NEXT_PUBLIC_VERUS_YOUTUBE}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="text-gray-400"
@@ -652,13 +659,18 @@ export function Footer() {
               © {new Date().getFullYear()} The Verus Protocol. All rights
               reserved.
             </div>
-            <div className="flex gap-4">
+            <div className="flex flex-row justify-between gap-2">
               <Link
                 href="/privacy-policy"
                 className="text-[12px] text-gray-400"
               >
                 Privacy Policy
               </Link>
+              {env.NEXT_PUBLIC_HOST_ID !== undefined && (
+                <p className="text-[12px] text-gray-400">
+                  ({env.NEXT_PUBLIC_HOST_ID})
+                </p>
+              )}
             </div>
           </div>
         </div>

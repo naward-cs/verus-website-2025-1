@@ -1,5 +1,6 @@
-'use client'
+import Image from 'next/image'
 
+import {env} from '@/configs/env'
 import {Coins, Search} from 'lucide-react'
 import {
   LuArrowLeftRight,
@@ -11,7 +12,7 @@ import {
   LuWallet,
 } from 'react-icons/lu'
 
-import {NavLink} from './NavLink'
+import {NavLink} from '../nav_link'
 
 export function UseSection() {
   return (
@@ -41,15 +42,12 @@ export function UseSection() {
             href="/verusid"
             icon={
               <div className="relative">
-                <img
+                <Image
                   src="/img/at-full-black.svg"
                   alt="VerusID Icon"
-                  className="h-5 w-5 opacity-50 transition-all group-hover:opacity-100 group-hover:[filter:invert(31%)_sepia(93%)_saturate(1352%)_hue-rotate(213deg)_brightness(97%)_contrast(87%)] dark:hidden"
-                />
-                <img
-                  src="/img/at-full-black.svg"
-                  alt="VerusID Icon"
-                  className="hidden h-5 w-5 opacity-50 transition-all [filter:invert(100%)] group-hover:opacity-100 group-hover:[filter:invert(31%)_sepia(93%)_saturate(1352%)_hue-rotate(213deg)_brightness(97%)_contrast(87%)] dark:block"
+                  width={5}
+                  height={5}
+                  className="h-5 w-5 opacity-50 transition-all group-hover:opacity-100 group-hover:[filter:invert(31%)_sepia(93%)_saturate(1352%)_hue-rotate(213deg)_brightness(97%)_contrast(87%)]"
                 />
               </div>
             }
@@ -119,7 +117,7 @@ export function UseSection() {
             description="Validate signed messages & files"
           />
           <NavLink
-            href="https://insight.verus.io"
+            href={env.NEXT_PUBLIC_VERUS_EXPLORER}
             icon={
               <LuGlobe className="h-5 w-5 text-gray-500 transition-colors group-hover:text-verus-blue" />
             }
