@@ -1,5 +1,5 @@
-
 import type {HTMLElement} from 'node-html-parser'
+
 // Safely get element by exact CSS selector
 export const getElementBySelector = (root: HTMLElement, selector: string) => {
   try {

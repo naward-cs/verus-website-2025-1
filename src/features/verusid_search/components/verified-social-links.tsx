@@ -2,6 +2,7 @@ import {Suspense} from 'react'
 
 import {getVerificationStatus} from '@/features/verusid_search/lib/verification_status'
 import {verifyServiceProof} from '@/features/verusid_search/server/verify_service_proof'
+
 import {getIcon} from './icons'
 import {VerificationBadge} from './verification-badge'
 

@@ -5,6 +5,7 @@ import {MarketplaceContent} from '@/features/build/marketplace/content'
 import {FeaturesGrid} from '@/features/build/marketplace/features-grid'
 import {IoLogoDiscord} from 'react-icons/io5'
 
+import {BodyBgHeroImages} from '@/components/background-images'
 import {Footer} from '@/components/footer'
 
 export const metadata: Metadata = {
@@ -35,17 +36,7 @@ export const metadata: Metadata = {
 export default function MarketplacePage() {
   return (
     <main className="relative mt-[50px] h-[calc(100vh-50px)] w-screen md:mt-[70px] md:h-[calc(100vh-70px)]">
-      {/* Background images - one for light mode, one for dark mode */}
-      <img
-        src="/img/hero-bg2-2.webp"
-        className="absolute h-full w-full object-cover dark:hidden"
-        alt="Hero background - light"
-      />
-      <img
-        src="/img/bg-darkmode.webp"
-        className="absolute hidden h-full w-full object-cover dark:block"
-        alt="Hero background - dark"
-      />
+      <BodyBgHeroImages />
 
       <div className="relative z-10 flex flex-col items-center px-4 pt-[30px] md:pt-[70px]">
         <h1 className="text-center text-[32px] font-medium tracking-tight text-white md:text-[75px]">

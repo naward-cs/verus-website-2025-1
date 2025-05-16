@@ -1,9 +1,9 @@
 'use client'
 
+import type {Dispatch, ReactNode, SetStateAction} from 'react'
 import type {VerificationStatus} from '@/features/verusid_search/components/verification-badge'
 import type {KeyData} from '@/features/verusid_search/components/verified-crypto-addresses'
 import type {VerificationResult} from '@/features/verusid_search/lib/types'
-import type {Dispatch, ReactNode, SetStateAction} from 'react'
 
 import {createContext, useContext, useEffect, useState} from 'react'
 

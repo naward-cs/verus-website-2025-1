@@ -1,9 +1,9 @@
 // Brand assets component displaying logos, icons, and brand guidelines
 import Link from 'next/link'
 
+import {brand_assets} from '@/data/brand-assets'
 import {Download} from 'lucide-react'
 
-import {brand_assets} from '@/data/brand-assets'
 import BrandAssetFilterController from './brand-assets-filter-controller'
 import {BrandAssetsLogos} from './brand-assets-logos'
 import {BrandAssetsWallpaper} from './brand-assets-wallpaper'

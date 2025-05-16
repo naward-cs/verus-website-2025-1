@@ -5,7 +5,6 @@ import type {NetWallet} from '../utils/types'
 import {processAssets} from '../utils/process_assets'
 import {fetchDesktopWallets} from './fetch-desktop-wallets'
 
-
 type DesktopWallets = {
   mainnet: NetWallet
   testnet?: NetWallet

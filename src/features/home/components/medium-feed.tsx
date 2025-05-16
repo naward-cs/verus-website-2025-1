@@ -1,14 +1,8 @@
-import Image from 'next/image';
-import Link from 'next/link';
-
-
+import Image from 'next/image'
+import Link from 'next/link'
 
 import {getMediumArticles} from '@/features/home/server/get-articles'
 import {Calendar, ExternalLink} from 'lucide-react'
-
-
-
-
 
 export default async function MediumFeed() {
   const articles = await getMediumArticles()

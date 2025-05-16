@@ -1,10 +1,7 @@
 'use server'
 
-import {fetchBridgePrices} from "./fetch-bridge-prices"
-import {fetchCoinpaprikaPrices} from "./fetch-conpaprika-prices"
-
-
-
+import {fetchBridgePrices} from './fetch-bridge-prices'
+import {fetchCoinpaprikaPrices} from './fetch-conpaprika-prices'
 
 // When API fails, return undefined values instead of fallback data
 const ERROR_RESPONSE = {
@@ -40,7 +37,7 @@ export const getBridgeData = async () => {
     console.log('Fetching Verus Bridge data...')
 
     const [verusResponse, coinpaprikaPrices] = await Promise.all([
-  fetchBridgePrices(),
+      fetchBridgePrices(),
       fetchCoinpaprikaPrices(),
     ])
     //lets check for errors
@@ -63,9 +60,7 @@ export const getBridgeData = async () => {
       ) {
         // Calculate percentage difference: (bridge_price - coinpaprika_price) / coinpaprika_price * 100
         const priceDiff =
-          ((verusResponse.prices[
-            currency
-          ] -
+          ((verusResponse.prices[currency] -
             coinpaprikaPrices[currency as keyof typeof coinpaprikaPrices]) /
             coinpaprikaPrices[currency as keyof typeof coinpaprikaPrices]) *
           100

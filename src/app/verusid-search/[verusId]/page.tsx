@@ -1,5 +1,5 @@
-import {permanentRedirect} from 'next/navigation'
 import {Suspense} from 'react'
+import {permanentRedirect} from 'next/navigation'
 
 import {DisplayProfile} from '@/features/verusid_search/components/display-profile'
 import {LoadingProfile} from '@/features/verusid_search/components/loading-profile'

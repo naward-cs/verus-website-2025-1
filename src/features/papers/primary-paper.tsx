@@ -1,16 +1,11 @@
-import {papers} from "@/data/papers"
-
-
+import {papers} from '@/data/papers'
 import {ArrowRight, CheckCircle, FileText} from 'lucide-react'
-
-
 
 export function PrimaryPaper() {
   const paper = papers.find((p) => p.isPrimary)
-  if(!paper) return null
+  if (!paper) return null
   return (
-    
-    <div className="mb-8 group relative overflow-hidden rounded-2xl border border-blue-100/80 bg-white/70 p-6 shadow-sm backdrop-blur-sm transition-all duration-300 dark:border-blue-900/30 dark:bg-gray-900/50 md:p-8">
+    <div className="group relative mb-8 overflow-hidden rounded-2xl border border-blue-100/80 bg-white/70 p-6 shadow-sm backdrop-blur-sm transition-all duration-300 dark:border-blue-900/30 dark:bg-gray-900/50 md:p-8">
       <div className="absolute left-6 top-6 h-32 w-32 rounded-full bg-blue-400/5 blur-xl dark:bg-blue-400/10"></div>
       <div className="absolute -bottom-8 -right-8 h-32 w-32 rounded-full bg-blue-400/5 blur-xl dark:bg-blue-400/10"></div>
 

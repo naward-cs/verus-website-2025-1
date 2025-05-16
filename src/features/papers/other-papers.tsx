@@ -1,4 +1,5 @@
 import type {PapersType} from '@/data/papers'
+
 import {papers} from '@/data/papers'
 import {ArrowRight, FileText} from 'lucide-react'
 

@@ -3,8 +3,8 @@ import 'server-only'
 import type {VerificationRequest, VerificationResult} from '../lib/types'
 
 import ProofsJSON from '@/data/vdxfid/proofsJSON'
-
 import {verifyMessage} from '@/features/verify/server/verify-message'
+
 import {isValidUrl, verusBlockchainProof, verusWebProof} from '../lib/utils'
 
 /**

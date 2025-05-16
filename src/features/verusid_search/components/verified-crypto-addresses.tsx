@@ -2,10 +2,11 @@
 
 import {useEffect, useState} from 'react'
 
-import {cn} from '@/lib/utils'
-
 import {useVerifyCryptoAddress} from '@/features/verusid_search/hooks/crypto-addresses'
 import {formatAddress} from '@/features/verusid_search/lib/utils'
+
+import {cn} from '@/lib/utils'
+
 import {getIcon} from './icons'
 import {ProofCard} from './proof-card'
 import {VerificationBadge} from './verification-badge'

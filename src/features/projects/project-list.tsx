@@ -1,20 +1,10 @@
 import type {ProjectCardProps, ProjectCategory} from './project-card'
 
-
-
 import {projects} from '@/data/projects'
-
-
 
 import {Tabs, TabsContent, TabsList, TabsTrigger} from '@/components/ui/tabs'
 
-
-
 import {ProjectCard} from './project-card'
-
-
-
-
 
 export function ProjectList() {
   const categories: ProjectCategory[] = ['Dashboard', 'Technology', 'Wallet']

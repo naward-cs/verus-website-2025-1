@@ -2,8 +2,8 @@
 
 import type {OS} from '@/features/wallet/utils/get_os_icon'
 
-import Image from 'next/image'
 import {useState} from 'react'
+import Image from 'next/image'
 
 import {env} from '@/configs/env'
 import {getOSIcon} from '@/features/wallet/utils/get_os_icon'

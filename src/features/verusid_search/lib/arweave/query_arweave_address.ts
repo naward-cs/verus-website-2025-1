@@ -48,7 +48,7 @@ export const queryArweaveAddress = async (address: string) => {
       )
 
       // Process and find the right transaction
-      if (!!ownerResult.length) {
+      if (ownerResult.length) {
         console.log(
           'queryArweaveAddress: Searching for transaction with tag:',
           publicVdxfid

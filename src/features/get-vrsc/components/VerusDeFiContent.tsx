@@ -1,5 +1,5 @@
-import Link from 'next/link'
 import {Suspense} from 'react'
+import Link from 'next/link'
 
 import {env} from '@/configs/env'
 import {ArrowLeftRight, Coins, ExternalLink} from 'lucide-react'

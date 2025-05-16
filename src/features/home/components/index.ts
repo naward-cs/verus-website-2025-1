@@ -8,4 +8,3 @@ export * from './medium-articles-section'
 export * from './participation-section'
 export * from './protocol-section'
 export * from './verusid-section'
-

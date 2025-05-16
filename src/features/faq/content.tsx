@@ -1,4 +1,5 @@
 import {faqData} from '@/data/faq'
+
 import {FaqCategories} from './faq-categories'
 
 // Server component that provides the data

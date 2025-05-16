@@ -1,20 +1,9 @@
-
-
-
 import 'server-only'
-
-
-
-
-
 
 import {env} from '@/configs/env'
 import {parse} from 'node-html-parser'
+
 import {getElementBySelector} from '../get-element-by-selector'
-
-
-
-
 
 /*
  * Server-side fetching Verus protocol statistics
@@ -25,8 +14,7 @@ import {getElementBySelector} from '../get-element-by-selector'
  * - Returns raw data in standard format for UI consumption
  */
 
-
-export async function fetchProtocolInfo(){
+export async function fetchProtocolInfo() {
   const response = await fetch(env.NEXT_PUBLIC_CRYPTO_DASHBOARD, {
     cache: 'no-store',
   })

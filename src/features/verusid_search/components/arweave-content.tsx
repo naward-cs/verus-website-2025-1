@@ -1,14 +1,7 @@
-;
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import {getArweaveContent} from '@/features/verusid_search/server/get_arweave_content'
 
-
-
 import {ArweaveContentCard} from './arweave-content-card'
-
-
-
-
 
 export async function ArweaveContent({content}: {content: any}) {
   let results: {result: any; error: string | undefined} = {

@@ -1,7 +1,7 @@
 'use client'
 
-import Image from 'next/image'
 import {useEffect, useState} from 'react'
+import Image from 'next/image'
 
 // Define image paths for both rows
 const row1Images = Array.from(

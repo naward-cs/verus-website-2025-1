@@ -5,6 +5,7 @@ import {useState} from 'react'
 import {useVerifyCryptoAddress} from '@/features/verusid_search/hooks/crypto-addresses'
 import {getExplorerLink} from '@/features/verusid_search/lib/explorer_links'
 import {getSignatureStatuses} from '@/features/verusid_search/lib/signature_status'
+
 import {VerificationBadge} from './verification-badge'
 
 export function ProofCard({selected}: {selected: string}) {

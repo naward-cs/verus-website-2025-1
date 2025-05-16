@@ -1,4 +1,3 @@
-;
 // Ensures the page is rendered dynamically
 
 import type {Metadata} from 'next'

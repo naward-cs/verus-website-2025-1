@@ -1,6 +1,6 @@
+import type {ReactNode} from 'react'
 import type {ProfileJSONType} from '@/features/verusid_search/lib/create_verus_profile'
 import type {VerusID} from '@/features/verusid_search/server/fetch_verus_id'
-import type {ReactNode} from 'react'
 
 import {Tabs, TabsContent, TabsList, TabsTrigger} from '@/components/ui/tabs'
 

@@ -1,8 +1,7 @@
-import type {Metadata} from 'next'
 import type {ReactNode} from 'react'
+import type {Metadata} from 'next'
 
 import {Search} from 'lucide-react'
-
 
 import {BodyBgSmallImages} from '@/components/background-images'
 import {Footer} from '@/components/footer'

@@ -1,17 +1,9 @@
 import type {Metadata} from 'next'
 
-
-
 import {TimelineClient} from '@/features/milestones/timeline'
-
-
 
 import {BodyBgSmallImages} from '@/components/background-images'
 import {Footer} from '@/components/footer'
-
-
-
-
 
 export const metadata: Metadata = {
   title: 'Verus Milestones | Verus',

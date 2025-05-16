@@ -1,8 +1,7 @@
 import Link from 'next/link'
 
-import {Calendar, ExternalLink} from 'lucide-react'
-
 import {getMediaItemOgCard} from '@/features/media/server/get-media-og-card'
+import {Calendar, ExternalLink} from 'lucide-react'
 
 export async function MediaItem({item_info}: {item_info: string}) {
   const item = await getMediaItemOgCard(item_info)

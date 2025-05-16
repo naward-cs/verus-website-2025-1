@@ -1,20 +1,12 @@
 import type {Metadata} from 'next'
 
-
-
+import {env} from '@/configs/env'
 import {VerusIDContent} from '@/features/build/verusid/content'
 import {FeaturesGrid} from '@/features/build/verusid/features-grid'
 import {IoLogoDiscord} from 'react-icons/io5'
 
-
-
 import {BodyBgHeroImages} from '@/components/background-images'
 import {Footer} from '@/components/footer'
-import {env} from '@/configs/env'
-
-
-
-
 
 export const metadata: Metadata = {
   title: 'Build with VerusID | Verus',

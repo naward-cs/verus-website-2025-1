@@ -1,4 +1,5 @@
 import type {VDXFID} from './types'
+
 const ServicesJSON: Record<string, VDXFID> = {
   discord: {
     vdxfid: 'i7aKFqemraKTTjmnuxMTAL6LNnYSUKq9J4',

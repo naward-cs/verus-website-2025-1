@@ -1,9 +1,9 @@
 import type {Metadata} from 'next'
 
+import {GetStartedSections} from '@/features/get-started/sections'
 
 import {BodyBgSmallImages} from '@/components/background-images'
 import {Footer} from '@/components/footer'
-import {GetStartedSections} from '@/features/get-started/sections'
 
 export const metadata: Metadata = {
   title: 'Getting Started with Verus | Verus',

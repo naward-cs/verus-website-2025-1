@@ -1,5 +1,7 @@
-const fetch = require('node-fetch')
-const {parse} = require('node-html-parser')
+// const fetch = require('node-fetch')
+// const {parse} = require('node-html-parser')
+import fetch from 'node-fetch'
+import {parse} from 'node-html-parser'
 
 async function scrapeVerusVolume() {
   try {
@@ -59,7 +61,7 @@ async function scrapeVerusVolume() {
 }
 
 // Execute the function and log the result
-scrapeVerusVolume().then((volume) => {
+await scrapeVerusVolume().then((volume) => {
   if (volume) {
     console.log('Final result:', volume)
   } else {

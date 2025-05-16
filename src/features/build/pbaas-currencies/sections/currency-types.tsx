@@ -7,7 +7,7 @@ import {
   Percent,
   Repeat,
   Scale,
-  Wallet
+  Wallet,
 } from 'lucide-react'
 
 export function CurrencyTypes() {

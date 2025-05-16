@@ -73,7 +73,7 @@ export default function VerificationResult({
             errorList.length > 1 ? (
               <ul>
                 {errorList.map((e, i) => (
-                  <li key={`${i}-${e}`}>{e as string}</li>
+                  <li key={`${i}-${e as string}`}>{e as string}</li>
                 ))}
               </ul>
             ) : (

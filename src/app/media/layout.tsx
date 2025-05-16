@@ -1,4 +1,3 @@
-
 import {BodyBgSmallImages} from '@/components/background-images'
 import {Footer} from '@/components/footer'
 

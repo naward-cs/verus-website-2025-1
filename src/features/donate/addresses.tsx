@@ -1,8 +1,8 @@
 'use client'
 
+import {useState} from 'react'
 import Image from 'next/image'
 import Link from 'next/link'
-import {useState} from 'react'
 
 import {env} from '@/configs/env'
 import {Check, Copy} from 'lucide-react'
@@ -40,7 +40,7 @@ export function DonationAddresses() {
     },
   ]
 
-  const copyAddress = async(address: string) => {
+  const copyAddress = async (address: string) => {
     await navigator.clipboard.writeText(address)
     setCopiedAddress(address)
 

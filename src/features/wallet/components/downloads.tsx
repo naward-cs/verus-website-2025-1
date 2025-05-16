@@ -1,5 +1,5 @@
-import Image from 'next/image'
 import {Suspense} from 'react'
+import Image from 'next/image'
 
 import {CliDownloads} from './cli-wallet/downloads'
 import {CliDownloadsSkeleton} from './cli-wallet/downloads-skeleton'

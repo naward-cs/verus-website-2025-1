@@ -3,6 +3,7 @@ import Image from 'next/image'
 import {CryptoAddressProvider} from '@/features/verusid_search/hooks/crypto-addresses'
 import {getVerusProfile} from '@/features/verusid_search/server/get_verus_profile_info'
 import {validateVerusId} from '@/features/verusid_search/server/validate-verusId'
+
 import ProfileTabs from './profile-tabs'
 import {VerifiedCryptoAddresses} from './verified-crypto-addresses'
 import {VerifiedSocialLinks} from './verified-social-links'

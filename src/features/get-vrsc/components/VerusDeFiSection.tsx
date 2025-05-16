@@ -1,5 +1,4 @@
-import {getProtocolInfo} from "@/features/get-vrsc/server/get-protocol-info"
-
+import {getProtocolInfo} from '@/features/get-vrsc/server/get-protocol-info'
 
 export const VolumeSection = async () => {
   const protocolData = await getProtocolInfo()

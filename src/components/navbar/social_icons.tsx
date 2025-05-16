@@ -1,6 +1,4 @@
-import Link from 'next/link';
-
-
+import Link from 'next/link'
 
 import {env} from '@/configs/env'
 import {FaGithub} from 'react-icons/fa'

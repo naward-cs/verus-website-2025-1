@@ -3,9 +3,8 @@
 import {useEffect, useRef} from 'react'
 
 import {env} from '@/configs/env'
-import {BarChart3, Clock, Download} from 'lucide-react'
-
 import {milestones} from '@/data/timeline-data'
+import {BarChart3, Clock, Download} from 'lucide-react'
 
 /*
  * Updated:

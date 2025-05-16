@@ -1,25 +1,13 @@
+import type {OS} from '@/features/wallet/utils/get_os_icon'
 import type {NetWallet} from '@/features/wallet/utils/types'
-
-
 
 import Image from 'next/image'
 
-
-
 import {env} from '@/configs/env'
-import type {OS} from '@/features/wallet/utils/get_os_icon'
-
-
 
 import {cn} from '@/lib/utils'
 
-
-
 import {OsSelectorDropdown} from './os-selector-dropdown'
-
-
-
-
 
 type SelectorTab = {
   currentOS: string

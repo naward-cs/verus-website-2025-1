@@ -1,16 +1,10 @@
-import { Suspense } from 'react';
-
-
+import {Suspense} from 'react'
 
 import {developerResources} from '@/data/resource-list'
 
 import {CliSection} from './cli_section'
 import {ResourceCard} from './resource_card'
 import {TestnetSection} from './testnet_section'
-
-
-
-
 
 export function ResourcesGrid() {
   return (

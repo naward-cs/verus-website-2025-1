@@ -1,5 +1,5 @@
-import { ComparisonSection } from './sections/comparison-section';
-import { DeFiSection } from './sections/defi-section';
+import {ComparisonSection} from './sections/comparison-section'
+import {DeFiSection} from './sections/defi-section'
 import {TechnicalSection} from './sections/technical-section'
 
 export function DeFiContent() {

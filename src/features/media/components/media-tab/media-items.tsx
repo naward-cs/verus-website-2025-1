@@ -1,6 +1,7 @@
 import {Suspense} from 'react'
 
 import {mediaUrls} from '@/data/media-urls'
+
 import {MediaItem} from './media-item'
 import {MediaItemSkeleton} from './media-item-skeleton'
 

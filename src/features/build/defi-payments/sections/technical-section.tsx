@@ -1,10 +1,4 @@
-import {
-  ArrowUpDown,
-  FileCode,
-  Layers,
-  QrCode,
-  Wallet
-} from 'lucide-react'
+import {ArrowUpDown, FileCode, Layers, QrCode, Wallet} from 'lucide-react'
 
 /*
  * Updated:

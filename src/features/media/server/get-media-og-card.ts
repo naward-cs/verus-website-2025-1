@@ -16,7 +16,7 @@ export async function getMediaItemOgCard(url: string) {
   try {
     const metadata = await FetchMediaItemInfo(url)
     console.log(metadata)
-    if (!!metadata.error) {
+    if (metadata.error) {
       throw new Error('Failed to fetch metadata')
     }
 
