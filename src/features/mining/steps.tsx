@@ -1,5 +1,6 @@
-'use client'
+import Image from 'next/image'
 
+import {env} from '@/configs/env'
 import {Check, ExternalLink} from 'lucide-react'
 import {IoLogoDiscord} from 'react-icons/io5'
 
@@ -39,7 +40,7 @@ export function MiningSteps() {
             <p className="text-[14px] leading-[1.8] tracking-tight text-gray-700 dark:text-gray-300 md:text-[15px]">
               It is a provable solution to 51% hash attacks.{' '}
               <a
-                href="https://verus.io/papers/VerusPoP.pdf"
+                href="/papers/VerusPoP.pdf"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-verus-blue transition-colors hover:underline dark:text-blue-400"
@@ -145,9 +146,11 @@ export function MiningSteps() {
 
               {/* Image */}
               <div className="flex w-full justify-center md:mt-8 md:w-auto">
-                <img
+                <Image
                   src="/img/wallets-small.png"
                   alt="Verus Wallets"
+                  height={120}
+                  width={120}
                   className="h-[120px] w-auto object-contain dark:brightness-90 md:h-[180px]"
                 />
               </div>
@@ -175,7 +178,7 @@ export function MiningSteps() {
             </div>
 
             <a
-              href="https://docs.verus.io/economy/start-mining.html#mining-software)"
+              href={`${env.NEXT_PUBLIC_VERUS_DOCS}/mining/mining-software.html`}
               target="_blank"
               rel="noopener noreferrer"
               className="group mt-8 flex h-[40px] w-fit items-center justify-center gap-2 rounded-lg border border-blue-200 bg-white/80 px-8 text-[14px] font-medium text-verus-blue backdrop-blur-sm transition-all duration-300 hover:-translate-y-[1px] hover:border-blue-300 hover:text-blue-600 hover:shadow-lg dark:border-blue-800/60 dark:bg-blue-950/80 dark:text-blue-300 dark:hover:border-blue-700 dark:hover:text-blue-200 dark:hover:shadow-blue-950/50 md:h-[50px] md:text-[16px]"
@@ -194,7 +197,7 @@ export function MiningSteps() {
 
         {/* Discord Help Box */}
         <a
-          href="https://www.verus.io/discord"
+          href={env.NEXT_PUBLIC_DISCORD}
           target="_blank"
           rel="noopener noreferrer"
           className="group flex h-[40px] w-full items-center gap-3 bg-[#444EE5] p-4 transition-all duration-300 hover:-translate-y-[1px] hover:bg-[#3942cc] hover:shadow-md md:h-[50px] md:rounded-lg md:p-6"
@@ -239,7 +242,7 @@ export function MiningSteps() {
             </div>
 
             <a
-              href="https://docs.verus.io/mining/mining-software.html"
+              href={`${env.NEXT_PUBLIC_VERUS_DOCS}/mining/mining-software.html`}
               target="_blank"
               rel="noopener noreferrer"
               className="group mt-8 flex h-[40px] w-fit items-center justify-center gap-2 rounded-lg border border-blue-200 bg-white/80 px-8 text-[14px] font-medium text-verus-blue backdrop-blur-sm transition-all duration-300 hover:-translate-y-[1px] hover:border-blue-300 hover:text-blue-600 hover:shadow-lg dark:border-blue-800/60 dark:bg-blue-950/80 dark:text-blue-300 dark:hover:border-blue-700 dark:hover:text-blue-200 dark:hover:shadow-blue-950/50 md:h-[50px] md:text-[16px]"

@@ -1,4 +1,6 @@
+import Image from 'next/image'
 
+import {env} from '@/configs/env'
 import {Check, ExternalLink} from 'lucide-react'
 import {FaYoutube} from 'react-icons/fa'
 import {IoLogoDiscord} from 'react-icons/io5'
@@ -153,9 +155,11 @@ export function StakingSteps() {
 
               {/* Image */}
               <div className="flex w-full justify-center md:mt-8 md:w-auto">
-                <img
+                <Image
                   src="/img/verus-desktop-cli.png"
                   alt="Verus Desktop"
+                  width={120}
+                  height={180}
                   className="h-[120px] w-auto object-contain dark:brightness-90 md:h-[180px]"
                 />
               </div>
@@ -221,7 +225,7 @@ export function StakingSteps() {
 
         {/* Discord Help Box */}
         <a
-          href="https://www.verus.io/discord"
+          href={env.NEXT_PUBLIC_DISCORD}
           target="_blank"
           rel="noopener noreferrer"
           className="group flex h-[40px] w-full items-center gap-3 bg-[#444EE5] p-4 transition-all duration-300 hover:-translate-y-[1px] hover:bg-[#3942cc] hover:shadow-md md:h-[50px] md:rounded-lg md:p-6"
