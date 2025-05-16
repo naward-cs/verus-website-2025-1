@@ -1,6 +1,6 @@
-// Scrolling image carousel for community page
 'use client'
 
+import Image from 'next/image'
 import {useEffect, useState} from 'react'
 
 // Define image paths for both rows
@@ -12,7 +12,7 @@ const row2Images = Array.from(
   {length: 9},
   (_, i) => `/img/community/${i + 11}.webp`
 )
-
+// Scrolling image carousel for community page
 export function ImageMarquee() {
   // State to track if component has mounted (avoids hydration issues)
   const [isMounted, setIsMounted] = useState(false)
@@ -45,9 +45,11 @@ export function ImageMarquee() {
                     key={`row1-${index}`}
                     className="mx-2 h-[120px] w-[180px] flex-shrink-0 overflow-hidden rounded-xl md:mx-4 md:h-[180px] md:w-[270px]"
                   >
-                    <img
+                    <Image
                       src={src}
                       alt={`Community Image ${(index % 10) + 1}`}
+                      width={266}
+                      height={266}
                       className="h-full w-full object-cover"
                     />
                   </div>
@@ -66,9 +68,11 @@ export function ImageMarquee() {
                     key={`row2-${index}`}
                     className="mx-2 h-[120px] w-[180px] flex-shrink-0 overflow-hidden rounded-xl md:mx-4 md:h-[180px] md:w-[270px]"
                   >
-                    <img
+                    <Image
                       src={src}
                       alt={`Community Image ${(index % 9) + 11}`}
+                      width={266}
+                      height={266}
                       className="h-full w-full object-cover"
                     />
                   </div>

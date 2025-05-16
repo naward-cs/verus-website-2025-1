@@ -1,66 +1,13 @@
-'use client'
-
-import {useState} from 'react'
 import Link from 'next/link'
 
-import {Code, Copy, DollarSign, FileText, Users} from 'lucide-react'
+import {env} from '@/configs/env'
+import {DollarSign} from 'lucide-react'
 import {IoLogoDiscord, IoLogoGithub} from 'react-icons/io5'
 
-// Main ways to contribute to Verus
-interface ContributionWay {
-  title: string
-  description: string
-  icon: React.ReactNode
-  examples: string[]
-}
+import {contributionWays} from './contribution-ways'
+import {ContributeCopyButton} from './copy-button'
 
 export function ContributionWays() {
-  const [copied, setCopied] = useState(false)
-
-  const handleCopy = () => {
-    navigator.clipboard.writeText('Verus Coin Foundation@')
-    setCopied(true)
-    setTimeout(() => setCopied(false), 2000)
-  }
-
-  const contributionWays: ContributionWay[] = [
-    {
-      title: 'Technical Contributions',
-      description: 'Help improve the code, documentation, and infrastructure.',
-      icon: <Code className="h-6 w-6 text-blue-600 dark:text-blue-400" />,
-      examples: [
-        'Develop the core protocol or applications',
-        'Test and report bugs',
-        'Improve documentation',
-        'Build tools and services',
-      ],
-    },
-    {
-      title: 'Community Support',
-      description: 'Join discussions and help others learn about Verus.',
-      icon: <Users className="h-6 w-6 text-purple-600 dark:text-purple-400" />,
-      examples: [
-        'Help new users get started',
-        'Translate content',
-        'Participate in community discussions',
-        'Organize community events',
-      ],
-    },
-    {
-      title: 'Financial Support',
-      description: 'Donate to help fund ongoing development and operations.',
-      icon: (
-        <DollarSign className="h-6 w-6 text-yellow-600 dark:text-yellow-400" />
-      ),
-      examples: [
-        'Donate cryptocurrencies',
-        'Sponsor specific projects',
-        'Mine or stake to support the network',
-        'Fund marketing initiatives',
-      ],
-    },
-  ]
-
   return (
     <div className="px-4 md:px-0">
       {/* Simplified contribution ways */}
@@ -134,7 +81,7 @@ export function ContributionWays() {
           </Link>
 
           <Link
-            href="https://www.verus.io/discord"
+            href={env.NEXT_PUBLIC_DISCORD}
             target="_blank"
             rel="noopener noreferrer"
             className="group flex h-[40px] w-fit items-center justify-center rounded-lg border border-blue-200 bg-white/80 px-8 text-[14px] font-medium text-verus-blue backdrop-blur-sm transition-all duration-300 hover:-translate-y-[1px] hover:border-blue-300 hover:text-blue-600 hover:shadow-lg dark:border-blue-800/60 dark:bg-blue-950/80 dark:text-blue-300 dark:hover:border-blue-700 dark:hover:text-blue-200 dark:hover:shadow-blue-950/50 md:h-[50px] md:text-[16px]"
@@ -158,7 +105,7 @@ export function ContributionWays() {
           </Link>
 
           <Link
-            href="https://github.com/VerusCoin"
+            href={env.NEXT_PUBLIC_VERUS_GITHUB}
             target="_blank"
             rel="noopener noreferrer"
             className="group flex h-[40px] w-fit items-center justify-center rounded-lg border border-blue-200 bg-white/80 px-8 text-[14px] font-medium text-verus-blue backdrop-blur-sm transition-all duration-300 hover:-translate-y-[1px] hover:border-blue-300 hover:text-blue-600 hover:shadow-lg dark:border-blue-800/60 dark:bg-blue-950/80 dark:text-blue-300 dark:hover:border-blue-700 dark:hover:text-blue-200 dark:hover:shadow-blue-950/50 md:h-[50px] md:text-[16px]"
@@ -222,28 +169,7 @@ export function ContributionWays() {
           <h2 className="mb-4 text-[20px] font-medium text-gray-900 dark:text-white md:text-[24px]">
             Use as referral when registering VerusID:
           </h2>
-
-          <div className="mt-4 flex items-center">
-            <div className="relative flex-grow">
-              <div className="flex items-center justify-between rounded-lg border border-gray-300 bg-gray-50 p-3 pl-4 dark:border-gray-700 dark:bg-gray-800">
-                <span className="text-[16px] font-medium text-gray-800 dark:text-gray-200 md:text-[18px]">
-                  Verus Coin Foundation@
-                </span>
-                <button
-                  onClick={handleCopy}
-                  className="ml-2 rounded-md p-2 transition-colors hover:bg-gray-200 dark:hover:bg-gray-700"
-                >
-                  {copied ? (
-                    <div className="text-sm font-medium text-green-600 dark:text-green-400">
-                      Copied!
-                    </div>
-                  ) : (
-                    <Copy className="h-5 w-5 text-gray-600 dark:text-gray-400" />
-                  )}
-                </button>
-              </div>
-            </div>
-          </div>
+          <ContributeCopyButton />
         </div>
       </div>
     </div>
