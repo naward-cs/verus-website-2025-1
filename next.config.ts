@@ -33,6 +33,11 @@ const nextConfig: NextConfig = {
       fullUrl: true,
     },
   },
+  experimental: {
+    serverActions: {
+      allowedOrigins: [env.NEXT_PUBLIC_BASE_URL],
+    },
+  },
   async headers() {
     return [
       {
