@@ -1,4 +1,4 @@
-import type { NextConfig } from 'next';
+import type {NextConfig} from 'next'
 
 import {env} from '@/configs/env'
 
@@ -35,22 +35,10 @@ const nextConfig: NextConfig = {
   },
   experimental: {
     serverActions: {
-      allowedOrigins: [env.NEXT_PUBLIC_BASE_URL],
+      allowedOrigins: ['verus.io', '*.verus.io'],
     },
   },
-  async headers() {
-    return [
-      {
-        source: '/',
-        headers: [
-          {
-            key: 'Access-Control-Allow-Origin',
-            value: env.NEXT_PUBLIC_BASE_URL, // Set your origin
-          },
-        ],
-      },
-    ]
-  },
+
   async redirects() {
     return [
       {source: '/economy', destination: '/statistics', permanent: true},
