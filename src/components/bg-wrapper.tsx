@@ -1,5 +1,5 @@
-import Image from 'next/image'
-import {ReactNode} from 'react'
+import { ReactNode } from 'react';
+import Image from 'next/image';
 
 
 
@@ -13,13 +13,13 @@ export function BgWrapper({
   size?: 'small' | 'large'
 }) {
   return (
-    <>
+    <main className="mt-[50px] h-[cacl(100dvh-50px)] md:mt-[70px] md:h-[calc(100dvh-70px)]">
       {/* Background images - one for light mode, one for dark mode */}
       {size === 'large' ? (
         <>
           <Image
             src="/img/hero-bg2-2.webp"
-            className="absolute -z-10 mt-[50px] size-full object-cover dark:hidden md:mt-[30px]"
+            className="absolute -z-10 mt-[50px] size-full object-cover dark:hidden md:mt-[70px]"
             fill
             alt="Hero background - light"
             priority
@@ -28,7 +28,7 @@ export function BgWrapper({
             src="/img/bg-darkmode.webp"
             fill
             priority
-            className="absolute -z-10 mt-[50px] hidden size-full object-cover dark:block md:mt-[30px]"
+            className="absolute -z-10 mt-[50px] hidden size-full object-cover dark:block md:mt-[70px]"
             alt="Hero background - dark"
           />
         </>
@@ -48,8 +48,7 @@ export function BgWrapper({
           />
         </>
       )}
-      <main className="mt-[50px] md:mt-[70px]">{children}</main>
-    </>
+      <div>{children}</div>
+    </main>
   )
 }
-
