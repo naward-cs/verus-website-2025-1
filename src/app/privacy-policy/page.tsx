@@ -1,9 +1,10 @@
-import type {Metadata} from 'next'
+import type { Metadata } from 'next';
+
+
 
 import {env} from '@/configs/env'
 
-import {BodyBgSmallImages} from '@/components/background-images'
-import {Footer} from '@/components/footer'
+import {BgWrapper} from '@/components/bg-wrapper'
 
 export const metadata: Metadata = {
   title: 'Privacy Policy | Verus',
@@ -29,10 +30,8 @@ export const metadata: Metadata = {
 
 export default function PrivacyPolicyPage() {
   return (
-    <main className="relative mt-[50px] h-screen w-screen md:mt-[70px]">
-      <BodyBgSmallImages />
-
-      <div className="relative z-10 flex min-h-[calc(100vh-50px)] flex-col md:min-h-[calc(100vh-70px)]">
+    <BgWrapper size="small">
+      <div className="flex flex-col">
         <div className="flex-grow py-8 md:py-16">
           <div className="mx-auto max-w-[1220px] md:px-8">
             <div className="mb-8 px-4 md:mb-12 md:px-0">
@@ -113,9 +112,7 @@ export default function PrivacyPolicyPage() {
             </div>
           </div>
         </div>
-
-        <Footer />
       </div>
-    </main>
+    </BgWrapper>
   )
 }

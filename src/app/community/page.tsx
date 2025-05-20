@@ -4,8 +4,7 @@ import type {Metadata} from 'next'
 import {ImageMarquee} from '@/features/community/image-marquee'
 import {CommunityLinks} from '@/features/community/links'
 
-import {BodyBgSmallImages} from '@/components/background-images'
-import {Footer} from '@/components/footer'
+import {BgWrapper} from '@/components/bg-wrapper'
 
 export const metadata: Metadata = {
   title: 'Community Hub | Verus',
@@ -34,10 +33,8 @@ export const metadata: Metadata = {
 
 export default function CommunityPage() {
   return (
-    <main className="relative mt-[50px] h-screen w-screen md:mt-[70px]">
-      <BodyBgSmallImages />
-
-      <div className="relative z-10 flex min-h-[calc(100vh-50px)] flex-col md:min-h-[calc(100vh-70px)]">
+    <BgWrapper size="small">
+      <div className="flex flex-col">
         <div className="flex-grow py-8 md:py-16">
           <div className="mx-auto max-w-[1220px] md:px-8">
             {/* Community Links Section */}
@@ -47,9 +44,7 @@ export default function CommunityPage() {
           {/* Scrolling Image Gallery - Full width */}
           <ImageMarquee />
         </div>
-
-        <Footer />
       </div>
-    </main>
+    </BgWrapper>
   )
 }

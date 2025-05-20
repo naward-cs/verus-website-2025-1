@@ -1,12 +1,23 @@
-import type {NextConfig} from 'next'
+import type { NextConfig } from 'next';
 
-import {env} from '@/configs/env'
+
+
+import { env } from '@/configs/env';
+
+
+
+
 
 const _env = env
 const nextConfig: NextConfig = {
   /* config options here */
   // For development, we'll use the standard Next.js build
-  allowedDevOrigins: ['local-origin.dev', '*.local-origin.dev', 'localhost'],
+  allowedDevOrigins: [
+    'local-origin.dev',
+    '*.local-origin.dev',
+    'localhost',
+    '192.168.20.176',
+  ],
 
   // For production on Replit, we'll use the 'export' output
   compiler: {

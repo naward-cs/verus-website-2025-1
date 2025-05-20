@@ -1,9 +1,10 @@
-import type {Metadata} from 'next'
+import type { Metadata } from 'next';
+
+
 
 import {WalletComparison, WalletDownloads} from '@/features/wallet/components'
 
-import {BodyBgHeroImages} from '@/components/background-images'
-import {Footer} from '@/components/footer'
+import {BgWrapper} from '@/components/bg-wrapper'
 
 export const metadata: Metadata = {
   title: 'The Verus Wallet | Verus',
@@ -32,8 +33,7 @@ export const metadata: Metadata = {
 
 export default function WalletPage() {
   return (
-    <main className="relative mt-[50px] min-h-[calc(100vh-50px)] w-screen md:mt-[70px] md:min-h-[calc(100vh-70px)]">
-      <BodyBgHeroImages />
+    <BgWrapper>
       <div className="relative z-10 flex flex-col items-center md:px-4">
         <div className="pt-[30px] md:pt-[70px]">
           <h1 className="text-center text-[32px] font-medium leading-[1.1] tracking-tight text-white md:text-[75px]">
@@ -46,9 +46,7 @@ export default function WalletPage() {
 
         <WalletDownloads />
         <WalletComparison />
-
-        <Footer />
       </div>
-    </main>
+    </BgWrapper>
   )
 }

@@ -1,15 +1,12 @@
-import type {Metadata} from 'next'
+import type { Metadata } from 'next';
 
-import {env} from '@/configs/env'
-import {
-  FeaturesGrid,
-  SolutionsGrid,
-  VerusIDLoginSection,
-} from '@/features/build/build'
+
+
+import { env } from '@/configs/env';
+import { FeaturesGrid, SolutionsGrid, VerusIDLoginSection } from '@/features/build/build';
 import {IoLogoDiscord} from 'react-icons/io5'
 
-import {BodyBgHeroImages} from '@/components/background-images'
-import {Footer} from '@/components/footer'
+import {BgWrapper} from '@/components/bg-wrapper'
 
 // Define metadata for SEO
 export const metadata: Metadata = {
@@ -39,10 +36,8 @@ export const metadata: Metadata = {
 
 export default function BuildPage() {
   return (
-    <main className="relative mt-[50px] h-[calc(100vh-50px)] w-screen md:mt-[70px] md:h-[calc(100vh-70px)]">
-      <BodyBgHeroImages />
-
-      <div className="relative z-10 flex flex-col items-center px-4 pt-[30px] md:pt-[70px]">
+    <BgWrapper>
+      <div className="flex flex-col items-center px-4 pt-[30px] md:pt-[70px]">
         <h1 className="text-center text-[32px] font-medium tracking-tight text-white md:text-[75px]">
           Build dApps Without Limits
         </h1>
@@ -94,9 +89,7 @@ export default function BuildPage() {
         <div className="flex w-full justify-center">
           <VerusIDLoginSection />
         </div>
-
-        <Footer />
       </div>
-    </main>
+    </BgWrapper>
   )
 }

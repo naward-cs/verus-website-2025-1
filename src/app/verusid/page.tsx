@@ -1,12 +1,13 @@
-import type {Metadata} from 'next'
+import type { Metadata } from 'next';
 
-import {DigitalControlSection} from '@/features/verusid/digital-control-section'
-import {FeaturesGrid} from '@/features/verusid/features-grid'
-import {FutureSection} from '@/features/verusid/future-section'
+
+
+import { DigitalControlSection } from '@/features/verusid/digital-control-section';
+import { FeaturesGrid } from '@/features/verusid/features-grid';
+import { FutureSection } from '@/features/verusid/future-section';
 import {RealWorldSection} from '@/features/verusid/real-world-section'
 
-import {BodyBgHeroImages} from '@/components/background-images'
-import {Footer} from '@/components/footer'
+import {BgWrapper} from '@/components/bg-wrapper'
 
 export const metadata: Metadata = {
   title: 'Own Your Digital Future with VerusID | Verus',
@@ -35,10 +36,8 @@ export const metadata: Metadata = {
 
 export default function VerusIDPage() {
   return (
-    <main className="relative mt-[50px] h-[calc(100vh-50px)] w-screen md:mt-[70px] md:h-[calc(100vh-70px)]">
-      <BodyBgHeroImages />
-
-      <div className="relative z-10 flex flex-col items-center px-4">
+    <BgWrapper>
+      <div className="flex flex-col items-center px-4">
         <div className="pt-[30px] md:pt-[70px]">
           <div className="mx-auto max-w-[1220px] text-center">
             <h1 className="mb-4 text-center text-[32px] font-medium leading-[1.1] tracking-tight text-white md:mb-8 md:text-[60px]">
@@ -71,9 +70,7 @@ export default function VerusIDPage() {
         <div className="flex w-full justify-center">
           <FutureSection />
         </div>
-
-        <Footer />
       </div>
-    </main>
+    </BgWrapper>
   )
 }

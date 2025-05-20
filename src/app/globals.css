@@ -79,7 +79,7 @@
 @layer base {
   html,
   body {
-    @apply m-0 h-full w-full overflow-x-hidden p-0 antialiased;
+    @apply m-0 min-h-dvh overflow-x-hidden p-0 antialiased;
   }
 
   /* Dark mode background color */
@@ -87,9 +87,9 @@
     background-color: #020a1a;
   }
 
-  body > div {
+  /* body > div {
     @apply h-full;
-  }
+  } */
 }
 
 /* Community page vertical scrolling animations */

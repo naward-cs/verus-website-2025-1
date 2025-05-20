@@ -1,11 +1,12 @@
-import type {Metadata} from 'next'
+import type { Metadata } from 'next';
 
-import {env} from '@/configs/env'
-import {BridgeContent} from '@/features/ethereum-bridge/components/content'
+
+
+import { env } from '@/configs/env';
+import { BridgeContent } from '@/features/ethereum-bridge/components/content';
 import {ExternalLink} from 'lucide-react'
 
-import {BodyBgHeroImages} from '@/components/background-images'
-import {Footer} from '@/components/footer'
+import {BgWrapper} from '@/components/bg-wrapper'
 
 export const dynamic = 'force-dynamic'
 export const metadata: Metadata = {
@@ -35,11 +36,8 @@ export const metadata: Metadata = {
 
 export default function EthereumBridgePage() {
   return (
-    <main className="relative mt-[50px] h-[calc(100vh-50px)] w-screen md:mt-[70px] md:h-[calc(100vh-70px)]">
-      {/* Background images - one for light mode, one for dark mode */}
-      <BodyBgHeroImages />
-
-      <div className="relative z-10 flex flex-col items-center px-4 pt-[30px] md:pt-[70px]">
+    <BgWrapper>
+      <div className="flex flex-col items-center px-4 pt-[30px] md:pt-[70px]">
         <h1 className="text-center text-[32px] font-medium leading-[1.1] tracking-tight text-white md:text-[75px]">
           Verus-Ethereum Bridge
         </h1>
@@ -63,9 +61,7 @@ export default function EthereumBridgePage() {
         <div className="flex w-full justify-center">
           <BridgeContent />
         </div>
-
-        <Footer />
       </div>
-    </main>
+    </BgWrapper>
   )
 }

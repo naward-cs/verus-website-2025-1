@@ -1,12 +1,13 @@
-import type {Metadata} from 'next'
+import type { Metadata } from 'next';
 
-import {env} from '@/configs/env'
-import {VerusIDContent} from '@/features/build/verusid/content'
-import {FeaturesGrid} from '@/features/build/verusid/features-grid'
+
+
+import { env } from '@/configs/env';
+import { VerusIDContent } from '@/features/build/verusid/content';
+import { FeaturesGrid } from '@/features/build/verusid/features-grid';
 import {IoLogoDiscord} from 'react-icons/io5'
 
-import {BodyBgHeroImages} from '@/components/background-images'
-import {Footer} from '@/components/footer'
+import {BgWrapper} from '@/components/bg-wrapper'
 
 export const metadata: Metadata = {
   title: 'Build with VerusID | Verus',
@@ -39,19 +40,15 @@ export const metadata: Metadata = {
  */
 export default function VerusIDPage() {
   return (
-    <main className="relative mt-[50px] h-[calc(100vh-50px)] w-screen md:mt-[70px] md:min-h-[calc(100vh-70px)]">
-      <BodyBgHeroImages />
-
-      <div className="relative z-10 flex flex-col items-center px-4">
-        <div className="pt-[30px] md:pt-[70px]">
-          <h1 className="text-center text-[32px] font-medium leading-[1.1] tracking-tight text-white md:text-[75px]">
-            Build with VerusID
-          </h1>
-          <p className="mx-auto max-w-[400px] pt-[10px] text-center text-[16px] font-normal leading-snug tracking-tight text-white opacity-90 md:max-w-[900px] md:pt-[20px] md:text-[32px]">
-            Build dApps with self-sovereign identity, namespace control, data
-            storage, and blockchain interoperability—no smart contracts needed.
-          </p>
-        </div>
+    <BgWrapper>
+      <div className="flex flex-col items-center px-4 pt-[30px] md:pt-[70px]">
+        <h1 className="text-center text-[32px] font-medium leading-[1.1] tracking-tight text-white md:text-[75px]">
+          Build with VerusID
+        </h1>
+        <p className="mx-auto max-w-[400px] pt-[10px] text-center text-[16px] font-normal leading-snug tracking-tight text-white opacity-90 md:max-w-[900px] md:pt-[20px] md:text-[32px]">
+          Build dApps with self-sovereign identity, namespace control, data
+          storage, and blockchain interoperability—no smart contracts needed.
+        </p>
 
         <div className="mb-16 mt-8 flex flex-col gap-4 md:mb-32 md:flex-row">
           <a
@@ -92,9 +89,7 @@ export default function VerusIDPage() {
         <div className="flex w-full justify-center">
           <VerusIDContent />
         </div>
-
-        <Footer />
       </div>
-    </main>
+    </BgWrapper>
   )
 }

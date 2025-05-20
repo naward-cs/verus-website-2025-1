@@ -1,16 +1,12 @@
-import type {Metadata} from 'next'
+import type { Metadata } from 'next';
 
-import {
-  ConsensusSection,
-  PrivacySection,
-  ScalingSection,
-  SmartTransactionsSection,
-  TokenomicsSection,
-  VisionMissionSection,
-} from '@/features/intro/components'
 
-import {BodyBgHeroImages} from '@/components/background-images'
-import {Footer} from '@/components/footer'
+
+import { ConsensusSection, PrivacySection, ScalingSection, SmartTransactionsSection, TokenomicsSection, VisionMissionSection } from '@/features/intro/components';
+
+
+
+import {BgWrapper} from '@/components/bg-wrapper'
 
 export const metadata: Metadata = {
   title: 'The Protocol for Everyone | Verus',
@@ -39,10 +35,8 @@ export const metadata: Metadata = {
 
 export default function IntroPage() {
   return (
-    <main className="relative mt-[50px] h-[calc(100vh-50px)] w-screen md:mt-[70px] md:h-[calc(100vh-70px)]">
-      <BodyBgHeroImages />
-
-      <div className="relative z-10 flex flex-col items-center px-4">
+    <BgWrapper>
+      <div className="flex flex-col items-center px-4">
         <div className="pt-[30px] md:pt-[70px]">
           <div className="mx-auto max-w-[1220px] text-center">
             <h1 className="text-center text-[32px] font-medium leading-[1.1] tracking-tight text-white md:text-[75px]">
@@ -78,9 +72,7 @@ export default function IntroPage() {
         <div className="flex w-full justify-center">
           <SmartTransactionsSection />
         </div>
-
-        <Footer />
       </div>
-    </main>
+    </BgWrapper>
   )
 }

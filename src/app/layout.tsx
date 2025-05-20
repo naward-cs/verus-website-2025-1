@@ -6,6 +6,7 @@ import {env} from '@/configs/env'
 import NextTopLoader from 'nextjs-toploader'
 
 import {DevUItools} from '@/components/devTools'
+import {Footer} from '@/components/footer'
 import {Header} from '@/components/header'
 import {ThemeProvider} from '@/components/providers/next_theme_provider'
 
@@ -35,6 +36,7 @@ export default function RootLayout({children}: {children: React.ReactNode}) {
         >
           <Header />
           {children}
+          <Footer />
           <DevUItools />
         </ThemeProvider>
       </body>

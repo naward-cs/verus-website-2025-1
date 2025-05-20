@@ -24,14 +24,12 @@ export default async function VerusIdPage(props: {
     return <SearchForm verusID={verusID} error={validId.error.message} />
   }
   return (
-    <>
-      <Suspense fallback={<LoadingProfile verusid={verusID} />}>
-        {/* Place Search Form here so that LoadingProfile suspsense can control searchForm also */}
-        <SearchForm verusID={verusID} />
-        {/* Display profile */}
-        <DisplayProfile verusId={verusID} />
-        {/* Results if Valid */}
-      </Suspense>
-    </>
+    <Suspense fallback={<LoadingProfile verusid={verusID} />}>
+      {/* Place Search Form here so that LoadingProfile suspsense can control searchForm also */}
+      <SearchForm verusID={verusID} />
+      {/* Display profile */}
+      <DisplayProfile verusId={verusID} />
+      {/* Results if Valid */}
+    </Suspense>
   )
 }

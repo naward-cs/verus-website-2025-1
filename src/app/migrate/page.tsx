@@ -2,8 +2,7 @@ import type {Metadata} from 'next'
 
 import {MigrateContent} from '@/features/migrate/content'
 
-import {BodyBgHeroImages} from '@/components/background-images'
-import {Footer} from '@/components/footer'
+import {BgWrapper} from '@/components/bg-wrapper'
 
 export const metadata: Metadata = {
   title: 'Migrate to Verus | Verus',
@@ -32,9 +31,8 @@ export const metadata: Metadata = {
 
 export default function MigratePage() {
   return (
-    <main className="relative mt-[50px] h-[calc(100vh-50px)] w-screen md:mt-[70px] md:h-[calc(100vh-70px)]">
-      <BodyBgHeroImages />
-      <div className="relative z-10 flex flex-col items-center px-4">
+    <BgWrapper>
+      <div className="flex flex-col items-center px-4">
         <div className="pt-[30px] md:pt-[70px]">
           <div className="mx-auto max-w-[1220px] text-center">
             <h1 className="text-center text-[32px] font-medium leading-[1.1] tracking-tight text-white md:text-[75px]">
@@ -50,9 +48,7 @@ export default function MigratePage() {
         <div className="flex w-full justify-center">
           <MigrateContent />
         </div>
-
-        <Footer />
       </div>
-    </main>
+    </BgWrapper>
   )
 }

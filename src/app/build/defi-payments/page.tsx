@@ -1,12 +1,13 @@
-import type {Metadata} from 'next'
+import type { Metadata } from 'next';
 
-import {env} from '@/configs/env'
-import {DeFiContent} from '@/features/build/defi-payments/content'
-import {FeaturesGrid} from '@/features/build/defi-payments/features-grid'
+
+
+import { env } from '@/configs/env';
+import { DeFiContent } from '@/features/build/defi-payments/content';
+import { FeaturesGrid } from '@/features/build/defi-payments/features-grid';
 import {IoLogoDiscord} from 'react-icons/io5'
 
-import {BodyBgHeroImages} from '@/components/background-images'
-import {Footer} from '@/components/footer'
+import {BgWrapper} from '@/components/bg-wrapper'
 
 export const metadata: Metadata = {
   title: 'DeFi & Payments | Verus',
@@ -35,10 +36,8 @@ export const metadata: Metadata = {
 
 export default function DeFiPaymentsPage() {
   return (
-    <main className="relative mt-[50px] h-[calc(100vh-50px)] w-screen md:mt-[70px] md:h-[calc(100vh-70px)]">
-      <BodyBgHeroImages />
-
-      <div className="relative z-10 flex flex-col items-center px-4 pt-[30px] md:pt-[70px]">
+    <BgWrapper>
+      <div className="flex flex-col items-center px-4 pt-[30px] md:pt-[70px]">
         <h1 className="text-center text-[32px] font-medium tracking-tight text-white md:text-[75px]">
           DeFi & Payments
         </h1>
@@ -86,9 +85,7 @@ export default function DeFiPaymentsPage() {
         <div className="flex w-full justify-center">
           <DeFiContent />
         </div>
-
-        <Footer />
       </div>
-    </main>
+    </BgWrapper>
   )
 }

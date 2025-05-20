@@ -3,6 +3,7 @@ import type {Metadata} from 'next'
 import {StakingSteps} from '@/features/staking/steps'
 
 import {BodyBgSmallImages} from '@/components/background-images'
+import {BgWrapper} from '@/components/bg-wrapper'
 import {Footer} from '@/components/footer'
 
 export const metadata: Metadata = {
@@ -33,10 +34,8 @@ export const metadata: Metadata = {
 // Updated Staking Page with dark mode support and improved styling
 export default function StakingPage() {
   return (
-    <main className="relative mt-[50px] h-[calc(100vh-50px)] w-screen md:mt-[70px] md:h-[calc(100vh-70px)]">
-      <BodyBgSmallImages />
-
-      <div className="relative z-10 flex min-h-[calc(100vh-50px)] flex-col md:min-h-[calc(100vh-70px)]">
+    <BgWrapper size="small">
+      <div className="flex flex-col">
         <div className="flex-grow py-8 md:py-16">
           <div className="mx-auto max-w-[1220px] md:px-8">
             <div className="mb-8 px-4 md:mb-16 md:px-0">
@@ -52,9 +51,7 @@ export default function StakingPage() {
             <StakingSteps />
           </div>
         </div>
-
-        <Footer />
       </div>
-    </main>
+    </BgWrapper>
   )
 }

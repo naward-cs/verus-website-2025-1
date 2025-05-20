@@ -1,11 +1,12 @@
-import {Suspense} from 'react'
+import { Suspense } from 'react';
 
-import {
-  BrandAssets,
-  MediaMentions,
-  PressKit,
-  TabBar,
-} from '@/features/media/components'
+
+
+import { BrandAssets, MediaMentions, PressKit, TabBar } from '@/features/media/components';
+
+
+
+
 
 type Params = Promise<{media_type: string}>
 type SearchParams = Promise<{[key: string]: string | undefined}>
@@ -30,10 +31,4 @@ export default async function Page(props: {
       </div>
     </div>
   )
-  // <div>
-  //       <TabBar activeTab="press-kit" />
-  //       <div className="py-8">
-  //         <PressKit />
-  //       </div>
-  //     </div>
 }

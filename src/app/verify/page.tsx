@@ -3,8 +3,7 @@ import type {Metadata} from 'next'
 import {VerificationForm} from '@/features/verify/components/verification-form'
 import {getVerification} from '@/features/verify/server/get-verification'
 
-import {BodyBgSmallImages} from '@/components/background-images'
-import {Footer} from '@/components/footer'
+import {BgWrapper} from '@/components/bg-wrapper'
 
 export const metadata: Metadata = {
   title: 'Verify Signatures | Verus',
@@ -42,10 +41,8 @@ export default async function VerifyPage({
   const updatedFormInfo = await getVerification(params)
 
   return (
-    <main className="relative mt-[50px] h-screen w-screen md:mt-[70px]">
-      <BodyBgSmallImages />
-
-      <div className="relative z-10 flex min-h-[calc(100vh-50px)] flex-col md:min-h-[calc(100vh-70px)]">
+    <BgWrapper size="small">
+      <div className="flex flex-col">
         <div className="flex-grow py-8 md:py-16">
           <div className="mx-auto max-w-[1220px] md:px-8">
             <div className="mb-8 px-4 md:mb-16 md:px-0">
@@ -61,9 +58,7 @@ export default async function VerifyPage({
             <VerificationForm formInfo={updatedFormInfo} />
           </div>
         </div>
-
-        <Footer />
       </div>
-    </main>
+    </BgWrapper>
   )
 }

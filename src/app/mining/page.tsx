@@ -1,9 +1,10 @@
-import type {Metadata} from 'next'
+import type { Metadata } from 'next';
+
+
 
 import {MiningSteps} from '@/features/mining/steps'
 
-import {BodyBgSmallImages} from '@/components/background-images'
-import {Footer} from '@/components/footer'
+import {BgWrapper} from '@/components/bg-wrapper'
 
 export const metadata: Metadata = {
   title: 'Start Mining VRSC | Verus',
@@ -33,10 +34,8 @@ export const metadata: Metadata = {
 // Updated Mining Page with dark mode support and improved styling
 export default function MiningPage() {
   return (
-    <main className="relative mt-[50px] h-screen w-screen md:mt-[70px]">
-      <BodyBgSmallImages />
-
-      <div className="relative z-10 flex min-h-[calc(100vh-50px)] flex-col md:min-h-[calc(100vh-70px)]">
+    <BgWrapper size="small">
+      <div className="flex flex-col">
         <div className="flex-grow py-8 md:py-16">
           <div className="mx-auto max-w-[1220px] md:px-8">
             <div className="mb-8 px-4 md:mb-16 md:px-0">
@@ -52,9 +51,7 @@ export default function MiningPage() {
             <MiningSteps />
           </div>
         </div>
-
-        <Footer />
       </div>
-    </main>
+    </BgWrapper>
   )
 }
