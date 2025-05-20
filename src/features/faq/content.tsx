@@ -14,7 +14,7 @@ export function FaqContent() {
         {faqData.map((category, idx) => (
           <div
             key={idx}
-            className="mb-16"
+            className="mb-16 scroll-m-24"
             id={category.title.toLowerCase().replace(/\s+/g, '-')}
           >
             <h2 className="mb-8 text-[20px] font-medium text-gray-900 dark:text-white md:text-[26px]">
