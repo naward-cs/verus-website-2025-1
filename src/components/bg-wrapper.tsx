@@ -1,9 +1,5 @@
-import { ReactNode } from 'react';
-import Image from 'next/image';
-
-
-
-
+import {ReactNode} from 'react'
+import Image from 'next/image'
 
 export function BgWrapper({
   children,
@@ -13,7 +9,7 @@ export function BgWrapper({
   size?: 'small' | 'large'
 }) {
   return (
-    <main className="mt-[50px] h-[cacl(100dvh-50px)] md:mt-[70px] md:h-[calc(100dvh-70px)]">
+    <>
       {/* Background images - one for light mode, one for dark mode */}
       {size === 'large' ? (
         <>
@@ -48,7 +44,7 @@ export function BgWrapper({
           />
         </>
       )}
-      <div>{children}</div>
-    </main>
+      <main className="mt-[50px] md:mt-[70px]">{children}</main>
+    </>
   )
 }
