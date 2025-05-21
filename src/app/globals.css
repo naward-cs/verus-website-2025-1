@@ -76,7 +76,7 @@
   @apply rounded-lg border border-gray-700/50 bg-gray-800/80 p-5;
 }
 
-body {
+html,body {
   scrollbar-width: thin;
   
 }
@@ -84,7 +84,7 @@ body {
 @layer base {
   html,
   body {
-    @apply m-0 h-dvh overflow-x-hidden p-0 antialiased;
+    @apply m-0 overflow-x-hidden p-0 antialiased;
   }
 
   /* Dark mode background color */

@@ -1,6 +1,8 @@
 import {ReactNode} from 'react'
 import Image from 'next/image'
 
+import {Footer} from './footer'
+
 export function BgWrapper({
   children,
   size = 'large',
@@ -51,6 +53,7 @@ export function BgWrapper({
         </>
       )}
       <main className="mt-[50px] md:mt-[70px]">{children}</main>
+      <Footer />
     </>
   )
 }

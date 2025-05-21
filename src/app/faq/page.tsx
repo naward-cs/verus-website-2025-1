@@ -1,8 +1,11 @@
-import type {Metadata} from 'next'
+import type { Metadata } from 'next';
+
+
 
 import {FaqContent} from '@/features/faq/content'
 
-import {BgWrapper} from '@/components/bg-wrapper'
+import {BodyBgSmallImages} from '@/components/background-images'
+import {Footer} from '@/components/footer'
 
 export const metadata: Metadata = {
   title: 'Frequently Asked Questions | Verus',
@@ -31,8 +34,10 @@ export const metadata: Metadata = {
 
 export default function FaqPage() {
   return (
-    <BgWrapper size="small">
-      <div className="flex flex-col">
+    <main className="relative mt-[50px] h-[calc(100vh-50px)] w-screen md:mt-[70px] md:h-[calc(100vh-70px)]">
+      <BodyBgSmallImages />
+
+      <div className="relative z-10 flex min-h-[calc(100vh-50px)] flex-col md:min-h-[calc(100vh-70px)]">
         <div className="flex-grow py-8 md:py-16">
           <div className="mx-auto max-w-[1220px] md:px-8">
             <h1 className="mb-8 px-4 text-[22px] font-medium leading-snug tracking-tight text-verus-blue dark:text-blue-400 md:mb-16 md:px-0 md:text-[40px]">
@@ -42,7 +47,9 @@ export default function FaqPage() {
             <FaqContent />
           </div>
         </div>
+
+        <Footer />
       </div>
-    </BgWrapper>
+    </main>
   )
 }
