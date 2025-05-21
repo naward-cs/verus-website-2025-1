@@ -1,4 +1,8 @@
-import he from 'he'
+import he from 'he';
+
+
+
+
 
 const hexCharsregex = /[0-9A-Fa-f]{6}/g
 const base64urlregex = /^[A-Za-z0-9_-]+$/
@@ -50,7 +54,7 @@ export const HexToBase64 = (hex: string) => {
   }
 }
 
-export const isValidUrl = (url: string) => {
+export const isValidUrl = (url: string): url is string => {
   // Basic validation
 
   try {

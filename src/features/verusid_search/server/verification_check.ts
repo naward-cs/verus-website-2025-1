@@ -1,11 +1,24 @@
-import 'server-only'
 
-import type {VerificationRequest, VerificationResult} from '../lib/types'
 
-import ProofsJSON from '@/data/vdxfid/proofsJSON'
-import {verifyMessage} from '@/features/verify/server/verify-message'
 
-import {isValidUrl, verusBlockchainProof, verusWebProof} from '../lib/utils'
+import 'server-only';
+
+
+
+import type { VerificationRequest, VerificationResult } from '../lib/types';
+
+
+
+import ProofsJSON from '@/data/vdxfid/proofsJSON';
+import { verifyMessage } from '@/features/verify/server/verify-message';
+
+
+
+import { isValidUrl, verusBlockchainProof, verusWebProof } from '../lib/utils';
+
+
+
+
 
 /**
  * Verifies a message against the Verus API
@@ -58,7 +71,11 @@ export async function verificationCheck(
     console.log(`Verification Check: Processing URL proof: ${verifyKey}`)
     try {
       console.log(`Verification Check: Fetching content from ${verifyKey}...`)
-      if (verifyKey.includes('reddit')) verifyKey += '.json'
+      if (verifyKey.includes('reddit')) {
+        if (verifyKey.slice(-1) === '/')
+          verifyKey = verifyKey.substring(0, verifyKey.length - 1)
+        verifyKey += '.json'
+      }
       const response = await fetch(verifyKey)
       if (!response.ok) {
         console.error(`URL fetch error: ${response.status} for ${verifyKey}`)
@@ -90,7 +107,7 @@ export async function verificationCheck(
           proofLink: verifyKey,
         }
       } else {
-        console.log('Verification Check: Could not parse proof from content.')
+        console.error('Verification Check: Could not parse proof from content.')
         result = {
           valid: 'error',
           message: 'Could not parse proof from content',

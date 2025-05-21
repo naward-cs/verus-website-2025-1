@@ -1,19 +1,13 @@
-import type { Metadata } from 'next';
+import type {Metadata} from 'next'
 
+import Image from 'next/image'
 
+import {env} from '@/configs/env'
+import {GreenContent} from '@/features/green/content'
+import {GreenFeaturesGrid} from '@/features/green/features-grid'
+import {IoLogoDiscord} from 'react-icons/io5'
 
-import Image from 'next/image';
-
-
-
-import { env } from '@/configs/env';
-import { GreenContent } from '@/features/green/content';
-import { GreenFeaturesGrid } from '@/features/green/features-grid';
-import { IoLogoDiscord } from 'react-icons/io5';
-
-
-
-
+import {Footer} from '@/components/footer'
 
 export const metadata: Metadata = {
   title: 'Environmentally Conscious Protocol | Verus',
@@ -107,6 +101,7 @@ export default function GreenPage() {
           </div>
         </div>
       </main>
+      <Footer />
     </>
   )
 }
