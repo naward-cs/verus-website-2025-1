@@ -15,16 +15,18 @@ export function BgWrapper({
         <>
           <Image
             src="/img/hero-bg2-2.webp"
-            className="absolute -z-10 mt-[50px] size-full object-cover dark:hidden md:mt-[70px]"
-            fill
+            className="absolute -z-10 mt-[50px] h-[calc(100dvh-50px)] w-full object-cover dark:hidden md:mt-[70px] md:h-[calc(100dvh-70px)]"
+            width={500}
+            height={500}
             alt="Hero background - light"
             priority
           />
           <Image
             src="/img/bg-darkmode.webp"
-            fill
+            width={500}
+            height={500}
             priority
-            className="absolute -z-10 mt-[50px] hidden size-full object-cover dark:block md:mt-[70px]"
+            className="absolute -z-10 mt-[50px] hidden h-[calc(100dvh-50px)] w-full object-cover dark:block md:mt-[70px] md:h-[calc(100dvh-70px)]"
             alt="Hero background - dark"
           />
         </>
@@ -33,14 +35,18 @@ export function BgWrapper({
           <Image
             src="/img/bg-small.webp"
             alt="Background - light"
-            fill
-            className="absolute -z-10 mt-[50px] size-full -translate-y-[300px] object-cover dark:hidden md:mt-[70px] md:-translate-y-[50px]"
+            width={500}
+            height={500}
+            priority
+            className="absolute -z-10 mt-[50px] h-4/5 w-full -translate-y-[300px] object-cover dark:hidden md:mt-[70px] md:-translate-y-[50px]"
           />
           <Image
             src="/img/bg-small-dark.webp"
             alt="Background - dark"
-            fill
-            className="absolute -z-10 mt-[50px] hidden size-full -translate-y-[300px] object-cover dark:block md:mt-[70px] md:-translate-y-[50px]"
+            width={500}
+            height={500}
+            priority
+            className="absolute -z-10 mt-[50px] hidden h-4/5 w-full -translate-y-[300px] object-cover dark:block md:mt-[70px] md:-translate-y-[50px]"
           />
         </>
       )}
