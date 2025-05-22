@@ -37,7 +37,7 @@ export function VerifiedSocialLinks({
           (s) => typeof s === 'string' && s.startsWith('http')
         )
 
-        if (!href) return null
+        if (!href || href.includes('reddit')) return null
         const icon = getIcon(key)
         return (
           <a
