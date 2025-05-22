@@ -1,9 +1,7 @@
 
 
 
-import 'server-only';
-
-
+import 'server-only'
 
 import type {VerificationRequest, VerificationResult} from '../lib/types'
 
@@ -11,10 +9,6 @@ import ProofsJSON from '@/data/vdxfid/proofsJSON'
 import {verifyMessage} from '@/features/verify/server/verify-message'
 
 import {isValidUrl, verusBlockchainProof, verusWebProof} from '../lib/utils'
-
-
-
-
 
 /**
  * Verifies a message against the Verus API
@@ -76,7 +70,7 @@ export async function verificationCheck(
       console.info('verification with VerifyKey response', response)
       if (!response.ok) {
         console.error(`URL fetch error: ${response.status} for ${verifyKey}`)
-        throw new Error(`URL fetch error: ${response.status}`)
+        throw new Error(`URL fetch error: ${response.status}:${response}`)
       }
       verifiedData = await response.text()
       console.info('verification with VerifyKey verifiedData', verifiedData)
