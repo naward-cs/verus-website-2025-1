@@ -9,5 +9,5 @@ export const verificationCheckCached = unstable_cache(
     return await verificationCheck(data)
   },
   ['verification_check'],
-  {revalidate: 12 * 60 * 60 * 1000, tags: ['verusId']} // 12 * 60 * 60 *1000 = 12 hours
+  {revalidate: 5 * 60 * 1000, tags: ['verusId']} // 12 * 60 * 60 *1000 = 12 hours
 )
