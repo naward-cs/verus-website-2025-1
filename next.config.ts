@@ -1,12 +1,6 @@
 import type { NextConfig } from 'next';
 
-
-
-import { env } from '@/configs/env';
-
-
-
-
+import {env} from '@/configs/env'
 
 const _env = env
 const nextConfig: NextConfig = {
@@ -48,7 +42,7 @@ const nextConfig: NextConfig = {
 
   experimental: {
     serverActions: {
-      allowedOrigins: ['verus.io', '*.verus.io', '192.168.20.176'],
+      allowedOrigins: ['verus.io', '*.verus.io'],
     },
   },
 
