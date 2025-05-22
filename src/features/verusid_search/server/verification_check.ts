@@ -1,7 +1,9 @@
 
 
 
-import 'server-only'
+import 'server-only';
+
+
 
 import type {VerificationRequest, VerificationResult} from '../lib/types'
 
@@ -66,11 +68,19 @@ export async function verificationCheck(
           verifyKey = verifyKey.substring(0, verifyKey.length - 1)
         verifyKey += '.json'
       }
-      const response = await fetch(verifyKey, {cache: 'no-cache'})
+      const response = await fetch(verifyKey, {
+        headers: {
+          'User-Agent':
+            'Mozilla/5.0 (compatible; VerusMediaBot/1.0; +https://verus.io)',
+        },
+        cache: 'no-cache',
+      })
       console.info('verification with VerifyKey response', response)
       if (!response.ok) {
         console.error(`URL fetch error: ${response.status} for ${verifyKey}`)
-        throw new Error(`URL fetch error: ${response.status}:${response}`)
+        throw new Error(
+          `URL fetch error: ${response.status}:${JSON.stringify(response)}`
+        )
       }
       verifiedData = await response.text()
       console.info('verification with VerifyKey verifiedData', verifiedData)
