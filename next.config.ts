@@ -10,7 +10,7 @@ const nextConfig: NextConfig = {
     'local-origin.dev',
     '*.local-origin.dev',
     'localhost',
-
+    '192.168.20.176',
     'verus.io',
     '*.verus.io',
   ],
@@ -24,7 +24,7 @@ const nextConfig: NextConfig = {
   compiler: {
     // Remove all console logs except console.error in production builds
     removeConsole: {
-      exclude: ['error', 'info'],
+      exclude: ['error'],
     },
   },
   images: {

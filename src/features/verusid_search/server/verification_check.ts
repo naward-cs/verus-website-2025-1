@@ -5,16 +5,12 @@ import 'server-only';
 
 
 
-import type { VerificationRequest, VerificationResult } from '../lib/types';
+import type {VerificationRequest, VerificationResult} from '../lib/types'
 
+import ProofsJSON from '@/data/vdxfid/proofsJSON'
+import {verifyMessage} from '@/features/verify/server/verify-message'
 
-
-import ProofsJSON from '@/data/vdxfid/proofsJSON';
-import { verifyMessage } from '@/features/verify/server/verify-message';
-
-
-
-import { isValidUrl, verusBlockchainProof, verusWebProof } from '../lib/utils';
+import {isValidUrl, verusBlockchainProof, verusWebProof} from '../lib/utils'
 
 
 
@@ -83,6 +79,7 @@ export async function verificationCheck(
         throw new Error(`URL fetch error: ${response.status}`)
       }
       verifiedData = await response.text()
+      console.info('verification with VerifyKey verifiedData', verifiedData)
       console.log(
         `Verification Check: Content fetched from ${verifyKey}. Length: ${verifiedData.length}`
       )
