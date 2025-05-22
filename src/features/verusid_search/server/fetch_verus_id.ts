@@ -50,6 +50,7 @@ export async function fetchVerusId(verusId: string): Promise<Return> {
         method: 'getidentity',
         params: [verusId],
       }),
+      next: {revalidate: 3600}, // Cache for 1 hour (single caching directive)
     }).then((res) => res.json())
   } catch {
     return {

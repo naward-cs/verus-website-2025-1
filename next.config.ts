@@ -1,4 +1,4 @@
-import type { NextConfig } from 'next';
+import type {NextConfig} from 'next'
 
 import {env} from '@/configs/env'
 
@@ -11,8 +11,15 @@ const nextConfig: NextConfig = {
     '*.local-origin.dev',
     'localhost',
     '192.168.20.176',
+    'verus.io',
+    '*.verus.io',
   ],
-
+  logging: {
+    fetches: {
+      hmrRefreshes: true,
+      fullUrl: true,
+    },
+  },
   // For production on Replit, we'll use the 'export' output
   compiler: {
     // Remove all console logs except console.error in production builds
@@ -32,12 +39,7 @@ const nextConfig: NextConfig = {
   eslint: {
     ignoreDuringBuilds: true,
   },
-  logging: {
-    fetches: {
-      hmrRefreshes: true,
-      fullUrl: true,
-    },
-  },
+
   experimental: {
     serverActions: {
       allowedOrigins: ['verus.io', '*.verus.io', '192.168.20.176'],

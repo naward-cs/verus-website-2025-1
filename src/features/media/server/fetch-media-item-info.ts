@@ -20,6 +20,7 @@ export async function FetchMediaItemInfo(url: string) {
         'User-Agent':
           'Mozilla/5.0 (compatible; VerusMediaBot/1.0; +https://verus.io)',
       },
+      next: {revalidate: 3600}, // Cache for 1 hour (single caching directive)
     })
 
     if (!response.ok) {

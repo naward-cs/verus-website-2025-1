@@ -6,6 +6,7 @@ import {LoadingProfile} from '@/features/verusid_search/components/loading-profi
 import {SearchForm} from '@/features/verusid_search/components/search-form'
 import {validateVerusId} from '@/features/verusid_search/server/validate-verusId'
 
+export const dynamic = 'force-dynamic'
 type Params = Promise<{verusId: string}>
 // type SearchParams = Promise<{[key: string]: string | undefined}>
 export default async function VerusIdPage(props: {

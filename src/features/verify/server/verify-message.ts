@@ -21,6 +21,7 @@ export async function verifyMessage(
       method: 'verifymessage',
       params: [verusId, signature, message],
     }),
+    next: {revalidate: 3600}, // Cache for 1 hour (single caching directive)
   })
   // Check if the API request was successful
   if (!response.ok) {

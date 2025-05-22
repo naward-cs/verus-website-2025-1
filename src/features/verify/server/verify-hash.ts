@@ -19,6 +19,7 @@ export async function verifyHash(
       method: 'verifyhash',
       params: [verusId, signature, hash],
     }),
+    next: {revalidate: 3600}, // Cache for 1 hour (single caching directive)
   })
   // Check if the API request was successful
   if (!response.ok) {
