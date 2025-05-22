@@ -1,4 +1,4 @@
-import type { NextConfig } from 'next';
+import type {NextConfig} from 'next'
 
 import {env} from '@/configs/env'
 
@@ -24,7 +24,7 @@ const nextConfig: NextConfig = {
   compiler: {
     // Remove all console logs except console.error in production builds
     removeConsole: {
-      exclude: ['error'],
+      exclude: ['error', 'info'],
     },
   },
   images: {
