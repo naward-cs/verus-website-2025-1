@@ -1,6 +1,12 @@
-import type {NextConfig} from 'next'
+import type { NextConfig } from 'next';
 
-import {env} from '@/configs/env'
+
+
+import { env } from '@/configs/env';
+
+
+
+
 
 const _env = env
 const nextConfig: NextConfig = {
@@ -10,7 +16,7 @@ const nextConfig: NextConfig = {
     'local-origin.dev',
     '*.local-origin.dev',
     'localhost',
-    '192.168.20.176',
+
     'verus.io',
     '*.verus.io',
   ],
