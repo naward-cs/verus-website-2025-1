@@ -10,7 +10,7 @@ const nextConfig: NextConfig = {
     'local-origin.dev',
     '*.local-origin.dev',
     'localhost',
-    '192.168.20.176',
+
     'verus.io',
     '*.verus.io',
   ],

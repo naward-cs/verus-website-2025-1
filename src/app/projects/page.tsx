@@ -77,8 +77,6 @@ export default function ProjectsPage() {
             </div>
           </div>
         </div>
-
-        
       </div>
     </BgWrapper>
   )

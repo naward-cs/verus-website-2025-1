@@ -1,6 +1,4 @@
-import type { Metadata } from 'next';
-
-
+import type {Metadata} from 'next'
 
 import {ContributionWays} from '@/features/contribute/ways'
 

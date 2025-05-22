@@ -1,18 +1,10 @@
-'use server';
+'use server'
 
-import type { VerusIdentity } from './fetch_verus_id';
+import type {VerusIdentity} from './fetch_verus_id'
 
+import {unstable_cache} from 'next/cache'
 
-
-import { unstable_cache } from 'next/cache';
-
-
-
-import { fetchVerusProfile } from './fetch_verus_profile';
-
-
-
-
+import {fetchVerusProfile} from './fetch_verus_profile'
 
 export const getVerusProfile = unstable_cache(
   async (identity?: VerusIdentity) => {

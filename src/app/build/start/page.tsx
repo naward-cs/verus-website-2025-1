@@ -1,10 +1,7 @@
-;
 // Build start page showcasing developer resources and documentation
-import type { Metadata } from 'next';
+import type {Metadata} from 'next'
 
-
-
-import { ResourcesGrid, TerminalExample } from '@/features/build/start';
+import {ResourcesGrid, TerminalExample} from '@/features/build/start'
 import {Info} from 'lucide-react'
 
 import {BgWrapper} from '@/components/bg-wrapper'

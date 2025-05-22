@@ -1,9 +1,11 @@
-import type { Metadata } from 'next';
+import type {Metadata} from 'next'
 
-
-
-import { env } from '@/configs/env';
-import { FeaturesGrid, SolutionsGrid, VerusIDLoginSection } from '@/features/build/build';
+import {env} from '@/configs/env'
+import {
+  FeaturesGrid,
+  SolutionsGrid,
+  VerusIDLoginSection,
+} from '@/features/build/build'
 import {IoLogoDiscord} from 'react-icons/io5'
 
 import {BgWrapper} from '@/components/bg-wrapper'

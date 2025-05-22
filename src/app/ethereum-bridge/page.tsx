@@ -1,9 +1,7 @@
-import type { Metadata } from 'next';
+import type {Metadata} from 'next'
 
-
-
-import { env } from '@/configs/env';
-import { BridgeContent } from '@/features/ethereum-bridge/components/content';
+import {env} from '@/configs/env'
+import {BridgeContent} from '@/features/ethereum-bridge/components/content'
 import {ExternalLink} from 'lucide-react'
 
 import {BgWrapper} from '@/components/bg-wrapper'

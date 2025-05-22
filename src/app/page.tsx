@@ -1,12 +1,19 @@
-import type { Metadata } from 'next';
+import type {Metadata} from 'next'
 
-
-
-import { env } from '@/configs/env';
-import { BridgeSection, CompareSection, EarlyAdoptionSection, EndSection, FeaturesGrid, GetStartedSection, MediumArticlesSection, ParticipationSection, ProtocolSection, VerusIDSection } from '@/features/home/components';
-import { IoLogoDiscord } from 'react-icons/io5';
-
-
+import {env} from '@/configs/env'
+import {
+  BridgeSection,
+  CompareSection,
+  EarlyAdoptionSection,
+  EndSection,
+  FeaturesGrid,
+  GetStartedSection,
+  MediumArticlesSection,
+  ParticipationSection,
+  ProtocolSection,
+  VerusIDSection,
+} from '@/features/home/components'
+import {IoLogoDiscord} from 'react-icons/io5'
 
 import {BgWrapper} from '@/components/bg-wrapper'
 

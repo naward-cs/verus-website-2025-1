@@ -1,10 +1,8 @@
-import type { Metadata } from 'next';
+import type {Metadata} from 'next'
 
-
-
-import { DigitalControlSection } from '@/features/verusid/digital-control-section';
-import { FeaturesGrid } from '@/features/verusid/features-grid';
-import { FutureSection } from '@/features/verusid/future-section';
+import {DigitalControlSection} from '@/features/verusid/digital-control-section'
+import {FeaturesGrid} from '@/features/verusid/features-grid'
+import {FutureSection} from '@/features/verusid/future-section'
 import {RealWorldSection} from '@/features/verusid/real-world-section'
 
 import {BgWrapper} from '@/components/bg-wrapper'

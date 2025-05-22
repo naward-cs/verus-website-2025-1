@@ -1,9 +1,6 @@
-;
 // Ensures the page is rendered dynamically
 
-import type { Metadata } from 'next';
-
-
+import type {Metadata} from 'next'
 
 import {ProtocolStatistics} from '@/features/statistics/components/protocol-statistics'
 

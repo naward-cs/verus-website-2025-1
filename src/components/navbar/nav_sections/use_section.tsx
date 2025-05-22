@@ -1,6 +1,4 @@
-import Image from 'next/image';
-
-
+import Image from 'next/image'
 
 import {env} from '@/configs/env'
 import {Coins, Search} from 'lucide-react'

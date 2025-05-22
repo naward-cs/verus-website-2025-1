@@ -1,8 +1,4 @@
-import he from 'he';
-
-
-
-
+import he from 'he'
 
 const hexCharsregex = /[0-9A-Fa-f]{6}/g
 const base64urlregex = /^[A-Za-z0-9_-]+$/

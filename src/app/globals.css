@@ -76,9 +76,9 @@
   @apply rounded-lg border border-gray-700/50 bg-gray-800/80 p-5;
 }
 
-html,body {
+html,
+body {
   scrollbar-width: thin;
-  
 }
 
 @layer base {

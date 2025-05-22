@@ -1,10 +1,13 @@
-import type { Metadata } from 'next';
+import type {Metadata} from 'next'
 
-
-
-import { ConsensusSection, PrivacySection, ScalingSection, SmartTransactionsSection, TokenomicsSection, VisionMissionSection } from '@/features/intro/components';
-
-
+import {
+  ConsensusSection,
+  PrivacySection,
+  ScalingSection,
+  SmartTransactionsSection,
+  TokenomicsSection,
+  VisionMissionSection,
+} from '@/features/intro/components'
 
 import {BgWrapper} from '@/components/bg-wrapper'
 

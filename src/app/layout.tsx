@@ -1,15 +1,8 @@
+import './globals.css'
 
+import type {Metadata} from 'next'
 
-
-import './globals.css';
-
-
-
-import type { Metadata } from 'next';
-
-
-
-import { env } from '@/configs/env';
+import {env} from '@/configs/env'
 import NextTopLoader from 'nextjs-toploader'
 
 import {DevUItools} from '@/components/devTools'

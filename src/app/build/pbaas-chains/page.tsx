@@ -1,10 +1,8 @@
-import type { Metadata } from 'next';
+import type {Metadata} from 'next'
 
-
-
-import { env } from '@/configs/env';
-import { PBaaSContent } from '@/features/build/pbaas-chains/content';
-import { FeaturesGrid } from '@/features/build/pbaas-chains/features-grid';
+import {env} from '@/configs/env'
+import {PBaaSContent} from '@/features/build/pbaas-chains/content'
+import {FeaturesGrid} from '@/features/build/pbaas-chains/features-grid'
 import {IoLogoDiscord} from 'react-icons/io5'
 
 import {BgWrapper} from '@/components/bg-wrapper'

@@ -1,6 +1,4 @@
-import type { Metadata } from 'next';
-
-
+import type {Metadata} from 'next'
 
 import {env} from '@/configs/env'
 

@@ -1,6 +1,3 @@
-
-
-
 import 'server-only'
 
 import type {VerificationRequest, VerificationResult} from '../lib/types'

@@ -1,7 +1,5 @@
 import type {Metadata} from 'next'
 
-
-
 import {GetVrscSections} from '@/features/get-vrsc/components/sections'
 
 import {BgWrapper} from '@/components/bg-wrapper'
@@ -50,8 +48,6 @@ export default function GetVrscPage() {
             <GetVrscSections />
           </div>
         </div>
-
-        
       </div>
     </BgWrapper>
   )

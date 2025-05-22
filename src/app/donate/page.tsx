@@ -1,6 +1,4 @@
-import type { Metadata } from 'next';
-
-
+import type {Metadata} from 'next'
 
 import {DonationAddresses} from '@/features/donate/addresses'
 
