@@ -7,10 +7,7 @@ const nextConfig: NextConfig = {
   /* config options here */
   // For development, we'll use the standard Next.js build
   allowedDevOrigins: [
-    'local-origin.dev',
-    '*.local-origin.dev',
     'localhost',
-    '192.168.20.176',
     'verus.io',
     '*.verus.io',
   ],
