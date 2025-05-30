@@ -8,25 +8,12 @@ import {IoLogoDiscord} from 'react-icons/io5'
 import {BgWrapper} from '@/components/bg-wrapper'
 
 export const metadata: Metadata = {
-  title: 'Build with VerusID | Verus',
+  title: 'Build with VerusID',
   description:
     'Build dApps with self-sovereign identity, namespace control, data storage, and blockchain interoperability—no smart contracts needed.',
   keywords:
     'VerusID, self-sovereign identity, blockchain identity, decentralized identity, namespace control, data storage, Verus',
-  openGraph: {
-    title: 'Build with VerusID | Verus',
-    description:
-      'Build dApps with self-sovereign identity, namespace control, data storage, and blockchain interoperability—no smart contracts needed.',
-    url: '/build/verusid',
-    siteName: 'Verus',
-    type: 'website',
-  },
-  twitter: {
-    card: 'summary_large_image',
-    title: 'Build with VerusID | Verus',
-    description:
-      'Build dApps with self-sovereign identity, namespace control, data storage, and blockchain interoperability—no smart contracts needed.',
-  },
+
   alternates: {
     canonical: '/build/verusid',
   },

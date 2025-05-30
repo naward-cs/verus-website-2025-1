@@ -8,28 +8,11 @@ import {IoLogoDiscord} from 'react-icons/io5'
 import {BgWrapper} from '../../../components/bg-wrapper'
 
 export const metadata: Metadata = {
-  title: 'Launch Currencies & Liquidity Pools | Verus',
+  title: 'Launch Currencies & Liquidity Pools',
   description:
     'Create powerful currencies, tokens & liquidity pools—secured by consensus, not vulnerable smart contracts.',
   keywords:
     'blockchain currencies, cryptocurrency, tokens, liquidity pools, consensus-secured, Verus, DeFi',
-  openGraph: {
-    title: 'Launch Currencies & Liquidity Pools | Verus',
-    description:
-      'Create powerful currencies, tokens & liquidity pools—secured by consensus, not vulnerable smart contracts.',
-    url: '/build/pbaas-currencies',
-    siteName: 'Verus',
-    type: 'website',
-  },
-  twitter: {
-    card: 'summary_large_image',
-    title: 'Launch Currencies & Liquidity Pools | Verus',
-    description:
-      'Create powerful currencies, tokens & liquidity pools—secured by consensus, not vulnerable smart contracts.',
-  },
-  alternates: {
-    canonical: '/build/pbaas-currencies',
-  },
 }
 
 export default function PBaaSCurrenciesPage() {

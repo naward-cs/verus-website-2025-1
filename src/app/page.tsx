@@ -1,5 +1,3 @@
-import type {Metadata} from 'next'
-
 import {env} from '@/configs/env'
 import {
   BridgeSection,
@@ -16,33 +14,6 @@ import {
 import {IoLogoDiscord} from 'react-icons/io5'
 
 import {BgWrapper} from '@/components/bg-wrapper'
-
-export const metadata: Metadata = {
-  title: 'The Internet of Value | Verus',
-  description:
-    'A fundamentally different and better protocol to build Web3, and to empower individuals & communities.',
-  keywords:
-    'Verus, blockchain, Web3, cryptocurrency, decentralization, DeFi, identity, privacy, interoperability, scalability',
-  openGraph: {
-    title: 'The Internet of Value | Verus',
-    description:
-      'A fundamentally different and better protocol to build Web3, and to empower individuals & communities.',
-    url: '/',
-    siteName: 'Verus',
-    type: 'website',
-    // opengraph-image.png and opengraph-image.alt.txt files are already in the app directory
-  },
-  twitter: {
-    card: 'summary_large_image',
-    title: 'The Internet of Value | Verus',
-    description:
-      'A fundamentally different and better protocol to build Web3, and to empower individuals & communities.',
-    // twitter-image.png is already in the app directory
-  },
-  alternates: {
-    canonical: '/',
-  },
-}
 
 export default function Home() {
   return (

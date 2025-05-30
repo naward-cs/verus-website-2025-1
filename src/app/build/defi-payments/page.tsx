@@ -8,28 +8,11 @@ import {IoLogoDiscord} from 'react-icons/io5'
 import {BgWrapper} from '@/components/bg-wrapper'
 
 export const metadata: Metadata = {
-  title: 'DeFi & Payments | Verus',
+  title: 'DeFi & Payments',
   description:
     'Fair DeFi without MEV exploitation. Low fees, secure payments, and protocol-level privacy—no smart contracts needed.',
   keywords:
     'DeFi, decentralized finance, blockchain payments, MEV-free, MEV-resistant, low fees, secure transactions, privacy, Verus',
-  openGraph: {
-    title: 'DeFi & Payments | Verus',
-    description:
-      'Fair DeFi without MEV exploitation. Low fees, secure payments, and protocol-level privacy—no smart contracts needed.',
-    url: '/build/defi-payments',
-    siteName: 'Verus',
-    type: 'website',
-  },
-  twitter: {
-    card: 'summary_large_image',
-    title: 'DeFi & Payments | Verus',
-    description:
-      'Fair DeFi without MEV exploitation. Low fees, secure payments, and protocol-level privacy—no smart contracts needed.',
-  },
-  alternates: {
-    canonical: '/build/defi-payments',
-  },
 }
 
 export default function DeFiPaymentsPage() {

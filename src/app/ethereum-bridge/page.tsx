@@ -8,28 +8,11 @@ import {BgWrapper} from '@/components/bg-wrapper'
 
 export const dynamic = 'force-dynamic'
 export const metadata: Metadata = {
-  title: 'Verus-Ethereum Bridge | Verus',
+  title: 'Verus-Ethereum Bridge',
   description:
     'A bridge to the Ethereum network—non-custodial, based on cryptographic proofs & verified by miners and stakers.',
   keywords:
     'blockchain bridge, ethereum bridge, cross-chain, non-custodial, Verus bridge, crypto bridge, decentralized bridge',
-  openGraph: {
-    title: 'Verus-Ethereum Bridge | Verus',
-    description:
-      'A bridge to the Ethereum network—non-custodial, based on cryptographic proofs & verified by miners and stakers.',
-    url: '/ethereum-bridge',
-    siteName: 'Verus',
-    type: 'website',
-  },
-  twitter: {
-    card: 'summary_large_image',
-    title: 'Verus-Ethereum Bridge | Verus',
-    description:
-      'A bridge to the Ethereum network—non-custodial, based on cryptographic proofs & verified by miners and stakers.',
-  },
-  alternates: {
-    canonical: '/ethereum-bridge',
-  },
 }
 
 export default function EthereumBridgePage() {

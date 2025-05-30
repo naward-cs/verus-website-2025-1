@@ -5,28 +5,11 @@ import {MigrateContent} from '@/features/migrate/content'
 import {BgWrapper} from '@/components/bg-wrapper'
 
 export const metadata: Metadata = {
-  title: 'Migrate to Verus | Verus',
+  title: 'Migrate to Verus',
   description:
     'Bring your token and community to a better, more secure ecosystem while maintaining full Ethereum compatibility.',
   keywords:
     'blockchain migration, token migration, crypto migration, ethereum compatibility, secure token migration, Verus migration',
-  openGraph: {
-    title: 'Migrate to Verus | Verus',
-    description:
-      'Bring your token and community to a better, more secure ecosystem while maintaining full Ethereum compatibility.',
-    url: '/migrate',
-    siteName: 'Verus',
-    type: 'website',
-  },
-  twitter: {
-    card: 'summary_large_image',
-    title: 'Migrate to Verus | Verus',
-    description:
-      'Bring your token and community to a better, more secure ecosystem while maintaining full Ethereum compatibility.',
-  },
-  alternates: {
-    canonical: '/migrate',
-  },
 }
 
 export default function MigratePage() {

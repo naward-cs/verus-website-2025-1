@@ -5,28 +5,11 @@ import {MiningSteps} from '@/features/mining/steps'
 import {BgWrapper} from '@/components/bg-wrapper'
 
 export const metadata: Metadata = {
-  title: 'Start Mining VRSC | Verus',
+  title: 'Start Mining VRSC',
   description:
     'Contribute to network security while earning rewards with your computer or mining hardware.',
   keywords:
     'crypto mining, mobile mining, VRSC mining, Verus coin mining, blockchain mining, cryptocurrency rewards, CPU mining',
-  openGraph: {
-    title: 'Start Mining VRSC | Verus',
-    description:
-      'Contribute to network security while earning rewards with your computer or mining hardware.',
-    url: '/mining',
-    siteName: 'Verus',
-    type: 'website',
-  },
-  twitter: {
-    card: 'summary_large_image',
-    title: 'Start Mining VRSC | Verus',
-    description:
-      'Contribute to network security while earning rewards with your computer or mining hardware.',
-  },
-  alternates: {
-    canonical: '/mining',
-  },
 }
 
 // Updated Mining Page with dark mode support and improved styling
