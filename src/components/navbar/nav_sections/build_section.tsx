@@ -1,7 +1,5 @@
-import Image from 'next/image';
-import Link from 'next/link';
-
-
+import Image from 'next/image'
+import Link from 'next/link'
 
 import {env} from '@/configs/env'
 import {ExternalLink} from 'lucide-react'
