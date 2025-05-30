@@ -2,33 +2,14 @@ import type {Metadata} from 'next'
 
 import {StakingSteps} from '@/features/staking/steps'
 
-import {BodyBgSmallImages} from '@/components/background-images'
 import {BgWrapper} from '@/components/bg-wrapper'
-import {Footer} from '@/components/footer'
 
 export const metadata: Metadata = {
-  title: 'Run a Full Node and Start Staking VRSC | Verus',
+  title: 'Run a Full Node and Start Staking VRSC',
   description:
     'Participate in securing the network while earning rewards with minimal requirements.',
   keywords:
     'crypto staking, VRSC staking, blockchain staking, passive crypto income, run blockchain node, Verus staking',
-  openGraph: {
-    title: 'Run a Full Node and Start Staking VRSC | Verus',
-    description:
-      'Participate in securing the network while earning rewards with minimal requirements.',
-    url: '/staking',
-    siteName: 'Verus',
-    type: 'website',
-  },
-  twitter: {
-    card: 'summary_large_image',
-    title: 'Run a Full Node and Start Staking VRSC | Verus',
-    description:
-      'Participate in securing the network while earning rewards with minimal requirements.',
-  },
-  alternates: {
-    canonical: '/staking',
-  },
 }
 
 // Updated Staking Page with dark mode support and improved styling

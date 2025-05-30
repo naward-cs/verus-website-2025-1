@@ -1,18 +1,18 @@
-import Image from 'next/image'
+import Image from 'next/image';
 
-import {env} from '@/configs/env'
-import {Coins, Search} from 'lucide-react'
-import {
-  LuArrowLeftRight,
-  LuBadgeCheck,
-  LuBookOpen,
-  LuCpu,
-  LuGlobe,
-  LuPercent,
-  LuWallet,
-} from 'react-icons/lu'
 
-import {NavLink} from '../nav_link'
+
+import { env } from '@/configs/env';
+import { Coins, Search } from 'lucide-react';
+import { LuArrowLeftRight, LuBadgeCheck, LuBookOpen, LuCpu, LuGlobe, LuPercent, LuWallet } from 'react-icons/lu';
+
+
+
+import { NavLink } from '../nav_link';
+
+
+
+
 
 export function UseSection() {
   return (
@@ -47,14 +47,7 @@ export function UseSection() {
                   alt="VerusID Icon"
                   width={5}
                   height={5}
-                  className="size-5 opacity-50 transition-all group-hover:opacity-100 group-hover:[filter:invert(31%)_sepia(93%)_saturate(1352%)_hue-rotate(213deg)_brightness(97%)_contrast(87%)] dark:hidden"
-                />
-                <Image
-                  src="/img/at-full-black.svg"
-                  alt="VerusID Icon"
-                  width={5}
-                  height={5}
-                  className="hidden size-5 opacity-50 transition-all [filter:invert(100%)] group-hover:opacity-100 group-hover:[filter:invert(31%)_sepia(93%)_saturate(1352%)_hue-rotate(213deg)_brightness(97%)_contrast(87%)] dark:block"
+                  className="size-5 opacity-50 transition-all group-hover:opacity-100 group-hover:[filter:invert(31%)_sepia(93%)_saturate(1352%)_hue-rotate(213deg)_brightness(97%)_contrast(87%)] dark:[filter:invert(100%)]"
                 />
               </div>
             }

@@ -1,4 +1,18 @@
+import {Metadata} from 'next'
+
 import {BgWrapper} from '@/components/bg-wrapper'
+
+export const metadata: Metadata = {
+  title: 'Media & Press Resources',
+  description:
+    'Everything you need to tell the Verus story accurately–press kits, media mentions, and brand assets.',
+  keywords:
+    'Verus press kit, blockchain media, cryptocurrency press, brand assets, media coverage, Verus media',
+
+  alternates: {
+    canonical: '/media',
+  },
+}
 
 export default function MediaLayout({children}: {children: React.ReactNode}) {
   return (

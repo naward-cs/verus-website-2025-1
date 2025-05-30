@@ -10,28 +10,11 @@ import {IoLogoDiscord} from 'react-icons/io5'
 import {BgWrapper} from '@/components/bg-wrapper'
 
 export const metadata: Metadata = {
-  title: 'Projects Built with Verus | Verus',
+  title: 'Projects Built with Verus',
   description:
     'Explore applications, wallets, dashboards, and other projects leveraging the Verus Protocol and its ecosystem.',
   keywords:
     'Verus projects, blockchain applications, cryptocurrency projects, Web3 applications, dApps, blockchain ecosystem',
-  openGraph: {
-    title: 'Projects Built with Verus | Verus',
-    description:
-      'Explore applications, wallets, dashboards, and other projects leveraging the Verus Protocol and its ecosystem.',
-    url: '/projects',
-    siteName: 'Verus',
-    type: 'website',
-  },
-  twitter: {
-    card: 'summary_large_image',
-    title: 'Projects Built with Verus | Verus',
-    description:
-      'Explore applications, wallets, dashboards, and other projects leveraging the Verus Protocol and its ecosystem.',
-  },
-  alternates: {
-    canonical: '/projects',
-  },
 }
 
 export default function ProjectsPage() {

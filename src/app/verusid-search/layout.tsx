@@ -10,22 +10,10 @@ type LayoutProps = {
 }
 
 export const metadata: Metadata = {
-  title: 'VerusID Search | Verus',
+  title: 'VerusID Search',
   description: 'Search and view detailed information on VerusIDs',
   keywords:
     'VerusID, blockchain identity, decentralized identity, profile search, blockchain profiles, Verus',
-  openGraph: {
-    title: 'VerusID Search | Verus',
-    description: 'Search and view detailed information about VerusID profiles',
-    url: '/verusid-search',
-    siteName: 'Verus',
-    type: 'website',
-  },
-  twitter: {
-    card: 'summary_large_image',
-    title: 'VerusID Search | Verus',
-    description: 'Search and view detailed information on VerusIDs',
-  },
   alternates: {
     canonical: '/verusid-search',
   },
