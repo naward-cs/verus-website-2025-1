@@ -7,28 +7,11 @@ import {Info} from 'lucide-react'
 import {BgWrapper} from '@/components/bg-wrapper'
 
 export const metadata: Metadata = {
-  title: 'Build on Verus | Developer Documentation',
+  title: {absolute: 'Build on Verus | Developer Documentation'},
   description:
     'Get started with Verus developer resources and documentation. Learn about VerusID, VDXF, DeFi, and more.',
   keywords:
     'Verus development, VerusID, VDXF, blockchain development, DeFi development, Verus documentation',
-  openGraph: {
-    title: 'Build on Verus | Developer Documentation',
-    description:
-      'Get started with Verus developer resources and documentation. Learn about VerusID, VDXF, DeFi, and more.',
-    url: '/build/start',
-    siteName: 'Verus',
-    type: 'website',
-  },
-  twitter: {
-    card: 'summary_large_image',
-    title: 'Build on Verus | Developer Documentation',
-    description:
-      'Get started with Verus developer resources and documentation. Learn about VerusID, VDXF, DeFi, and more.',
-  },
-  alternates: {
-    canonical: '/build/start',
-  },
 }
 
 export default function BuildStartPage() {

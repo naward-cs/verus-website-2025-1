@@ -1,5 +1,7 @@
-import Image from 'next/image'
-import Link from 'next/link'
+import Image from 'next/image';
+import Link from 'next/link';
+
+
 
 import {env} from '@/configs/env'
 import {ExternalLink} from 'lucide-react'
@@ -40,14 +42,13 @@ export function BuildSection() {
           <NavLink
             href="/build/verusid/"
             icon={
-              // ?? Why relative wrapper
               <div className="relative">
                 <Image
                   src="/img/at-full-black.svg"
                   alt="VerusID Icon"
                   width={5}
                   height={5}
-                  className="h-5 w-5 opacity-50 transition-all group-hover:opacity-100 group-hover:[filter:invert(31%)_sepia(93%)_saturate(1352%)_hue-rotate(213deg)_brightness(97%)_contrast(87%)]"
+                  className="size-5 opacity-50 transition-all group-hover:opacity-100 group-hover:[filter:invert(31%)_sepia(93%)_saturate(1352%)_hue-rotate(213deg)_brightness(97%)_contrast(87%)] dark:[filter:invert(100%)]"
                 />
               </div>
             }

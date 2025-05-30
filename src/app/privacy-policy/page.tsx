@@ -5,25 +5,10 @@ import {env} from '@/configs/env'
 import {BgWrapper} from '@/components/bg-wrapper'
 
 export const metadata: Metadata = {
-  title: 'Privacy Policy | Verus',
+  title: 'Privacy Policy',
   description: "Verus privacy policy - we don't track you, we mean it.",
   keywords:
     'Verus privacy policy, no tracking, no cookies, privacy focused, blockchain privacy',
-  openGraph: {
-    title: 'Privacy Policy | Verus',
-    description: "Verus privacy policy - we don't track you, we mean it.",
-    url: '/privacy-policy',
-    siteName: 'Verus',
-    type: 'website',
-  },
-  twitter: {
-    card: 'summary_large_image',
-    title: 'Privacy Policy | Verus',
-    description: "Verus privacy policy - we don't track you, we mean it.",
-  },
-  alternates: {
-    canonical: '/privacy-policy',
-  },
 }
 
 export default function PrivacyPolicyPage() {

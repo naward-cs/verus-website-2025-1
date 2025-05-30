@@ -5,28 +5,11 @@ import {DonationAddresses} from '@/features/donate/addresses'
 import {BgWrapper} from '@/components/bg-wrapper'
 
 export const metadata: Metadata = {
-  title: 'Support Verus with Donations | Verus',
+  title: 'Support Verus with Donations',
   description:
     'As a no-ICO, no premine, and no dev-fee project, Verus relies on community donations to fund development and marketing efforts. Your contributions help maintain and advance the technology.',
   keywords:
     'donate crypto, Verus donation, blockchain funding, community support, cryptocurrency donation',
-  openGraph: {
-    title: 'Support Verus with Donations | Verus',
-    description:
-      'As a no-ICO, no premine, and no dev-fee project, Verus relies on community donations to fund development and marketing efforts. Your contributions help maintain and advance the technology.',
-    url: '/donate',
-    siteName: 'Verus',
-    type: 'website',
-  },
-  twitter: {
-    card: 'summary_large_image',
-    title: 'Support Verus with Donations | Verus',
-    description:
-      'As a no-ICO, no premine, and no dev-fee project, Verus relies on community donations to fund development and marketing efforts. Your contributions help maintain and advance the technology.',
-  },
-  alternates: {
-    canonical: '/donate',
-  },
 }
 
 // Donation Page for supporting Verus development

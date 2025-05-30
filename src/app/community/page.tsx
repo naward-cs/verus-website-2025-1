@@ -7,28 +7,11 @@ import {CommunityLinks} from '@/features/community/links'
 import {BgWrapper} from '@/components/bg-wrapper'
 
 export const metadata: Metadata = {
-  title: 'Community Hub | Verus',
+  title: 'Community Hub',
   description:
     'Join the worldwide Verus community across various platforms. Connect, collaborate, and contribute to the future of blockchain technology.',
   keywords:
     'Verus community, blockchain community, discord, social media, collaboration, contribute',
-  openGraph: {
-    title: 'Community Hub | Verus',
-    description:
-      'Join the worldwide Verus community across various platforms. Connect, collaborate, and contribute to the future of blockchain technology.',
-    url: '/community',
-    siteName: 'Verus',
-    type: 'website',
-  },
-  twitter: {
-    card: 'summary_large_image',
-    title: 'Community Hub | Verus',
-    description:
-      'Join the worldwide Verus community across various platforms. Connect, collaborate, and contribute to the future of blockchain technology.',
-  },
-  alternates: {
-    canonical: '/community',
-  },
 }
 
 export default function CommunityPage() {

@@ -5,28 +5,11 @@ import {ContributionWays} from '@/features/contribute/ways'
 import {BgWrapper} from '@/components/bg-wrapper'
 
 export const metadata: Metadata = {
-  title: 'Contribute to Verus | Verus',
+  title: 'Contribute to Verus',
   description:
     'Help shape the future of blockchain technology by contributing to Verus in various ways—from code and marketing to community support and financial backing.',
   keywords:
     'contribute blockchain, Verus contribution, open source contribution, blockchain development, community support',
-  openGraph: {
-    title: 'Contribute to Verus | Verus',
-    description:
-      'Help shape the future of blockchain technology by contributing to Verus in various ways—from code and marketing to community support and financial backing.',
-    url: '/contribute',
-    siteName: 'Verus',
-    type: 'website',
-  },
-  twitter: {
-    card: 'summary_large_image',
-    title: 'Contribute to Verus | Verus',
-    description:
-      'Help shape the future of blockchain technology by contributing to Verus in various ways—from code and marketing to community support and financial backing.',
-  },
-  alternates: {
-    canonical: '/contribute',
-  },
 }
 
 // Contribution Page showing ways to get involved with Verus

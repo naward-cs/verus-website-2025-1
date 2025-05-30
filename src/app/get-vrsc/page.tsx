@@ -5,28 +5,11 @@ import {GetVrscSections} from '@/features/get-vrsc/components/sections'
 import {BgWrapper} from '@/components/bg-wrapper'
 
 export const metadata: Metadata = {
-  title: 'Get VRSC | Verus',
+  title: 'Get VRSC',
   description:
     'Multiple ways to acquire VRSC: through Verus DeFi, exchanges, mining, or staking.',
   keywords:
     'get VRSC, buy VRSC, acquire cryptocurrency, Verus coin, crypto exchanges, mining VRSC, staking VRSC',
-  openGraph: {
-    title: 'Get VRSC | Verus',
-    description:
-      'Multiple ways to acquire VRSC: through Verus DeFi, exchanges, mining, or staking.',
-    url: '/get-vrsc',
-    siteName: 'Verus',
-    type: 'website',
-  },
-  twitter: {
-    card: 'summary_large_image',
-    title: 'Get VRSC | Verus',
-    description:
-      'Multiple ways to acquire VRSC: through Verus DeFi, exchanges, mining, or staking.',
-  },
-  alternates: {
-    canonical: '/get-vrsc',
-  },
 }
 
 export default function GetVrscPage() {

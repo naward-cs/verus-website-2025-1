@@ -5,28 +5,11 @@ import {TimelineClient} from '@/features/milestones/timeline'
 import {BgWrapper} from '@/components/bg-wrapper'
 
 export const metadata: Metadata = {
-  title: 'Verus Milestones | Verus',
+  title: 'Verus Milestones',
   description:
     'Tracking the evolution of Verus from genesis to a comprehensive blockchain ecosystem.',
   keywords:
     'blockchain history, Verus timeline, cryptocurrency development, blockchain milestones, Verus evolution',
-  openGraph: {
-    title: 'Verus Milestones | Verus',
-    description:
-      'Tracking the evolution of Verus from genesis to a comprehensive blockchain ecosystem.',
-    url: '/milestones',
-    siteName: 'Verus',
-    type: 'website',
-  },
-  twitter: {
-    card: 'summary_large_image',
-    title: 'Verus Milestones | Verus',
-    description:
-      'Tracking the evolution of Verus from genesis to a comprehensive blockchain ecosystem.',
-  },
-  alternates: {
-    canonical: '/milestones',
-  },
 }
 
 // Updated Milestones Page with dark mode support and improved styling

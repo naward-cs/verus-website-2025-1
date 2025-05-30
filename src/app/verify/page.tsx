@@ -6,25 +6,12 @@ import {getVerification} from '@/features/verify/server/get-verification'
 import {BgWrapper} from '@/components/bg-wrapper'
 
 export const metadata: Metadata = {
-  title: 'Verify Signatures | Verus',
+  title: 'Verify Signatures',
   description:
     'Verify signatures for files, messages, and hashes. Confirm the authenticity of digital signatures using VerusIDs to ensure data integrity and origin verification.',
   keywords:
     'verify signature, digital signature, blockchain verification, message verification, file verification, hash verification, cryptographic proof, VerusID signature',
-  openGraph: {
-    title: 'Verify Signatures | Verus',
-    description:
-      'Verify signatures for files, messages, and hashes. Confirm the authenticity of digital signatures using VerusIDs to ensure data integrity and origin verification.',
-    url: '/verify',
-    siteName: 'Verus',
-    type: 'website',
-  },
-  twitter: {
-    card: 'summary_large_image',
-    title: 'Verify Signatures | Verus',
-    description:
-      'Verify signatures for files, messages, and hashes. Confirm the authenticity of digital signatures using VerusIDs to ensure data integrity and origin verification.',
-  },
+
   alternates: {
     canonical: '/verify',
   },
