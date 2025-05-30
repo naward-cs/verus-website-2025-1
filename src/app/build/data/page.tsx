@@ -1,4 +1,4 @@
-import type {Metadata, ResolvingMetadata} from 'next'
+import type {Metadata} from 'next'
 
 import {env} from '@/configs/env'
 import {DataContent, FeaturesGrid} from '@/features/build/data'
@@ -17,7 +17,7 @@ export const metadata: Metadata = {
   },
 }
 
-export default function DataPage(parent: ResolvingMetadata) {
+export default function DataPage() {
   return (
     <BgWrapper>
       <div className="flex flex-col items-center px-4 pt-[30px] md:pt-[70px]">
