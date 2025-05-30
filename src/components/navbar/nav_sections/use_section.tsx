@@ -1,18 +1,18 @@
-import Image from 'next/image';
+import Image from 'next/image'
 
+import {env} from '@/configs/env'
+import {Coins, Search} from 'lucide-react'
+import {
+  LuArrowLeftRight,
+  LuBadgeCheck,
+  LuBookOpen,
+  LuCpu,
+  LuGlobe,
+  LuPercent,
+  LuWallet,
+} from 'react-icons/lu'
 
-
-import { env } from '@/configs/env';
-import { Coins, Search } from 'lucide-react';
-import { LuArrowLeftRight, LuBadgeCheck, LuBookOpen, LuCpu, LuGlobe, LuPercent, LuWallet } from 'react-icons/lu';
-
-
-
-import { NavLink } from '../nav_link';
-
-
-
-
+import {NavLink} from '../nav_link'
 
 export function UseSection() {
   return (
