@@ -1,13 +1,13 @@
 // Projects Page - Showcase of projects using Verus technology
-import type {Metadata} from 'next'
+import type { Metadata } from 'next'
 
 import Link from 'next/link'
 
-import {env} from '@/configs/env'
-import {ProjectList} from '@/features/projects/project-list'
-import {IoLogoDiscord} from 'react-icons/io5'
+import { env } from '@/configs/env'
+import { ProjectList } from '@/features/projects/project-list'
+import { IoLogoDiscord } from 'react-icons/io5'
 
-import {BgWrapper} from '@/components/bg-wrapper'
+import { BgWrapper } from '@/components/bg-wrapper'
 
 export const metadata: Metadata = {
   title: 'Projects Built with Verus',
@@ -43,7 +43,7 @@ export default function ProjectsPage() {
                 </h2>
                 <p className="mb-4 text-[14px] text-gray-600 dark:text-gray-300 md:text-[16px]">
                   If you have built a project using Verus technology and would
-                  like to have it listed on this page, please visit our Discord
+                  like to have it considered for listing on this page, please visit our Discord
                   community and reach out in the #marketing channel to discuss
                   your project with the community.
                 </p>
@@ -51,7 +51,7 @@ export default function ProjectsPage() {
                   href={env.NEXT_PUBLIC_DISCORD}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="group flex h-[40px] w-fit items-center justify-center gap-2 rounded-lg border border-blue-800/60 bg-blue-950/40 px-6 text-[14px] font-medium text-blue-300 backdrop-blur-sm transition-all duration-300 hover:-translate-y-[1px] hover:border-blue-700/80 hover:text-blue-200 hover:shadow-lg md:h-[50px] md:text-[16px]"
+                  className="group flex h-[40px] w-fit items-center justify-center gap-2 rounded-lg border border-blue-200 bg-white/80 px-6 text-[14px] font-medium text-verus-blue backdrop-blur-sm transition-all duration-300 hover:-translate-y-[1px] hover:border-blue-300 hover:text-blue-600 hover:shadow-lg dark:border-blue-800/60 dark:bg-blue-950/80 dark:text-blue-300 dark:hover:border-blue-700 dark:hover:text-blue-200 dark:hover:shadow-blue-950/50 md:h-[50px] md:text-[16px]"
                 >
                   Join Discord
                   <IoLogoDiscord className="h-5 w-5 transition-transform duration-300 group-hover:translate-x-[1px] md:h-6 md:w-6" />

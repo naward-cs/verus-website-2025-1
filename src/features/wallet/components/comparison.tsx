@@ -1,6 +1,7 @@
 import Image from 'next/image'
 
-import {Check} from 'lucide-react'
+import { env } from '@/configs/env'
+import { Check } from 'lucide-react'
 
 export function WalletComparison() {
   return (
@@ -199,7 +200,7 @@ export function WalletComparison() {
             <div className="flex">
               <div className="w-[40%] p-4">
                 <span className="text-[14px] dark:text-white">
-                  Integrated bridge
+                  Verus → Ethereum
                 </span>
               </div>
               <div className="flex w-[30%] justify-center border-l-2 border-[#E9EFFC] p-4 dark:border-gray-800">
@@ -208,7 +209,7 @@ export function WalletComparison() {
                     <span className="mb-2 text-[10px] text-gray-500 dark:text-gray-400">
                       Full node
                     </span>
-                    <div className="mt-1.5 h-2 w-2 rounded-full bg-gray-200 dark:bg-gray-700" />
+                    <Check className="h-5 w-5 text-verus-blue dark:text-blue-400" />
                   </div>
                   <div className="flex flex-col items-center">
                     <span className="mb-2 text-[10px] text-gray-500 dark:text-gray-400">
@@ -216,6 +217,29 @@ export function WalletComparison() {
                     </span>
                     <div className="mt-1.5 h-2 w-2 rounded-full bg-gray-200 dark:bg-gray-700" />
                   </div>
+                </div>
+              </div>
+              <div className="flex w-[30%] items-center justify-center border-l-2 border-[#E9EFFC] p-4 dark:border-gray-800">
+                <Check className="h-5 w-5 text-verus-blue dark:text-blue-400" />
+              </div>
+            </div>
+
+            <div className="flex">
+              <div className="w-[40%] p-4">
+                <span className="text-[14px] dark:text-white">
+                  Ethereum → Verus
+                </span>
+              </div>
+              <div className="flex w-[30%] justify-center border-l-2 border-[#E9EFFC] p-4 dark:border-gray-800">
+                <div className="flex items-center">
+                  <a
+                    href={env.NEXT_PUBLIC_VERUS_BRIDGE}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-[11px] text-verus-blue hover:underline dark:text-blue-400"
+                  >
+                    Via bridge interface
+                  </a>
                 </div>
               </div>
               <div className="flex w-[30%] items-center justify-center border-l-2 border-[#E9EFFC] p-4 dark:border-gray-800">
@@ -288,17 +312,10 @@ export function WalletComparison() {
               <div className="flex w-[30%] justify-center border-l-2 border-[#E9EFFC] p-4 dark:border-gray-800">
                 <div className="flex gap-4">
                   <div className="flex flex-col items-center">
-                    <span className="mb-2 text-[10px] text-gray-500 dark:text-gray-400">
-                      Full node
-                    </span>
+                    
                     <Check className="h-5 w-5 text-verus-blue dark:text-blue-400" />
                   </div>
-                  <div className="flex flex-col items-center">
-                    <span className="mb-2 text-[10px] text-gray-500 dark:text-gray-400">
-                      Lite
-                    </span>
-                    <div className="mt-1.5 h-2 w-2 rounded-full bg-gray-200 dark:bg-gray-700" />
-                  </div>
+                  
                 </div>
               </div>
               <div className="flex w-[30%] items-center justify-center border-l-2 border-[#E9EFFC] p-4 dark:border-gray-800">
@@ -312,18 +329,11 @@ export function WalletComparison() {
               </div>
               <div className="flex w-[30%] justify-center border-l-2 border-[#E9EFFC] p-4 dark:border-gray-800">
                 <div className="flex gap-4">
-                  <div className="flex flex-col items-center">
-                    <span className="mb-2 text-[10px] text-gray-500 dark:text-gray-400">
-                      Full node
-                    </span>
-                    <div className="mt-1.5 h-2 w-2 rounded-full bg-gray-200 dark:bg-gray-700" />
+                   <div className="flex flex-col items-center">
+                    
+                    <Check className="h-5 w-5 text-verus-blue dark:text-blue-400" />
                   </div>
-                  <div className="flex flex-col items-center">
-                    <span className="mb-2 text-[10px] text-gray-500 dark:text-gray-400">
-                      Lite
-                    </span>
-                    <div className="mt-1.5 h-2 w-2 rounded-full bg-gray-200 dark:bg-gray-700" />
-                  </div>
+                 
                 </div>
               </div>
               <div className="flex w-[30%] items-center justify-center border-l-2 border-[#E9EFFC] p-4 dark:border-gray-800">
