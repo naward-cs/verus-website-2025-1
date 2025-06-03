@@ -357,9 +357,9 @@ export function PBaaSContent() {
             ].map((feature, index) => (
               <div
                 key={index}
-                className="group flex flex-col items-center rounded-xl border border-blue-100/60 bg-white/80 p-4 backdrop-blur-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-md dark:border-blue-900/20 dark:bg-gray-800/30 md:p-6"
+                className="group flex flex-col items-center rounded-xl border border-blue-100/60 bg-white/80 p-4 backdrop-blur-sm transition-all duration-300 dark:border-blue-900/20 dark:bg-gray-800/30 md:p-6"
               >
-                <div className="mb-4 flex h-10 w-10 items-center justify-center rounded-full bg-blue-100/80 text-blue-600 transition-colors group-hover:bg-blue-200 dark:bg-blue-900/30 dark:text-blue-400 dark:group-hover:bg-blue-800/40">
+                <div className="mb-4 flex h-10 w-10 items-center justify-center rounded-full bg-blue-100/80 text-blue-600 transition-colors dark:bg-blue-900/30 dark:text-blue-400">
                   {feature.icon}
                 </div>
                 <span className="text-center text-[14px] text-gray-700 dark:text-gray-300">
@@ -585,7 +585,7 @@ export function PBaaSContent() {
                     },
                     {
                       icon: <Clock className="h-5 w-5" />,
-                      text: 'Permanent yet removable storage',
+                      text: 'Permanent yet amenable storage',
                     },
                   ].map((feature, index) => (
                     <div

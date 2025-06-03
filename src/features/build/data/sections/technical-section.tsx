@@ -1,4 +1,4 @@
-import {Code2, FileCode, Layers} from 'lucide-react'
+import { Code2, FileCode, Layers } from 'lucide-react'
 
 /*
  * Updated:
@@ -161,16 +161,7 @@ export function TechnicalSection() {
                     </p>
                   </div>
 
-                  <div className="rounded-lg border border-blue-100/60 bg-white/80 p-6 backdrop-blur-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-md dark:border-blue-900/20 dark:bg-gray-800/50">
-                    <h4 className="mb-4 text-[16px] font-medium text-gray-900 dark:text-white md:text-[18px]">
-                      Access Control
-                    </h4>
-                    <p className="text-[15px] leading-relaxed text-gray-600 dark:text-gray-300 md:text-[16px]">
-                      Built-in permission system based on VerusIDs and
-                      namespaces. Control who can create, modify, and access
-                      different types of data.
-                    </p>
-                  </div>
+                
                 </div>
               </div>
             </div>

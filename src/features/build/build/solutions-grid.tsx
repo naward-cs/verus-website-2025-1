@@ -1,7 +1,7 @@
 import Image from 'next/image'
 import Link from 'next/link'
 
-import {ArrowUpDown, Coins, Database, Network, Store} from 'lucide-react'
+import { ArrowUpDown, Coins, Database, Network, Store } from 'lucide-react'
 
 export function SolutionsGrid() {
   return (
@@ -169,6 +169,9 @@ export function SolutionsGrid() {
               </span>
               <span className="rounded-full border border-verus-blue/10 bg-verus-blue/5 px-3 py-1.5 text-[12px] font-medium text-verus-blue/80 dark:border-blue-800/30 dark:bg-verus-blue/10 dark:text-blue-300">
                 Private
+              </span>
+              <span className="rounded-full border border-verus-blue/10 bg-verus-blue/5 px-3 py-1.5 text-[12px] font-medium text-verus-blue/80 dark:border-blue-800/30 dark:bg-verus-blue/10 dark:text-blue-300">
+                Verus Vault
               </span>
             </div>
             <div className="mt-auto pt-8">

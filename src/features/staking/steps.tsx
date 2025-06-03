@@ -1,9 +1,9 @@
 import Image from 'next/image'
 
-import {env} from '@/configs/env'
-import {Check, ExternalLink} from 'lucide-react'
-import {FaYoutube} from 'react-icons/fa'
-import {IoLogoDiscord} from 'react-icons/io5'
+import { env } from '@/configs/env'
+import { Check, ExternalLink } from 'lucide-react'
+import { FaYoutube } from 'react-icons/fa'
+import { IoLogoDiscord } from 'react-icons/io5'
 
 // Updated component with dark mode support and improved styling
 export function StakingSteps() {
@@ -214,7 +214,11 @@ export function StakingSteps() {
                 </div>
               </div>
               <p className="mt-6 flex w-fit items-center gap-2 rounded-md border border-amber-200/50 bg-amber-50/50 px-3 py-2 text-[13px] text-amber-800 dark:border-amber-700/30 dark:bg-amber-900/20 dark:text-amber-300 md:mt-8 md:text-[14px]">
-                Make sure to keep your node online 24/7
+                Make sure to keep your node online 24/7 and always in sync with
+                the network
+              </p>
+              <p className="mt-6 flex w-fit items-center gap-2 rounded-md border border-amber-200/50 bg-amber-50/50 px-3 py-2 text-[13px] text-amber-800 dark:border-amber-700/30 dark:bg-amber-900/20 dark:text-amber-300 md:mt-4 md:text-[14px]">
+                Always be up to date with the latest version
               </p>
               <p className="mt-2 flex w-fit items-center gap-2 rounded-md border border-amber-200/50 bg-amber-50/50 px-3 py-2 text-[13px] text-amber-800 dark:border-amber-700/30 dark:bg-amber-900/20 dark:text-amber-300 md:mt-4 md:text-[14px]">
                 Funds stake after 150 block confirmations
