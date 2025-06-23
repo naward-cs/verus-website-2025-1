@@ -7,25 +7,11 @@ import {IoLogoDiscord} from 'react-icons/io5'
 import {BgWrapper} from '@/components/bg-wrapper'
 
 export const metadata: Metadata = {
-  title: 'Store & Retrieve Data On-Chain | Verus',
+  title: 'Store & Retrieve Data On-Chain',
   description:
     'A complete on-chain database system with encryption, indexing, and flexible storage options—secured by consensus.',
   keywords:
     'blockchain data storage, on-chain database, encrypted data, blockchain indexing, data retrieval, Verus',
-  openGraph: {
-    title: 'Store & Retrieve Data On-Chain | Verus',
-    description:
-      'A complete on-chain database system with encryption, indexing, and flexible storage options—secured by consensus.',
-    url: '/build/data',
-    siteName: 'Verus',
-    type: 'website',
-  },
-  twitter: {
-    card: 'summary_large_image',
-    title: 'Store & Retrieve Data On-Chain | Verus',
-    description:
-      'A complete on-chain database system with encryption, indexing, and flexible storage options—secured by consensus.',
-  },
   alternates: {
     canonical: '/build/data',
   },

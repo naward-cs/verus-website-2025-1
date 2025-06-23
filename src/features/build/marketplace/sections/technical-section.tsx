@@ -121,6 +121,10 @@ export function TechnicalSection() {
                       <span className="font-medium">takeoffer</span> - Accepts
                       existing offers
                     </li>
+                    <li className="relative pl-6 text-[15px] leading-relaxed text-gray-600 dark:text-gray-300 md:text-[16px]">
+                      <div className="absolute left-0 top-2 h-1.5 w-1.5 rounded-full bg-blue-500/60 dark:bg-blue-400/60"></div>
+                      <span className="font-medium">listopenoffers</span> - Outstanding offers in a wallet
+                    </li>
                   </ul>
                 </div>
                 <div>

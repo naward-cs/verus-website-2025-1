@@ -12,28 +12,11 @@ import {
 import {BgWrapper} from '@/components/bg-wrapper'
 
 export const metadata: Metadata = {
-  title: 'The Protocol for Everyone | Verus',
+  title: 'The Protocol for Everyone',
   description:
     'Verus is uniquely positioned to empower individuals, communities and developers around the world, sustainably.',
   keywords:
     'blockchain protocol, Web3 technology, cryptocurrency, sustainable blockchain, scalable protocol, Verus introduction',
-  openGraph: {
-    title: 'The Protocol for Everyone | Verus',
-    description:
-      'Verus is uniquely positioned to empower individuals, communities and developers around the world, sustainably.',
-    url: '/intro',
-    siteName: 'Verus',
-    type: 'website',
-  },
-  twitter: {
-    card: 'summary_large_image',
-    title: 'The Protocol for Everyone | Verus',
-    description:
-      'Verus is uniquely positioned to empower individuals, communities and developers around the world, sustainably.',
-  },
-  alternates: {
-    canonical: '/intro',
-  },
 }
 
 export default function IntroPage() {

@@ -8,25 +8,12 @@ import {RealWorldSection} from '@/features/verusid/real-world-section'
 import {BgWrapper} from '@/components/bg-wrapper'
 
 export const metadata: Metadata = {
-  title: 'Own Your Digital Future with VerusID | Verus',
+  title: 'Own Your Digital Future with VerusID',
   description:
     'Your Identity, Your Control. Self-sovereign identity solutions built on the Verus Protocol.',
   keywords:
     'self-sovereign identity, digital identity, blockchain identity, decentralized identity, VerusID, identity control',
-  openGraph: {
-    title: 'Own Your Digital Future with VerusID | Verus',
-    description:
-      'Your Identity, Your Control. Self-sovereign identity solutions built on the Verus Protocol.',
-    url: '/verusid',
-    siteName: 'Verus',
-    type: 'website',
-  },
-  twitter: {
-    card: 'summary_large_image',
-    title: 'Own Your Digital Future with VerusID | Verus',
-    description:
-      'Your Identity, Your Control. Self-sovereign identity solutions built on the Verus Protocol.',
-  },
+
   alternates: {
     canonical: '/verusid',
   },

@@ -1,8 +1,8 @@
 import Image from 'next/image'
 
-import {env} from '@/configs/env'
-import {Check, ExternalLink} from 'lucide-react'
-import {IoLogoDiscord} from 'react-icons/io5'
+import { env } from '@/configs/env'
+import { Check, ExternalLink } from 'lucide-react'
+import { IoLogoDiscord } from 'react-icons/io5'
 
 // Updated component with dark mode support and improved styling
 export function MiningSteps() {
@@ -119,6 +119,12 @@ export function MiningSteps() {
               </div>
             </div>
 
+            <div className="mt-4 flex">
+              <p className="flex w-fit items-center gap-2 rounded-md border border-amber-200/50 bg-amber-50/50 px-3 py-2 text-[13px] text-amber-800 dark:border-amber-700/30 dark:bg-amber-900/20 dark:text-amber-300 md:text-[14px]">
+                Do not mine to exchanges directly, it will go wrong
+              </p>
+            </div>
+
             <div className="mt-8 flex h-full flex-col items-center justify-between md:mt-auto md:flex-row">
               {/* Button */}
               <div className="mb-8 w-full md:mb-0 md:w-auto">
@@ -178,7 +184,7 @@ export function MiningSteps() {
             </div>
 
             <a
-              href={`${env.NEXT_PUBLIC_VERUS_DOCS}/mining/mining-software.html`}
+              href={`${env.NEXT_PUBLIC_VERUS_DOCS}/economy/start-mining.html#mining-software`}
               target="_blank"
               rel="noopener noreferrer"
               className="group mt-8 flex h-[40px] w-fit items-center justify-center gap-2 rounded-lg border border-blue-200 bg-white/80 px-8 text-[14px] font-medium text-verus-blue backdrop-blur-sm transition-all duration-300 hover:-translate-y-[1px] hover:border-blue-300 hover:text-blue-600 hover:shadow-lg dark:border-blue-800/60 dark:bg-blue-950/80 dark:text-blue-300 dark:hover:border-blue-700 dark:hover:text-blue-200 dark:hover:shadow-blue-950/50 md:h-[50px] md:text-[16px]"
@@ -242,7 +248,7 @@ export function MiningSteps() {
             </div>
 
             <a
-              href={`${env.NEXT_PUBLIC_VERUS_DOCS}/mining/mining-software.html`}
+              href={`${env.NEXT_PUBLIC_VERUS_DOCS}/economy/start-mining.html#mining-pools`}
               target="_blank"
               rel="noopener noreferrer"
               className="group mt-8 flex h-[40px] w-fit items-center justify-center gap-2 rounded-lg border border-blue-200 bg-white/80 px-8 text-[14px] font-medium text-verus-blue backdrop-blur-sm transition-all duration-300 hover:-translate-y-[1px] hover:border-blue-300 hover:text-blue-600 hover:shadow-lg dark:border-blue-800/60 dark:bg-blue-950/80 dark:text-blue-300 dark:hover:border-blue-700 dark:hover:text-blue-200 dark:hover:shadow-blue-950/50 md:h-[50px] md:text-[16px]"

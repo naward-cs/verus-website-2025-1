@@ -6,28 +6,11 @@ import {BodyBgSmallImages} from '@/components/background-images'
 import {Footer} from '@/components/footer'
 
 export const metadata: Metadata = {
-  title: 'Frequently Asked Questions | Verus',
+  title: 'Frequently Asked Questions',
   description:
     'Find answers to common questions about Verus technology, protocol features, and how to get involved in the ecosystem.',
   keywords:
     'Verus FAQ, blockchain FAQ, cryptocurrency questions, Verus help, Verus information',
-  openGraph: {
-    title: 'Frequently Asked Questions | Verus',
-    description:
-      'Find answers to common questions about Verus technology, protocol features, and how to get involved in the ecosystem.',
-    url: '/faq',
-    siteName: 'Verus',
-    type: 'website',
-  },
-  twitter: {
-    card: 'summary_large_image',
-    title: 'Frequently Asked Questions | Verus',
-    description:
-      'Find answers to common questions about Verus technology, protocol features, and how to get involved in the ecosystem.',
-  },
-  alternates: {
-    canonical: '/faq',
-  },
 }
 
 export default function FaqPage() {

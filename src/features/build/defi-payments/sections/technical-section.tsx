@@ -1,4 +1,4 @@
-import {ArrowUpDown, FileCode, Layers, QrCode, Wallet} from 'lucide-react'
+import { ArrowUpDown, FileCode, QrCode, Wallet } from 'lucide-react'
 
 /*
  * Updated:
@@ -233,57 +233,7 @@ export function TechnicalSection() {
           </div>
         </div>
 
-        {/* Implementation Details */}
-        <div className="relative overflow-hidden rounded-2xl border border-blue-100/80 bg-gradient-to-br from-blue-50/90 to-white p-8 backdrop-blur-sm dark:border-blue-900/30 dark:from-blue-950/40 dark:to-gray-950">
-          <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(59,130,246,0.08),transparent_50%)] dark:bg-[radial-gradient(circle_at_center,rgba(59,130,246,0.15),transparent_50%)]"></div>
-          <div className="absolute -right-8 -top-8 h-32 w-32 rounded-full bg-blue-400/10 blur-xl dark:bg-blue-400/20"></div>
-
-          <div className="relative">
-            <div className="mb-6 flex items-center gap-4">
-              <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-white/90 text-blue-600 shadow-sm dark:bg-gray-800/90 dark:text-blue-400">
-                <Layers className="h-6 w-6" />
-              </div>
-              <h3 className="text-[20px] font-medium text-gray-900 dark:text-white md:text-[24px]">
-                Implementation Resources
-              </h3>
-            </div>
-
-            <div className="grid grid-cols-1 gap-6 md:grid-cols-3">
-              <div className="rounded-xl border border-blue-100/60 bg-white/80 px-6 py-5 backdrop-blur-sm dark:border-blue-900/20 dark:bg-gray-800/30">
-                <h4 className="mb-2 text-[16px] font-medium text-gray-900 dark:text-white">
-                  API Documentation
-                </h4>
-                <p className="text-[14px] leading-relaxed text-gray-700 dark:text-gray-300">
-                  Comprehensive API references for integrating payment
-                  processing, DeFi features, and cross-chain functionality into
-                  your applications.
-                </p>
-              </div>
-
-              <div className="rounded-xl border border-blue-100/60 bg-white/80 px-6 py-5 backdrop-blur-sm dark:border-blue-900/20 dark:bg-gray-800/30">
-                <h4 className="mb-2 text-[16px] font-medium text-gray-900 dark:text-white">
-                  SDK Libraries
-                </h4>
-                <p className="text-[14px] leading-relaxed text-gray-700 dark:text-gray-300">
-                  Ready-to-use software development kits in multiple languages
-                  including JavaScript, Python, Go, and Rust for rapid
-                  integration.
-                </p>
-              </div>
-
-              <div className="rounded-xl border border-blue-100/60 bg-white/80 px-6 py-5 backdrop-blur-sm dark:border-blue-900/20 dark:bg-gray-800/30">
-                <h4 className="mb-2 text-[16px] font-medium text-gray-900 dark:text-white">
-                  Sample Implementations
-                </h4>
-                <p className="text-[14px] leading-relaxed text-gray-700 dark:text-gray-300">
-                  Example projects and reference implementations including
-                  e-commerce plugins, payment gateways, and DeFi application
-                  samples.
-                </p>
-              </div>
-            </div>
-          </div>
-        </div>
+     
       </div>
     </section>
   )

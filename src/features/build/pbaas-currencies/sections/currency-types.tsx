@@ -99,7 +99,7 @@ export function CurrencyTypes() {
                 </div>
                 <p className="text-[15px] leading-relaxed text-gray-600 dark:text-gray-300">
                   Value is directly linked to what's in the reserves and the
-                  reserve ratio
+                  reserve ratio. There are no oracles or other external price feeds.
                 </p>
               </div>
 

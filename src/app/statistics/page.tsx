@@ -9,28 +9,11 @@ import {BgWrapper} from '@/components/bg-wrapper'
 export const dynamic = 'force-dynamic'
 
 export const metadata: Metadata = {
-  title: 'Protocol Statistics | Verus',
+  title: 'Protocol Statistics',
   description:
     'Real-time statistics for the Verus protocol including network metrics, market data, and ecosystem growth.',
   keywords:
     'Verus statistics, blockchain metrics, crypto statistics, Verus network data, VerusID statistics, PBaaS stats',
-  openGraph: {
-    title: 'Protocol Statistics | Verus',
-    description:
-      'Real-time statistics for the Verus protocol including network metrics, market data, and ecosystem growth.',
-    url: '/statistics',
-    siteName: 'Verus',
-    type: 'website',
-  },
-  twitter: {
-    card: 'summary_large_image',
-    title: 'Protocol Statistics | Verus',
-    description:
-      'Real-time statistics for the Verus protocol including network metrics, market data, and ecosystem growth.',
-  },
-  alternates: {
-    canonical: '/statistics',
-  },
 }
 
 export default function StatisticsPage() {

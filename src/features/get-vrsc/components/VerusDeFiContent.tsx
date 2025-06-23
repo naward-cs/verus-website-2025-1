@@ -1,10 +1,10 @@
-import {Suspense} from 'react'
 import Link from 'next/link'
+import { Suspense } from 'react'
 
-import {env} from '@/configs/env'
-import {ArrowLeftRight, Coins, ExternalLink} from 'lucide-react'
+import { env } from '@/configs/env'
+import { ArrowLeftRight, Coins, ExternalLink } from 'lucide-react'
 
-import {LiquidSection, VolumeSection} from './VerusDeFiSection'
+import { LiquidSection, VolumeSection } from './VerusDeFiSection'
 
 /*
  * VerusDeFiSection - Server Component
@@ -81,7 +81,7 @@ export function VerusDeFiContent() {
                         </Suspense>
                       </span>
                       <span className="text-[14px] font-medium text-gray-600 dark:text-gray-300">
-                        VRSC in Liquidity Pools
+                        in Liquidity Pools
                       </span>
                     </div>
                   </div>

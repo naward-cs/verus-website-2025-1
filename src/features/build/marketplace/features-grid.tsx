@@ -1,4 +1,4 @@
-import {BookOpen, Code2, Cpu, Database, Layers, Lock} from 'lucide-react'
+import { BookOpen, Code2, Cpu, Database, Layers, Lock } from 'lucide-react'
 
 export function FeaturesGrid() {
   return (
@@ -125,10 +125,9 @@ export function FeaturesGrid() {
                 Trustless Settlement Engine
               </h3>
               <p className="text-[14px] leading-relaxed text-gray-600 dark:text-gray-300 md:text-[15px]">
-                Integrate atomic swaps that guarantee either successful
-                completion of both sides of a trade or complete transaction
-                rollback. Eliminate complex escrow logic from your applications
-                while ensuring transaction finality.
+                Integrate multi-asset atomic trades that complete entirely in
+                both directions or not at all. Eliminate complex escrow logic
+                from your applications while ensuring transaction finality.
               </p>
             </div>
           </div>

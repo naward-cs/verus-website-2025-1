@@ -6,28 +6,11 @@ import {PeopleSections} from '@/features/people/sections'
 import {BgWrapper} from '@/components/bg-wrapper'
 
 export const metadata: Metadata = {
-  title: 'Meet the People Behind Verus | Verus',
+  title: 'Meet the People Behind Verus',
   description:
     'Meet the developers, contributors, and community members building the Verus ecosystem.',
   keywords:
     'Verus contributors, blockchain developers, cryptocurrency community, blockchain contributors, open source contributors',
-  openGraph: {
-    title: 'Meet the People Behind Verus | Verus',
-    description:
-      'Meet the developers, contributors, and community members building the Verus ecosystem.',
-    url: '/people',
-    siteName: 'Verus',
-    type: 'website',
-  },
-  twitter: {
-    card: 'summary_large_image',
-    title: 'Meet the People Behind Verus | Verus',
-    description:
-      'Meet the developers, contributors, and community members building the Verus ecosystem.',
-  },
-  alternates: {
-    canonical: '/people',
-  },
 }
 
 export default function PeoplePage() {

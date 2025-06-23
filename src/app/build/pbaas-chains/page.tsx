@@ -8,28 +8,11 @@ import {IoLogoDiscord} from 'react-icons/io5'
 import {BgWrapper} from '@/components/bg-wrapper'
 
 export const metadata: Metadata = {
-  title: 'Public Blockchains as a Service | Verus',
+  title: 'Public Blockchains as a Service',
   description:
     'Create powerful, interoperable blockchains with all Verus features—secured by worldwide miners and stakers.',
   keywords:
     'PBaaS, blockchain as a service, interoperable blockchains, custom blockchain, chain creation, Verus, multichain',
-  openGraph: {
-    title: 'Public Blockchains as a Service | Verus',
-    description:
-      'Create powerful, interoperable blockchains with all Verus features—secured by worldwide miners and stakers.',
-    url: '/build/pbaas-chains',
-    siteName: 'Verus',
-    type: 'website',
-  },
-  twitter: {
-    card: 'summary_large_image',
-    title: 'Public Blockchains as a Service | Verus',
-    description:
-      'Create powerful, interoperable blockchains with all Verus features—secured by worldwide miners and stakers.',
-  },
-  alternates: {
-    canonical: '/build/pbaas-chains',
-  },
 }
 
 export default function PBaaSChainPage() {
