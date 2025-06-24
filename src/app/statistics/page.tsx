@@ -1,12 +1,11 @@
-// Ensures the page is rendered dynamically
-
 import type {Metadata} from 'next'
 
 import {ProtocolStatistics} from '@/features/statistics/components/protocol-statistics'
 
 import {BgWrapper} from '@/components/bg-wrapper'
 
-export const dynamic = 'force-dynamic'
+// Ensures the page is rendered dynamically
+// export const dynamic = 'force-dynamic'
 
 export const metadata: Metadata = {
   title: 'Protocol Statistics',
